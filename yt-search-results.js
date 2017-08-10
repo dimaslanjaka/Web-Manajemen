@@ -13,3 +13,4 @@ var yturl = 'https://www.googleapis.com/youtube/v3/search?q='+queries+'&part=sni
 $.getJSON(yturl, function(data) {
   var html1st = '<div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="https://www.youtube.com/embed/';
   var html2nd = '?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&vq=large&origin=https://webmanajemen.xyz" frameborder=0" allowfullscreen></iframe></div>';
+})
