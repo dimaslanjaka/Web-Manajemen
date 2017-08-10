@@ -11,7 +11,7 @@ function getQueryVariable(variable) {
 }
 var queries = getQueryVariable("q");
 
-var yturl = "https://www.googleapis.com/youtube/v3/search?q=" + queries + "&part=snippet&maxResults=1&key=AIzaSyAx6gnU8v7jQDi6ZFg_ERCtJRJUIC9VuoQ";
+var yturl = "https://www.googleapis.com/youtube/v3/search?q="+queries+"&part=snippet&maxResults=1&key=AIzaSyAx6gnU8v7jQDi6ZFg_ERCtJRJUIC9VuoQ";
 $.getJSON(yturl, function(data) {
   document.write('<style type="text/css" scoped="">\
 a {text-decoration:none}\
