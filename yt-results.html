@@ -1,0 +1,18 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false);
+}
+var queries = getQueryVariable("q");
+
+var yturl = "https://www.googleapis.com/youtube/v3/search?q="+queries+"&part=snippet&maxResults=1&key=AIzaSyAx6gnU8v7jQDi6ZFg_ERCtJRJUIC9VuoQ";
+$.getJSON(yturl, function(data) {
+  document.write('<iframe src="https://www.youtube.com/embed/'+data.items[0].id.videoId+'?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&vq=large&origin=https://webmanajemen.xyz"></iframe>');
+})
+</script>
