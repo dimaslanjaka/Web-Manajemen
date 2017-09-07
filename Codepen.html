@@ -14,15 +14,8 @@
   }
   var idC=query('id');
   var tC=query('tab');
-$('<iframe>', {
-   src: 'https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'',
-   id:  'pen',
-   class: 'pen',
-   frameborder: 0,
-   width: '100%',
-   height: '300',
-   allowfullscreen: 'true',
-   allowTransparency: 'true',
-   scrolling: 'auto'
-   }).appendTo('#pen').after('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
+    
+    var ifr = '<iframe src="https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'" width="100%" height="100%" scrolling="auto" frameborder="0" allowfullscreen allowtransparency="true"></iframe>';
+    
+$('#pen').html(ifr).after('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
     </script>
