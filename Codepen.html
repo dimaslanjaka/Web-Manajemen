@@ -1,4 +1,9 @@
 <div id="pen" class="pen"></div>
+<span id="desc"></span>
+<style>
+    #pen,.pen{width:100%;height:100%}
+    #desc{font-color:red}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function query(variable) {
@@ -17,5 +22,6 @@
     
     var ifr = '<iframe src="https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'" width="100%" height="100%" scrolling="auto" frameborder="0" allowfullscreen allowtransparency="true"></iframe>';
     
-$('#pen').html(ifr).after('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
+$('#pen').html(ifr)
+$('#desc").html('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
     </script>
