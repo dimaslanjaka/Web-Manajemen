@@ -1,7 +1,7 @@
-<div id="pen" class="pen"></div>
+<!--div id="pen" class="pen"></div-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-function query(variable) {
+    function query(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
     for (var i = 0; i < vars.length; i++) {
@@ -20,12 +20,9 @@ $('<iframe>', {
    class: 'pen',
    frameborder: 0,
    width: '100%',
-   height: '500',
+   height: '300',
    allowfullscreen: 'true',
    allowTransparency: 'true',
    scrolling: 'auto'
    }).appendTo('#pen').after('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
-   </script>
-<style>
-    #pen,.pen{width:100% !important;height:100% !important}
-    </style>
+    </script>
