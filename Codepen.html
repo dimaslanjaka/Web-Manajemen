@@ -1,5 +1,3 @@
-<div id="pen" class="pen"></div>
-<span id="desc"></span>
 <style>
     #pen,.pen{width:100%;height:100%}
     #desc{font-color:red}
@@ -20,8 +18,8 @@
   var idC=query('id');
   var tC=query('tab');
     
-    var ifr = '<iframe src="https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'" width="100%" height="300" scrolling="auto" frameborder="0" allowfullscreen allowtransparency="true"></iframe>';
+    var ifr = '<iframe src="https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'" width="100%" height="300" scrolling="auto" frameborder="0" style="width:100%;height:100%"></iframe>';
     
-$('#pen').html(ifr)
-$('#desc').html('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
+document.write(ifr);
+document.write('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
     </script>
