@@ -1,3 +1,4 @@
+ <meta charset="UTF-8">
 <style>
   #full{width:100%;height:100%}
 table
@@ -31,17 +32,17 @@ td
 <table cellpadding="5" cellspacing="0" class="w3-white" border="0" style="width: 100%; border-collapse: collapse">
   <tr>
     <td>
-      <table cellpadding="2" cellspacing="0" style="border-collapse: collapse" class="w3-text-teal">
+      <table cellpadding="2" cellspacing="0" style="width:100%;border-collapse: collapse" class="w3-text-teal">
         <tr>
           <td style="width:13%">
             <b>Enter URL:</b>
           </td>
-          <td style="width:66%">
-            <input class="w3-round w3-teal w3-border w3-border-red" type="text" name="url" value="" size="40" />
+          <td style="width:64%">
+       <input class="w3-round w3-teal w3-border w3-border-red" type="text" name="url" value="http://" size="40" onClick="this.select();" style="white-space:normal"/>
           </td>
-          <td style="width:25%">
-           <input type="button" value="Show Header" onclick="OnSubmitPluginInput(this,'http://www.webtoolhub.com/plugins/wt561360-http-header-viewer.aspx');" />
-         </td>
+          <td>
+            <input class="w3-button w3-teal w3-round" type="button" value="Check" onclick="OnSubmitPluginInput(this,'http://www.webtoolhub.com/plugins/wt561360-http-header-viewer.aspx');" style="white-space:normal;width:100%"/>
+         </td>
        </tr>
        <tr>
          <td style="font-size:9pt">
