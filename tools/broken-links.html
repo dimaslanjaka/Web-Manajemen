@@ -1,12 +1,5 @@
 <style>
-  *{word-wrap:break-word}
-  .wrap-value {
-   color: #000000; 
-   white-space: normal; 
-   width: 150px;
-}
-  iframe {width:100%}
-  table
+table
 {
     table-layout: fixed;
     width: 100%;
@@ -29,7 +22,6 @@ td
      -webkit-box-sizing:border-box;
      -moz-box-sizing: border-box;
 }
-  
   </style>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,23 +29,24 @@ td
 <table cellpadding="5" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse">
   <tr>
     <td>
-      <table cellpadding="2" cellspacing="0" style="border-collapse: collapse">
+      <table cellpadding="2" cellspacing="0" style="border-collapse: collapse" class="w3-text-teal">
         <tr>
-          <td>
+          <td style="width:50px">
             <b>Enter URL:</b>
           </td>
-          <td>
-            <input class="" type="text" name="url" value="" size="40" />
+          <td style="width:200px">
+            <input class="w3-round w3-teal w3-border w3-border-red" type="text" name="url" value="" size="40" />
           </td>
           <td>
-            <input class="w3-button wrap-value" type="button" value="Check Broken Links" onclick="OnSubmitPluginInput(this,'http://www.webtoolhub.com/plugins/wt561356-broken-link-checker.aspx');" />
+            <input class="w3-button w3-teal w3-round" type="button" value="Check Broken Links" onclick="OnSubmitPluginInput(this,'http://www.webtoolhub.com/plugins/wt561356-broken-link-checker.aspx');" style="white-space: normal"/>
           </td>
        </tr>
        <tr>
-         <td>
+         <td style="font-size:9pt">
+           Usage:
          </td>
          <td colspan="2" style="font-size: 9pt;">
-           (e.g. yourwebsite.com)
+     (e.g. yourwebsite.com or http://yourwebsite.com)
          </td>
        </tr>
       </table>
