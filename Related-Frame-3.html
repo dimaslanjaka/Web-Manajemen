@@ -162,9 +162,9 @@ window.CP.exitedLoop(1);
     document.write('Query variable %s not found for ', variable);
 }
 var Xtitle = getQueryVariableParse("title");
-var titles = '<span class="title">'+decodeURI(decodeURIComponent(Xtitle))+'</span>';
+var titles = decodeURI(decodeURIComponent(Xtitle));
 /*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
-var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Related For "+titles+":</h4>",widgetStyle:1,homePage:"web-manajemen.blogspot.com",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){if (window.CP.shouldStopExecution(2)){break;}d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}
+var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Related For <span class='title'>"+titles+"</span>:</h4>",widgetStyle:1,homePage:"web-manajemen.blogspot.com",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){if (window.CP.shouldStopExecution(2)){break;}d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}
 window.CP.exitedLoop(2);
 var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){if (window.CP.shouldStopExecution(3)){break;}c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}
 window.CP.exitedLoop(3);
