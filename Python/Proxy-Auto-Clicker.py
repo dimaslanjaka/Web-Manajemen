@@ -4,6 +4,8 @@
 # code for tutorial Python [ Membuat Bot Auto Clicker ]
 import urllib2
 import urllib
+import urllib.request
+import requests
 import sys
 import time
 import random
