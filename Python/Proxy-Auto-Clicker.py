@@ -27,7 +27,7 @@ useragent = ['Mozilla/4.0 (compatible; MSIE 5.0; SunOS 5.10 sun4u; X11)',
 		'Mozilla/4.0 (compatible; MSIE 5.0; Windows ME) Opera 5.11 [en]']
 
 referer	= ['http://google.com','http://bing.com','http://facebook.com','http://twitter.com']
-link_invation= 'http://cash111.com/ref.php?page=act/ref&invcod=90386'
+link_invation= 'https://www.bestchange.com/?p=343921'
 
 def Autoclicker(proxy1):
     try:
