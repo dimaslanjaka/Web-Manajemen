@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$EUID" -ne 0 ] then 
+	echo "Please run as root" 
+	exit 
+fi
 EDITOR=vim
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
