@@ -68,7 +68,7 @@ sudo apt-get update
 }
 bgminer(){
 pkill miner
-nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
+nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/dev/null &
 }
 four(){
 sudo echo "/home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1" > /etc/init.d/zminer.sh
