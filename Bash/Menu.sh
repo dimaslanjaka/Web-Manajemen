@@ -27,6 +27,7 @@ then
 else
     echo "Miner Is Stopped"
 fi
+pause
 }
 cpuminer-multi(){
 cd /home/ubuntu
@@ -80,8 +81,8 @@ pkill minerd
 }
 cli(){
 	sudo apt-get update -y && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb -y && sudo minergate-cli -user dimaslanjaka@gmail.com -xmr 2
-	}
-	os(){
+}
+os(){
 		echo "OS Name :"
 		uname -a
 		echo "CPU Model :"
@@ -112,6 +113,7 @@ show_menus() {
  echo "9. Kill Miner Process"
  echo "10. Check Miner Process"
  echo "11. Create Reboot Every 1 Hour"
+ echo "12. Show CPU and OS Info"
  echo "99. Exit"
 }
 
@@ -130,6 +132,7 @@ read_options(){
  9) minerkill ;;
  10) minercheck ;;
  11) bootlog ;;
+ 12) os ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
