@@ -38,7 +38,10 @@ sudo echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
 sudo update-initramfs -u
 sudo apt-get update
 }
-
+bgminer(){
+pkill miner
+nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
+}
 four(){
 sudo echo "/home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1" > /etc/init.d/zminer.sh
 sudo chmod +x /etc/init.d/zminer.sh
@@ -75,6 +78,7 @@ show_menus() {
 	echo "4. Install Miner Every Boot"
  echo "5. Install cpuminer-multi"
  echo "6. Install minergate-cli"
+ echo "7. Run Miner In Background"
  echo "99. Exit"
 }
 
@@ -88,6 +92,7 @@ read_options(){
  4) four ;;
  5) cpuminer-multi ;;
  6) cli ;;
+ 7) bgminer ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
