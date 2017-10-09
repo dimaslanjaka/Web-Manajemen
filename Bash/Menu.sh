@@ -99,22 +99,22 @@ pause
 # function to display menus
 show_menus() {
 	clear
- echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"	
- echo "     Dimas Lanjaka Menus      |        Information        "
- echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
- echo "1. Reboot System              | Reboot VPS  "
- echo '2. Start Miner                | Start New Mining"
- echo "3. Fix mdadm.conf No Array    | Fix Linux Img"
- echo "4. Install Miner Every Boot   | Auto Run Miner"
- echo "5. Install cpuminer-multi     | Install cpuminer"
- echo "6. Install minergate-cli      | Install Minergate CLI"
- echo "7. Run Miner In Background    | Run Mining In Background"
- echo "8. Get Background Miner log   | Get Log Of Background Mining"
- echo "9. Kill Miner Process         | Kill Miner"
- echo "10. Check Miner Process       | Check Miner Process"
- echo "11. Create Reboot Every 1 Hour| Create Auto Reboot"
- echo "12. Show CPU and OS Info      | Show VPS Information"
- echo "99. Exit                      | Exit Menu"
+	echo "~~~~~~~~~~~~~~~~~~~~~"	
+	echo " Dimas Lanjaka Menus "
+	echo "~~~~~~~~~~~~~~~~~~~~~"
+	echo "1. Reboot System"
+	echo "2. Start Miner"
+	echo "3. Fix mdadm.conf No Array"
+	echo "4. Install Miner Every Boot"
+ echo "5. Install cpuminer-multi"
+ echo "6. Install minergate-cli"
+ echo "7. Run Miner In Background"
+ echo "8. Get Background Miner log"
+ echo "9. Kill Miner Process"
+ echo "10. Check Miner Process"
+ echo "11. Create Reboot Every 1 Hour"
+ echo "12. Show CPU and OS Info"
+ echo "99. Exit"
 }
 
 read_options(){
