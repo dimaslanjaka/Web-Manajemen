@@ -26,7 +26,9 @@ sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y &&
 one(){
         sudo reboot
 }
-
+nohuplog(){
+cat nohu*
+}
 two(){
         sudo pkill miner
 sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
@@ -48,7 +50,9 @@ sudo chmod +x /etc/init.d/zminer.sh
 sudo chmod ugo+x /etc/init.d/zminer.sh
 sudo update-rc.d zminer.sh defaults
 }
-
+minerkill(){
+pkill miner
+}
 cli(){
 	sudo apt-get update -y && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb -y && sudo minergate-cli -user dimaslanjaka@gmail.com -xmr 2
 	}
@@ -79,6 +83,8 @@ show_menus() {
  echo "5. Install cpuminer-multi"
  echo "6. Install minergate-cli"
  echo "7. Run Miner In Background"
+ echo "8. Get Background Miner log"
+ echo "9. Kill Miner Process"
  echo "99. Exit"
 }
 
@@ -93,6 +99,8 @@ read_options(){
  5) cpuminer-multi ;;
  6) cli ;;
  7) bgminer ;;
+ 8) nohuplog ;;
+ 9) minerkill ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
