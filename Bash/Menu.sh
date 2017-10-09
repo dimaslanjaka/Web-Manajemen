@@ -12,9 +12,8 @@ EDITOR=vim
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
-if [ -e /home/ubuntu ] then
-cd /home/ubuntu
-else
+dir='/home/ubuntu'
+if [ ! -d "$dir" ]; then
 sudo mkdir /home/ubuntu
 chmod 777 /home/ubuntu
 fi
