@@ -40,7 +40,18 @@ two(){
         sudo pkill miner
 sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
 }
-
+bootlog(){
+if [ -e /home/ubuntu/reboot.sh ] then
+rm -f -r /home/ubuntu/reboot.sh
+else
+cat << 'EOF' >> /home/ubuntu/reboot.sh
+#!/bin/bash
+dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt rebooted" >> /home/ubuntu/boot.log
+/sbin/reboot
+EOF
+chmod +x /home/ubuntu/reboot.sh
+fi
+}
  three(){
 #fix mdadm.conf no array
 sudo echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
@@ -93,6 +104,7 @@ show_menus() {
  echo "8. Get Background Miner log"
  echo "9. Kill Miner Process"
  echo "10. Check Miner Process"
+ echo "11. Create Reboot Every 1 Hour"
  echo "99. Exit"
 }
 
@@ -110,6 +122,7 @@ read_options(){
  8) nohuplog ;;
  9) minerkill ;;
  10) minercheck ;;
+ 11) bootlog ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
