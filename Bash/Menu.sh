@@ -12,12 +12,17 @@ EDITOR=vim
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
- 
+if [ -e /home/ubuntu ] then
+cd /home/ubuntu
+else
+sudo mkdir /home/ubuntu
+chmod 777 /home/ubuntu
+fi
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
 minercheck(){
-if pgrep -x "miner" > /dev/null
+if pgrep -x "minerd" > /dev/null
 then
     echo "Miner Is Running"
 else
@@ -25,19 +30,18 @@ else
 fi
 }
 cpuminer-multi(){
-sudo mkdir /home/ubuntu
 cd /home/ubuntu
 sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y && sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y && sudo git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi/ && ./autogen.sh && CFLAGS="-march=native" ./configure && make && sudo make install && cd ../ && echo "/home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1" > start.sh
 }
 
 one(){
-        sudo reboot
+        /sbin/reboot
 }
 nohuplog(){
-cat nohu*
+cat /home/ubuntu/nohu*
 }
 two(){
-        sudo pkill miner
+        sudo pkill minerd
 sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
 }
 bootlog(){
@@ -69,7 +73,7 @@ sudo chmod ugo+x /etc/init.d/zminer.sh
 sudo update-rc.d zminer.sh defaults
 }
 minerkill(){
-pkill miner
+pkill minerd
 }
 cli(){
 	sudo apt-get update -y && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb -y && sudo minergate-cli -user dimaslanjaka@gmail.com -xmr 2
