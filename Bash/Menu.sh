@@ -39,6 +39,7 @@ one(){
 }
 nohuplog(){
 cat /home/ubuntu/nohu*
+pause
 }
 two(){
         sudo pkill minerd
