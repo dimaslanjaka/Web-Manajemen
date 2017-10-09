@@ -46,14 +46,13 @@ sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool
 bootlog(){
 if [ ! -d "/home/ubuntu/reboot.sh" ]; then
 rm -f -r /home/ubuntu/reboot.sh
-else
+fi
 cat << 'EOF' >> /home/ubuntu/reboot.sh
 #!/bin/bash
 dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt rebooted" >> /home/ubuntu/boot.log
 /sbin/reboot
 EOF
 chmod +x /home/ubuntu/reboot.sh
-fi
 }
  three(){
 #fix mdadm.conf no array
