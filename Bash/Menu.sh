@@ -16,7 +16,14 @@ STD='\033[0;0;39m'
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
-
+minercheck(){
+if pgrep -x "miner" > /dev/null
+then
+    echo "Miner Is Running"
+else
+    echo "Miner Is Stopped"
+fi
+}
 cpuminer-multi(){
 sudo mkdir /home/ubuntu
 cd /home/ubuntu
@@ -85,6 +92,7 @@ show_menus() {
  echo "7. Run Miner In Background"
  echo "8. Get Background Miner log"
  echo "9. Kill Miner Process"
+ echo "10. Check Miner Process"
  echo "99. Exit"
 }
 
@@ -101,6 +109,7 @@ read_options(){
  7) bgminer ;;
  8) nohuplog ;;
  9) minerkill ;;
+ 10) minercheck ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
