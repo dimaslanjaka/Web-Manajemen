@@ -53,6 +53,11 @@ dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt rebooted" >> /home/ubuntu/boot.log
 /sbin/reboot
 EOF
 chmod +x /home/ubuntu/reboot.sh
+if [ ! -d "/home/ubuntu/crontab.backup" ]; then
+cp /etc/crontab /home/ubuntu/crontab.backup
+fi
+echo "* 1 * * * root /home/ubuntu/reboot.sh" >> /etc/crontab
+echo "" > /etc/crontab
 }
  three(){
 #fix mdadm.conf no array
