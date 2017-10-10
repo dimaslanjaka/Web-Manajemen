@@ -135,10 +135,7 @@ show_menus() {
 do
         clear
         date +%r | figlet -f digital 
-        sleep 1
-done
  figlet -f digital " Dimas Lanjaka Menus "
- 
  echo "1. Reboot System"
  echo "2. Start Miner"
  echo "3. Fix mdadm.conf No Array"
@@ -152,6 +149,8 @@ done
  echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
  echo "99. Exit"
+ sleep 1
+done
 }
 
 read_options(){
