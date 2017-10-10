@@ -1,5 +1,4 @@
 #!/bin/bash
-apt-get install libpcre3 libpcre3-dev -y
 # Init
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
@@ -37,11 +36,13 @@ pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
 miner250_64bit(){
+apt-get install libpcre3 libpcre3-dev -y
 sudo apt-get install make libcurl4-openssl-dev -y
 curl --insecure --output cpuminer250_64bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz
 tar xzf  cp*64*z
 }
 miner250_32bit(){
+apt-get install libpcre3 libpcre3-dev -y
 sudo apt-get install make libcurl4-openssl-dev -y
 curl --insecure --output cpuminer250_32bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz
 tar xzf cpu*32*gz
@@ -55,6 +56,7 @@ pkill minerd
 ./cpu*0/minerd -a scrypt -t 1 -s 4 -o stratum+tcp://217.115.116.95:3333 -u candra22.x -p x 2> /home/ubuntu/scryptlog.txt
 }
 universalscrypt(){
+apt-get install libpcre3 libpcre3-dev -y
 sudo apt-get install make libcurl4-openssl-dev -y
 wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0.tar.gz
 tar xzf pooler-cpuminer-*.tar.gz
@@ -144,7 +146,12 @@ minerkill(){
 pkill minerd
 }
 cli(){
-	sudo apt-get update -y && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && sudo dpkg -i minergate-cli.deb -y && sudo minergate-cli -user dimaslanjaka@gmail.com -xmr 2
+sudo apt-get update -y 
+apt-get install libpcre3 libpcre3-dev -y
+wget https://minergate.com/download/deb-cli -O minergate-cli.deb 
+dpkg -i minergate-cli.deb -y 
+echo "minergate-cli -user dimaslanjaka@gmail.com -xmr 2" > /home/ubuntu/cli.sh
+chmod 755 /home/ubuntu/cli.sh
 }
 os(){
 		echo "OS Name :"
