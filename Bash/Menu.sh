@@ -20,9 +20,11 @@ fi
 if [ ! -d "/usr/share/figlet" ]; then
 apt-get install figlet -y
 apt-get install toilet -y
+fi
+if [ ! -d "/usr/share/figlet/figlet-fonts" ]; then
 cd /usr/share/figlet
 git clone https://github.com/xero/figlet-fonts
-mv fi*s/* ./
+mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
 pause(){
