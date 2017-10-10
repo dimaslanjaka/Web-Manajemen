@@ -130,10 +130,7 @@ pause
 
 # function to display menus
 show_menus() {
-	clear
-	while [ 1 ]; do
-        date +%r | figlet -f digital 
-	done
+clear
  figlet -f digital " Dimas Lanjaka Menus "
  echo "1. Reboot System"
  echo "2. Start Miner"
