@@ -13,7 +13,7 @@ PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
 dir='/home/ubuntu'
-menuclone="/home/ubuntu/menu.sh"
+menuclone='/home/ubuntu/menu.sh'
 if [ -f "$dir" ]
 then
 cd $dir
