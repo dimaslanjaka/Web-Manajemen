@@ -150,7 +150,7 @@ sudo apt-get update -y
 apt-get install libpcre3 libpcre3-dev -y
 wget https://minergate.com/download/deb-cli -O minergate-cli.deb 
 dpkg -i minergate-cli.deb -y 
-echo "minergate-cli -user dimaslanjaka@gmail.com -xmr 2" > /home/ubuntu/cli.sh
+curl -o /home/ubuntu/cli.sh --insecure "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Cli.sh"
 chmod 755 /home/ubuntu/cli.sh
 }
 os(){
