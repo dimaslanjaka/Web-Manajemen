@@ -53,7 +53,7 @@ pause
 }
 two(){
       pkill minerd
-sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/home/ubuntu/minerlog.txt &
+sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
 }
 bootlog(){
 if [ ! -d "/home/ubuntu/reboot.sh" ]; then
@@ -85,8 +85,8 @@ sudo update-initramfs -u
 sudo apt-get update
 }
 bgminer(){
-pkill miner
-nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/dev/null &
+pkill minerd
+nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/home/ubuntu/minerlog.txt &
 }
 four(){
 if [ ! -d "/home/ubuntu/crontab.backup" ]; then
