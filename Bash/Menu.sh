@@ -131,7 +131,7 @@ pause
 # function to display menus
 show_menus() {
  clear
- figlet -f digital " Dimas Lanjaka Menus "
+ figlet -f digital "Dimas Lanjaka Menus"
  figlet -f digital "1. Reboot System"
  figlet -f digital "2. Start Miner"
  figlet -f digital "3. Fix mdadm.conf No Array"
