@@ -1,6 +1,7 @@
+#!/bin/sh
 if pgrep -x "minerd" > /dev/null
 then
     echo "Miner Is Running"
 else
-    echo "Miner Is Stopped"
+    minergate-cli -user dimaslanjaka@gmail.com -xmr 1
 fi
