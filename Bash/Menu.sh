@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get install libpcre3 libpcre3-dev -y
 # Init
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
