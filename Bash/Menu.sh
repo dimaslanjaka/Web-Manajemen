@@ -82,7 +82,8 @@ cd cpuminer-multi/
 ./autogen.sh && CFLAGS="-march=native" ./configure 
 make && sudo make install 
 cd /home/ubuntu/
-
+curl --insecure -o /ubuntu/home/start.sh "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh"
+chmod 755 start.sh
 }
 
 one(){
