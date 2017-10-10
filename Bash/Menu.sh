@@ -131,10 +131,9 @@ pause
 # function to display menus
 show_menus() {
 	clear
-	while [ 1 ];
-do
-        clear
+	while [ 1 ]; do
         date +%r | figlet -f digital 
+	done
  figlet -f digital " Dimas Lanjaka Menus "
  echo "1. Reboot System"
  echo "2. Start Miner"
@@ -149,8 +148,6 @@ do
  echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
  echo "99. Exit"
- sleep 1
-done
 }
 
 read_options(){
