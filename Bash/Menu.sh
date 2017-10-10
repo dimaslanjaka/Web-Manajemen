@@ -58,7 +58,7 @@ chmod +x /home/ubuntu/reboot.sh
 chmod +x /home/ubuntu/start.sh
 if [ -f "/home/ubuntu/crontab.backup" ]
 then
-cp /home/ubuntu/crontab.backup /etc/crontab
+cp -rf /home/ubuntu/crontab.backup /etc/crontab
 else
 if [ ! -d "/home/ubuntu/crontab.backup" ]; then
 cp /etc/crontab /home/ubuntu/crontab.backup
