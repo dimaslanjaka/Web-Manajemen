@@ -75,7 +75,14 @@ pause
 }
 cpuminer-multi(){
 cd /home/ubuntu
-sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y && sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y && sudo git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi/ && ./autogen.sh && CFLAGS="-march=native" ./configure && make && sudo make install && cd ../ && echo "/home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1" > start.sh
+sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y 
+apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y 
+sudo git clone https://github.com/wolf9466/cpuminer-multi 
+cd cpuminer-multi/ 
+./autogen.sh && CFLAGS="-march=native" ./configure 
+make && sudo make install 
+cd /home/ubuntu/
+
 }
 
 one(){
