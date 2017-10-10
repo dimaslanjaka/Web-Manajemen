@@ -32,6 +32,11 @@ git clone https://github.com/xero/figlet-fonts
 mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
+clone(){
+menuclone="/home/ubuntu/menu.sh"
+echo "Cloning $menuclone..."
+curl --insecure -o $menuclone "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Menu.sh"
+}
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
@@ -192,12 +197,14 @@ show_menus() {
  echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
  echo "99. Exit"
+ echo "0. Clone This Menu To $menuclone"
 }
 
 read_options(){
 	local choice
 	read -p "Choose Options : " choice
 	case $choice in
+ 0) clone ;;
  1) one ;;
  2) two ;;
  3) three ;;
