@@ -30,6 +30,20 @@ fi
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
+miner250_64bit(){
+sudo apt-get install make libcurl4-openssl-dev
+curl --insecure --output cpuminer250_64bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz
+}
+miner250_32bit(){
+sudo apt-get install make libcurl4-openssl-dev
+curl --insecure --output cpuminer250_32bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz
+}
+runscrypt(){
+./cpu*0/minerd -a scrypt -t 1 -s 4 -o stratum+tcp://217.115.116.95:3333 -u candra22.x -p x
+}
+runscriptbg(){
+./cpu*0/minerd -a scrypt -t 1 -s 4 -o stratum+tcp://217.115.116.95:3333 -u candra22.x -p x 2> /home/ubuntu/scryptlog.txt
+}
 minercheck(){
 if pgrep -x "minerd" > /dev/null
 then
