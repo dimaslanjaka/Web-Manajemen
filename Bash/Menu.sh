@@ -13,6 +13,7 @@ PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
 dir='/home/ubuntu'
+menuclone="/home/ubuntu/menu.sh"
 if [ -f "$dir" ]
 then
 cd $dir
@@ -33,7 +34,6 @@ mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
 clone(){
-menuclone="/home/ubuntu/menu.sh"
 echo "Cloning $menuclone..."
 curl --insecure -o $menuclone "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Menu.sh"
 }
