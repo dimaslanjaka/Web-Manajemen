@@ -121,13 +121,13 @@ pause
 # function to display menus
 show_menus() {
 	clear
-	echo "~~~~~~~~~~~~~~~~~~~~~"	
-	echo " Dimas Lanjaka Menus "
-	echo "~~~~~~~~~~~~~~~~~~~~~"
-	echo "1. Reboot System"
-	echo "2. Start Miner"
-	echo "3. Fix mdadm.conf No Array"
-	echo "4. Install Miner Every Boot"
+ echo "~~~~~~~~~~~~~~~~~~~~~"	
+ echo " Dimas Lanjaka Menus "
+ echo "~~~~~~~~~~~~~~~~~~~~~"
+ echo "1. Reboot System"
+ echo "2. Start Miner"
+ echo "3. Fix mdadm.conf No Array"
+ echo "4. Install Miner Every Boot"
  echo "5. Install cpuminer-multi"
  echo "6. Install minergate-cli"
  echo "7. Run Miner In Background"
