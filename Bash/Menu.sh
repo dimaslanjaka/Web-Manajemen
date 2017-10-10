@@ -36,6 +36,7 @@ fi
 clone(){
 echo "Cloning $menuclone..."
 curl --insecure -o $menuclone "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Menu.sh"
+chmod 755 $menuclone
 }
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
