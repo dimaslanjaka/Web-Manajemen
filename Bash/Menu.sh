@@ -56,12 +56,14 @@ dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt rebooted" >> /home/ubuntu/boot.log
 EOF
 chmod +x /home/ubuntu/reboot.sh
 chmod +x /home/ubuntu/start.sh
-if [ ! -d "/home/ubuntu/crontab.backup" ]; then
-cp /etc/crontab /home/ubuntu/crontab.backup
-fi
 if [ -f "/home/ubuntu/crontab.backup" ]
 then
 cp /home/ubuntu/crontab.backup /etc/crontab
+else
+if [ ! -d "/home/ubuntu/crontab.backup" ]; then
+cp /etc/crontab /home/ubuntu/crontab.backup
+fi
+fi
 echo "* 1 * * * root /home/ubuntu/reboot.sh" >> /etc/crontab
 echo "* * * * * root /home/ubuntu/start.sh" >> /etc/crontab
 echo "" >> /etc/crontab
