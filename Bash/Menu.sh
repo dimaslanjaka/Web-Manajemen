@@ -13,9 +13,14 @@ PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
 dir='/home/ubuntu'
+if [ -f "$dir" ]
+then
+cd $dir
+else
 if [ ! -d "$dir" ]; then
 sudo mkdir /home/ubuntu
 chmod 777 /home/ubuntu
+fi
 fi
 if [ ! -d "/usr/share/figlet" ]; then
 apt-get install figlet -y
@@ -31,18 +36,30 @@ pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
 miner250_64bit(){
-sudo apt-get install make libcurl4-openssl-dev
+sudo apt-get install make libcurl4-openssl-dev -y
 curl --insecure --output cpuminer250_64bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86_64.tar.gz
+tar xzf  cp*64*z
 }
 miner250_32bit(){
-sudo apt-get install make libcurl4-openssl-dev
+sudo apt-get install make libcurl4-openssl-dev -y
 curl --insecure --output cpuminer250_32bit.tar.gz "https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz" #wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0-linux-x86.tar.gz
+tar xzf cpu*32*gz
 }
 runscrypt(){
+pkill minerd
 ./cpu*0/minerd -a scrypt -t 1 -s 4 -o stratum+tcp://217.115.116.95:3333 -u candra22.x -p x
 }
 runscriptbg(){
+pkill minerd
 ./cpu*0/minerd -a scrypt -t 1 -s 4 -o stratum+tcp://217.115.116.95:3333 -u candra22.x -p x 2> /home/ubuntu/scryptlog.txt
+}
+universalscrypt(){
+sudo apt-get install make libcurl4-openssl-dev -y
+wget https://github.com/pooler/cpuminer/releases/download/v2.5.0/pooler-cpuminer-2.5.0.tar.gz
+tar xzf pooler-cpuminer-*.tar.gz
+cd cpuminer-*
+./configure CFLAGS="-O3"
+make
 }
 minercheck(){
 if pgrep -x "minerd" > /dev/null
