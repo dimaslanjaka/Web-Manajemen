@@ -17,6 +17,14 @@ if [ ! -d "$dir" ]; then
 sudo mkdir /home/ubuntu
 chmod 777 /home/ubuntu
 fi
+if [ ! -d "/usr/share/figlet" ]; then
+apt-get install figlet -y
+apt-get install toilet -y
+cd /usr/share/figlet
+git clone https://github.com/xero/figlet-fonts
+mv fi*s/* ./
+cd /home/ubuntu/
+fi
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
