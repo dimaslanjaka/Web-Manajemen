@@ -1,5 +1,5 @@
 #!/bin/sh
-if pgrep -x "miner" > /dev/null
+if pgrep -x "minerd" > /dev/null
 then
     echo "Miner Is Running"
 else
