@@ -193,6 +193,7 @@ pause
 # function to display menus
 show_menus() {
  clear
+ ps aux | grep miner
  figlet -f digital "Dimas Lanjaka Menus"
  echo "1. Reboot System"
  echo "2. Start Miner"
