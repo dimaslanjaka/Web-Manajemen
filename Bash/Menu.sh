@@ -131,7 +131,7 @@ if [ ! -d "/home/ubuntu/crontab.backup" ]; then
 cp /etc/crontab /home/ubuntu/crontab.backup
 fi
 fi
-echo "* 1 * * * root /home/ubuntu/reboot.sh" >> /etc/crontab
+echo "0 */4 * * * root /sbin/shutdown -r now" >> /etc/crontab
 echo "* * * * * root /home/ubuntu/start.sh" >> /etc/crontab
 echo "" >> /etc/crontab
 }
