@@ -113,6 +113,13 @@ two(){
 sudo /home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1
 }
 bootlog(){
+if [ -f "/etc/init.d/zminer.sh" ]
+then
+rm -f /etc/init.d/zminer.sh
+else
+curl --output /home/ubuntu/start.sh --insecure "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh"
+chmod 777 /home/ubuntu/start.sh
+fi
 if [ ! -d "/home/ubuntu/reboot.sh" ]; then
 rm -f -r /home/ubuntu/reboot.sh
 fi
