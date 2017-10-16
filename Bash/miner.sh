@@ -1,3 +1,4 @@
+#!/bin/sh
 if pgrep -x "miner" > /dev/null
 then
     echo "Miner Is Running"
