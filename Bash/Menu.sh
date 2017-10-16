@@ -22,6 +22,15 @@ if [ ! -d "$dir" ]; then
 sudo mkdir /home/ubuntu
 chmod 777 /home/ubuntu
 fi
+if [ -f "/home/ubuntu/start.sh" ]
+then
+rm -rf /home/ubuntu/start.sh
+curl --output /home/ubuntu/start.sh --insecure "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh"
+chmod 777 /home/ubuntu/start.sh
+else
+curl --output /home/ubuntu/start.sh --insecure "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh"
+chmod 777 /home/ubuntu/start.sh
+fi
 fi
 if [ ! -d "/usr/share/figlet" ]; then
 apt-get install figlet -y
