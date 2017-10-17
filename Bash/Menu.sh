@@ -100,7 +100,9 @@ cd /home/ubuntu/
 curl --insecure -o /ubuntu/home/start.sh "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh"
 chmod 755 start.sh
 }
-
+rmCron(){
+cp /home/ubuntu/crontab.backup /etc/crontab
+}
 one(){
         /sbin/reboot
 }
@@ -139,8 +141,8 @@ cp /etc/crontab /home/ubuntu/crontab.backup
 fi
 fi
 echo "0 */2 * * * root /home/ubuntu/reboot.sh" >> /etc/crontab
-echo "* * * * * root /home/ubuntu/start.sh" >> /etc/crontab
-echo "" >> /etc/crontab
+#echo "* * * * * root /home/ubuntu/start.sh" >> /etc/crontab
+#echo "" >> /etc/crontab
 }
  three(){
 #fix mdadm.conf no array
@@ -214,6 +216,7 @@ show_menus() {
  echo "10. Check Miner Process"
  echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
+ echo "13. Remove Cron"
  echo "99. Exit"
  echo "0. Clone This Menu To $menuclone"
 }
@@ -235,6 +238,7 @@ read_options(){
  10) minercheck ;;
  11) bootlog ;;
  12) os ;;
+ 13) rmCron ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
