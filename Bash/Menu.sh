@@ -67,6 +67,10 @@ echo "Cloning $menuclone..."
 curl --insecure -o $menuclone "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Menu.sh"
 chmod 755 $menuclone
 }
+cpusage(){
+sudo apt-get install htop -y
+htop
+}
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
@@ -237,6 +241,7 @@ show_menus() {
  echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
  echo "13. Remove Cron"
+ echo "14. Show CPU Usage"
  echo "99. Exit"
  echo "0. Clone This Menu To $menuclone"
  echo "00. Install Full Minergate Mining"
@@ -261,6 +266,7 @@ read_options(){
  11) bootlog ;;
  12) os ;;
  13) rmCron ;;
+ 14) cpusage ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
