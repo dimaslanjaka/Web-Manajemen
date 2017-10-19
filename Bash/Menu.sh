@@ -44,6 +44,8 @@ cd /home/ubuntu/
 fi
 fullinstall(){
 EDITOR=vim
+sudo echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
+sudo update-initramfs -u
 sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y && sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y && sudo git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi/ && ./autogen.sh && CFLAGS="-march=native" ./configure && make && sudo make install && cd ../
 cat << 'EOF' >> /etc/init.d/zminer.sh
 #!/bin/bash
