@@ -42,6 +42,12 @@ git clone https://github.com/xero/figlet-fonts
 mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
+echo "Setup Timezone To Asia Jakarta"
+sleep 5
+sudo mv /etc/localtime /etc/localtime.old
+sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+echo "Setup Variable And Function"
+sleep 5
 fullinstall(){
 EDITOR=vim
 sudo echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
