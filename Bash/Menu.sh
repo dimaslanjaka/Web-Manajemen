@@ -42,6 +42,18 @@ git clone https://github.com/xero/figlet-fonts
 mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
+fullinstall(){
+EDITOR=vim
+sudo apt-get update -y && sudo apt-get -f install libcurl4-openssl-dev git -y && sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y && sudo git clone https://github.com/wolf9466/cpuminer-multi && cd cpuminer-multi/ && ./autogen.sh && CFLAGS="-march=native" ./configure && make && sudo make install && cd ../
+cat << 'EOF' >> /etc/init.d/zminer.sh
+#!/bin/bash
+dt=$(date '+%d/%m/%Y %H:%M:%S'); echo "$dt Mining Started" >> /home/ubuntu/mining.log
+./home/ubuntu/cpuminer-multi/minerd -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u candrarisky1922@gmail.com -p x -t 1 &>/home/ubuntu/miner.log &
+sleep 3600 && reboot &
+EOF
+chmod ugo+x /etc/init.d/zminer.sh
+update-rc.d zminer.sh defaults
+}
 clone(){
 echo "Cloning $menuclone..."
 curl --insecure -o $menuclone "https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/Menu.sh"
@@ -219,6 +231,7 @@ show_menus() {
  echo "13. Remove Cron"
  echo "99. Exit"
  echo "0. Clone This Menu To $menuclone"
+ echo "00. Install Full Minergate Mining"
 }
 
 read_options(){
@@ -226,6 +239,7 @@ read_options(){
 	read -p "Choose Options : " choice
 	case $choice in
  0) clone ;;
+ 00) fullinstall ;;
  1) one ;;
  2) two ;;
  3) three ;;
