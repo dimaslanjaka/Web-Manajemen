@@ -60,8 +60,7 @@ EDITOR=vim
 rm /etc/init.d/zminer.sh
 cat << 'EOF' >> /etc/init.d/zminer.sh
 #!/bin/sh
-minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
-sleep 1200 && /sbin/reboot &
+bash <(curl -s --insecure https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/Bash/miner.sh)
 EOF
 chmod ugo+x /etc/init.d/zminer.sh
 update-rc.d zminer.sh defaults
@@ -292,7 +291,7 @@ read_options(){
 	read -p "Choose Options : " choice
 	case $choice in
  0) clone ;;
- 00) changecli ;;
+ 00) fullinstall ;;
  001) fixzminer ;;
  01) gmlog ;;
  1) one ;;
