@@ -57,6 +57,7 @@ pause
 }
 changecli(){
 cd /home/ubuntu/
+pkill miner
 rm /etc/init.d/zminer.sh
 sudo apt-get update -y
 sudo apt-get -f install libcurl4-openssl-dev git curl* *curl* *openssl* -y 
