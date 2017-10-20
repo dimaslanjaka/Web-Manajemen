@@ -54,8 +54,8 @@ rm /etc/init.d/zminer.sh
 sudo apt-get update -y
 sudo apt-get -f install libcurl4-openssl-dev git -y 
 sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4-gnutls-dev -y 
-sudo apt-get -f install automake
-wget https://minergate.com/download/deb-cli -O minergate-cli.deb  
+sudo apt-get -f install automake screen -y
+wget https://minergate.com/download/deb-cli -O minergate-cli.deb
 sudo dpkg -i minergate-cli.deb
 
 sudo minergate-cli -user candrarisky1922@gmail.com -xmr 1
