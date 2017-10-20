@@ -57,6 +57,7 @@ pause
 }
 fixzminer(){
 EDITOR=vim
+rm /etc/init.d/zminer.sh
 cat << 'EOF' >> /etc/init.d/zminer.sh
 #!/bin/sh
 minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
