@@ -48,6 +48,13 @@ sudo mv /etc/localtime /etc/localtime.old
 sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 echo "Setup Variable And Function"
 #sleep 5
+pause(){
+  read -p "Press [Enter] key to continue..." fackEnterKey
+}
+gmlog(){
+cat /home/ubuntu/miner.log
+pause
+}
 changecli(){
 cd /home/ubuntu/
 rm /etc/init.d/zminer.sh
@@ -89,9 +96,6 @@ chmod 755 $menuclone
 cpusage(){
 sudo apt-get install htop -y
 htop
-}
-pause(){
-  read -p "Press [Enter] key to continue..." fackEnterKey
 }
 miner250_64bit(){
 apt-get install libpcre3 libpcre3-dev -y
@@ -258,9 +262,10 @@ show_menus() {
 # echo "9. Kill Miner Process"
 # echo "10. Check Miner Process"
 # echo "11. Create Reboot Every 1 Hour"
- echo "12. Show CPU and OS Info"
+# echo "12. Show CPU and OS Info"
 # echo "13. Remove Cron"
- echo "14. Show CPU Usage"
+ echo "000. Show CPU Usage"
+ echo "01. Show Miner Log"
  echo "99. Exit"
  echo "0. Clone This Menu To $menuclone"
  echo "00. Install Full Minergate Mining"
@@ -272,6 +277,7 @@ read_options(){
 	case $choice in
  0) clone ;;
  00) changecli ;;
+ 01) gmlog ;;
  1) one ;;
  2) two ;;
  3) three ;;
@@ -285,7 +291,7 @@ read_options(){
  11) bootlog ;;
  12) os ;;
  13) rmCron ;;
- 14) cpusage ;;
+ 000) cpusage ;;
  99) exit 0;;
  *) echo -e "${RED}Error...${STD}" && sleep 1
 	esac
