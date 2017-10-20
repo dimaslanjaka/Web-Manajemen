@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 runminer(){
 rm /etc/init.d/zminer.sh
+rm /etc/init.d/miner.sh
 cd /home/ubuntu
 sudo apt-get update -y 
 sudo wget https://minergate.com/download/deb-cli -O minergate-cli.deb 
