@@ -43,11 +43,11 @@ mv -rf fi*s/* ./
 cd /home/ubuntu/
 fi
 echo "Setup Timezone To Asia Jakarta"
-sleep 5
+#sleep 5
 sudo mv /etc/localtime /etc/localtime.old
 sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 echo "Setup Variable And Function"
-sleep 5
+#sleep 5
 fullinstall(){
 EDITOR=vim
 sudo echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
@@ -230,15 +230,15 @@ show_menus() {
  figlet -f digital "Dimas Lanjaka Menus"
  echo "1. Reboot System"
  echo "2. Start Miner"
- echo "3. Fix mdadm.conf No Array"
- echo "4. Install Miner Every Boot"
+ #echo "3. Fix mdadm.conf No Array"
+# echo "4. Install Miner Every Boot"
  echo "5. Install cpuminer-multi"
  echo "6. Install minergate-cli"
  echo "7. Run Miner In Background"
  echo "8. Get Background Miner log"
  echo "9. Kill Miner Process"
  echo "10. Check Miner Process"
- echo "11. Create Reboot Every 1 Hour"
+# echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
  echo "13. Remove Cron"
  echo "14. Show CPU Usage"
