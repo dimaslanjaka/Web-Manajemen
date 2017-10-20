@@ -248,18 +248,18 @@ show_menus() {
  ps aux | grep miner
  figlet -f digital "Dimas Lanjaka Menus"
  echo "1. Reboot System"
- echo "2. Start Miner"
- #echo "3. Fix mdadm.conf No Array"
+# echo "2. Start Miner"
+# echo "3. Fix mdadm.conf No Array"
 # echo "4. Install Miner Every Boot"
- echo "5. Install cpuminer-multi"
- echo "6. Install minergate-cli"
- echo "7. Run Miner In Background"
- echo "8. Get Background Miner log"
- echo "9. Kill Miner Process"
- echo "10. Check Miner Process"
+# echo "5. Install cpuminer-multi"
+# echo "6. Install minergate-cli"
+# echo "7. Run Miner In Background"
+# echo "8. Get Background Miner log"
+# echo "9. Kill Miner Process"
+# echo "10. Check Miner Process"
 # echo "11. Create Reboot Every 1 Hour"
  echo "12. Show CPU and OS Info"
- echo "13. Remove Cron"
+# echo "13. Remove Cron"
  echo "14. Show CPU Usage"
  echo "99. Exit"
  echo "0. Clone This Menu To $menuclone"
@@ -271,7 +271,7 @@ read_options(){
 	read -p "Choose Options : " choice
 	case $choice in
  0) clone ;;
- 00) fullinstall ;;
+ 00) changecli ;;
  1) one ;;
  2) two ;;
  3) three ;;
