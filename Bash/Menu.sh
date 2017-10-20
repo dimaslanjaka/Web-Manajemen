@@ -261,6 +261,7 @@ pause
 
 # function to display menus
 show_menus() {
+fixzminer
  clear
  ps aux | grep miner
  figlet -f digital "Dimas Lanjaka Menus"
