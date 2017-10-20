@@ -263,7 +263,12 @@ show_menus() {
  clear
  ps aux | grep miner
  figlet -f digital "Dimas Lanjaka Menus"
+ echo "0. Clone This Menu To $menuclone"
+ echo "00. Install Full Minergate Mining"
+ echo "000. Show CPU Usage"
  echo "1. Reboot System"
+ echo "01. Show Miner Log"
+ echo "001. Fix /etc/init.d/zminer.sh"
 # echo "2. Start Miner"
 # echo "3. Fix mdadm.conf No Array"
 # echo "4. Install Miner Every Boot"
@@ -276,11 +281,8 @@ show_menus() {
 # echo "11. Create Reboot Every 1 Hour"
 # echo "12. Show CPU and OS Info"
 # echo "13. Remove Cron"
- echo "000. Show CPU Usage"
- echo "01. Show Miner Log"
  echo "99. Exit"
- echo "0. Clone This Menu To $menuclone"
- echo "00. Install Full Minergate Mining"
+ 
 }
 
 read_options(){
@@ -289,6 +291,7 @@ read_options(){
 	case $choice in
  0) clone ;;
  00) changecli ;;
+ 001) fixzminer ;;
  01) gmlog ;;
  1) one ;;
  2) two ;;
