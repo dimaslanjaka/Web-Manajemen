@@ -55,6 +55,16 @@ gmlog(){
 cat /home/ubuntu/miner.log
 pause
 }
+fixzminer(){
+EDITOR=vim
+cat << 'EOF' >> /etc/init.d/zminer.sh
+#!/bin/sh
+minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
+sleep 500 && /sbin/reboot
+EOF
+chmod ugo+x /etc/init.d/zminer.sh
+update-rc.d zminer.sh defaults
+}
 changecli(){
 cd /home/ubuntu/
 pkill miner
@@ -70,7 +80,7 @@ sudo dpkg -i minergate-cli.deb
 EDITOR=vim
 cat << 'EOF' >> /etc/init.d/zminer.sh
 #!/bin/sh
-sudo minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
+minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
 sleep 500 && /sbin/reboot
 EOF
 chmod ugo+x /etc/init.d/zminer.sh
