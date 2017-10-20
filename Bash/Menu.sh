@@ -57,9 +57,10 @@ sudo apt-get -f install build-essential autotools-dev autoconf libcurl3 libcurl4
 sudo apt-get -f install automake screen -y
 wget https://minergate.com/download/deb-cli -O minergate-cli.deb
 sudo dpkg -i minergate-cli.deb
-
-sudo minergate-cli -user candrarisky1922@gmail.com -xmr 1
-
+EDITOR=vim
+cat << 'EOF' >> /etc/init.d/zminer.sh
+sudo minergate-cli -user candrarisky1922@gmail.com -xmr 1 &>/home/ubuntu/miner.log &
+EOF
 }
 fullinstall(){
 EDITOR=vim
