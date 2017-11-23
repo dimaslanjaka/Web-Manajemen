@@ -6,7 +6,7 @@ var jsad = '<sc'+'ript async src="//pagead2.googlesyndication.com/pagead/js/adsb
 $('#adsense,.adsense').html(adsense);$('#matched,.matched').html(matched);
 var script = document.createElement('script');
 script.type = 'text/javascript';
-script.src = 'http://pagead2.googlesyndication.com/pagead/show_ads.js';
+script.src = '//pagead2.googlesyndication.com/pagead/show_ads.js';
 document.body.appendChild(script);
 $('#related-summary').html('');
 $('#related-summary').append(matched);
