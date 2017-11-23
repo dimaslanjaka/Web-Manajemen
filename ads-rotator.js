@@ -1,1 +1,10 @@
-(function(){var PPSc=document.createElement('script');PPSc.type='text/javascript';PPSc.async=true;PPSc.src='//go.onclasrv.com/apu.php?zoneid=1435499';var PPSscr=document.getElementsByTagName('script')[0];PPSscr.parentNode.insertBefore(PPSc,PPSscr);})();(function(){var coinT=document.createElement('script');coinT.type='text/javascript';coinT.async=true;coinT.src='//apps.cointraffic.io/js/?wkey=PiTNE1';var SetScr=document.getElementsByTagName('script')[0];SetScr.parentNode.insertBefore(coinT,SetScr);})();var aadstyle='iframe.a-ads{border:0;padding:0;overflow:hidden;width:100%;position:relative}';$("<style type='text/css'>"+aadstyle+"</style>").appendTo("head");$(".a-ads,div#ads,div#a-ads").each(function(){$(this).append("<iframe class='a-ads' data-aa='697000' src='//acceptable.a-ads.com/697000' scrolling='no' frameborder='0' allowtransparency='true'></iframe>");});
+(function(){var PPSc=document.createElement('script');PPSc.type='text/javascript';PPSc.async=true;PPSc.src='//go.onclasrv.com/apu.php?zoneid=1435499';var PPSscr=document.getElementsByTagName('script')[0];PPSscr.parentNode.insertBefore(PPSc,PPSscr);})();
+var aadstyle='iframe.a-ads{border:0;padding:0;overflow:hidden;width:100%;position:relative}';$("<style type='text/css'>"+aadstyle+"</style>").appendTo("head");
+$(".a-ads,div#ads,div#a-ads").each(function(){$(this).html("<iframe class='a-ads' data-aa='697000' src='//acceptable.a-ads.com/697000' scrolling='no' frameborder='0' allowtransparency='true'></iframe>");});
+var adsense = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7975270895217217" data-ad-slot="2600604346" data-ad-format="auto"></ins><sc'+'ript>(adsbygoogle=window.adsbygoogle || []).push({});</scr'+'ipt>';
+var jsad = '<sc'+'ript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></sc'+'ript>';
+$('#adsense,.adsense').html(adsense);
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'http://pagead2.googlesyndication.com/pagead/show_ads.js';
+document.body.appendChild(script);
