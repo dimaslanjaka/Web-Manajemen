@@ -8,5 +8,5 @@ var script = document.createElement('script');
 script.type = 'text/javascript';
 script.src = '//pagead2.googlesyndication.com/pagead/show_ads.js';
 document.body.appendChild(script);
-$('#related-summary').html('');
-$('#related-summary').append(matched);
+$('#matched,.matched').html(matched);
+$('#related-summary').html(matched);
