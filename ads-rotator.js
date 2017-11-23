@@ -2,6 +2,7 @@
 var aadstyle='iframe.a-ads{border:0;padding:0;overflow:hidden;width:100%;position:relative}';$("<style type='text/css'>"+aadstyle+"</style>").appendTo("head");
 $(".a-ads,div#ads,div#a-ads").each(function(){$(this).html("<iframe class='a-ads' data-aa='697000' src='//acceptable.a-ads.com/697000' scrolling='no' frameborder='0' allowtransparency='true'></iframe>");});
 var adsense = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7975270895217217" data-ad-slot="2600604346" data-ad-format="auto"></ins><sc'+'ript>(adsbygoogle=window.adsbygoogle || []).push({});</scr'+'ipt>';
+var matched = '<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-7975270895217217" data-ad-slot="6234751119"></ins><scr'+'ipt>(adsbygoogle=window.adsbygoogle || []).push({});</scr'+'ipt>';
 var jsad = '<sc'+'ript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></sc'+'ript>';
 $('#adsense,.adsense').html(adsense);
 var script = document.createElement('script');
