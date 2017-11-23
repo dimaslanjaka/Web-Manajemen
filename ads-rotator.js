@@ -4,7 +4,7 @@ $(".a-ads,div#ads,div#a-ads").each(function(){$(this).html("<iframe class='a-ads
 var adsense = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7975270895217217" data-ad-slot="2600604346" data-ad-format="auto"></ins><sc'+'ript>(adsbygoogle=window.adsbygoogle || []).push({});</scr'+'ipt>';
 var matched = '<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-7975270895217217" data-ad-slot="6234751119"></ins><scr'+'ipt>(adsbygoogle=window.adsbygoogle || []).push({});</scr'+'ipt>';
 var jsad = '<sc'+'ript async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></sc'+'ript>';
-$('#adsense,.adsense').html(adsense);
+$('#adsense,.adsense').html(adsense);$('#matched,.matched').html(matched);
 var script = document.createElement('script');
 script.type = 'text/javascript';
 script.src = 'http://pagead2.googlesyndication.com/pagead/show_ads.js';
