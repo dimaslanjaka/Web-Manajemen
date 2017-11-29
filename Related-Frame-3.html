@@ -1,16 +1,11 @@
-
 <!DOCTYPE html><html class=''>
-<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/dimaslanjaka/pen/WZbXyy?label=AMP&title=label%20for%20amp%20blog&home=https://www.webmanajemen.xyz" />
-
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons|Tangerine|Raleway'>
-<style class="cp-pen-styles">/* ==== Related Post Widget Global Styling ==== */
-.tangerine{
-	font-family:Tangerine;
-  font-size:23px;
-	}.pmt10{margin-top:10px;padding-top:10px}
-.raleway{
-  font-family:Raleway
-    }
+<head>
+	<script src='//cdn.rawgit.com/dimaslanjaka/865dd6b579156d22427efa312267c651/raw/afee7fac22b1dac33e1ba71b87c7d333dda215f4/console-runner.js'></script>
+	<script src='//cdn.rawgit.com/dimaslanjaka/865dd6b579156d22427efa312267c651/raw/afee7fac22b1dac33e1ba71b87c7d333dda215f4/css-event-load.js'></script><script src='https://cdn.rawgit.com/dimaslanjaka/865dd6b579156d22427efa312267c651/raw/afee7fac22b1dac33e1ba71b87c7d333dda215f4/event-runner.js'></script><meta charset='UTF-8'>
+	<link rel="canonical" href="//cdn.rawgit.com/dimaslanjaka/Web-Manajemen/master/Related-Frame-3.html" />
+<link rel='stylesheet prefetch' href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons%7CRaleway%7CTangerine'>
+<style class="cp-pen-styles">
+/* ==== Related Post Widget Global Styling ==== */
 body {
   background-color:white;
   margin:0;
@@ -30,6 +25,10 @@ a:hover {color:#0379C4}
   font-family: Roboto, sans-serif;
   font-size:16px;
 }
+.related-post span.title{
+	font-family:Tangerine;
+	font-size:23px;
+	}
 .related-post h4 {
   font-size:20px;
   margin:0 5px 10px;
@@ -101,14 +100,19 @@ function getQueryVariable(variable) {
   }
   return(false);
 }
+	function stripurl(url) {
+  return url.split("?")[0].split("#")[0];
+}
   var labelX = getQueryVariable("label");
   var str = labelX;
   var res = str.split(",");
   var resx = JSON.stringify(res);
   var rexX = resx.replace(/[\[\]']+/g,'');
+	var homepageurl = stripurl(getQueryVariable('home'));
+	
   var labelArray = [str],
     relatedPostConfig = {
-		homePage: 'https://www.webmanajemen.xyz',
+		homePage: homepageurl,
         numPosts: 6,
         summaryLength: 100,
         widgetStyle: 2,
@@ -142,10 +146,9 @@ function getQueryVariable(variable) {
             } newsTicker();
         }
     };
-  document.write('<a href="#" class="pmt10">'+getQueryVariable("home")+'</a>');
 </script>
-<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script >function getQueryVariableParse(variable) {
+<script src='//cdn.rawgit.com/dimaslanjaka/865dd6b579156d22427efa312267c651/raw/afee7fac22b1dac33e1ba71b87c7d333dda215f4/Exec-timeout.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script>function getQueryVariableParse(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
     for (var i = 0; i < vars.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
@@ -159,11 +162,9 @@ window.CP.exitedLoop(1);
     document.write('Query variable %s not found for ', variable);
 }
 var Xtitle = getQueryVariableParse("title");
-var stitle = Xtitle;
-	var xA = stitle.replace(/%20/g, " ");
-var titles = '<span class="tangerine">'+decodeURI(decodeURIComponent(Xtitle))+'</span>';
+var titles = '<span class="title">'+decodeURI(decodeURIComponent(Xtitle))+'</span>';
 /*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
-var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4 class='raleway'>Related For "+titles+":</h4>",widgetStyle:1,homePage:"web-manajemen.blogspot.com",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){if (window.CP.shouldStopExecution(2)){break;}d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}
+var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Related For "+titles+":</h4>",widgetStyle:1,homePage:"web-manajemen.blogspot.com",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){if (window.CP.shouldStopExecution(2)){break;}d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}
 window.CP.exitedLoop(2);
 var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){if (window.CP.shouldStopExecution(3)){break;}c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}
 window.CP.exitedLoop(3);
