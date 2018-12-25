@@ -1,4 +1,8 @@
-
+function xconsole(string){
+  var str = JSON.stringify(string);
+  str = JSON.stringify(string, null, 4);
+  return str;
+}
 var ajax = {};
 ajax.x = function () {
     if (typeof XMLHttpRequest !== 'undefined') {
