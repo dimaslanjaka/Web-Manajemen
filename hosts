@@ -18,7 +18,7 @@
 
 # localhost name resolution is handled within DNS itself.
 ::1             localhost
-127.0.0.1 	    localhost
+127.0.0.1       localhost
 255.255.255.255 broadcasthost
 127.0.0.1       license.sublimehq.com
 127.0.0.1       bandicam.com
