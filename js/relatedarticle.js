@@ -1,14 +1,14 @@
 var randomRelatedIndex, showRelatedPost;
 (function(n, m, k) {
     var d = {
-        widgetTitle: "<h4>Artikel Terkait:</h4>",
+        widgetTitle: "<h4>Related Article:</h4>",
         widgetStyle: 1,
-        homePage: "http://www.dte.web.id",
+        homePage: "http://web-manajemen.blogspot.com",
         numPosts: 7,
         summaryLength: 370,
         titleLength: "auto",
         thumbnailSize: 72,
-        noImage: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",
+        noImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png",
         containerId: "related-post",
         newTabLink: false,
         moreText: "Baca Selengkapnya",
