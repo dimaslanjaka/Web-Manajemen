@@ -27,7 +27,8 @@ var randomRelatedIndex, showRelatedPost;
             return Math.floor(Math.random() * (a - b + 1)) + b
         },
         l = function(a) {
-            var p = (a.hasOwnProperty('length') ? a.length : 0),
+            console.log(a);
+            var p = (a ? a.length : 0),
                 c, b;
             if (p === 0) {
                 return false
