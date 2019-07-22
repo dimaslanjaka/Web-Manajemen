@@ -164,59 +164,10 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 </script>
 </b:if>
 <b:if cond='data:blog.searchQuery'>
-<style>
-#main-wrapper{width:100%;}
-.article{width:30.3333%;margin:0 1.5% 30px;}
-.article:nth-of-type(2n){margin-right:1.5%}
-.article:nth-of-type(2n+1){clear:none}
-.article:nth-of-type(3n+1){clear:both}
-.blog-posts{width:103%;margin-left:-1.5%}
-</style>
+<script>
+'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/search.css'.CSS();
+</script>
 </b:if>
-<style>
-/*<![CDATA[*/
-@media screen and (max-width:1024px){
-.full-row{width:768px}
-#main-wrapper,#sidebar-wrapper{float:none;width:100%;margin:0;border:0}
-#menu-icon{display:block}#box{right:40px}
-#menu-wrapper{float:none;margin:0}
-#menutop a{padding:0}
-.mini-list{margin:0;width:100%}
-#show-list{display:none}
-#show-list.menu-active{display:block;clear:both;width:100%;margin-top:10px}
-.menu-active li{padding:10px 0;float:none;width:100%;text-align:center;border-top:1px solid rgba(0,0,0,.2);display:block;height:auto}
-.menu-active li:last-child{padding-bottom:0}
-.menu-active a{width:100%;display:block}
-}
-@media screen and (max-width:768px){
-.full-row{width:95%}
-.f-width{display:block;max-width:100%}
-.postmeta{border:none;padding:5px 0}
-}
-@media screen and (max-width:480px){
-#Header1{float:none;width:100%;position:initial}
-#top-img img{margin:10px 0}
-#header-area{padding:0}
-#htop:after{display:block;content:'';clear:both}
-#sidebar-wrapper{padding-top:10px}
-.editing{display:none}
-#judul-post .post-title,.sumcontent .post-title a{font-size:20px}
-.post-body,.breadcrumbs{margin:0}
-.article{float:none;width:100%;min-height:auto;}.sumcontent{overflow:visible;padding:0}.post{box-shadow:none}
-.f-links li:after,.longtxt,#backtop,.notxt{display:none!Important}
-.related-post-style-3 .related-post-item{width:48%!important}
-.related-post-style-3 .related-post-item:nth-of-type(4n+1){clear:none}
-.related-post-style-3 .related-post-item:nth-of-type(2n){margin-right:0px!important}
-.related-post-style-3 .related-post-item:nth-of-type(2n+1){clear:both}
-.footer-colomn,.row-menu,.row-social{width:100%}.f-text,.f-links{float:none;width:100%;text-align:center;margin: 0;}
-.row-menu-links ul li{float:left;width:48%;margin:0 4% 0 0;border-bottom:1px solid rgba(0,0,0,.2);padding:10px 0;text-align:left}.row-menu-links{padding:0}.row-menu-links ul li:nth-of-type(even){margin-right:0}.f-text ul li{padding:10px 0;width:100%}
-.iklan1{margin:5px auto;float:none;text-align:center}
-}
-@media screen and (max-width:320px){
-.authorava{display:none}
-}
-/*]]>*/
-</style>
 &lt;/head&gt;&lt;!--<head/>--&gt;
 <body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute("data-href")||a.match(EXCLUDE)||(t.setAttribute("data-href",a),t.removeAttribute("href"),t.style.textDecoration="underline",t.style.color="red")}}),l("click",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute("data-href");return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement("a"),{target:"_blank",href:"https://dimaslanjaka.github.io/page/safelink.html?url="+btoa(t)}).click(),!1}});' style='margin:0;'>
 <b:if cond='data:view.isError'>
@@ -226,13 +177,9 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <div class='light-heading2'>Laman yang anda cari sudah dipindahkan, dihapus atau mungkin tidak pernah dibuat...</div><br/>
 <div class='bt404'><a expr:href='data:blog.homepageUrl' title='Homepage'><span>Let&#39;s Go Back To Homepage</span></a></div>
 </div>
-<style>
-#error-page{text-align:center;top:0;right:0;bottom:0;left:0;z-index:9}
-#error-page .errorlabel{text-align:center;transition:all 0.8s ease 0s;color:#333;font:800 70px work sans;margin:0}
-#error-page .light-heading1 {color:#000;font-size:40px;text-transform:uppercase!important;}
-#error-page .light-heading2 {color:#666;font-size:20px;line-height:1.8em;}
-.bt404 span{background:#ddd;display:inline-block;padding:10px;margin:10px auto;border-radius:2px;color:#333;font-weight:700}
-</style>
+<script>
+'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/error.css'.CSS();
+</script>
   <b:else/>
 <div id='page_content'>
 <header class='bg-color' id='header' itemscope='itemscope' itemtype='http://schema.org/WPHeader'>
