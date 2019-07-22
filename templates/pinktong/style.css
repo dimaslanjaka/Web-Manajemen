@@ -1213,7 +1213,7 @@ a.washare {
   color: #000;
   font-weight: 700
 }
-
+/*
 @media screen and (max-width : 902px) {
 
   .popular-posts,
@@ -1222,7 +1222,7 @@ a.washare {
     visibility: hidden;
   }
 }
-
+*/
 li>.item-snippet {
   display: none
 }

@@ -128,10 +128,10 @@
 <!--CLASS-->
 <script>
 String.prototype.CSS = function() {
-  var l = document.createElement('link');
-  l.rel = 'stylesheet';
+  var l = document.createElement(&#39;link&#39;);
+  l.rel = &#39;stylesheet&#39;;
   l.href = this;
-  var h = document.getElementsByTagName('head')[0], event = window.addEventListener || window.attachEvent || window.onload;
+  var h = document.getElementsByTagName(&#39;head&#39;)[0], event = window.addEventListener || window.attachEvent || window.onload;
   h.parentNode.insertBefore(l, h);
 }
 </script>
@@ -154,33 +154,33 @@ body#layout #sidebar-wrapper{width:30%;float:right;margin:0}
 body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 ]]></b:skin>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style.css&#39;.CSS();
 </script>
 <b:if cond='data:view.isMultipleItems'>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/multiviews.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/multiviews.css&#39;.CSS();
 </script>
 </b:if>
 <b:if cond='data:view.isPost'>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/post.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/post.css&#39;.CSS();
 </script>
 </b:if>
 <b:if cond='data:view.isPage'>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/page.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/page.css&#39;.CSS();
 </script>
 </b:if>
 <b:if cond='data:blog.searchQuery'>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/search.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/search.css&#39;.CSS();
 </script>
 </b:if>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style2.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/style2.css&#39;.CSS();
 </script>
 &lt;/head&gt;&lt;!--<head/>--&gt;
-<body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute("data-href")||a.match(EXCLUDE)||(t.setAttribute("data-href",a),t.removeAttribute("href"),t.style.textDecoration="underline",t.style.color="red")}}),l("click",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute("data-href");return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement("a"),{target:"_blank",href:"https://dimaslanjaka.github.io/page/safelink.html?url="+btoa(t)}).click(),!1}});' style='margin:0;'>
+<body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l(&quot;mouseover&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute(&quot;data-href&quot;)||a.match(EXCLUDE)||(t.setAttribute(&quot;data-href&quot;,a),t.removeAttribute(&quot;href&quot;),t.style.textDecoration=&quot;underline&quot;,t.style.color=&quot;red&quot;)}}),l(&quot;click&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute(&quot;data-href&quot;);return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement(&quot;a&quot;),{target:&quot;_blank&quot;,href:&quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot;+btoa(t)}).click(),!1}});' style='margin:0;'>
 <b:if cond='data:view.isError'>
 <div id='error-page'>
 <br/><br/><br/><br/>
@@ -189,7 +189,7 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <div class='bt404'><a expr:href='data:blog.homepageUrl' title='Homepage'><span>Let&#39;s Go Back To Homepage</span></a></div>
 </div>
 <script>
-'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/error.css'.CSS();
+&#39;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/error.css&#39;.CSS();
 </script>
   <b:else/>
 <div id='page_content'>
@@ -308,7 +308,24 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <div class='content-wrapper full-row'>
 <!-- iklan -->
       <div id='iklan-atas'><b:if cond='data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;'><b:else/>
-        <b:section class='iklan-atas section' id='iklan-atas-1' maxwidgets='1' showaddelement='yes'/>
+        <b:section class='iklan-atas section' id='iklan-atas-1' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='HTML1' locked='false' title='' type='HTML'>
+            <b:widget-settings>
+              <b:widget-setting name='content'><![CDATA[<div id="ads1"></div>]]></b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+          </b:widget>
+        </b:section>
         </b:if></div>
 <div id='outer-wrapper'>
 <div id='main-wrapper' role='main'>
@@ -1205,7 +1222,7 @@ if (hash.length &gt; 8) {
 <b:section class='sidebar sidebar__inner' id='sidebar' preferred='yes'>
   <b:widget id='PopularPosts1' locked='true' title='Popular Posts' type='PopularPosts' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+      <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
       <b:widget-setting name='showThumbnails'>true</b:widget-setting>
       <b:widget-setting name='showSnippets'>false</b:widget-setting>
       <b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
@@ -1251,11 +1268,11 @@ if (hash.length &gt; 8) {
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='Label' type='Label'>
+  <b:widget id='Label1' locked='false' title='Label' type='Label' version='1'>
     <b:widget-settings>
       <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
       <b:widget-setting name='display'>CLOUD</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='selectedLabelsList'>CSS,HTML,JS,PHP</b:widget-setting>
       <b:widget-setting name='showType'>ALL</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
     </b:widget-settings>
@@ -1305,7 +1322,24 @@ if (hash.length &gt; 8) {
 </div> <!-- end content-wrapper -->
 <!-- iklan -->
       <div id='iklan-bawah'><b:if cond='data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;'><b:else/>
-        <b:section class='iklan-bawah section' id='iklan-bawah-1' maxwidgets='1' showaddelement='yes'/>
+        <b:section class='iklan-bawah section' id='iklan-bawah-1' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='HTML2' locked='false' title='' type='HTML'>
+            <b:widget-settings>
+              <b:widget-setting name='content'><![CDATA[<div id="ads2"></div>]]></b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+          </b:widget>
+        </b:section>
         </b:if></div>
 </div><!-- end outer-wrapper -->
 <div class='clear'/>
@@ -1450,19 +1484,7 @@ new Blazy;
 </b:if>
 <script>
 //<![CDATA[
-function Up(name, url = null) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url);
-  if (!results) { return null; }
-  if (!results[2]) { return ''; }
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-const x = Up('url') || Up('u');
-if (x && x != '') {
-  location.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + x;
-}
+function Up(e,a){a||(a=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var l=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(a);return l?l[2]?decodeURIComponent(l[2].replace(/\+/g," ")):"":null}var x=Up("url")||Up("u");x&&""!=x&&location.replace("https://dimaslanjaka.github.io/page/safelink.html?url="+x);
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
