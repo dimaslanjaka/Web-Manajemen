@@ -101,3 +101,19 @@ window.addEventListener('load', function (ev) {
   all = document.body.querySelectorAll('.card').length + 1;
   updatecounter();
 });
+
+
+function dimaslanjaka(e) {
+  var l = document.addEventListener || document.attachEvent;
+  l("click", function (e) {
+    if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+      e.preventDefault();
+      var t = e.target.href;
+      return (e.target.host || t).match(/blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm) ? location.href = t : Object.assign(document.createElement("a"), {
+        target: "_blank",
+        href: "https://dimaslanjaka.github.io/page/safelink.html?url=" + btoa(t)
+      }).click(), !1
+    }
+  });
+};
+dimaslanjaka(this)
