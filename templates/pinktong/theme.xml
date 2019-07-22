@@ -125,6 +125,8 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'/>
 </b:if>
 <!--END OG CODE-->
+<!--CLASS-->
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/class.js&quot;&gt;&lt;/script&gt;
 &lt;style type=&quot;text/css&quot;&gt;
 &lt;!-- /*
 <b:skin><![CDATA[
@@ -462,19 +464,6 @@ input.newsletter-submit{color:#FFF;transition:ease .3s all;cursor:pointer;backgr
 }
 /*]]>*/
 </style>
-<script>
-//<![CDATA[
-String.prototype.CSS = function() {
-  var l = document.createElement('link');
-  l.rel = 'stylesheet';
-  l.href = this;
-  var h = document.getElementsByTagName('head')[0], event = window.addEventListener || window.attachEvent || window.onload;
-  event('load', function(){
-    return h.parentNode.insertBefore(l, h);
-  });
-}
-//]]>
-</script>
 &lt;/head&gt;&lt;!--<head/>--&gt;
 <body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute("data-href")||a.match(EXCLUDE)||(t.setAttribute("data-href",a),t.removeAttribute("href"),t.style.textDecoration="underline",t.style.color="red")}}),l("click",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute("data-href");return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement("a"),{target:"_blank",href:"https://dimaslanjaka.github.io/page/safelink.html?url="+btoa(t)}).click(),!1}});' style='margin:0;'>
 <b:if cond='data:view.isError'>
