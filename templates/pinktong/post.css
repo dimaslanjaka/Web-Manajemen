@@ -59,7 +59,8 @@ textarea,
   color: #fff;
   display: block;
   margin: 0;
-  content: '#'+attr('type', 'Codelines');
+  content: "[#" attr(type) "]";
+  text-transform: uppercase;
   height: 18px;
   background: #d2cbb8
 }
