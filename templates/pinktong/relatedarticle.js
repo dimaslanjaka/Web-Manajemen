@@ -62,7 +62,7 @@ var randomRelatedIndex, showRelatedPost;
         if (q == x.length) {
           break
         }
-        t = (x[q].hasOwnProperty('title') ? x[q].title.$t : '');
+        t = x[q].title.$t || '';
         w = (d.titleLength !== "auto" && d.titleLength < t.length) ? t.substring(0, d.titleLength) + "&hellip;" : t;
         r = ("media$thumbnail" in x[q] && d.thumbnailSize !== false) ? x[q].media$thumbnail.url.replace(/.*?:\/\//g, "https://cdn.staticaly.com/img/").replace(/\/s[0-9]+(\-c)?/, "/s" + d.thumbnailSize + "-c") : d.noImage;
         u = ("summary" in x[q] && d.summaryLength > 0) ? x[q].summary.$t.replace(/<br ?\/?>/g, " ").replace(/<.*?>/g, "").replace(/[<>]/g, "").substring(0, d.summaryLength) + "&hellip;" : "";
