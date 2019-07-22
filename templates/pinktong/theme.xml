@@ -127,13 +127,7 @@
 <!--END OG CODE-->
 <!--CLASS-->
 <script>
-String.prototype.CSS = function() {
-  var l = document.createElement(&#39;link&#39;);
-  l.rel = &#39;stylesheet&#39;;
-  l.href = this;
-  var h = document.getElementsByTagName(&#39;head&#39;)[0], event = window.addEventListener || window.attachEvent || window.onload;
-  h.parentNode.insertBefore(l, h);
-}
+String.prototype.CSS=function(){var e=document.createElement(&quot;link&quot;);e.rel=&quot;stylesheet&quot;,e.href=this;var n=document.getElementsByTagName(&quot;head&quot;)[0];window.addEventListener?window.addEventListener(&quot;load&quot;,function(){n.parentNode.insertBefore(e,n)},!1):window.attachEvent?window.attachEvent(&quot;onload&quot;,function(){n.parentNode.insertBefore(e,n)}):window.onload=n.parentNode.insertBefore(e,n)},String.prototype.JS=function(){var e=document.createElement(&quot;script&quot;);e.src=this,window.addEventListener?window.addEventListener(&quot;load&quot;,function(){document.body.appendChild(e)},!1):window.attachEvent?window.attachEvent(&quot;onload&quot;,function(){document.body.appendChild(e)}):window.onload=document.body.appendChild(e)};
 </script>
 &lt;style type=&quot;text/css&quot;&gt;
 &lt;!-- /*
