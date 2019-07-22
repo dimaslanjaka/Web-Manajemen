@@ -374,31 +374,9 @@ input.newsletter-submit{color:#FFF;transition:ease .3s all;cursor:pointer;backgr
 /*]]>*/
 </style>
 <b:if cond='data:view.isMultipleItems'>
-<style>
-#outer-wrapper{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
-#main-wrapper{padding:1px}
-.article{display:block;position:relative;height:auto;border-bottom:0px solid #ddd;margin-bottom:30px;float:left;width:48%;margin-right:4%}
-.article:nth-of-type(2n){margin-right:0;clear:right}
-.article:nth-of-type(2n+1){clear:both}
-.sumcontent .post-title{margin:0;display:inline-block}
-.sumcontent .post-title a{font-size:18px;color:#333;padding:0!important;font-weight:700}
-.sumcontent .post-title a:hover{color:#c13a30}
-.post-body{margin-top:0!important;padding:0}
-.thumb-area{position:relative;background-color:#ddd;overflow:hidden;width:100%;height:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:block;margin-bottom:15px;padding-top:60%;}
-.thumbox{position:absolute;display:block;top:0;left:0;width:100%;height:100%}
-.thumbox img{max-width:none;position:absolute;margin:0 auto;width:100%;height:auto;min-height:100%;left:-9999px; right:-9999px;display:block;text-indent:-1000px}
-.post-body:hover .thumbox:after{width:0}
-.post-labels{position:absolute;top:0;left:0;z-index:1}
-.post-labels a{color:#fff;padding:5px;margin-right:5px;margin-bottom:5px;display:block;float:left;border:0;font-size:12px;background-color:#c13a30;border-radius:0;text-transform:uppercase}
-.post-labels a:hover{background-color:#7f93cf}
-.sumcontent{overflow:hidden}
-.summary{margin:0;padding:0;border-top:0px solid #3a3a3a;line-height:150%;font-size:14px}
-.sumcontent .postmeta{border:0;margin:10px 0;padding:0;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px}
-.postmeta svg{vertical-align:sub;width:14px;height:14px;fill:#666}
-.postmeta li{color:#666;display:inline !important;list-style:none!important;margin:0 5px 0 0!important;padding:0 5px 0 0 !important;font-size:12px;border-right:1px solid #ddd;line-height:1}
-.postmeta li a{color:#666}
-.postmeta li:last-child{border:none}
-</style>
+<script>
+'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/multiviews.css'.CSS();
+</script>
 </b:if>
 <b:if cond='data:view.isPost'>
 <script>
