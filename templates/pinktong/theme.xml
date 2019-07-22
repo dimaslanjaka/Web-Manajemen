@@ -400,17 +400,13 @@ input.newsletter-submit{color:#FFF;transition:ease .3s all;cursor:pointer;backgr
 </b:if>
 <b:if cond='data:view.isPost'>
 <script>
-loadCSS('');
+'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/post.css'.CSS();
 </script>
 </b:if>
 <b:if cond='data:view.isPage'>
-<style>
-#main-wrapper{width:100%}
-.post-title{text-align:center}
-.post{margin:0 0px 20px!important;padding:0;}
-.post-body{margin:0;padding:0}
-.postmeta{padding-left:0;margin:0 20px;display:none}
-</style>
+<script>
+'https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/page.css'.CSS();
+</script>
 </b:if>
 <b:if cond='data:blog.searchQuery'>
 <style>
