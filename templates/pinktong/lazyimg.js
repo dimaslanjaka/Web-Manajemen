@@ -1,36 +1,39 @@
-IntersectionObserver.prototype.USE_MUTATION_OBSERVER = false; // Globally
-const config = {
-  rootMargin: '0px 0px 50px 0px',
-  threshold: 0
-};
-const imgs = document.querySelectorAll('[data-src]');
+document.addEventListener("DOMContentLoaded", function() {
+  let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  let active = false;
 
-if (typeof intersectionObserver != 'undefined') {
-  // register the config object with an instance
-  // of intersectionObserver
-  let observer = new intersectionObserver(function (entries, self) {
-    // iterate over each entry
-    entries.forEach(entry => {
-      // process just the images that are intersecting.
-      // isIntersecting is a property exposed by the interface
-      if (entry.isIntersecting) {
-        // custom function that copies the path to the img
-        // from data-src to src
-        preloadImage(entry.target);
-        // the image is now in place, stop watching
-        self.unobserve(entry.target);
-      }
-    });
-  }, config);
+  const lazyLoad = function() {
+    if (active === false) {
+      active = true;
 
-  imgs.forEach(img => {
-    observer.observe(img);
-  });
-} else {
-  imgs.forEach(img => {
-    preloadImage(img)
-  });
-}
+      setTimeout(function() {
+        lazyImages.forEach(function(lazyImage) {
+          if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.srcset = lazyImage.dataset.srcset || lazyImage.dataset.src;
+            lazyImage.classList.remove("lazy");
+
+            lazyImages = lazyImages.filter(function(image) {
+              return image !== lazyImage;
+            });
+
+            if (lazyImages.length === 0) {
+              document.removeEventListener("scroll", lazyLoad);
+              window.removeEventListener("resize", lazyLoad);
+              window.removeEventListener("orientationchange", lazyLoad);
+            }
+          }
+        });
+
+        active = false;
+      }, 200);
+    }
+  };
+
+  document.addEventListener("scroll", lazyLoad);
+  window.addEventListener("resize", lazyLoad);
+  window.addEventListener("orientationchange", lazyLoad);
+});
 
 function preloadImage(e) {
   var a = e.getAttribute('src'), b = e.getAttribute('data-src');
