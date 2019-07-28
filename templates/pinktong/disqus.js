@@ -1,6 +1,15 @@
 var mql = window.matchMedia('screen and (min-width: 350px)');
-var site_url = location.protocol + '//' + location.host + '/';
+var pr = location.protocol + '//';
+var site_url = pr + location.host + '/';
+var gd = function (href) {
+  var l = document.createElement("a");
+  l.href = href;
+  return l;
+};
 if (mql.matches) {
+  if (disqus.custom_domain) {
+    disqus.disqus_blogger_current_url = pr + disqus.custom_domain + gd(disqus.disqus_blogger_current_url).pathname.substring(1);
+  }
   var disqus_loaded = disqus.disqus_loaded;
   var disqus_shortname = disqus.disqus_shortname;
   var disqus_url = disqus.disqus_blogger_current_url;
