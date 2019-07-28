@@ -17,6 +17,14 @@ l("mouseover", function (e) {
     }
   }
 });
+l("click", function (e) {
+  if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+    if (e.target.host.match(/javascript\:void/gm)) {
+      e.preventDefault();
+      console.log(e);
+    }
+  }
+});
 /*
 l("mouseover", function (e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
