@@ -13,7 +13,7 @@ l("mouseover", function (e) {
       t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + btoa(a);
       t.setAttribute('target', '_blank');
       t.style.textDecoration = "underline";
-      t.style.color = "red"
+      /*t.style.color = "red"*/
     }
   }
 });
