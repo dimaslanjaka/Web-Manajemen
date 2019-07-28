@@ -20,6 +20,7 @@ window.onload = function () {
   }), l("click", function (e) {
     if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
       e.preventDefault();
+      console.log(e);
       var t = e.target.href || e.target.getAttribute("data-href");
       return (e.target.host || t).match(EXCLUDE) ? location.href = t : Object.assign(document.createElement("a"), {
         target: "_blank",
