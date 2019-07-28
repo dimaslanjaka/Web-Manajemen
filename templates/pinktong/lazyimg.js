@@ -22,14 +22,16 @@ if (typeof intersectionObserver != 'undefined') {
       }
     });
   }, config);
+  const imgs = document.querySelectorAll('[data-src]');
+  console.log(imgs);
+  imgs.forEach(img => {
+    observer.observe(img);
+  });
 }
+
 function preloadImage(e) {
   console.log(e);
 }
 
-const imgs = document.querySelectorAll('[data-src]');
-console.log(imgs);
-imgs.forEach(img => {
-  observer.observe(img);
-});
+
 
