@@ -7,18 +7,18 @@ var gd = function (href) {
   return l;
 };
 if (mql.matches) {
-  if (disqus.custom_domain) {
-    disqus.disqus_blogger_current_url = pr + disqus.custom_domain + gd(disqus.disqus_blogger_current_url).pathname.substring(1);
+  if (disqus_cfg.custom_domain) {
+    disqus_cfg.disqus_blogger_current_url = pr + disqus_cfg.custom_domain + gd(disqus_cfg.disqus_blogger_current_url).pathname.substring(1);
   }
-  var disqus_loaded = disqus.disqus_loaded;
-  var disqus_shortname = disqus.disqus_shortname;
-  var disqus_url = disqus.disqus_blogger_current_url;
-  var disqus_blogger_current_url = disqus.disqus_blogger_current_url;
+  var disqus_loaded = disqus_cfg.disqus_loaded;
+  var disqus_shortname = disqus_cfg.disqus_shortname;
+  var disqus_url = disqus_cfg.disqus_blogger_current_url;
+  var disqus_blogger_current_url = disqus_cfg.disqus_blogger_current_url;
   if (!disqus_blogger_current_url.length) {
     disqus_blogger_current_url = site_url;
   }
-  var disqus_blogger_homepage_url = disqus.disqus_blogger_homepage_url;
-  var disqus_blogger_canonical_homepage_url = disqus.disqus_blogger_canonical_homepage_url;
+  var disqus_blogger_homepage_url = disqus_cfg.disqus_blogger_homepage_url;
+  var disqus_blogger_canonical_homepage_url = disqus_cfg.disqus_blogger_canonical_homepage_url;
 
   function disqus() {
     if (!disqus_loaded) {

@@ -626,7 +626,7 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <div class='disqus-box comment-box' id='disqus-box'>
 <div class='comments' id='comments'/>
 <script type='text/javascript'>
-var disqus = {
+var disqus_cfg = {
   custom_domain = "web-manajemen.blogspot.com",
   disqus_loaded: false,
   disqus_shortname: &quot;dimaslanjaka&quot;,
