@@ -8,7 +8,9 @@ var gd = function (href) {
 };
 if (mql.matches) {
   if (disqus_cfg.custom_domain) {
-    disqus_cfg.disqus_blogger_current_url = pr + disqus_cfg.custom_domain + gd(disqus_cfg.disqus_blogger_current_url).pathname.substring(1);
+    disqus_cfg.disqus_blogger_current_url = pr + disqus_cfg.custom_domain + gd(disqus_cfg.disqus_blogger_current_url).pathname;
+    disqus_cfg.disqus_blogger_homepage_url = pr + disqus_cfg.custom_domain+'/';
+    disqus_cfg.disqus_blogger_canonical_homepage_url = pr + disqus_cfg.custom_domain+'/';
   }
   console.log(disqus_cfg);
   var disqus_loaded = disqus_cfg.disqus_loaded;
