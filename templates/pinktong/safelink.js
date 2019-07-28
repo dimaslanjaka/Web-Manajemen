@@ -17,6 +17,8 @@ l("mouseover", function (e) {
     }
   }
 });
+
+/** fix if translator widget */
 l("click", function (e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
     if (e.target.host.match(/javascript\:void/gm)) {
