@@ -1487,11 +1487,13 @@ new Blazy;
 <script>
 //<![CDATA[
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/safelink.js');
+window.onload = function(){
 'https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/google-translate.css'.CSS();
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/adsense.js');
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/mgid.js');
 'https://fonts.googleapis.com/icon?family=Material+Icons'.CSS();
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/translator.js');
+}
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
