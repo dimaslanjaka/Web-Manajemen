@@ -10,7 +10,7 @@ l("mouseover", function (e) {
     var t = e.target,
       a = t.href;
     if (!a.match(EXCLUDE)) {
-      t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + a;
+      t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + btoa(a);
       t.style.textDecoration = "underline";
       t.style.color = "red"
     }
