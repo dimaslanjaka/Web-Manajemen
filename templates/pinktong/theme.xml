@@ -1325,20 +1325,7 @@ if (hash.length &gt; 8) {
         <b:section class='iklan-bawah section' id='iklan-bawah-1' maxwidgets='1' showaddelement='yes'>
           <b:widget id='HTML2' locked='false' title='' type='HTML' version='1'>
             <b:widget-settings>
-              <b:widget-setting name='content'>&lt;div id=&quot;ads2&quot; style=&quot;max-width:1000px&quot;&gt;&lt;!-- Composite Start --&gt;
-&lt;div id=&quot;M445014ScriptRootC397919&quot;&gt;
-        &lt;div id=&quot;M445014PreloadC397919&quot;&gt;Loading...&lt;/div&gt;
-    &lt;/div&gt;
-&lt;!-- Composite End --&gt;&lt;/div&gt;
-
-
-&lt;div id=&quot;google_translate_element&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: &#39;id&#39;, includedLanguages: &#39;ar,en,es,jv,ko,pa,pt,ru,zh-CN,id&#39;, layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, &#39;google_translate_element&#39;);
-}
-&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&quot;&gt;&lt;/script&gt;</b:widget-setting>
+              <b:widget-setting name='content'><![CDATA[<div id="ads2" style="max-width:1000px"></div>]]></b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
   <!-- only display title if it's non-empty -->
