@@ -1,7 +1,7 @@
 #google_translate_element {
   position: fixed;
-  bottom: calc(2px + 16px);
-  left: 16px !important;
+  bottom: 10px;
+  left: 10px;
   z-index: 1200;
 }
 
