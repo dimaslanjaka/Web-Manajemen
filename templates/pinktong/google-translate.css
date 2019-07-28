@@ -1,7 +1,7 @@
 #google_translate_element {
   position: absolute;
   bottom: calc(53px + 16px);
-  right: 16px !important;
+  left: 16px !important;
 }
 
 .goog-te-gadget {
@@ -10,7 +10,7 @@
 }
 
 .goog-te-gadget-simple {
-  background-color: rgba(255, 51, 51, 1) !important;
+  background-color: rgba(255, 51, 51, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
   padding: 8px !important;
   border-radius: 4px !important;
