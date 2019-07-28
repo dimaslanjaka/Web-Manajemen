@@ -5,22 +5,27 @@ const config = {
   threshold: 0
 };
 
-// register the config object with an instance
-// of intersectionObserver
-let observer = new intersectionObserver(function(entries, self) {
-  // iterate over each entry
-  entries.forEach(entry => {
-    // process just the images that are intersecting.
-    // isIntersecting is a property exposed by the interface
-    if (entry.isIntersecting) {
-      // custom function that copies the path to the img
-      // from data-src to src
-      preloadImage(entry.target);
-      // the image is now in place, stop watching
-      self.unobserve(entry.target);
-    }
-  });
-}, config);
+if (typeof intersectionObserver != 'undefined') {
+  // register the config object with an instance
+  // of intersectionObserver
+  let observer = new intersectionObserver(function (entries, self) {
+    // iterate over each entry
+    entries.forEach(entry => {
+      // process just the images that are intersecting.
+      // isIntersecting is a property exposed by the interface
+      if (entry.isIntersecting) {
+        // custom function that copies the path to the img
+        // from data-src to src
+        preloadImage(entry.target);
+        // the image is now in place, stop watching
+        self.unobserve(entry.target);
+      }
+    });
+  }, config);
+}
+function preloadImage(e) {
+  console.log(e);
+}
 
 const imgs = document.querySelectorAll('[data-src]');
 console.log(imgs);
