@@ -23,8 +23,9 @@ l("click", function (e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
     if (e.target.host.match(/javascript\:void/gm)) {
       e.preventDefault();
-      console.log(e);
+
     }
+    console.log(e);
   }
 });
 /*
