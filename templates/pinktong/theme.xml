@@ -301,7 +301,7 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <!-- iklan -->
       <div id='iklan-atas'><b:if cond='data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;'><b:else/>
         <b:section class='iklan-atas section' id='iklan-atas-1' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML1' locked='false' title='' type='HTML'>
+          <b:widget id='HTML1' locked='false' title='' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content'>&lt;div id=&quot;ads1&quot; style=&quot;max-width:1000px&quot;&gt;
 &lt;!-- Horizontal Text --&gt;
@@ -1323,15 +1323,11 @@ if (hash.length &gt; 8) {
 <!-- iklan -->
       <div id='iklan-bawah'><b:if cond='data:blog.searchQuery or data:blog.pageType == &quot;static_page&quot;'><b:else/>
         <b:section class='iklan-bawah section' id='iklan-bawah-1' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML2' locked='false' title='' type='HTML'>
+          <b:widget id='HTML2' locked='false' title='' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content'>&lt;div id=&quot;ads2&quot; style=&quot;max-width:1000px&quot;&gt;&lt;!-- Composite Start --&gt;
 &lt;div id=&quot;M445014ScriptRootC397919&quot;&gt;
-        &lt;div id=&quot;M445014PreloadC397919&quot;&gt;
-        Loading...    &lt;/div&gt;
-        &lt;script&gt;
-
-    &lt;/script&gt;
+        &lt;div id=&quot;M445014PreloadC397919&quot;&gt;Loading...&lt;/div&gt;
     &lt;/div&gt;
 &lt;!-- Composite End --&gt;&lt;/div&gt;
 
@@ -1503,10 +1499,12 @@ new Blazy;
 </b:if>
 <script>
 //<![CDATA[
-'https://fonts.googleapis.com/icon?family=Material+Icons'.CSS();
+dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/safelink.js');
 'https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/google-translate.css'.CSS();
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/adsense.js');
-dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/safelink.js');
+dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/mgid.js');
+'https://fonts.googleapis.com/icon?family=Material+Icons'.CSS();
+dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/translator.js');
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
