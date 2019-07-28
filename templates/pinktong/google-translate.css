@@ -10,7 +10,7 @@
 \* ================================== */
 @media (max-width: 667px) {
   #google_translate_element {
-    bottom: calc(100% - 50% - 2px);
+    bottom: 2px;
     left: 2px !important;
     width: 100% !important;
   }
