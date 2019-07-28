@@ -1503,10 +1503,10 @@ new Blazy;
 </b:if>
 <script>
 //<![CDATA[
-window.onload=function(){function e(e,t){t=t||window.location.href,e=e.replace(/[\[\]]/g,"\\$&");var a=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(t);return a?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null}var t=e("url")||e("u");"translate.googleusercontent.com"!=location.host&&t&&""!=t&&location.replace("https://dimaslanjaka.github.io/page/safelink.html?url="+t);var o=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|translate\.google\.com|translate\.googleusercontent\.com|javascript\:void\(0\)/gm,a=document.addEventListener||document.attachEvent;a("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute("data-href")||a.match(o)||(t.setAttribute("data-href",a),t.removeAttribute("href"),t.style.textDecoration="underline",t.style.color="red")}}),a("click",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute("data-href");return(e.target.host||t).match(o)?location.href=t:Object.assign(document.createElement("a"),{target:"_blank",href:"https://dimaslanjaka.github.io/page/safelink.html?url="+btoa(t)}).click(),!1}})};
 'https://fonts.googleapis.com/icon?family=Material+Icons'.CSS();
 'https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/google-translate.css'.CSS();
 dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/adsense.js');
+dimas.js('https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/safelink.js');
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
