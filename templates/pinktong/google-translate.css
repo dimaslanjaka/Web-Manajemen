@@ -1,7 +1,7 @@
 #google_translate_element {
   position: fixed;
-  bottom: 2px;
-  left: 2px;
+  bottom: calc(53px + 16px);
+  left: 16px !important;
   z-index: 1200;
 }
 
@@ -76,8 +76,8 @@ body {
 \* ================================== */
 @media (max-width: 667px) {
   #google_translate_element {
-    bottom: calc(100% - 50% - 53px);
-    left: 16px !important;
+    bottom: calc(100% - 50% - 2px);
+    left: 2px !important;
     width: 100% !important;
   }
 
