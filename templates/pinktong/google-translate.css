@@ -1,5 +1,5 @@
 #google_translate_element {
-  position: absolute;
+  position: fixed;
   bottom: calc(53px + 16px);
   left: 16px !important;
 }
