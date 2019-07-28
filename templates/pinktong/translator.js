@@ -1,3 +1,5 @@
+document.body.innerHTML += '<div id="google_translate_element"></div>';
+
 dimas.js('//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', function() {});
 
 function googleTranslateElementInit() {
