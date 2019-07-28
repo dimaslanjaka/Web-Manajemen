@@ -1401,13 +1401,13 @@ if (hash.length &gt; 8) {
 <b:if cond='data:view.isPost'>
 <script>
 //<![CDATA[
-function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/relatedarticle.js?"+new Date(),document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;
-//]]>
-//<![CDATA[
+window.onload = function(){
+dimas.js('https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/templates/pinktong/relatedarticle.js');
 var newParent = document.getElementById('top-img');
 var oldParent = document.getElementById('desc');
 if (oldParent && oldParent.hasAttribute('childNodes')){
 while (oldParent.childNodes.length) { newParent.appendChild(oldParent.firstChild);};
+}
 }
 //]]>
 </script>
