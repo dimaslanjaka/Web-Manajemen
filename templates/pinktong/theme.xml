@@ -322,7 +322,7 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
     <data:content/>
   </div>
 
-  <b:include name='quickedit'/>
+
 </b:includable>
           </b:widget>
         </b:section>
@@ -1353,7 +1353,7 @@ function googleTranslateElementInit() {
     <data:content/>
   </div>
 
-  <b:include name='quickedit'/>
+
 </b:includable>
           </b:widget>
         </b:section>
