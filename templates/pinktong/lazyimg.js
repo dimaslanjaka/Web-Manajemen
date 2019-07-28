@@ -1,3 +1,4 @@
+IntersectionObserver.prototype.USE_MUTATION_OBSERVER = false; // Globally
 const config = {
   rootMargin: '0px 0px 50px 0px',
   threshold: 0
