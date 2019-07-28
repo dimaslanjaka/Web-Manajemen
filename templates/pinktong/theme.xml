@@ -627,8 +627,8 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 <div class='comments' id='comments'/>
 <script type='text/javascript'>
 var disqus = {
+  custom_domain = "web-manajemen.blogspot.com",
   disqus_loaded: false,
-  disqus_blogger_current_url: &quot;<data:blog.canonicalUrl/>&quot;,
   disqus_shortname: &quot;dimaslanjaka&quot;,
   disqus_blogger_current_url: &quot;<data:blog.canonicalUrl/>&quot;,
   disqus_blogger_homepage_url: &quot;<data:blog.homepageUrl/>&quot;,
