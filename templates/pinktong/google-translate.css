@@ -5,6 +5,46 @@
   z-index: 1200;
 }
 
+/* ================================== *\
+    Mediaqueries
+\* ================================== */
+@media (max-width: 667px) {
+  #google_translate_element {
+    bottom: calc(100% - 50% - 2px);
+    left: 2px !important;
+    width: 100% !important;
+  }
+
+  #google_translate_element goog-te-gadget {
+    width: 100% !important;
+  }
+
+  #google_translate_element .skiptranslate {
+    width: 100% !important;
+  }
+
+  #google_translate_element .goog-te-gadget-simple {
+    width: calc(100% - 32px) !important;
+    text-align: center;
+  }
+}
+
+@media (min-width: 667px) {
+
+  /* Hide text */
+  span.goog-te-menu-value {
+    width: 0px !important;
+    height: 0px !important;
+  }
+
+  .goog-te-menu-value * {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
 .goog-te-gadget {
   font-family: Roboto, "Open Sans", sans-serif !important;
   text-transform: uppercase;
@@ -69,41 +109,4 @@
 
 body {
   top: 0px !important;
-}
-
-/* ================================== *\
-    Mediaqueries
-\* ================================== */
-@media (max-width: 667px) {
-  #google_translate_element {
-    bottom: calc(100% - 50% - 2px);
-    left: 2px !important;
-    width: 100% !important;
-  }
-
-  #google_translate_element goog-te-gadget {
-    width: 100% !important;
-  }
-
-  #google_translate_element .skiptranslate {
-    width: 100% !important;
-  }
-
-  #google_translate_element .goog-te-gadget-simple {
-    width: calc(100% - 32px) !important;
-    text-align: center;
-  }
-}
-
-/* Hide text */
-span.goog-te-menu-value {
-  width: 0px !important;
-  height: 0px !important;
-}
-
-.goog-te-menu-value * {
-  display: none;
-  visibility: hidden;
-  width: 0;
-  height: 0;
 }
