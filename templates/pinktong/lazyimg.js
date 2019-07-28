@@ -1,9 +1,8 @@
-// create config object: rootMargin and threshold
-// are two properties exposed by the interface
 const config = {
   rootMargin: '0px 0px 50px 0px',
   threshold: 0
 };
+const imgs = document.querySelectorAll('[data-src]');
 
 if (typeof intersectionObserver != 'undefined') {
   // register the config object with an instance
@@ -22,15 +21,21 @@ if (typeof intersectionObserver != 'undefined') {
       }
     });
   }, config);
-  const imgs = document.querySelectorAll('[data-src]');
-  console.log(imgs);
+
   imgs.forEach(img => {
     observer.observe(img);
+  });
+} else {
+  imgs.forEach(img => {
+    preloadImage(img)
   });
 }
 
 function preloadImage(e) {
-  console.log(e.getAttribute('src'));
+  var a = e.getAttribute('src'), b = e.getAttribute('data-src');
+  if (b.trim() != ''){
+    e.src = b.trim();
+  }
 }
 
 
