@@ -174,7 +174,7 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
 &#39;https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/templates/pinktong/style2.css&#39;.CSS();
 </script>
 &lt;/head&gt;&lt;!--<head/>--&gt;
-<body expr:class='data:blog.pageType' onload='var EXCLUDE=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io/gm,l=document.addEventListener||document.attachEvent;l(&quot;mouseover&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute(&quot;data-href&quot;)||a.match(EXCLUDE)||(t.setAttribute(&quot;data-href&quot;,a),t.removeAttribute(&quot;href&quot;),t.style.textDecoration=&quot;underline&quot;,t.style.color=&quot;red&quot;)}}),l(&quot;click&quot;,function(e){if(&quot;a&quot;==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute(&quot;data-href&quot;);return(e.target.host||t).match(EXCLUDE)?location.href=t:Object.assign(document.createElement(&quot;a&quot;),{target:&quot;_blank&quot;,href:&quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot;+btoa(t)}).click(),!1}});' style='margin:0;'>
+<body expr:class='data:blog.pageType' onload='' style='margin:0;'>
 <b:if cond='data:view.isError'>
 <div id='error-page'>
 <br/><br/><br/><br/>
@@ -305,7 +305,15 @@ body#layout #sidebar-wrapper .sidebar{overflow:hidden}
         <b:section class='iklan-atas section' id='iklan-atas-1' maxwidgets='1' showaddelement='yes'>
           <b:widget id='HTML1' locked='false' title='' type='HTML'>
             <b:widget-settings>
-              <b:widget-setting name='content'><![CDATA[<div id="ads1"></div>]]></b:widget-setting>
+              <b:widget-setting name='content'>&lt;div id=&quot;ads1&quot; style=&quot;max-width:1000px&quot;&gt;
+&lt;!-- Horizontal Text --&gt;
+&lt;ins class=&quot;adsbygoogle&quot;
+     style=&quot;display:block&quot;
+     data-ad-client=&quot;ca-pub-7975270895217217&quot;
+     data-ad-slot=&quot;4891646750&quot;
+     data-ad-format=&quot;link&quot;
+     data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;
+&lt;/div&gt;</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1319,7 +1327,24 @@ if (hash.length &gt; 8) {
         <b:section class='iklan-bawah section' id='iklan-bawah-1' maxwidgets='1' showaddelement='yes'>
           <b:widget id='HTML2' locked='false' title='' type='HTML'>
             <b:widget-settings>
-              <b:widget-setting name='content'><![CDATA[<div id="ads2"></div>]]></b:widget-setting>
+              <b:widget-setting name='content'>&lt;div id=&quot;ads2&quot; style=&quot;max-width:1000px&quot;&gt;&lt;!-- Composite Start --&gt;
+&lt;div id=&quot;M445014ScriptRootC397919&quot;&gt;
+        &lt;div id=&quot;M445014PreloadC397919&quot;&gt;
+        Loading...    &lt;/div&gt;
+        &lt;script&gt;
+
+    &lt;/script&gt;
+    &lt;/div&gt;
+&lt;!-- Composite End --&gt;&lt;/div&gt;
+
+
+&lt;div id=&quot;google_translate_element&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: &#39;id&#39;, includedLanguages: &#39;ar,en,es,jv,ko,pa,pt,ru,zh-CN,id&#39;, layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, &#39;google_translate_element&#39;);
+}
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&quot;&gt;&lt;/script&gt;</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1480,7 +1505,8 @@ new Blazy;
 </b:if>
 <script>
 //<![CDATA[
-function Up(e,a){a||(a=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var l=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(a);return l?l[2]?decodeURIComponent(l[2].replace(/\+/g," ")):"":null}var x=Up("url")||Up("u");x&&""!=x&&location.replace("https://dimaslanjaka.github.io/page/safelink.html?url="+x);
+window.onload=function(){function e(e,t){t=t||window.location.href,e=e.replace(/[\[\]]/g,"\\$&");var a=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(t);return a?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null}var t=e("url")||e("u");"translate.googleusercontent.com"!=location.host&&t&&""!=t&&location.replace("https://dimaslanjaka.github.io/page/safelink.html?url="+t);var o=/facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|translate\.google\.com|translate\.googleusercontent\.com|javascript\:void\(0\)/gm,a=document.addEventListener||document.attachEvent;a("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;t.getAttribute("data-href")||a.match(o)||(t.setAttribute("data-href",a),t.removeAttribute("href"),t.style.textDecoration="underline",t.style.color="red")}}),a("click",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){e.preventDefault();var t=e.target.href||e.target.getAttribute("data-href");return(e.target.host||t).match(o)?location.href=t:Object.assign(document.createElement("a"),{target:"_blank",href:"https://dimaslanjaka.github.io/page/safelink.html?url="+btoa(t)}).click(),!1}})};
+'https://fonts.googleapis.com/icon?family=Material+Icons'.CSS();
 //]]>
 </script>
 &lt;!--</body>--&gt;&lt;/body&gt;
