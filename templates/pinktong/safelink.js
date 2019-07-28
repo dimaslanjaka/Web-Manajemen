@@ -9,7 +9,11 @@ l("mouseover", function (e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
     var t = e.target,
       a = t.href;
-    a.match(EXCLUDE) || (t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + a, t.style.textDecoration = "underline", t.style.color = "red")
+    if (!a.match(EXCLUDE)) {
+      t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + a;
+      t.style.textDecoration = "underline";
+      t.style.color = "red"
+    }
   }
 });
 /*
