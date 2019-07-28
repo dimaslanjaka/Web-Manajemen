@@ -14,7 +14,7 @@ if (mql.matches) {
   var disqus_shortname = disqus_cfg.disqus_shortname;
   var disqus_url = disqus_cfg.disqus_blogger_current_url;
   var disqus_blogger_current_url = disqus_cfg.disqus_blogger_current_url;
-  if (!disqus_blogger_current_url.length) {
+  if (typeof disqus_blogger_current_url.length != 'undefined' && !disqus_blogger_current_url.length) {
     disqus_blogger_current_url = site_url;
   }
   var disqus_blogger_homepage_url = disqus_cfg.disqus_blogger_homepage_url;
