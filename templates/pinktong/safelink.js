@@ -1,9 +1,5 @@
 window.onload = function () {
-  function Up(e, a) {
-    a || (a = window.location.href), e = e.replace(/[\[\]]/g, "\\$&");
-    var l = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(a);
-    return l ? l[2] ? decodeURIComponent(l[2].replace(/\+/g, " ")) : "" : null
-  }
+
   var x = Up("url") || Up("u");
   if (location.host != 'translate.googleusercontent.com' && x && "" != x) {
     location.replace("https://dimaslanjaka.github.io/page/safelink.html?url=" + x);
@@ -28,4 +24,10 @@ window.onload = function () {
       }).click(), !1
     }
   });
+}
+
+function Up(e, a) {
+  a || (a = window.location.href), e = e.replace(/[\[\]]/g, "\\$&");
+  var l = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(a);
+  return l ? l[2] ? decodeURIComponent(l[2].replace(/\+/g, " ")) : "" : null
 }
