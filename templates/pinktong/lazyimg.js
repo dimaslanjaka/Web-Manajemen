@@ -30,7 +30,7 @@ if (typeof intersectionObserver != 'undefined') {
 }
 
 function preloadImage(e) {
-  console.log(e);
+  console.log(e.getAttribute('src'));
 }
 
 
