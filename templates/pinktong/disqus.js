@@ -10,6 +10,7 @@ if (mql.matches) {
   if (disqus_cfg.custom_domain) {
     disqus_cfg.disqus_blogger_current_url = pr + disqus_cfg.custom_domain + gd(disqus_cfg.disqus_blogger_current_url).pathname.substring(1);
   }
+  console.log(disqus_cfg);
   var disqus_loaded = disqus_cfg.disqus_loaded;
   var disqus_shortname = disqus_cfg.disqus_shortname;
   var disqus_url = disqus_cfg.disqus_blogger_current_url;
