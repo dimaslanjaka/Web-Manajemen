@@ -3,5 +3,7 @@ if (typeof dimas != 'undefined') {
 }
 function adsgo(x) {
   var ins = document.getElementsByTagName('ins').length;
-  console.log({ adsC: ins });
+  for (let index = 0; index < ins; index++) {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }
 }
