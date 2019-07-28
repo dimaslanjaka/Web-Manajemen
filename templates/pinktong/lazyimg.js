@@ -21,6 +21,7 @@ let observer = new intersectionObserver(function(entries, self) {
     }
   });
 }, config);
+
 const imgs = document.querySelectorAll('[data-src]');
 console.log(imgs);
 imgs.forEach(img => {
