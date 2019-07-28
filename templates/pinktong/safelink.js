@@ -11,7 +11,7 @@ l("mouseover", function (e) {
       a = t.href;
     if (!a.match(EXCLUDE)) {
       t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + btoa(a);
-      t.target = '_blank';
+      t.setAttribute('target', '_blank');
       t.style.textDecoration = "underline";
       t.style.color = "red"
     }
