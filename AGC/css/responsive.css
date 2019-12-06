@@ -2,3 +2,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.d-block {
+  display: block;
+}
+.clear {
+  clear: both;
+}
