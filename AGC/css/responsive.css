@@ -8,3 +8,8 @@ img {
 .clear {
   clear: both;
 }
+body.mceContentBody,body.mce-content-body {
+  background: #FFF;
+  font-size:100%;
+  word-wrap: break-word;
+}
