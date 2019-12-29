@@ -1,0 +1,211 @@
+{
+	"php.validate.executablePath": "D:\\xampp\\php\\php.exe",
+	"php.executablePath": "D:\\xampp\\php\\php.exe",
+	"phpfmt.php_bin": "D:\\xampp\\php\\php.exe",
+	"php.validate.run": "onSave",
+	"php.validate.enable": true,
+	"typescript.validate.enable": true,
+	"phpcs.standard": "D:\\agcontents\\phpcs.xml",
+
+	"css.validate": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact"
+	],
+	"editor.fontFamily": "Consolas",
+	"editor.tabSize": 2,
+	"editor.wordWrap": "on",
+	"editor.snippetSuggestions": "top",
+	"editor.formatOnSave": false,
+	"[php]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"emmet.showSuggestionsAsSnippets": true,
+	"git.allowForcePush": true,
+	"git.autoRepositoryDetection": true,
+	"git.confirmForcePush": true,
+	"git.confirmSync": false,
+	"git.enabled": true,
+	"git.fetchOnPull": true,
+	"git.path": "D:\\Program Files\\Git\\bin\\git.exe",
+	"git.postCommitCommand": "push",
+	"git.rebaseWhenSync": false,
+	"git.showProgress": true,
+	"git.ignoreLimitWarning": true,
+	"git.enableSmartCommit": true,
+	"files.autoSaveDelay": 30000,
+	"npm.autoDetect": "on",
+	"files.trimTrailingWhitespace": true,
+	"files.autoSave": "afterDelay",
+	"files.watcherExclude": {
+		"**/log/**": true,
+		"**/vendor/**": true,
+		"*.sql": true
+	},
+	"files.exclude": {
+		"**/.DS_Store": true,
+		"**/.git": true,
+		"**/.hg": true,
+		"**/.svn": true,
+		"**/.vscode": true,
+		"**/CVS": true
+	},
+	"prettier.stylelintIntegration": true,
+	"prettier.eslintIntegration": true,
+	"prettier.useTabs": true,
+	"jshint.lintHTML": true,
+	"terminal.integrated.shell.windows": "B:/Windows/System32/cmd.exe",
+	"auto-close-tag.SublimeText3Mode": true,
+	"editor.matchBrackets": "always",
+	"liveshare.featureSet": "insiders",
+	"phpfmt.cakephp": true,
+	"sync.gist": "eb4d655e0a3bb619f456750a7a844939",
+	"phpfmt.indent_with_space": 2,
+	"php.memoryLimit": "4000M",
+	"phpfmt.visibility_order": true,
+	"bracketPairColorizer.showBracketsInRuler": true,
+	"phpfmt.psr1": true,
+	"phpfmt.psr2": false,
+	"peacock.favoriteColors": [
+		{
+			"name": "Angular Red",
+			"value": "#b52e31"
+		},
+		{
+			"name": "Auth0 Orange",
+			"value": "#eb5424"
+		},
+		{
+			"name": "Azure Blue",
+			"value": "#007fff"
+		},
+		{
+			"name": "C# Purple",
+			"value": "#68217A"
+		},
+		{
+			"name": "Gatsby Purple",
+			"value": "#639"
+		},
+		{
+			"name": "Go Cyan",
+			"value": "#5dc9e2"
+		},
+		{
+			"name": "Java Blue-Gray",
+			"value": "#557c9b"
+		},
+		{
+			"name": "JavaScript Yellow",
+			"value": "#f9e64f"
+		},
+		{
+			"name": "Mandalorian Blue",
+			"value": "#1857a4"
+		},
+		{
+			"name": "Node Green",
+			"value": "#215732"
+		},
+		{
+			"name": "React Blue",
+			"value": "#00b3e6"
+		},
+		{
+			"name": "Something Different",
+			"value": "#832561"
+		},
+		{
+			"name": "Vue Green",
+			"value": "#42b883"
+		}
+	],
+	"beautify.language": {
+		"js": {
+			"type": [
+				"javascript",
+				"json"
+			],
+			"filename": [
+				".jshintrc",
+				".jsbeautifyrc"
+			]
+		},
+		"css": [
+			"css",
+			"scss"
+		],
+		"html": [
+			"htm",
+			"html"
+		]
+	},
+	"beautify.config": {
+		"indent_size": 2,
+		"indent_char": " "
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"explorer.confirmDelete": false,
+	"php-cs-fixer.executablePath": "D:/php/php-cs-fixer.phar",
+	"php-cs-fixer.lastDownload": 1561449807564,
+	"php-cs-fixer.config": "D:/php/php-cs-fixer-config.php",
+	"php-cs-fixer.rules": "@PSR1,@PSR2,@Symfony,-yoda_style",
+	"php-cs-fixer.exclude": [
+		"dom.php"
+	],
+	"bracket-pair-colorizer-2.highlightActiveScope": true,
+	"bracket-pair-colorizer-2.colors": [
+		"Gold",
+		"Orchid",
+		"Green",
+		"LightSkyBlue",
+		"Yellow",
+		"Cyan",
+		"DeepPink",
+		"IndianRed",
+		"Purple",
+		"Brown",
+		"Grey",
+		"Blue",
+		"Lime",
+		"LimeGreen",
+		"Maroon"
+	],
+	"npm.enableScriptExplorer": true,
+	"[json]": {
+		"editor.defaultFormatter": "HookyQR.beautify"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "HookyQR.beautify"
+	},
+	"vscode-php-cs-fixer.useCache": false,
+	"vscode-php-cs-fixer.toolPath": "D:/Users/windows 10/Documents/php/php-cs-fixer.phar",
+	"vscode-php-cs-fixer.config": "D:/Users/windows 10/Documents/php/php-cs-fixer-config.php",
+	"vscode-php-cs-fixer.rules": "@PSR1,@PSR2,@Symfony,-yoda_style",
+	"php-cs-fixer.formatHtml": true,
+	"terminal.integrated.rendererType": "dom",
+	"window.zoomLevel": 0,
+	"gitlens.views.repositories.location": "gitlens",
+	"gitlens.views.fileHistory.location": "gitlens",
+	"gitlens.views.lineHistory.location": "gitlens",
+	"gitlens.views.compare.location": "gitlens",
+	"gitlens.views.search.location": "gitlens",
+	"git.autofetchPeriod": 100000,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"java.configuration.checkProjectSettingsExclusions": false,
+	"maven.executable.path": "D:\\bin\\apache-maven-3.6.3\\bin",
+	"intelephense.diagnostics.undefinedSymbols": false,
+	"intelephense.diagnostics.duplicateSymbols": false,
+	"git.autofetch": true,
+	"files.maxMemoryForLargeFilesMB": 2085,
+	"typescript.tsserver.maxTsServerMemory": 1085,
+	"intelephense.maxMemory": 256
+}
