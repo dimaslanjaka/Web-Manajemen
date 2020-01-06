@@ -1,0 +1,59 @@
+ /*--- Find out all the ids or classes of the main wrappers and add them in below code to hide them---*/
+ .sidebar-wrapper,
+ .header-wrapper,
+ .post-title,
+ #blog-pager,
+ .post-footer,
+ #footer-wrapper,
+ .comments {
+   display: none !important;
+   /*-- This will hide those main wrappers--*/
+ }
+
+ /*---If you're using one of the default blogger templates---*/
+ .header-outer,
+ .column-right-outer,
+ .tabs-outer,
+ .footer-outer,
+ #sidebar-wrapper,
+ aside,
+ #header-wrapper,
+ .dropdowns,
+ .dropdowns *,
+ .breadcrumbs,
+ .nav-wrap,
+ .menu,
+ #b-navbar,
+ #navbar,
+ #navbar-iframe {
+   display: none !important;
+   /*-- This will hide header, footer, navbar and sidebar--*/
+ }
+
+ /*---Changing the Content Width to 100%---*/
+ #post-wrapper,
+ .blog-posts,
+ #main,
+ .post {
+   display: block;
+   width: 100% !important;
+   /*---This will change the content area width to 100%--*/
+   max-width: 100% !important;
+   margin: 0 0 0 0 !important;
+ }
+
+ /*---Changing The Body Style---*/
+ body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+ }
+
+ /* Back to top*/
+ .back-to-top {
+   position: fixed;
+   bottom: 25px;
+   right: 25px;
+   display: none;
+ }
