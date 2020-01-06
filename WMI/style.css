@@ -25,7 +25,8 @@
  .menu,
  #b-navbar,
  #navbar,
- #navbar-iframe .blog-feeds,
+ #navbar-iframe,
+ .blog-feeds,
  .feed-links,
  #backlinks-container {
    display: none !important;
