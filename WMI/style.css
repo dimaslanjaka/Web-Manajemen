@@ -25,7 +25,9 @@
  .menu,
  #b-navbar,
  #navbar,
- #navbar-iframe {
+ #navbar-iframe .blog-feeds,
+ .feed-links,
+ #backlinks-container {
    display: none !important;
    /*-- This will hide header, footer, navbar and sidebar--*/
  }
