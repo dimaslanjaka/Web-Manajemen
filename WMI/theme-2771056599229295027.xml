@@ -136,17 +136,6 @@
 <meta content='en_US' property='og:locale'/>
 <meta content='en_GB' property='og:locale:alternate'/>
 <meta content='id_ID' property='og:locale:alternate'/>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/v2.css"></link>
-<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'></link>
-<!--<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>-->
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"></link>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css"></link>
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"></link>
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet"></link>
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
@@ -4289,9 +4278,10 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 <!--[nav-controller.js]-->
 <script type='text/javascript'>
-<![CDATA[
+//<![CDATA[
 $(function(){$(".set-1").mtabs()}),$(function(){$(".nav-menu").tinyNav({header:"Menu"})}),$(window).scroll(function(){200<$(this).scrollTop()?$("#back-to-top").fadeIn():$("#back-to-top").fadeOut()}),$("#back-to-top").hide().click(function(){return $("html, body").animate({scrollTop:0},1e3),!1});
-]]>
+!function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"),loadCSS("https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css"),loadCSS("https://use.fontawesome.com/releases/v5.11.2/css/all.css"),loadCSS('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700'),loadCSS('https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css');
+//]]>
 </script>
 <script type='text/javascript'>
 //<![CDATA[
