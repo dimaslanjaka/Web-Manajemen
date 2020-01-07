@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' b:css='false' b:js='false' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:version='2' class='v2' b:css='false' b:js='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 <!--[Meta Content-Type AND Charset]-->
 <meta charset='utf-8'/>
@@ -121,6 +121,7 @@
 <meta content='en_GB' property='og:locale:alternate'/>
 <meta content='id_ID' property='og:locale:alternate'/>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/v2.css"></link>
 <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'></link>
 <!--<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>-->
 <!-- Font Awesome -->
@@ -3443,8 +3444,8 @@ head.appendChild(script);
 
 		<!-- Kotak berlangganan email feedburner -->
 		<div class='berlangganan-box'>
-			<form action='https://feedburner.google.com/fb/a/mailverify' method='post' onsubmit='window.open(&apos;https://feedburner.google.com/fb/a/mailverify?uri=BlogMasSugeng&apos;, &apos;popupwindow&apos;, &apos;scrollbars=yes,width=550,height=520&apos;);return true' target='popupwindow'>
-			<p>Subscribe to receive free email updates:</p><p><input class='email-address' name='email' placeholder='Your email address...' type='text'/></p><input name='uri' type='hidden' value='BlogMasSugeng'/>
+			<form action='https://feedburner.google.com/fb/a/mailverify' method='post' onsubmit='window.open(&apos;https://feedburner.google.com/fb/a/mailverify?uri=PersonalisasiWebsite&apos;, &apos;popupwindow&apos;, &apos;scrollbars=yes,width=550,height=520&apos;);return true' target='popupwindow'>
+			<p>Subscribe to receive free email updates:</p><p><input class='email-address' name='email' placeholder='Your email address...' type='text'/></p><input name='uri' type='hidden' value='PersonalisasiWebsite'/>
 			<input name='loc' type='hidden' value='en_US'/>
 			<p><input class='submit-email' type='submit' value='Subscribe'/></p>
 			</form>
