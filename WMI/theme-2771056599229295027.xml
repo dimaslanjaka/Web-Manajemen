@@ -314,7 +314,7 @@ kbd{font-size:80%;border:1px solid #999;padding:2px 5px;border-bottom-width:2px;
 }
 mark{background-color:#ffce00;color:black;
 }
-p,blockquote,pre,table,figure,hr,form,ol,ul,dl{margin:1.5em 0;
+p,blockquote,pre,table,figure,hr,form:not(.form-inline),ol,ul,dl{margin:1.5em 0;
 }
 hr{height:1px;border:none;background-color:#666;
 }
