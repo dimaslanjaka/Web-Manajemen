@@ -11,6 +11,7 @@ $css = <<<EOF
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+<div style="margin-bottom:60px"></div>
 EOF;
 if (isset($_REQUEST['file'])) {
   try {
