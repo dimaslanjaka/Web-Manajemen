@@ -9,7 +9,7 @@
     1. Contact form AJAX PHP
 1. Sources
     1. Font awesome 5
-    1. Material bootstrap 4 (MDB)
+    1. Material bootstrap 4 (MDB) support
     1. Bootstrap 4 support
     1. Full width static page template
 
