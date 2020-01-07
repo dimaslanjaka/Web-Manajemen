@@ -1,15 +1,7 @@
 <noscript>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
-  <!--Default CSS-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </noscript>
-
 <style type='text/css'>
   #featured-contents img {
     width: 781px;
@@ -574,7 +566,6 @@
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -587,7 +578,95 @@
 <script src="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/bootstrap.utility.js"></script>
 
 <script>
-!function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css"),loadCSS('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css');
+  /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+  (function (w) {
+    "use strict";
+    /* exported loadCSS */
+    var loadCSS = function (href, before, media, attributes) {
+      // Arguments explained:
+      // `href` [REQUIRED] is the URL for your CSS file.
+      // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+      // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+      // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+      // `attributes` [OPTIONAL] is the Object of attribute name/attribute value pairs to set on the stylesheet's DOM Element.
+      var doc = w.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      }
+      else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+
+      var sheets = doc.styleSheets;
+      // Set any of the provided attributes to the stylesheet DOM Element.
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+      ss.media = "only x";
+
+      // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      // Inject link
+      // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+      // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+      ready(function () {
+        ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+      });
+      // A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+
+      // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    };
+    // commonjs
+    if (typeof exports !== "undefined") {
+      exports.loadCSS = loadCSS;
+    }
+    else {
+      w.loadCSS = loadCSS;
+    }
+  }(typeof global !== "undefined" ? global : this));
+  loadCSS("https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css"), loadCSS('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css');
   $(function () {
     $("#cForm").submit(function (e) {
       e.preventDefault();
@@ -633,8 +712,8 @@
                   });
                 });
 
-                //itemWrapper.getElementsByTagName('p')[0].innerHTML = entry.summary.$t.trim().replace(/\s+/gm, ' ');
-                itemWrapper.getElementsByTagName('p')[0].innerHTML = 'Published at ' + jQuery.timeago(entry.published.$t);
+                itemWrapper.getElementsByTagName('p')[0].setAttribute('data-time', entry.published.$t);
+                itemWrapper.getElementsByTagName('p')[0].innerHTML = 'Published at ' + timeDifference(new Date(entry.published.$t));
                 getFeedUrl(entry, 'alternate', function (link) {
                   itemWrapper.getElementsByTagName('h5')[0].innerHTML = '<a href="' + link + '" title="' + entry.title.$t.trim() + '" rel="bookmark" class="text-white">' + entry.title.$t.trim() + '</a>';
                 });
@@ -644,7 +723,44 @@
         }
       });
     });
-  })
+  });
+
+  function timeDifference(previous, current) {
+    if (!current) {
+      current = new Date();
+    }
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+      return Math.round(elapsed / 1000) + ' seconds ago';
+    }
+
+    else if (elapsed < msPerHour) {
+      return Math.round(elapsed / msPerMinute) + ' minutes ago';
+    }
+
+    else if (elapsed < msPerDay) {
+      return Math.round(elapsed / msPerHour) + ' hours ago';
+    }
+
+    else if (elapsed < msPerMonth) {
+      return 'approximately ' + Math.round(elapsed / msPerDay) + ' days ago';
+    }
+
+    else if (elapsed < msPerYear) {
+      return 'approximately ' + Math.round(elapsed / msPerMonth) + ' months ago';
+    }
+
+    else {
+      return 'approximately ' + Math.round(elapsed / msPerYear) + ' years ago';
+    }
+  }
 
   function getFeedUrl(obj, type, callback) { //next, self
     if (obj) {
