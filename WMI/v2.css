@@ -1024,7 +1024,7 @@ div.clear {
 .quickedit {
   cursor: pointer
 }
-
+/*
 .Navbar iframe {
   display: block
 }
@@ -1033,7 +1033,7 @@ div.clear {
   display: block;
   height: 30px
 }
-
+*/
 .crosscol .PageList UL,
 .footer .PageList UL {
   list-style: none;
