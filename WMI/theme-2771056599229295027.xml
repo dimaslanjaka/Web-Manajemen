@@ -2,6 +2,22 @@
 <!DOCTYPE html>
 <html b:version='2' class='v2' b:css='false' b:js='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
+<!--[Caching]-->
+<include expiration='7d' path='*.css'></include>
+<include expiration='7d' path='*.js'></include>
+<include expiration='3d' path='*.gif'></include>
+<include expiration='3d' path='*.jpeg'></include>
+<include expiration='3d' path='*.jpg'></include>
+<include expiration='3d' path='*.png'></include>
+<!-- [ Prefetch DNS for external assets ]-->
+<link rel='dns-prefetch' href='//fonts.googleapis.com'></link>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com'></link>
+<link rel='dns-prefetch' href='//use.fontawesome.com'></link>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net'></link>
+<link rel='dns-prefetch' href='//static.xx.fbcdn.net'></link>
+<link rel='dns-prefetch' href='//www.blogger.com'></link>
+<!--[renders the entire page in the background]-->
+<link rel='prerender' expr:href='data:blog.homepageUrl'></link>
 <!--[Meta Content-Type AND Charset]-->
 <meta charset='utf-8'/>
 <meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>
