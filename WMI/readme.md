@@ -1,6 +1,6 @@
 # Evo Magz Blogger Template v4.9
 
-## Added :
+## Added
 1. Major fix
     1. SEO optimization
     2. Rich snippets fix (alogaritm Google 2020)
