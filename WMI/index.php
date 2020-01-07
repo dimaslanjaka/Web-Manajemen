@@ -11,14 +11,46 @@ if (isset($_REQUEST['file'])) {
     echo $th->getMessage();
   }
 } else {
-  if ($handle = opendir('.')) {
+?>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+  <!--Default CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css">
+  <style type='text/css'>
 
-    while (false !== ($entry = readdir($handle))) {
-      if ($entry != "." && $entry != ".." && preg_match('/\.html$/m', $entry)) {
-        echo "<a href='?file=$entry'>$entry</a><br/>";
+  </style>
+
+  <div class="container m-5">
+    <ol>
+      <?php
+      if ($handle = opendir('.')) {
+
+        while (false !== ($entry = readdir($handle))) {
+          if ($entry != "." && $entry != ".." && preg_match('/\.html$/m', $entry)) {
+            echo "<li><a href='?file=$entry'>$entry</a></li>";
+          }
+        }
+
+        closedir($handle);
       }
-    }
+      ?>
+    </ol>
+  </div>
 
-    closedir($handle);
-  }
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+  <!--Bootstrap Utility-->
+  <script src="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/bootstrap.utility.js"></script>
+<?php
+
 }
