@@ -575,8 +575,6 @@
 <script src="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/bootstrap.utility.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
 <script>
-  !function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"),loadCSS("https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css"),loadCSS("https://use.fontawesome.com/releases/v5.11.2/css/all.css"),loadCSS("https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css"),loadCSS('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700'),loadCSS('https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/v2.css'),loadCSS('https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css');
-
   $("#cForm").submit(function (e) {
     e.preventDefault();
     toastr.info('Sending messages', 'Message');
