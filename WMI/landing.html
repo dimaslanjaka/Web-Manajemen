@@ -7,6 +7,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
   <!--Default CSS-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </noscript>
 
 <style type='text/css'>
@@ -525,10 +526,12 @@
         </h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="https://www.blogger.com/profile/17555754514989936273" rel="nofollow noopener"
-            title="Blogger Account" target="_blank">Blogger Profile</a><br>
-          <a href="https://web-manajemen.blogspot.com/2018/11/install-php-web-server-on-termux.html" target="_blank">PHP Termux</a><br>
-          <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html" target="_blank" rel="bookmark"></a>
+          <a href="https://www.blogger.com/profile/17555754514989936273" rel="nofollow noopener" title="Blogger Account"
+            target="_blank">Blogger Profile</a><br>
+          <a href="https://web-manajemen.blogspot.com/2018/11/install-php-web-server-on-termux.html" target="_blank">PHP
+            Termux</a><br>
+          <a href="https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html"
+            target="_blank" rel="bookmark"></a>
         </p>
       </div>
       <!--/.Third column-->
@@ -571,6 +574,7 @@
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -580,68 +584,67 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
   integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
-  integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous" />
 <script src="https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/bootstrap.utility.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"></script>
+
 <script>
-  !function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css");
-  $("#cForm").submit(function (e) {
-    e.preventDefault();
-    toastr.info('Sending messages', 'Message');
-    var mailer = 'http://agcontents.000webhostapp.com/mail.php';
-    $.post(mailer, $(this).serialize(), function (resm) {
-      console.log(resm);
-      if (typeof resm.type != 'undefined' && typeof resm.message != 'undefined') {
-        if (resm.type == 'success') {
-          toastr.success(resm.message, 'Message');
-        } else {
-          toastr.error(resm.message, 'Message');
+!function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/WMI/style.css"),loadCSS('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css');
+  $(function () {
+    $("#cForm").submit(function (e) {
+      e.preventDefault();
+      toastr.info('Sending messages', 'Message');
+      var mailer = 'https://agcontents.000webhostapp.com/mail.php';
+      $.post(mailer, $(this).serialize(), function (resm) {
+        console.log(resm);
+        if (typeof resm.type != 'undefined' && typeof resm.message != 'undefined') {
+          if (resm.type == 'success') {
+            toastr.success(resm.message, 'Message');
+          } else {
+            toastr.error(resm.message, 'Message');
+          }
         }
+      });
+      return false;
+    });
+    $.ajaxPrefilter(function (options) {
+      if (options.crossDomain && jQuery.support.cors) {
+        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+        options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
       }
     });
-    return false;
-  });
-  $.ajaxPrefilter(function (options) {
-    if (options.crossDomain && jQuery.support.cors) {
-      var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-      options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-      //options.url = "http://cors.corsproxy.io/url=" + options.url;
-    }
-  });
-  var dataLabel = $("[data-label]");
-  dataLabel.each(function (i, el) {
-    var element = el;//$(el)
-    //console.log(element.attr('data-label'))
-    $.getJSON('http://web-manajemen.blogspot.com/feeds/posts/summary/-/' + element.getAttribute('data-label') + '?alt=json&max-results=3', function (response) {
-      if (response) {
-        if (response.hasOwnProperty('feed')) {
-          if (response.feed.hasOwnProperty('entry')) {
-            for (var indexEntry = 0; indexEntry < response.feed.entry.length; indexEntry++) {
-              var entry = response.feed.entry[indexEntry],
-                itemWrapper = element.querySelectorAll('.carousel-item').item(indexEntry),
-                outerWrapper;
-              getFeedUrl(entry, 'self', function (postURL) {
-                $.getJSON(postURL + '?alt=json', function (postResponse) {
-                  if (postResponse.hasOwnProperty('entry')) {
-                    if (typeof postResponse.entry.media$thumbnail != 'undefined') {
-                      itemWrapper.getElementsByTagName('img')[0].setAttribute('src', postResponse.entry.media$thumbnail.url);
+    var dataLabel = $("[data-label]");
+    dataLabel.each(function (i, el) {
+      var element = el;//$(el)
+      //console.log(element.attr('data-label'))
+      $.getJSON('https://web-manajemen.blogspot.com/feeds/posts/summary/-/' + element.getAttribute('data-label') + '?alt=json&max-results=3', function (response) {
+        if (response) {
+          if (response.hasOwnProperty('feed')) {
+            if (response.feed.hasOwnProperty('entry')) {
+              for (var indexEntry = 0; indexEntry < response.feed.entry.length; indexEntry++) {
+                var entry = response.feed.entry[indexEntry],
+                  itemWrapper = element.querySelectorAll('.carousel-item').item(indexEntry),
+                  outerWrapper;
+                getFeedUrl(entry, 'self', function (postURL) {
+                  $.getJSON('https://agcontents.000webhostapp.com/?url=' + postURL + '?alt=json', function (postResponse) {
+                    if (postResponse.hasOwnProperty('entry')) {
+                      if (typeof postResponse.entry.media$thumbnail != 'undefined') {
+                        itemWrapper.getElementsByTagName('img')[0].setAttribute('src', postResponse.entry.media$thumbnail.url);
+                      }
                     }
-                  }
+                  });
                 });
-              });
 
-              //itemWrapper.getElementsByTagName('p')[0].innerHTML = entry.summary.$t.trim().replace(/\s+/gm, ' ');
-              itemWrapper.getElementsByTagName('p')[0].innerHTML = 'Published at ' + jQuery.timeago(entry.published.$t);
-              getFeedUrl(entry, 'alternate', function (link) {
-                itemWrapper.getElementsByTagName('h5')[0].innerHTML = '<a href="' + link + '" title="' + entry.title.$t.trim() + '" rel="bookmark" class="text-white">' + entry.title.$t.trim() + '</a>';
-              });
+                //itemWrapper.getElementsByTagName('p')[0].innerHTML = entry.summary.$t.trim().replace(/\s+/gm, ' ');
+                itemWrapper.getElementsByTagName('p')[0].innerHTML = 'Published at ' + jQuery.timeago(entry.published.$t);
+                getFeedUrl(entry, 'alternate', function (link) {
+                  itemWrapper.getElementsByTagName('h5')[0].innerHTML = '<a href="' + link + '" title="' + entry.title.$t.trim() + '" rel="bookmark" class="text-white">' + entry.title.$t.trim() + '</a>';
+                });
+              }
             }
           }
         }
-      }
+      });
     });
-  });
+  })
 
   function getFeedUrl(obj, type, callback) { //next, self
     if (obj) {
