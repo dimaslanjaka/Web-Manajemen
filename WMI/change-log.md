@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bootstrap 4 support
 - Material bootstrap 4 support
 - AJAX contact form receiver PHP
+- Static page template
