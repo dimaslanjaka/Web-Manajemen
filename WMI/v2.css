@@ -45,11 +45,11 @@ body {
 .footer-inner {
   padding: 30px 15px
 }
-
+/*
 .section {
   margin: 0 15px
 }
-
+*/
 .widget {
   margin: 30px 0;
   _margin: 0 0 10px
@@ -984,7 +984,7 @@ a.next-page-link {
 div.clear {
   clear: both
 }
-
+/*
 .label-size-1 {
   font-size: 80%;
   filter: alpha(80);
@@ -1008,7 +1008,7 @@ div.clear {
 .label-size-5 {
   font-size: 160%
 }
-
+*/
 .cloud-label-widget-content {
   text-align: justify
 }
