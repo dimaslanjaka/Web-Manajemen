@@ -1,4 +1,4 @@
-# Evo Magz Blogger Template v4.9
+# Evo Magz Blogger Template v4.9 [DEMO](https://web-manajemen.blogspot.com)
 
 ## Added
 1. Major fix
