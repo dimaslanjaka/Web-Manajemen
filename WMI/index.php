@@ -1,9 +1,15 @@
 <?php
 if (isset($_REQUEST['file'])) {
-  $str = file_get_contents(__DIR__ . '/' . $_REQUEST['file']);
-  $doc = new DOMDocument();
-  @$doc->loadHTML($str);
-  echo $doc->saveHTML();
+  try {
+    $f = __DIR__ . '/' . $_REQUEST['file'];
+    if (!file_exists($f)) throw new Exception('File does not exists');
+    $str = file_get_contents($f);
+    $doc = new DOMDocument();
+    @$doc->loadHTML($str);
+    echo $doc->saveHTML();
+  } catch (\Throwable $th) {
+    echo $th->getMessage();
+  }
 } else {
   if ($handle = opendir('.')) {
 
