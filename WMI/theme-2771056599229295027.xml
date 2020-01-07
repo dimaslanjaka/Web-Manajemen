@@ -288,7 +288,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 /* Blogger CSS Reset */
 .section,.widget{margin:0 0 0 0;padding:0 0 0 0;
 }
-.navbar, .blog-feeds, .feed-links, #backlinks-container {display:none;
+.navbar, .blog-feeds, .feed-links, #backlinks-container {display:none !important;
 }
 .post-body .separator > a, .post-body .separator > span {
 margin-left: 0 !important;
