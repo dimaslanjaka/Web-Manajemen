@@ -2404,3 +2404,7 @@ input.gsc-input {
   border: 1px solid #ddd;
   width: 99%
 }
+
+.avatar-image-container img {
+  box-sizing: content-box !important;
+}
