@@ -1,0 +1,16 @@
+{
+    "name": "dimaslanjaka/wmi",
+    "description": "Website Manajemen Indonesia Repository",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "~6.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimas Lanjaka",
+            "email": "dimaslanjaka@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
