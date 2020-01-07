@@ -5,7 +5,16 @@ Added :
 
 ## Installation
 
-no installation requirements
+`PHP` for preview
+
+| Platform  | Installation |
+| ------------- | ------------- |
+| Windows  | [Installation](https://www.php.net/manual/en/install.windows.tools.php) or [XAMPP](https://www.apachefriends.org/download.html)  |
+| Linux  | `apt install php` |
+| Termux | `pkg install php` |
+| Android | [Install PHP CLI Android](https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html) |
+
+
 
 ## Usage
 
