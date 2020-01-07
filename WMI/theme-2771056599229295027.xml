@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<b:if cond='data:blog.url == data:blog.canonicalHomepageUrl + "p/landing.html"'>
-  <html b:version='2' class='v2' b:css='false' b:js='false' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-  <b:else/>
-  <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-</b:if>
+<html b:css='false' b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 <!--[Meta Content-Type AND Charset]-->
 <meta charset='utf-8'/>
@@ -14,15 +10,15 @@
 <meta content='449227586c5e50f67f3b738c8f3820d8' name='propeller'/>
 <meta content='b6b85ac67091338457ad31487a9d00bb' name='p:domain_verify'/>
 <meta content='blogger' name='generator'/>
-<link href='http://www.blogger.com/openid-server.g' rel='openid.server'/>
-<link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
-<link expr:href='data:blog.url' rel='canonical'/>
+<link href='http://www.blogger.com/openid-server.g' rel='openid.server'></link>
+<link expr:href='data:blog.homepageUrl' rel='openid.delegate'></link>
+<link expr:href='data:blog.url' rel='canonical'></link>
 <!-- Facebook Open Graph Tag (property og:url dan og:image sudah otomatis ada dari blogger) -->
 <!--<b:include data='blog' name='all-head-content'/>-->
-<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
-<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
-<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
-<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='service.post' type='application/atom+xml'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'></link>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'></link>
+<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'></link>
+<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='service.post' type='application/atom+xml'></link>
 <!--<link rel="alternate" type="application/atom+xml" title="Website Development Indonesia - Atom" href="https://www.webmanajemen.com/feeds/8957997439460516689/comments/default" />-->
 <!--[if IE]>
 <script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/1366743480-ieretrofit.js"></script>
@@ -58,7 +54,6 @@
 <b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery or data:blog.isMobile'>
 	<meta content='noindex,nofollow' name='robots'/>
 </b:if>
-
 
 <!--[Social Media]-->
 <meta content='summary' name='twitter:card'/>
@@ -98,23 +93,24 @@
 <b:if cond='data:blog.postImageUrl'>
   <meta expr:content='data:blog.postImageUrl' property='og:image'/>
   <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
-  <link expr:href='data:blog.postImageUrl' rel='image_src'/>
+  <link expr:href='data:blog.postImageUrl' rel='image_src'></link>
   <b:else/>
   <b:if cond='data:blog.postImageThumbnailUrl'>
     <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
     <meta expr:content='data:blog.postThumbnailUrl' name='twitter:image'/>
-    <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'/>
+    <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'></link>
   <b:else/>
     <meta content='https://1.bp.blogspot.com/-aKZzSAygVKk/VYPkX_nAwrI/AAAAAAAACeo/cgQTs8nR5Rg/s1600/Arlina%2BLogo.png' property='og:image'/>
+    <link href='https://1.bp.blogspot.com/-aKZzSAygVKk/VYPkX_nAwrI/AAAAAAAACeo/cgQTs8nR5Rg/s1600/Arlina%2BLogo.png' rel='image_src'></link>
   </b:if>
 </b:if>
 
 <!--[Language]-->
-<link expr:href='data:blog.url' hreflang='x-default' rel='alternate'/>
+<link expr:href='data:blog.url' hreflang='x-default' rel='alternate'></link>
 <!--[Author]-->
-<link href='https://www.blogger.com/profile/17555754514989936273' rel='publisher'/>
-<link href='https://www.blogger.com/profile/17555754514989936273' rel='author'/>
-<link href='https://www.blogger.com/profile/17555754514989936273' rel='me'/>
+<link href='https://www.blogger.com/profile/17555754514989936273' rel='publisher'></link>
+<link href='https://www.blogger.com/profile/17555754514989936273' rel='author'></link>
+<link href='https://www.blogger.com/profile/17555754514989936273' rel='me'></link>
 <!--[Geocode]-->
 <meta content='Indonesia' name='geo.placename'/>
 <meta content='Dimas Lanjaka' name='Author'/>
@@ -125,9 +121,15 @@
 <meta content='en_GB' property='og:locale:alternate'/>
 <meta content='id_ID' property='og:locale:alternate'/>
 
-<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'/>
-<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>
-
+<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'></link>
+<!--<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>-->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"></link>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css"></link>
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"></link>
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet"></link>
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
@@ -354,9 +356,7 @@ blockquote{background:#f0f0f0;margin-left:2em;margin-right:2em;padding:1em 1em;f
 }
 blockquote:before {
 content: "\f10d";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-right:4px;
 color:#666;
@@ -659,9 +659,7 @@ color:#333;
 }
 .nav-menu2 li .parent:after {
 content: "\f107";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-left:6px;
 }
@@ -678,7 +676,7 @@ width:100%;
 margin:0 0 0 0;
 }
 #search-form td.search-box {
-padding-right:30px;
+padding-right:3px;
 }
 #search-form input#search-box[type="text"] {
 background:#ffffff;
@@ -691,8 +689,8 @@ color:#666666;
 border:none;
 text-transform: uppercase;
 }
-#search-form input#search-button[type="submit"] {
-font-family: FontAwesome;
+#search-form #search-button[type="submit"] {
+font-family: "Font Awesome 5 Free";
 background:#FF4F4F;
 color:#ffffff;
 height:36px;
@@ -705,7 +703,7 @@ transition:all 0.25s;
 -moz-transition:all 0.25s;
 -webkit-transition:all 0.25s;
 }
-#search-form input#search-button[type="submit"]:hover{
+#search-form #search-button[type="submit"]:hover{
 background:#222222;
 cursor:pointer;
 }
@@ -994,9 +992,7 @@ color:#ffffff;
 }
 .recent-post-title h2 a:after {
 content: "\f18e";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-left:6px;
 }
@@ -1111,25 +1107,19 @@ margin-right:8px;
 }
 span.rp_meta_date:before {
 content: "\f073";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-right:4px;
 }
 span.rp_meta_comment:before  {
 content: "\f086";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-right:4px;
 }
 span.rp_meta_more:before {
 content: "\f0a9";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-right:4px;
 }
@@ -1471,7 +1461,7 @@ display: inline-block;
 margin: 8px;
 border-radius: 50%;
 font-size: 24px;
-color: #fff;
+color: #fff !important;
 opacity: 0.75;
 transition: opacity 0.15s linear;
 }
@@ -1484,13 +1474,13 @@ top: 50%;
 transform: translateY(-50%);
 }
 .facebook {
-background: #3b5998;
+border: 1px solid #3b5998;
 }
 .twitter {
-background: #55acee;
+border: 1px solid #55acee;
 }
 .googleplus {
-background: #dd4b39;
+border: 1px solid #dd4b39;
 }
 .linkedin {
 background: #0077b5;
@@ -1522,9 +1512,7 @@ padding:20px 2%;
 }
 .tabs-content .widget ul li:before, .sidebar ul li:before, #bottombar ul li:before {
 content:"\f061";
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
+font-family: "Font Awesome 5 Free";
 text-decoration: inherit;
 padding-right:4px;
 color:#666;
@@ -1659,7 +1647,7 @@ width:1%;
 #search-form input#search-box[type="text"] {
 margin:0 0 0 0;
 }
-#search-form input#search-button[type="submit"] {
+#search-form #search-button[type="submit"] {
 margin:0 0 0 0;
 }
 .img-thumbnail {
@@ -2380,7 +2368,14 @@ var no_thumb2 = &#39;//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PF
 </script>
 </b:if>
 
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'/>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 <script type='text/javascript'>
 $(function() {
 $(&quot;.set-1&quot;).mtabs();
@@ -2633,7 +2628,7 @@ head.appendChild(script);
 	</ul>
 	<!-- secondary navigation menu end -->
 
-	<form action='/search' id='search-form' method='get'><table><tbody><tr><td class='search-box'><input id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><input id='search-button' type='submit' value=''/></td></tr></tbody></table></form>
+	<form action='/search' id='search-form' method='get'><table><tbody><tr><td class='search-box'><input id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><button id='search-button' type='submit'><i class="fas fa-search"></i></button></td></tr></tbody></table></form>
 
   </nav>
 
@@ -4144,14 +4139,6 @@ head.appendChild(script);
   <div class='clear'/>
 
   <b:section class='sidebar' id='sidebar' preferred='yes'>
-    <b:widget id='AdSense1' locked='false' title='' type='AdSense' version='1'>
-      <b:includable id='main'>
-  <div class='widget-content'>
-    <data:adCode/>
-
-  </div>
-</b:includable>
-    </b:widget>
     <b:widget id='HTML1' locked='false' title='' type='HTML' version='1'>
       <b:widget-settings>
         <b:widget-setting name='content'>&lt;!--div id=&quot;SC_TBlock_708314&quot; class=&quot;SC_TBlock&quot;&gt;loading...&lt;/div&gt;
@@ -4183,6 +4170,7 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
 &lt;!-- Histats.com  END  --&gt;
 
 &lt;!-- safelink start --&gt;
+&lt;!--
 &lt;script&gt;
   var x = Up(&quot;url&quot;) || Up(&quot;u&quot;);
   if (location.host != &#39;translate.googleusercontent.com&#39; &amp;&amp; x &amp;&amp; &quot;&quot; != x) {
@@ -4241,7 +4229,8 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
     var l = new RegExp(&quot;[?&amp;]&quot; + e + &quot;(=([^&amp;#]*)|&amp;|#|$)&quot;).exec(a);
     return l ? l[2] ? decodeURIComponent(l[2].replace(/\+/g, &quot; &quot;)) : &quot;&quot; : null
   }
-&lt;/script&gt;</b:widget-setting>
+&lt;/script&gt;
+--&gt;</b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -4287,7 +4276,7 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
   </div>
   <!-- wrapper end -->
 
-<div class='back-to-top'><a href='#' id='back-to-top' title='back to top' data-toggle='tooltip'>
+<div class='back-to-top'><a href='#' id='back-to-top' title='back to top'>
     <i class='fa fa-chevron-up'/>
 </a></div>
 
