@@ -5,6 +5,8 @@
  * @todo Receiving contact form post data to send it with Mailer
  * @requires PHPMailer
  * @author Dimas Lanjaka <dimaslanjaka@gmail.com>
+ * @copyright 2020 MIT - WMI (Website Manajemen Indonesia)
+ * @version 1.0.0
  */
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
