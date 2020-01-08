@@ -1,16 +1,27 @@
 <?php
 require __DIR__ . '/dom.php';
 
-use simple_html_dom;
-
-libxml_use_internal_errors(true);
+/**
+ * Load template
+ *
+ * @return str_get_html
+ */
 function loadTheme()
 {
   $xml = file_get_contents(__DIR__ . "/../theme.xml");
   $xml = html_entity_decode($xml);
   $html = str_get_html($xml);
-  foreach ($html->find('b:skin,b:template-skin') as $skin) {
-    $skin->outertext = '<style>' . $skin->innertext . '</style>';
+  $s = ['css' => [], 'scr' => []];
+  foreach ($html->find('link,style') as $skin) {
+    $s['css'][] = $skin->outertext;
   }
-  echo $html->find('html', 0)->outertext;
+  foreach ($html->find('b:skin,b:template') as $skin) {
+    $s['css'][] = '<style>' . $skin->innertext . '</style>';
+  }
+  foreach ($html->find('script[src]') as $skin) {
+    $s['scr'][] = $skin->outertext;
+  }
+  $html->find('article', 0)->innertext = '';
+  //var_dump($html->find('article', 0)->outertext, implode('', $s));
+  return str_get_html(implode('', $s['css']) . $html->find('article', 0)->outertext . implode('', $s['scr']));
 }
