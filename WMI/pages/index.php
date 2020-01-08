@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/func.php';
 $css = <<<EOF
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,12 +15,24 @@ $css = <<<EOF
 <div style="margin-bottom:60px"></div>
 EOF;
 if (isset($_REQUEST['file'])) {
+  $f = __DIR__ . '/' . $_REQUEST['file'];
   try {
-    $f = __DIR__ . '/' . $_REQUEST['file'];
     if (!file_exists($f)) throw new Exception('File does not exists');
     $str = file_get_contents($f);
+    $nav = file_get_contents(__DIR__ . '/navbar.html');
+    $style = file_get_contents(__DIR__ . '/style.html');
+    $contact = file_get_contents(__DIR__ . '/contact.html');
+    $str = str_replace(['%WMI_STYLE%', '%WMI_NAVBAR%', '%WMI_CONTACT%'], [$style, $nav, $contact], $str);
+    $theme = loadTheme();
+    $theme->find('article.post', 0)->innertext = $str;
+    if (!isset($_REQUEST['build'])) {
+      $theme->find('article.post', 0)->innertext .= file_get_contents(__DIR__ . '/builder.html');
+    } else {
+      $theme->find('article.post', 0)->innertext = str_replace('%WMI_CONTENT%', htmlentities($str), file_get_contents(__DIR__ . '/output.html'));
+    }
+    $str = $theme->save();
     $doc = new DOMDocument();
-    @$doc->loadHTML($css . $str);
+    @$doc->loadHTML($str);
     echo $doc->saveHTML();
   } catch (\Throwable $th) {
     echo $th->getMessage();
