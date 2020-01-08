@@ -12,6 +12,7 @@
     1. Material bootstrap 4 (MDB) support
     1. Bootstrap 4 support
     1. Full width static page template
+1. More on [Change Log](change-log.md)
 
 ## Installation
 
