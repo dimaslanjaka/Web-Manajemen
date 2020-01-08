@@ -25,3 +25,20 @@ function loadTheme()
   //var_dump($html->find('article', 0)->outertext, implode('', $s));
   return str_get_html(implode('', $s['css']) . $html->find('article', 0)->outertext . implode('', $s['scr']));
 }
+/**
+ * remove elements
+ *
+ * @param string $str
+ * @param string $selector
+ * @return string
+ */
+function removeElement($str, $selector)
+{
+  $html = str_get_html($str);
+  if ($html->find($selector)) {
+    foreach ($html->find($selector) as $e) {
+      $e->outertext = '';
+    }
+  }
+  return $html->save();
+}

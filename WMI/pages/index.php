@@ -22,12 +22,14 @@ if (isset($_REQUEST['file'])) {
     $nav = file_get_contents(__DIR__ . '/navbar.html');
     $style = file_get_contents(__DIR__ . '/style.html');
     $contact = file_get_contents(__DIR__ . '/contact.html');
-    $str = str_replace(['%WMI_STYLE%', '%WMI_NAVBAR%', '%WMI_CONTACT%'], [$style, $nav, $contact], $str);
+    $footer = file_get_contents(__DIR__ . '/footer.html');
+    $str = str_replace(['%WMI_STYLE%', '%WMI_NAVBAR%', '%WMI_CONTACT%', '%WMI_FOOTER%'], [$style, $nav, $contact, $footer], $str);
     $theme = loadTheme();
     $theme->find('article.post', 0)->innertext = $str;
     if (!isset($_REQUEST['build'])) {
       $theme->find('article.post', 0)->innertext .= file_get_contents(__DIR__ . '/builder.html');
     } else {
+
       $theme->find('article.post', 0)->innertext = str_replace('%WMI_CONTENT%', htmlentities($str), file_get_contents(__DIR__ . '/output.html'));
     }
     $str = $theme->save();
