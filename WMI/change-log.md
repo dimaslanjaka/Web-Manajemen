@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - v2 blogger utility CSS
+- FIX CDN Cache
+- Facebook comments responsive FIX
 
 ## [4.9.0.r1] - 2020-01-07
 

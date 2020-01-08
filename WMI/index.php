@@ -53,7 +53,7 @@ if (isset($_REQUEST['file'])) {
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
   <!--Bootstrap Utility-->
-  <script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/5d9e9f612d306d0ba8804d98e43fcc76941dc277/WMI/bootstrap.utility.js"></script>
+  <script src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9128da3f6bc1fedafb84d09179ed679c353a2d6e/WMI/bootstrap.utility.js"></script>
 <?php
 
 }
