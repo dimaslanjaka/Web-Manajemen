@@ -6,7 +6,7 @@ Easy static page builder with php
 php -S localhost:8000
 ```
 
-## Shortcode
+## Shortcode available
 |Shortcode     | Usage |
 |--------------|---------------|
 | %WMI_STYLE% | Insert style

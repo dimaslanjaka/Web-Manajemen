@@ -29,7 +29,7 @@ if (isset($_REQUEST['file'])) {
     if (!isset($_REQUEST['build'])) {
       $theme->find('article.post', 0)->innertext .= file_get_contents(__DIR__ . '/builder.html');
     } else {
-
+      //$str = removeElement($str, '#separator-o');
       $theme->find('article.post', 0)->innertext = str_replace('%WMI_CONTENT%', htmlentities($str), file_get_contents(__DIR__ . '/output.html'));
     }
     $str = $theme->save();
