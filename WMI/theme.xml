@@ -2349,9 +2349,6 @@ h4#comment-post-message {
 <script type='text/javascript'>
 //<![CDATA[
 function labelthumbs(t){for(var e=0;e<numposts;e++){var r,n=t.feed.entry[e],m=n.title.$t;if(e==t.feed.entry.length)break;for(var i=0;i<n.link.length;i++){if("replies"==n.link[i].rel&&"text/html"==n.link[i].type)var l=n.link[i].title,o=n.link[i].href;if("alternate"==n.link[i].rel){r=n.link[i].href;break}}var u;try{u=n.media$thumbnail.url,u=u.replace(/.*?:\/\//g , "//").replace("/s72-c/","/w"+thumb_width+"-h"+thumb_height+"-c/")}catch(h){s=n.content.$t,a=s.indexOf("<img"),b=s.indexOf('src="',a),c=s.indexOf('"',b+5),d=s.substr(b+5,c-b-5),u=-1!=a&&-1!=b&&-1!=c&&""!=d?d:no_thumb}var p=n.published.$t,w=p.substring(0,4),_=p.substring(5,7),f=p.substring(8,10);document.write('<ul class="rp_thumbs">'),document.write("<li>"),1==showpostthumbnails&&document.write('<a href="'+r+'"><div class="rp_thumb"><span class="rollover"></span><img width="'+thumb_width+'" height="'+thumb_height+'" alt="'+m+'" src="'+u+'"/></div></a>'),document.write('<span class="rp_title"><a href="'+r+'" target ="_top">'+m+"</a></span>");var g="";if(document.write('<span class="rp_meta">'),1==showpostdate&&(g=g+'<span class="rp_meta_date">'+f+"/"+_+"/"+w+"</span>"),1==showcommentnum&&("1 Comments"==l&&(l="1 Comment"),"0 Comments"==l&&(l="No Comments"),showcomment='<span class="rp_meta_comment"><a href="'+o+'">'+l+"</a></span>",g+=showcomment),1==displaymore&&(g=g+'<span class="rp_meta_more"><a href="'+r+'" class="url" target ="_top">Read More...</a></span>'),document.write(g),document.write("</span>"),document.write('<span class="rp_summary">'),"content"in n)var v=n.content.$t;else if("summary"in n)var v=n.summary.$t;else var v="";var k=/<\S[^>]*>/g;if(v=v.replace(k,""),1==showpostsummary)if(v.length<numchars)document.write(""),document.write(v),document.write("");else{document.write(""),v=v.substring(0,numchars);var y=v.lastIndexOf(" ");v=v.substring(0,y),document.write(v+"..."),document.write("")}document.write("</span>"),document.write("</li>"),document.write("</ul>")}document.write('<ul class="rp_thumbs2">');for(var e=1;e<numposts2;e++){var r,n=t.feed.entry[e],m=n.title.$t;if(e==t.feed.entry.length)break;for(var i=1;i<n.link.length;i++){if("replies"==n.link[i].rel&&"text/html"==n.link[i].type)var l=n.link[i].title,o=n.link[i].href;if("alternate"==n.link[i].rel){r=n.link[i].href;break}}var $;try{$=n.media$thumbnail.url.replace(/.*?:\/\//g , "//").replace("/s72-c/","/w"+thumb_width2+"-h"+thumb_height2+"-c/")}catch(h){s=n.content.$t,a=s.indexOf("<img"),b=s.indexOf('src="',a),c=s.indexOf('"',b+5),d=s.substr(b+5,c-b-5),$=-1!=a&&-1!=b&&-1!=c&&""!=d?d:no_thumb2}var p=n.published.$t,w=p.substring(0,4),_=p.substring(5,7),f=p.substring(8,10);1==showpostthumbnails2&&document.write('<a href="'+r+'"><div class="rp_thumb2"><img width="'+thumb_width2+'" height="'+thumb_height2+'" alt="'+m+'" src="'+$+'"/></div></a>'),document.write("<li>"),document.write('<span class="rp_title rp_title2"><a href="'+r+'" target ="_top">'+m+"</a></span>");var g="";document.write('<span class="rp_meta rp_meta2">'),1==showpostdate2&&(g=g+'<span class="rp_meta_date rp_meta_date2">'+f+"/"+_+"/"+w+"</span>"),1==showcommentnum2&&("1 Comments"==l&&(l="1 Comment"),"0 Comments"==l&&(l="No Comments"),showcomment='<span class="rp_meta_comment rp_meta_comment2"><a href="'+o+'">'+l+"</a></span>",g+=showcomment),1==displaymore2&&(g=g+'<span class="rp_meta_more rp_meta_more2"><a href="'+r+'" class="url" target ="_top">Read More...</a></span>'),document.write(g),document.write("</span>"),document.write("</li>")}document.write("</ul>")}
-//]]>
-</script>
-<script type='text/javascript'>
 var numposts = 1;
 var numposts2 = 4;
 var showpostthumbnails = true;
@@ -2368,8 +2365,9 @@ var thumb_width = 300;
 var thumb_height = 140;
 var thumb_width2 = 60;
 var thumb_height2 = 60;
-var no_thumb = &#39;//1.bp.blogspot.com/-7vDs5hMaDho/U268E2ecF4I/AAAAAAAADY8/RBHVTTuJrxc/w300-h140-c/no-image.png&#39;
-var no_thumb2 = &#39;//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaGZu9PQ/s60-c/no-image.png&#39;
+var no_thumb = '//1.bp.blogspot.com/-7vDs5hMaDho/U268E2ecF4I/AAAAAAAADY8/RBHVTTuJrxc/w300-h140-c/no-image.png'
+var no_thumb2 = '//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaGZu9PQ/s60-c/no-image.png'
+//]]>
 </script>
 </b:if>
 
@@ -4133,60 +4131,62 @@ head.appendChild(script);
   <b:section class='sidebar' id='sidebar' preferred='yes'>
     <b:widget id='HTML1' locked='false' title='' type='HTML' version='1'>
       <b:widget-settings>
-        <b:widget-setting name='content'>&lt;!--div id=&quot;SC_TBlock_708314&quot; class=&quot;SC_TBlock&quot;&gt;loading...&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
+        <b:widget-setting name='content'>
+        <![CDATA[
+        <!--div id="SC_TBlock_708314" class="SC_TBlock">loading...</div>
+<script type="text/javascript">
   (sc_adv_out = window.sc_adv_out || []).push({
-    id: &quot;708314&quot;,
-    domain: &quot;n.ads1-adnow.com&quot;
+    id: "708314",
+    domain: "n.ads1-adnow.com"
   });
-&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;//st-n.ads1-adnow.com/js/a.js&quot;&gt;&lt;/script--&gt;
-&lt;!--script async src=&quot;https://codepen.io/dimaslanjaka/pen/XWJMyrb.js&quot;--&gt;
-            &lt;!-- TOP.GE ASYNC COUNTER CODE --&gt;
-            &lt;div id=&quot;top-ge-counter-container&quot; data-site-id=&quot;113359&quot;&gt;&lt;/div&gt;
-            &lt;script async src=&quot;//counter.top.ge/counter.js&quot;&gt;&lt;/script&gt;
-            &lt;!-- / END OF TOP.GE COUNTER CODE --&gt;
-   &lt;!-- Histats.com  (div with counter) --&gt;&lt;div id=&quot;histats_counter&quot;&gt;&lt;/div&gt;
-&lt;!-- Histats.com  START  (aync)--&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;var _Hasync= _Hasync|| [];
-_Hasync.push([&#39;Histats.startgif&#39;, &#39;1,3860842,4,10045,&quot;div#histatsC {position: absolute;top:0px;left:0px;}body&gt;div#histatsC {position: fixed;}&quot;&#39;]);
-_Hasync.push([&#39;Histats.fasi&#39;, &#39;1&#39;]);
-_Hasync.push([&#39;Histats.track_hits&#39;, &#39;&#39;]);
+</script>
+<script type="text/javascript" src="//st-n.ads1-adnow.com/js/a.js"></script-->
+<!--script async src="https://codepen.io/dimaslanjaka/pen/XWJMyrb.js"-->
+            <!-- TOP.GE ASYNC COUNTER CODE -->
+            <div id="top-ge-counter-container" data-site-id="113359"></div>
+            <script async src="//counter.top.ge/counter.js"></script>
+            <!-- / END OF TOP.GE COUNTER CODE -->
+   <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.startgif', '1,3860842,4,10045,"div#histatsC {position: absolute;top:0px;left:0px;}body>div#histatsC {position: fixed;}"']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
 (function() {
-var hs = document.createElement(&#39;script&#39;); hs.type = &#39;text/javascript&#39;; hs.async = true;
-hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
-(document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(hs);
-})();&lt;/script&gt;
-&lt;noscript&gt;&lt;a href=&quot;/&quot; alt=&quot;&quot; target=&quot;_blank&quot; &gt;&lt;div id=&quot;histatsC&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;//s4is.histats.com/stats/i/3860842.gif?3860842&amp;amp;103&quot; /&gt;&lt;/div&gt;&lt;/a&gt;
-&lt;/noscript&gt;
-&lt;!-- Histats.com  END  --&gt;
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_gif_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" alt="" target="_blank" ><div id="histatsC"><img border="0" src="//s4is.histats.com/stats/i/3860842.gif?3860842&amp;103" /></div></a>
+</noscript>
+<!-- Histats.com  END  -->
 
-&lt;!-- safelink start --&gt;
-&lt;!--
-&lt;script&gt;
-  var x = Up(&quot;url&quot;) || Up(&quot;u&quot;);
-  if (location.host != &#39;translate.googleusercontent.com&#39; &amp;&amp; x &amp;&amp; &quot;&quot; != x) {
-    location.replace(&quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot; + x);
+<!-- safelink start -->
+<!--
+<script>
+  var x = Up("url") || Up("u");
+  if (location.host != 'translate.googleusercontent.com' && x && "" != x) {
+    location.replace("https://dimaslanjaka.github.io/page/safelink.html?url=" + x);
   }
 
   var EXCLUDE = /facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|webmanajemen\.com|www\.blogger\.com|translate\.google\.com|translate\.googleusercontent\.com|javascript\:void\(0\)/gm,
     l = document.addEventListener || document.attachEvent;
-  l(&quot;mouseover&quot;, function (e) {
-    if (&quot;a&quot; == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+  l("mouseover", function (e) {
+    if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
       var t = e.target,
         a = t.href;
       if (!a.match(EXCLUDE)) {
-        t.href = &#39;https://dimaslanjaka.github.io/page/safelink.html?url=&#39; + btoa(a);
-        t.setAttribute(&#39;target&#39;, &#39;_blank&#39;);
-        t.style.textDecoration = &quot;underline&quot;;
-        /*t.style.color = &quot;red&quot;*/
+        t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + btoa(a);
+        t.setAttribute('target', '_blank');
+        t.style.textDecoration = "underline";
+        /*t.style.color = "red"*/
       }
     }
   });
 
   /** fix if translator widget */
-  l(&quot;click&quot;, function (e) {
-    if (&quot;a&quot; == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+  l("click", function (e) {
+    if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
       if (e.target.host.match(/javascript\:void/gm)) {
         e.preventDefault();
 
@@ -4196,33 +4196,35 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
     console.log(e);
   });
   /*
-  l(&quot;mouseover&quot;, function (e) {
-  if (&quot;a&quot; == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+  l("mouseover", function (e) {
+  if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
   var t = e.target,
   a = t.href;
-  t.getAttribute(&quot;data-href&quot;) || a.match(EXCLUDE) || (t.setAttribute(&quot;data-href&quot;, a), t.removeAttribute(&quot;href&quot;), t.style.textDecoration = &quot;underline&quot;, t.style.color = &quot;red&quot;)
+  t.getAttribute("data-href") || a.match(EXCLUDE) || (t.setAttribute("data-href", a), t.removeAttribute("href"), t.style.textDecoration = "underline", t.style.color = "red")
   }
   });
 
-  l(&quot;click&quot;, function (e) {
-  if (&quot;a&quot; == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
+  l("click", function (e) {
+  if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
   e.preventDefault();
   console.log(e);
-  var t = e.target.href || e.target.getAttribute(&quot;data-href&quot;);
-  return (e.target.host || t).match(EXCLUDE) ? location.href = t : Object.assign(document.createElement(&quot;a&quot;), {
-  target: &quot;_blank&quot;,
-  href: &quot;https://dimaslanjaka.github.io/page/safelink.html?url=&quot; + btoa(t)
+  var t = e.target.href || e.target.getAttribute("data-href");
+  return (e.target.host || t).match(EXCLUDE) ? location.href = t : Object.assign(document.createElement("a"), {
+  target: "_blank",
+  href: "https://dimaslanjaka.github.io/page/safelink.html?url=" + btoa(t)
   }).click(), !1
   }
   });
   */
   function Up(e, a) {
-    a || (a = window.location.href), e = e.replace(/[\[\]]/g, &quot;\\$&amp;&quot;);
-    var l = new RegExp(&quot;[?&amp;]&quot; + e + &quot;(=([^&amp;#]*)|&amp;|#|$)&quot;).exec(a);
-    return l ? l[2] ? decodeURIComponent(l[2].replace(/\+/g, &quot; &quot;)) : &quot;&quot; : null
+    a || (a = window.location.href), e = e.replace(/[\[\]]/g, "\\$&");
+    var l = new RegExp("[?&]" + e + "(=([^&#]*)|&|#|$)").exec(a);
+    return l ? l[2] ? decodeURIComponent(l[2].replace(/\+/g, " ")) : "" : null
   }
-&lt;/script&gt;
---&gt;</b:widget-setting>
+</script>
+-->
+        ]]>
+        </b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
   <!-- only display title if it's non-empty -->
