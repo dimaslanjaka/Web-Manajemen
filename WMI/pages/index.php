@@ -19,23 +19,29 @@ if (isset($_REQUEST['file'])) {
   try {
     if (!file_exists($f)) throw new Exception('File does not exists');
     $str = file_get_contents($f);
-    $nav = file_get_contents(__DIR__ . '/navbar.html');
-    $style = file_get_contents(__DIR__ . '/style.html');
-    $contact = file_get_contents(__DIR__ . '/contact.html');
-    $footer = file_get_contents(__DIR__ . '/footer.html');
-    $str = str_replace(['%WMI_STYLE%', '%WMI_NAVBAR%', '%WMI_CONTACT%', '%WMI_FOOTER%'], [$style, $nav, $contact, $footer], $str);
-    $theme = loadTheme();
-    $theme->find('article.post', 0)->innertext = $str;
-    if (!isset($_REQUEST['build'])) {
-      $theme->find('article.post', 0)->innertext .= file_get_contents(__DIR__ . '/builder.html');
+    $direct = '/\<\!\-\-direct\-\-\>/m';
+    if (!preg_match_all($direct, $str)) {
+      $nav = file_get_contents(__DIR__ . '/navbar.html');
+      $style = file_get_contents(__DIR__ . '/style.html');
+      $contact = file_get_contents(__DIR__ . '/contact.html');
+      $footer = file_get_contents(__DIR__ . '/footer.html');
+      $str = str_replace(['%WMI_STYLE%', '%WMI_NAVBAR%', '%WMI_CONTACT%', '%WMI_FOOTER%'], [$style, $nav, $contact, $footer], $str);
+      $theme = loadTheme();
+      $theme->find('article.post', 0)->innertext = $str;
+      if (!isset($_REQUEST['build'])) {
+        $theme->find('article.post', 0)->innertext .= file_get_contents(__DIR__ . '/builder.html');
+      } else {
+        //$str = removeElement($str, '#separator-o');
+        $theme->find('article.post', 0)->innertext = str_replace('%WMI_CONTENT%', htmlentities($str), file_get_contents(__DIR__ . '/output.html'));
+      }
+      $str = $theme->save();
+      $doc = new DOMDocument();
+      @$doc->loadHTML($str);
+      echo $doc->saveHTML();
     } else {
-      //$str = removeElement($str, '#separator-o');
-      $theme->find('article.post', 0)->innertext = str_replace('%WMI_CONTENT%', htmlentities($str), file_get_contents(__DIR__ . '/output.html'));
+      $str = preg_replace($direct, '', $str);
+      echo $str;
     }
-    $str = $theme->save();
-    $doc = new DOMDocument();
-    @$doc->loadHTML($str);
-    echo $doc->saveHTML();
   } catch (\Throwable $th) {
     echo $th->getMessage();
   }
