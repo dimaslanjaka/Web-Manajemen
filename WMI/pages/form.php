@@ -75,3 +75,4 @@ try {
 
 $encoded = json_encode($responseArray);
 echo $encoded;
+?>
