@@ -15,9 +15,14 @@
 var global_index = 0, global_proxies = [];
 (function () {
   'use strict';
+  parsingFPL();
+  $(document).on('click', 'ul.pagination *', parsingFPL);
+})();
+
+function parsingFPL() {
   var t = document.querySelector('table.table');
   if (t) {
-    var tr = t.querySelectorAll('tr');
+    var tr = t.querySelectorAll('tbody tr');
     var ii = 0;
     for (var i = 0; i < tr.length; i++) {
       var el = tr[i];
@@ -31,17 +36,18 @@ var global_index = 0, global_proxies = [];
       global_proxies.push(proxy);
       ii++;
       if (i == tr.length - 1 || i == ii) {
-        checkSpys();
+        checkSPL();
       }
     }
   }
-})();
-function checkSpys() {
+}
+
+function checkSPL() {
   if (typeof global_proxies[global_index] != 'undefined') {
     $.post('https://agcontents.000webhostapp.com/proxy-receiver.php', { save: global_proxies[global_index] }).always(function () {
       global_index++;
       if (global_index < global_proxies.length) {
-        checkSpys();
+        checkSPL();
       }
     });
   }
