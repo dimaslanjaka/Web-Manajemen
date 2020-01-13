@@ -7,7 +7,7 @@
 // @match        https://free-proxy-list.net/*
 // @match        http://free-proxy-list.net/*
 // @grant        none
-// @require      http://code.jquery.com/jquery-3.4.1.min.js
+// @require      https://code.jquery.com/jquery-3.4.1.min.js
 // @updateURL    https://rawgit.com/dimaslanjaka/Web-Manajemen/master/userscripts/freeproxylist.user.js
 // @downloadURL  https://rawgit.com/dimaslanjaka/Web-Manajemen/master/userscripts/freeproxylist.user.js
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAACVBMVEUAAGcAAABmzDNZt9VtAAAAAXRSTlMAQObYZgAAAF5JREFUeNrtkTESABAQxPD/R6tsE2dUGYUtFJvLDKf93KevHJAjpBorAQWSBIKqFASC4G0pCAkm4GfaEvgYXl0T6HBaE97f0vmnfYHbZOMLZCx9ISdKWwjOWZSC8GYm4SUGwfYgqI4AAAAASUVORK5CYII=
@@ -18,6 +18,7 @@ var global_index = 0, global_proxies = [];
   var t = document.querySelector('table.table');
   if (t) {
     var tr = t.querySelectorAll('tr');
+    var ii = 0;
     for (var i = 0; i < tr.length; i++) {
       var el = tr[i];
       var td = el.querySelectorAll('td');
@@ -28,7 +29,8 @@ var global_index = 0, global_proxies = [];
       var proxy = ip + ':' + port;
       if (!proxy.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d{2,8}/gm)) continue;
       global_proxies.push(proxy);
-      if (i == tr.length - 1) {
+      ii++;
+      if (i == tr.length - 1 || i == ii) {
         checkSpys();
       }
     }
