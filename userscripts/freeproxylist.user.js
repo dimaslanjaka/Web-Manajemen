@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name         free-proxy-list.net and www.sslproxies.org proxy grabber
+// @name         free-proxy-list.net company proxy grabber
 // @namespace    http://web-manajemen.blogspot.com/
 // @version      1.0
-// @description  try to grabbing proxies from free-proxy-list.net and www.sslproxies.org
+// @description  try to grabbing proxies from free-proxy-list.net, www.sslproxies.org, www.socks-proxy.net
 // @author       Dimas Lanjaka <dimaslanjaka[at]gmail.com>
 // @match        https://free-proxy-list.net/*
 // @match        http://free-proxy-list.net/*
 // @match        https://www.sslproxies.org/*
 // @match        http://www.sslproxies.org/*
+// @match        https://www.socks-proxy.net/*
+// @match        http://www.socks-proxy.net/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.4.1.min.js
 // @updateURL    https://rawgit.com/dimaslanjaka/Web-Manajemen/master/userscripts/freeproxylist.user.js
@@ -18,7 +20,7 @@ var global_index = 0, global_proxies = [];
 (function () {
   'use strict';
   parsingFPL();
-  $(document).on('click', 'ul.pagination *', parsingFPL);
+  $(document).on('click', 'ul.pagination li, ul.pagination li a, .fg-button, [aria-controls="proxylisttable"]', parsingFPL);
 })();
 
 function parsingFPL() {
@@ -50,6 +52,9 @@ function checkSPL() {
       global_index++;
       if (global_index < global_proxies.length) {
         checkSPL();
+      }
+      if (global_index == global_proxies.length - 1){
+        global_proxies = [];
       }
     });
   }
