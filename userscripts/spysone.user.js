@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SpysOne Proxy Grabber
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @namespace    http://web-manajemen.blogspot.com/
+// @version      1.0
+// @description  try to grabbing proxies from spysone
 // @author       You
 // @match        https://spys.one/*
 // @match        http://spys.one/*
