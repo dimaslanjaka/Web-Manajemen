@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name         https://free-proxy-list.net/ proxy grabber
+// @name         free-proxy-list.net and www.sslproxies.org proxy grabber
 // @namespace    http://web-manajemen.blogspot.com/
 // @version      1.0
-// @description  try to grabbing proxies from https://free-proxy-list.net/
+// @description  try to grabbing proxies from free-proxy-list.net and www.sslproxies.org
 // @author       Dimas Lanjaka <dimaslanjaka[at]gmail.com>
 // @match        https://free-proxy-list.net/*
 // @match        http://free-proxy-list.net/*
+// @match        https://www.sslproxies.org/*
+// @match        http://www.sslproxies.org/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.4.1.min.js
 // @updateURL    https://rawgit.com/dimaslanjaka/Web-Manajemen/master/userscripts/freeproxylist.user.js
