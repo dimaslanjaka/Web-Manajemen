@@ -34,7 +34,7 @@ var global_index = 0, global_proxies = [];
 })();
 function checkSpys() {
   if (typeof global_proxies[global_index] != 'undefined') {
-      $.post('http://agcontents.000webhostapp.com/proxy-receiver.php', { save: global_proxies[global_index] }).always(function () {
+      $.post('https://agcontents.000webhostapp.com/proxy-receiver.php', { save: global_proxies[global_index] }).always(function () {
           global_index++;
           if (global_index < global_proxies.length) {
               checkSpys();
