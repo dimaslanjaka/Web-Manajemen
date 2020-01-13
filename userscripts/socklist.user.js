@@ -1,10 +1,12 @@
 // ==UserScript==
-// @name         Socklist.net proxy grabber
+// @name         Socklist.net and proxyhttp.net proxy grabber
 // @namespace    http://web-manajemen.blogspot.com/
 // @version      1.0
-// @description  try to grabbing proxies from Socklist.net
+// @description  try to grabbing proxies from Socklist.net and proxyhttp.net
 // @author       Dimas Lanjaka <dimaslanjaka[at]gmail.com>
 // @match        https://sockslist.net/*
+// @match        https://proxyhttp.net/*
+// @match        http://proxyhttp.net/*
 // @match        http://sockslist.net/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
@@ -25,6 +27,7 @@ var global_index = 0, global_proxies = [];
       var port = el.querySelectorAll('.t_port');
       if (!port.length) continue;
       var proxy = ip[0].innerText + ':' + port[0].innerText;
+      if (!proxy.innerText.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d{2,8}/gm)) continue;
       global_proxies.push(proxy);
       if (i == tr.length - 1){
         checkSpys();
