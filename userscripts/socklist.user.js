@@ -26,7 +26,9 @@ var global_index = 0, global_proxies = [];
       if (!port.length) continue;
       var proxy = ip[0].innerText + ':' + port[0].innerText;
       global_proxies.push(proxy);
-      console.log(proxy)
+      if (i == tr.length - 1){
+        checkSpys();
+      }
     }
   }
 })();
