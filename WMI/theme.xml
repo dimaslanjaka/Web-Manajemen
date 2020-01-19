@@ -136,9 +136,15 @@
     <meta expr:content='data:blog.postThumbnailUrl' name='twitter:image'/>
     <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'></link>
   <b:else/>
-    <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' property='og:image'/>
-    <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' name='twitter:image'/>
-    <link href='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' rel='image_src'></link>
+    <b:if cond='data:post.firstImageUrl'>
+      <meta expr:content='data:post.firstImageUrl' property='og:image'/>
+      <meta expr:content='data:post.firstImageUrl' name='twitter:image'/>
+      <link expr:href='data:post.firstImageUrl' rel='image_src'></link>
+      <b:else/>
+      <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' property='og:image'/>
+      <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' name='twitter:image'/>
+      <link href='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' rel='image_src'></link>
+    </b:if>
   </b:if>
 </b:if>
 
@@ -3325,14 +3331,47 @@ head.appendChild(script);
   <div class='clear'/>
 </b:includable>
       <b:includable id='post' var='post'>
-  <article class='post'>
-
+  <div class='hentry'>
+  <article class='post' itemscope='itemscope' itemtype='https://schema.org/NewsArticle'>
+  <b:if cond='data:post.link'>
+    <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.link' />
+    <b:else/>
+      <b:if cond='data:post.url'>
+        <b:if cond='data:blog.url != data:post.url'>
+          <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.url' />
+        <b:else/>
+          <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:blog.url' />
+        </b:if>
+      </b:if>
+  </b:if>
+  <b:if cond='data:top.showTimestamp'>
+    <meta itemprop="datePublished" expr:content='data:post.timestampISO8601' />
+    <meta itemprop="dateModified" expr:content='data:post.timestampISO8601' />
+    <b:else/>
+    <meta itemprop="datePublished" content='2020-01-13T22:49:00+07:00' />
+    <meta itemprop="dateModified" content='2020-01-13T22:49:00+07:00' />
+  </b:if>
+  <b:if cond='data:top.showAuthor'>
+    <b:if cond='data:post.authorProfileUrl'>
+      <div style='display: none;' itemprop='publisher' itemscope='' itemtype='https://schema.org/Organization'>
+          <div itemprop='logo' itemscope='' itemtype='https://schema.org/ImageObject'>
+              <img style='visibility: hidden;' src="data:image/svg+xml,%3Csvg width='5cm' height='4cm' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3EFour separate rectangles %3C/desc%3E%3Crect x='0.5cm' y='0.5cm' width='2cm' height='1cm'/%3E%3Crect x='0.5cm' y='2cm' width='1cm' height='1.5cm'/%3E%3Crect x='3cm' y='0.5cm' width='1.5cm' height='2cm'/%3E%3Crect x='3.5cm' y='3cm' width='1cm' height='0.5cm'/%3E%3C!-- Show outline of viewport using 'rect' element --%3E%3Crect x='.01cm' y='.01cm' width='4.98cm' height='3.98cm' fill='none' stroke='blue' stroke-width='.02cm' /%3E%3C/svg%3E" />
+              <noscript><img style='visibility: hidden;' src='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
+              </noscript>
+              <meta itemprop='url' content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
+              <meta itemprop='width' content='600' />
+              <meta itemprop='height' content='60' />
+          </div>
+          <meta itemprop='name' expr:content='data:post.author' />
+      </div>
+    </b:if>
+  </b:if>
 	<b:switch var='data:blog.pageType'>
 	<b:case value='static_page'/>
 	<!-- Posting halaman statis -->
 	  <div>
 	    <b:if cond='data:post.title'>
-          <h1 class='post-title entry-title'>
+          <h1 class='post-title entry-title' itemprop='name headline'>
             <b:if cond='data:post.link'>
               <a expr:href='data:post.link'><data:post.title/></a>
             <b:else/>
@@ -3564,7 +3603,7 @@ head.appendChild(script);
 	  </b:if>
 	  <a expr:name='data:post.id'/>
 	    <b:if cond='data:post.title'>
-          <h2 class='post-title entry-title' itemprop='name headline'>
+          <h2 class='post-title entry-title' itemprop='name'>
             <b:if cond='data:post.link'>
               <a expr:href='data:post.link'><data:post.title/></a>
             <b:else/>
@@ -3638,7 +3677,9 @@ head.appendChild(script);
 
 	  </div>
 	</b:switch>
+  <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' itemprop='image'/>
   </article>
+  </div>
 
   <!-- [facebook comments] -->
   <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -4050,7 +4091,7 @@ head.appendChild(script);
     <b:section class='panel panel-1' id='panel-1' maxwidgets='4' preferred='yes'>
       <b:widget id='HTML2' locked='false' title='About Me' type='HTML' version='1'>
         <b:widget-settings>
-          <b:widget-setting name='content'><![CDATA[<div class="dimaslanjaka" itemscope="" itemtype="http://schema.org/author"> <div class="about-author" itemscope itemprop="Person" itemtype="http://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="http://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope itemtype="http://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope itemtype="http://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="http://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="http://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>]]></b:widget-setting>
+          <b:widget-setting name='content'><![CDATA[<div class="dimaslanjaka" itemscope="" itemtype="http://schema.org/author"> <div class="about-author" itemscope='itemscope' itemprop="Person" itemtype="http://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="http://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='itemscope' itemtype="http://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='itemscope' itemtype="http://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="http://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="http://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>]]></b:widget-setting>
         </b:widget-settings>
         <b:includable id='main'>
   <!-- only display title if it's non-empty -->
