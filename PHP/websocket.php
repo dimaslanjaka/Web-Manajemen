@@ -2,6 +2,7 @@
 
 /**
  * Websocket server.
+ * @author dimaslanjaka <dimaslanjaka@gmail.com>
  */
 header('X-Robots-Tag: noindex, nofollow', true);
 header('Content-Type: text/event-stream');
