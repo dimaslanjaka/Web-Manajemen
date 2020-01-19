@@ -75,10 +75,10 @@ class WMI_websocket
    *
    * @return self::$_instance
    */
-  public static function i()
+  public static function i($allow_global_domain = false, $cache = false)
   {
     if (null === self::$_instance) {
-      self::$_instance = new self();
+      self::$_instance = new self($allow_global_domain = false, $cache = false);
     }
 
     return self::$_instance;
@@ -120,11 +120,19 @@ class WMI_websocket
 
 /*
 Object Oriented Chaining method:
-WMI_websocket(false, false)->createData([
+
+*/
+$websocket = new WMI_websocket(false, false);
+$websocket->createData([
   'pendapatan_max_invoice' => 45,
   'piutang_max_invoice' => 55,
   'hutang_max_invoice' => 65,
   'pengeluaran_max_invoice' => 67,
 ])->SEND();
-*/
+WMI_websocket::i(false, false)->createData([
+  'pendapatan_max_invoice' => 45,
+  'piutang_max_invoice' => 55,
+  'hutang_max_invoice' => 65,
+  'pengeluaran_max_invoice' => 67,
+])->SEND();
 exit;
