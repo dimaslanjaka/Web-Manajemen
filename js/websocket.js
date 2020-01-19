@@ -14,16 +14,8 @@ function socket_start() {
     };
     socket.onmessage = function (msg) {
       var data = JSON.parse(msg.data);
-      //console.log();
-      if (piutang_invoice.length) {
-        piutang_invoice.val(data.piutang_max_invoice).trigger('change');
-      }
-      if (pendapatan_invoice.length&&typeof data.pendapatan_max_invoice != 'undefined') {
-        pendapatan_invoice.val(data.pendapatan_max_invoice).trigger('change');
-      }
-      if (socket_debug.length&&typeof data.debug != 'undefined'){
-        socket_debug.html('<pre>'+JSON.stringify(data.debug)+'</pre>');
-      }
+      //do with data response
+      console.log(data);
     };
     socket.onclose = function (msg) {
       console.log({ closed: socket });
