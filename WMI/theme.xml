@@ -1875,7 +1875,7 @@ pre {
   text-align: left;
 }
 /*External Link*/
-a[target="_blank"]:after, a.ext-link:after {
+a.ext-link:after {
     font-family: "Font Awesome 5 Pro";
     font-weight: 900;
     font-size: 0.5em;
@@ -2435,7 +2435,7 @@ var no_thumb2 = '//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaG
 //<![CDATA[
 var WMI = {
   safelinkURL: "https://dimaslanjaka.github.io/page/safelink.html?url=",
-  exclude: new RegExp([location.host, 'facebook.com', 'fb.me', 'twitter.com', 'dimaslanjaka.github.io', 'translate\.googleusercontent\.com', 'thumblr\.com', 'web\-manajemen\.blogspot\.com', 'blog.akarmas.com', 'www\.blogger\.com', 'webmanajemen\.com', 'translate\.google\.com', 'javascript\:', '\#'].join('|'))
+  exclude: new RegExp([location.host, 'facebook.com', 'fb.me', 'twitter.com', 'dimaslanjaka.github.io', 'translate\.googleusercontent\.com', 'thumblr\.com', 'web\-manajemen\.blogspot\.', 'blog.akarmas.com', 'www\.blogger\.com', 'webmanajemen\.com', 'translate\.google\.com', 'javascript\:', '\#'].join('|'))
 }
 //]]>
 </script>
