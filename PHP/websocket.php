@@ -117,22 +117,3 @@ class WMI_websocket
     return $this;
   }
 }
-
-/*
-Object Oriented Chaining method:
-
-*/
-$websocket = new WMI_websocket(false, false);
-$websocket->createData([
-  'pendapatan_max_invoice' => 45,
-  'piutang_max_invoice' => 55,
-  'hutang_max_invoice' => 65,
-  'pengeluaran_max_invoice' => 67,
-])->SEND();
-WMI_websocket::i(false, false)->createData([
-  'pendapatan_max_invoice' => 45,
-  'piutang_max_invoice' => 55,
-  'hutang_max_invoice' => 65,
-  'pengeluaran_max_invoice' => 67,
-])->SEND();
-exit;

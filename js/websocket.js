@@ -5,15 +5,10 @@
  * @author Dimas Lanjaka <dimaslanjaka[at]gmail.com
  * @see https://www.webmanajemen.com/2020/01/simple-websocket.html Simple Web Socket
  */
+var socket = false;
 
-/**
-USAGE:
-if (conditional) {
-  socket_start();
-}
-*/
 function socket_start() {
-  if (!socket) {
+  if (!socket_check()) {
     console.log('WebSocket Started');
     socket = socket_server();
   }
