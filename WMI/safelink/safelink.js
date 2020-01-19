@@ -1,32 +1,27 @@
-var x = Up("url") || Up("u");
+var x = Up("url") || Up("u"), safelinkURL = 'https://dimaslanjaka.github.io/page/safelink.html?url=';
 if (location.host != 'translate.googleusercontent.com' && x && "" != x) {
-  location.replace("https://dimaslanjaka.github.io/page/safelink.html?url=" + x);
+  location.replace(safelinkURL + x);
 }
 
 var EXCLUDE = /facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|webmanajemen\.com|www\.blogger\.com|translate\.google\.com|translate\.googleusercontent\.com|javascript\:|\#/gm,
   l = document.addEventListener || document.attachEvent;
-l("mouseover", function (e) {
+l("mouseover", function(e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
     var t = e.target,
       a = t.href;
-    if (!a.match(EXCLUDE)) {
-      t.href = 'https://dimaslanjaka.github.io/page/safelink.html?url=' + btoa(a);
-      t.setAttribute('target', '_blank');
-      t.style.textDecoration = "underline";
-      /*t.style.color = "red"*/
-    }
-  }
-});
-
-/** fix if translator widget */
-l("click", function (e) {
-  if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
     if (e.target.host.match(/javascript\:void/gm)) {
-      e.preventDefault();
+      return;
     }
-
+    if (!a.match(EXCLUDE)) {
+      t.href = safelinkURL + btoa(a);
+      t.setAttribute('target', '_blank');
+      if (typeof t.classList != 'undefined') {
+        t.classList.toggle('ext-link');
+      } else {
+        t.setAttribute('class', 'ext-link');
+      }
+    }
   }
-  console.log(e);
 });
 /*
 l("mouseover", function (e) {
