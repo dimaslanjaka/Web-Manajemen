@@ -28,31 +28,13 @@ function SEND($id, $msg)
   $login = $user->islogin();
   $data = ['msg' => $msg];
   //$parse_url = parse_url($_SERVER['HTTP_REFERER']);
-  if ($login) {
-    $data = [
-      'pendapatan_max_invoice' => $AChain->get_records_current_month('invoice', 'pdate', 'AND type = \'pendapatan\'')->count(1),
-      'piutang_max_invoice' => $AChain->get_records_current_month('invoice', 'pdate', 'AND type = \'piutang\'')->count(1),
-      'hutang_max_invoice' => $AChain->get_records_current_month('invoice', 'pdate', 'AND type = \'hutang\'')->count(1),
-      'pengeluaran_max_invoice' => $AChain->get_records_current_month('invoice', 'pdate', 'AND type = \'pengeluaran\'')->count(1),
-    ];
-  } elseif (isset($_SERVER['HTTP_REFERER'])) {
-    $p = parse_url($_SERVER['HTTP_REFERER']);
-    if (isset($p['path'])) {
-      $root = $_SERVER['DOCUMENT_ROOT'];
-      $tmp = $root . '/tmp/';
-      switch ($p['path']) {
-        case preg_match('/^\/AGC\//s', $p['path']) ? true : false:
-          $dir = $root . '/views/AGC';
-          $log = file_exists($dir . '/log.txt') ? file($dir . '/log.txt', FILE_SKIP_EMPTY_LINES) : null;
-          $data = ['log' => $log];
-          break;
-
-        default:
-          $data = ['debug' => ['serv' => $_SERVER, 'sess' => $_SESSION]];
-          break;
-      }
-    }
-  }
+  /* Data Example */
+  $data = [
+    'pendapatan_max_invoice' => 45,
+    'piutang_max_invoice' => 55,
+    'hutang_max_invoice' => 65,
+    'pengeluaran_max_invoice' => 67,
+  ];
   echo "id: $id" . PHP_EOL;
   $data = json_encode($data);
   echo "data: $data" . PHP_EOL;
