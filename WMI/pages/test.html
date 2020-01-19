@@ -1,8 +1,33 @@
 %WMI_STYLE%
 %WMI_NAVBAR%
+<style>
+  [id=usage] .card {
+    min-height: 300px;
+  }
 
+  a.btn {
+    color: white;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+    text-align: left;
+  }
+</style>
 <!--Content Here-->
 <div>
+  <h1 itemprop="name">Simple Websocket Writen in PHP and Javascript</h1>
+  <img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png"
+    alt="Websocket How to" class="d-none" />
   <h5 class="ml-3"><i class="fab fa-js mr-1"></i><span class="badge badge-info">Javascript</span><a
       href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js" target="_blank"
       rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="JS">Download<i
@@ -68,6 +93,46 @@
    }
 
   </pre>
+  <h6 class="text-center">JS Usage Example</h6>
+  <div class="row" id="usage">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">By Variable OR Const</h5>
+          <pre class="card-text">
+const start_socket = false;
+if (start_socket){
+  socket_start();
+}
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">By Element Exists</h5>
+          <pre class="card-text">
+var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
+if (websocketElement){
+  socket_start();
+}
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Others</h5>
+          <p class="card-text">
+            You can use it as your wish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <h5 class="ml-3"><i class="fab fa-php mr-1"></i><span class="badge badge-info">PHP</span><a
       href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php" target="_blank"
       rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="PHP">Download<i
@@ -194,11 +259,11 @@ class WMI_websocket
 }
 </pre>
 
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row" id="usage">
+    <div class="col-md-4 mb-3">
       <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
+          <h5 class="card-title">PHP Normal Usage</h5>
           <pre class="card-text">
 $websocket = new WMI_websocket(false, false);
 /* Data Example */
@@ -209,6 +274,37 @@ $websocket-&gt;createData([
   &apos;pengeluaran_max_invoice&apos; =&gt; 67,
 ]);
 $websocket-&gt;SEND();
+        </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PHP Object Oriented Usage</h5>
+          <pre class="card-text">
+$websocket = new WMI_websocket(false, false);
+$websocket-&gt;createData([
+  &apos;pendapatan_max_invoice&apos; =&gt; 45,
+  &apos;piutang_max_invoice&apos; =&gt; 55,
+  &apos;hutang_max_invoice&apos; =&gt; 65,
+  &apos;pengeluaran_max_invoice&apos; =&gt; 67,
+])-&gt;SEND();
+        </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PHP <b>Static</b> Object Oriented Usage</h5>
+          <pre class="card-text">
+WMI_websocket::i(false, false)-&gt;createData([
+  &apos;pendapatan_max_invoice&apos; =&gt; 45,
+  &apos;piutang_max_invoice&apos; =&gt; 55,
+  &apos;hutang_max_invoice&apos; =&gt; 65,
+  &apos;pengeluaran_max_invoice&apos; =&gt; 67,
+])-&gt;SEND();
         </pre>
         </div>
       </div>

@@ -83,10 +83,9 @@
   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   <meta content='website' property='og:type'/>
 </b:if>
+<script type='application/ld+json'>{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@type&quot;: &quot;WebSite&quot;, &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;, &quot;potentialAction&quot;: { &quot;@type&quot;: &quot;SearchAction&quot;, &quot;target&quot;: &quot;<data:blog.homepageUrl/>?q={search_term}&quot;, &quot;query-input&quot;: &quot;required name=search_term&quot; } }</script>
 <!--[Description & Keywords]-->
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-  <script type='application/ld+json'>{ &quot;@context&quot;: &quot;http://schema.org&quot;, &quot;@type&quot;: &quot;WebSite&quot;, &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;, &quot;potentialAction&quot;: { &quot;@type&quot;: &quot;SearchAction&quot;, &quot;target&quot;: &quot;<data:blog.homepageUrl/>?q={search_term}&quot;, &quot;query-input&quot;: &quot;required name=search_term&quot; } }</script>
-
   <b:if cond='data:blog.homepageUrl != data:blog.url'>
     <meta expr:content='data:blog.pageName + &quot;, &quot; + data:blog.pageTitle + &quot;, &quot; + data:blog.title' name='keywords'/>
   </b:if>
@@ -115,8 +114,8 @@
     <meta expr:content='data:blog.postThumbnailUrl' name='twitter:image'/>
     <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'></link>
   <b:else/>
-    <meta content='https://1.bp.blogspot.com/-aKZzSAygVKk/VYPkX_nAwrI/AAAAAAAACeo/cgQTs8nR5Rg/s1600/Arlina%2BLogo.png' property='og:image'/>
-    <link href='https://1.bp.blogspot.com/-aKZzSAygVKk/VYPkX_nAwrI/AAAAAAAACeo/cgQTs8nR5Rg/s1600/Arlina%2BLogo.png' rel='image_src'></link>
+    <meta content='http://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' property='og:image'/>
+    <link href='http://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' rel='image_src'></link>
   </b:if>
 </b:if>
 
