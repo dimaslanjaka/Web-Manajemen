@@ -1,4 +1,12 @@
 /**
+ * Simple Websocket javascript
+ * @todo Live Data
+ * @description Don't miss data that changes even for a second
+ * @author Dimas Lanjaka <dimaslanjaka[at]gmail.com
+ */
+
+/**
+USAGE:
 if (conditional) {
   socket_start();
 }

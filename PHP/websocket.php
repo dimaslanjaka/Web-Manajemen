@@ -2,7 +2,14 @@
 
 /**
  * Websocket server.
+ *
  * @author dimaslanjaka <dimaslanjaka@gmail.com>
+ *
+ * @todo receiving websocket and return all data to be live
+ *
+ * @version 1.4.6
+ *
+ * @since 1.0.0
  */
 header('X-Robots-Tag: noindex, nofollow', true);
 header('Content-Type: text/event-stream');
@@ -24,9 +31,6 @@ header('Access-Control-Allow-Origin: *');
 
 function SEND($id, $msg)
 {
-  global $AChain;
-  global $user;
-  $login = $user->islogin();
   $data = ['msg' => $msg];
   //$parse_url = parse_url($_SERVER['HTTP_REFERER']);
   /* Data Example */
