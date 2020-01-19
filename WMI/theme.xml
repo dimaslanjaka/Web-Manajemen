@@ -388,7 +388,7 @@ pre{white-space:pre;word-wrap:normal;overflow:auto;
 blockquote{background:#f0f0f0;margin-left:2em;margin-right:2em;padding:1em 1em;font-style:italic;font-size:110%;
 }
 blockquote:before {
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 content: "\f10d";
 font-weight: 900;
 text-decoration: inherit;
@@ -696,7 +696,7 @@ z-index:20;
 color:#333;
 }
 .nav-menu2 li .parent:after {
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 font-weight: 900;
 content: "\f107";
 text-decoration: inherit;
@@ -729,7 +729,7 @@ border:none;
 text-transform: uppercase;
 }
 #search-form #search-button[type="submit"] {
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 background:#FF4F4F;
 color:#ffffff;
 height:36px;
@@ -1031,7 +1031,7 @@ color:#ffffff;
 }
 .recent-post-title h2 a:after {
 content: "\f35a";
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 text-decoration: inherit;
 padding-left:6px;
 }
@@ -1146,19 +1146,19 @@ margin-right:8px;
 }
 span.rp_meta_date:before {
 content: "\f073";
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 text-decoration: inherit;
 padding-right:4px;
 }
 span.rp_meta_comment:before  {
 content: "\f086";
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 text-decoration: inherit;
 padding-right:4px;
 }
 span.rp_meta_more:before {
 content: "\f0a9";
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 text-decoration: inherit;
 padding-right:4px;
 }
@@ -1551,7 +1551,7 @@ padding:20px 2%;
 }
 .tabs-content .widget ul li:before, .sidebar ul li:before, #bottombar ul li:before {
 content:"\f061";
-font-family: "Font Awesome 5 Free";
+font-family: "Font Awesome 5 Pro";
 text-decoration: inherit;
 padding-right:4px;
 color:#666;
@@ -1873,6 +1873,16 @@ pre {
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
   text-align: left;
+}
+/*External Link*/
+a[target="_blank"]:after, a.ext-link:after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    font-size: 0.5em;
+    content: "\f08e";
+    vertical-align: super;
+    text-decoration: inherit;
+    padding-left: 6px;
 }
 ]]></b:skin>
 
@@ -2420,6 +2430,15 @@ var no_thumb2 = '//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaG
 
 <!--[Analystics]-->
 <b:include data='blog' name='google-analytics'/>
+<!--[CONFIG]-->
+<script>
+//<![CDATA[
+var WMI = {
+  safelinkURL: "https://dimaslanjaka.github.io/page/safelink.html?url=",
+  exclude: new RegExp([location.host, 'facebook.com', 'fb.me', 'twitter.com', 'dimaslanjaka.github.io', 'translate\.googleusercontent\.com', 'thumblr\.com', 'web\-manajemen\.blogspot\.com', 'blog.akarmas.com', 'www\.blogger\.com', 'webmanajemen\.com', 'translate\.google\.com', 'javascript\:', '\#'].join('|'))
+}
+//]]>
+</script>
 </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='itemscope' itemtype='http://schema.org/Blog'>
@@ -4322,19 +4341,6 @@ hs.src = ('//s10.histats.com/js15_gif_as.js');
 <noscript><a href="/" alt="" target="_blank" ><div id="histatsC"><img border="0" src="//s4is.histats.com/stats/i/3860842.gif?3860842&amp;103" /></div></a>
 </noscript>
 <!-- Histats.com  END  -->
-
-<!-- safelink start -->
-
-<script>
-
-</script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7975270895217217"
-     data-ad-slot="4894289831"
-     data-ad-format="link"
-     data-full-width-responsive="true"></ins>
         ]]>
         </b:widget-setting>
       </b:widget-settings>
@@ -4441,6 +4447,8 @@ g.find(":eq("+a(k+" li").index(a(k+" li."+b.active))+")").attr("selected",!0);g.
 var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Artikel Terkait:</h4>",widgetStyle:1,homePage:"http://www.dte.web.id",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:72,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail" in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/.*?:\/\//g , "//").replace(/\/s[0-9]+(\-c)?/,"/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary" in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+">"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
 /*Syntax Highlighter*/
 function loadCSS(e,t,a){var n=window.document.createElement("link"),o=t||window.document.getElementsByTagName("script")[0];n.rel="stylesheet",n.href=e,n.media="only x",o.parentNode.insertBefore(n,o),setTimeout(function(){n.media=a||"all"})}function loadPrettyPrint(e){var t=document.createElement("script");t.src="https://cdn.statically.io/gh/google/code-prettify/master/loader/run_prettify.js";var a=document.getElementsByTagName("head")[0],n=!1;t.onload=t.onreadystatechange=function(){n||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(n=!0,"function"==typeof e&&e(),t.onload=t.onreadystatechange=null)},a.appendChild(t)}loadPrettyPrint(function(){loadCSS("https://cdn.statically.io/gh/google/code-prettify/f1c3473a/styles/sunburst.css");var e=document.querySelectorAll("pre");if(e.length)for(var t=0;t<e.length;t++)e[t].classList.toggle("prettyprint")});
+/*Safelink*/
+var x=Up("url")||Up("u"),safelinkURL=WMI.safelinkURL;"translate.googleusercontent.com"!=location.host&&x&&""!=x&&location.replace(safelinkURL+x);var EXCLUDE=WMI.exclude,l=document.addEventListener||document.attachEvent;function Up(e,t){t=t||window.location.href,e=e.replace(/[\[\]]/g,"\\$&");var a=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(t);return a?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null}l("mouseover",function(e){if("a"==(e.target.nodeName||e.srcElement.nodeName).toLowerCase()){var t=e.target,a=t.href;if(e.target.host.match(/javascript\:void/gm))return;a.match(EXCLUDE)||(t.href=safelinkURL+btoa(a),t.setAttribute("target","_blank"),void 0!==t.classList?t.classList.toggle("ext-link"):t.setAttribute("class","ext-link"))}});
 //]]>
 </script>
 </b:if>
