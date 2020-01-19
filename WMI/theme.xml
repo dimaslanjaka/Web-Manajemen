@@ -441,7 +441,7 @@ margin:20px auto;
 padding:28px;
 */
 margin: 2px;
-padding: 5px;
+padding: 10px;
 overflow:hidden;
 }
 /* NAVIGATION MENU */
@@ -696,10 +696,11 @@ z-index:20;
 color:#333;
 }
 .nav-menu2 li .parent:after {
-content: "\f107";
 font-family: "Font Awesome 5 Free";
+font-weight: 900;
+content: "\f107";
 text-decoration: inherit;
-padding-left:6px;
+padding-left: 6px;
 }
 /* SEARCH FORM */
 #search-form {
@@ -780,7 +781,7 @@ overflow:hidden;
 background:transparent;
 float:left;
 width:70%;
-max-width:700px;
+/*max-width:700px;*/
 margin:0 0 10px;
 }
 .post-container {
@@ -967,7 +968,7 @@ border:none;
 background:transparent;
 float:right;
 width:30%;
-max-width:300px;
+/*max-width:300px;*/
 margin:0 auto;
 }
 .sidebar-container {
@@ -4387,31 +4388,31 @@ hs.src = ('//s10.histats.com/js15_gif_as.js');
 
 
 <!-- JQuery -->
-<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/js/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/js/popper.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/js/mdb.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/js/mdb.min.js"></script>
 <!--[nav-controller.js]-->
 <script type='text/javascript'>
 //<![CDATA[
 $(function(){$(".set-1").mtabs()}),$(function(){$(".nav-menu").tinyNav({header:"Menu"})}),$(window).scroll(function(){200<$(this).scrollTop()?$("#back-to-top").fadeIn():$("#back-to-top").fadeOut()}),$("#back-to-top").hide().click(function(){return $("html, body").animate({scrollTop:0},1e3),!1});
-!function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/bootstrap.min.css"),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/mdb.min.css"),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/all.css"),loadCSS('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700'),loadCSS('https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/v4-shims.css'),loadCSS('https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/WMI/v2.css');
+!function(u){"use strict";function e(e,t,n,s){var o,a=u.document,r=a.createElement("link");if(t)o=t;else{var d=(a.body||a.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var i=a.styleSheets;if(s)for(var l in s)s.hasOwnProperty(l)&&r.setAttribute(l,s[l]);r.rel="stylesheet",r.href=e,r.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(r,t?o:o.nextSibling)});var c=function(e){for(var t=r.href,n=i.length;n--;)if(i[n].href===t)return e();setTimeout(function(){c(e)})};function f(){r.addEventListener&&r.removeEventListener("load",f),r.media=n||"all"}return r.addEventListener&&r.addEventListener("load",f),(r.onloadcssdefined=c)(f),r}"undefined"!=typeof exports?exports.loadCSS=e:u.loadCSS=e}("undefined"!=typeof global?global:this),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap.min.css"),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/mdb.min.css"),loadCSS("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/all.css"),loadCSS('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700'),loadCSS('https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/v4-shims.css'),loadCSS('https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/v2.css');
 //]]>
 </script>
 <noscript>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/all.css"/>
-  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/v4-shims.css"/>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/all.css"/>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/v4-shims.css"/>
   <!-- Bootstrap core CSS -->
-  <link href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- Material Design Bootstrap -->
-  <link href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/css/mdb.min.css" rel="stylesheet"/>
+  <link href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/css/mdb.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700"/>
   <!--V2-->
-  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/9b0cf74159a0a720da52f052531c574be785f32d/WMI/v2.css"/>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/master/WMI/v2.css"/>
 </noscript>
 <script type='text/javascript'>
 //<![CDATA[
