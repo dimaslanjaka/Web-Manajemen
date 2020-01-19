@@ -86,7 +86,7 @@ class WMI_websocket
 
   /**
    * Output data for javascript processing.
-   *
+   * * Data Should be as JSON string
    * @return void
    */
   public function SEND()
