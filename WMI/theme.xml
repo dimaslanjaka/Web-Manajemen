@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' b:css='false' b:js='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:version='2' class='v2' b:css='false' b:js='true' expr:dir='data:blog.languageDirection' xmlns='https://www.w3.org/1999/xhtml' xmlns:b='https://www.google.com/2005/gml/b' xmlns:data='https://www.google.com/2005/gml/data' xmlns:expr='https://www.google.com/2005/gml/expr'>
 <head>
 <!--[Caching]-->
 <include expiration='7d' path='*.css'></include>
@@ -24,15 +24,15 @@
 <meta content='449227586c5e50f67f3b738c8f3820d8' name='propeller'/>
 <meta content='b6b85ac67091338457ad31487a9d00bb' name='p:domain_verify'/>
 <meta content='blogger' name='generator'/>
-<link href='http://www.blogger.com/openid-server.g' rel='openid.server'></link>
+<link href='https://www.blogger.com/openid-server.g' rel='openid.server'></link>
 <link expr:href='data:blog.homepageUrl' rel='openid.delegate'></link>
 <link expr:href='data:blog.url' rel='canonical'></link>
 <!-- Facebook Open Graph Tag (property og:url dan og:image sudah otomatis ada dari blogger) -->
 <!--<b:include data='blog' name='all-head-content'/>-->
 <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'></link>
 <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'></link>
-<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'></link>
-<link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='service.post' type='application/atom+xml'></link>
+<link expr:href='&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'></link>
+<link expr:href='&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='service.post' type='application/atom+xml'></link>
 <!--<link rel="alternate" type="application/atom+xml" title="Website Development Indonesia - Atom" href="https://www.webmanajemen.com/feeds/8957997439460516689/comments/default" />-->
 <!--[if IE]>
 <script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/1366743480-ieretrofit.js"></script>
@@ -41,19 +41,23 @@
 <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.homepageUrl == data:blog.url'>
 	<title><data:blog.pageTitle/></title>
 <b:else/>
-  <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;} or data:blog.pageType != &quot;error_page&quot;'>
+  <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;} or data:blog.pageType != &quot;error_page&quot; and data:blog.pageName != &quot;&quot;'>
 	  <title><data:blog.pageName/> - <data:blog.title/></title>
-<b:else/>
-  <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.pageName == &quot;&quot;'>
-    <title>All Posts - <data:blog.title/></title>
-<b:else/>
-  <b:if cond='data:blog.pageType in {&quot;error_page&quot;}'>
-    <title>Page Not Found - <data:blog.title/></title>
-<b:else/>
-	<title><data:blog.pageName/></title>
-</b:if>
-</b:if>
-</b:if>
+  <b:else/>
+    <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.pageName == &quot;&quot;'>
+      <title>All Posts - <data:blog.title/></title>
+    <b:else/>
+      <b:if cond='data:blog.pageType in {&quot;error_page&quot;}'>
+        <title>Archive for <data:blog.pageName/></title>
+        <b:else/>
+        <b:if cond='data:blog.pageType in {&quot;error_page&quot;}'>
+          <title>Page Not Found - <data:blog.title/></title>
+        <b:else/>
+          <title><data:blog.pageName/></title>
+        </b:if>
+      </b:if>
+    </b:if>
+  </b:if>
 </b:if>
 
 <!-- [Keywords] -->
@@ -85,7 +89,7 @@
 </b:if>
 <script type='application/ld+json'>
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "Website",
       "name": "<b:if cond='data:blog.pageType == &quot;item&quot;'><data:blog.pageName/><b:else/><data:blog.pageTitle/></b:if>",
       "url": "<data:blog.homepageUrl/>",
@@ -306,8 +310,8 @@ default="normal bold 16px Open Sans Condensed, Arial, sans-serif" value="normal 
 </Group>
 */
 /**
-* Eric Meyer&#39;s Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
-* http://cssreset.com
+* Eric Meyer&#39;s Reset CSS v2.0 (https://meyerweb.com/eric/tools/css/reset/)
+* https://cssreset.com
 */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 /* HTML5 display-role reset for older browsers */
@@ -2441,7 +2445,7 @@ var WMI = {
 </script>
 </head>
 
-  <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='itemscope' itemtype='http://schema.org/Blog'>
+  <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='itemscope' itemtype='https://schema.org/Blog'>
 <div id='fb-root'/>
 <script type='text/javascript'>
 //<![CDATA[
@@ -2844,7 +2848,7 @@ head.appendChild(script);
         <b:if cond='data:blog.pageType == &quot;item&quot;'>
         <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.labels'>
-        <div class='breadcrumbs'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title'>Home</span></a></span> &#187; <b:loop values='data:post.labels' var='label'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;max-results=8&quot;' itemprop='url'><span itemprop='title'><data:label.name/></span></a></span><b:if cond='data:label.isLast != &quot;true&quot;'> &#187; </b:if> </b:loop> &#187; <span><data:post.title/></span>
+        <div class='breadcrumbs'><span itemscope='' itemtype='https://data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title'>Home</span></a></span> &#187; <b:loop values='data:post.labels' var='label'><span itemscope='' itemtype='https://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;max-results=8&quot;' itemprop='url'><span itemprop='title'><data:label.name/></span></a></span><b:if cond='data:label.isLast != &quot;true&quot;'> &#187; </b:if> </b:loop> &#187; <span><data:post.title/></span>
         </div>
         <b:else/>
         <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span>Uncategories</span> &#187; <span><data:post.title/></span></div>
@@ -3119,7 +3123,7 @@ head.appendChild(script);
 				<b:if cond='data:top.showAuthor'>
 					<b:if cond='data:post.authorProfileUrl'>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 						<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 						<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 						  <span itemprop='name'><data:post.author/></span>
@@ -3128,7 +3132,7 @@ head.appendChild(script);
 					  </span>
 					<b:else/>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 						<span itemprop='name'><data:post.author/></span>
 					  </span>
 					  </span>
@@ -3256,7 +3260,7 @@ head.appendChild(script);
 					<b:if cond='data:post.authorProfileUrl'>
 					  <span class='author-info'>
 					  <i class='fa fa-user'/>
-					  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 						<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 						<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 						  <span itemprop='name'><data:post.author/></span>
@@ -3265,7 +3269,7 @@ head.appendChild(script);
 					  </span>
 					<b:else/>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 						<span itemprop='name'><data:post.author/></span>
 					  </span>
 					  </span>
@@ -3376,7 +3380,7 @@ head.appendChild(script);
 
   <div style='display: none;' itemprop='publisher' itemscope='' itemtype='https://schema.org/Organization'>
     <div itemprop='logo' itemscope='' itemtype='https://schema.org/ImageObject'>
-        <img style='visibility: hidden;' src="data:image/svg+xml,%3Csvg width='5cm' height='4cm' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cdesc%3EFour separate rectangles %3C/desc%3E%3Crect x='0.5cm' y='0.5cm' width='2cm' height='1cm'/%3E%3Crect x='0.5cm' y='2cm' width='1cm' height='1.5cm'/%3E%3Crect x='3cm' y='0.5cm' width='1.5cm' height='2cm'/%3E%3Crect x='3.5cm' y='3cm' width='1cm' height='0.5cm'/%3E%3C!-- Show outline of viewport using 'rect' element --%3E%3Crect x='.01cm' y='.01cm' width='4.98cm' height='3.98cm' fill='none' stroke='blue' stroke-width='.02cm' /%3E%3C/svg%3E" />
+        <img style='visibility: hidden;' src="data:image/svg+xml,%3Csvg width='5cm' height='4cm' version='1.1' xmlns='https://www.w3.org/2000/svg'%3E%3Cdesc%3EFour separate rectangles %3C/desc%3E%3Crect x='0.5cm' y='0.5cm' width='2cm' height='1cm'/%3E%3Crect x='0.5cm' y='2cm' width='1cm' height='1.5cm'/%3E%3Crect x='3cm' y='0.5cm' width='1.5cm' height='2cm'/%3E%3Crect x='3.5cm' y='3cm' width='1cm' height='0.5cm'/%3E%3C!-- Show outline of viewport using 'rect' element --%3E%3Crect x='.01cm' y='.01cm' width='4.98cm' height='3.98cm' fill='none' stroke='blue' stroke-width='.02cm' /%3E%3C/svg%3E" />
         <noscript><img style='visibility: hidden;' src='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
         </noscript>
         <meta itemprop='url' content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
@@ -3457,7 +3461,7 @@ head.appendChild(script);
 				<b:if cond='data:post.authorProfileUrl'>
 				  <span class='author-info'>
 				  <i class='fa fa-user'/>
-				  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 					<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 					<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 					  <span itemprop='name'><data:post.author/></span>
@@ -3466,7 +3470,7 @@ head.appendChild(script);
 				  </span>
 				<b:else/>
 				  <span class='author-info'>
-				  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 					<span itemprop='name'><data:post.author/></span>
 				  </span>
 				  </span>
@@ -3480,7 +3484,7 @@ head.appendChild(script);
 			  </span>
         <script type="application/ld+json">
           {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@type": "WebPage",
             "mainEntity": {
               "@type": "Book",
@@ -3573,17 +3577,17 @@ head.appendChild(script);
 
 		<!-- Tombol share media sosial -->
 <div id='share'>
-<a class='facebook' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-facebook'/></a>
-<a class='twitter' expr:href='&quot;http://twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-twitter'/></a>
+<a class='facebook' expr:href='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-facebook'/></a>
+<a class='twitter' expr:href='&quot;https://twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-twitter'/></a>
 <a class='googleplus' expr:href='&quot;https://plus.google.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-google-plus'/></a>
-<a class='linkedin' expr:href='&quot;http://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-linkedin'/></a>
-<a class='pinterest' expr:href='&quot;http://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;amp;media=&quot; + data:post.thumbnailUrl + &quot;&amp;amp;description= + data:post.title&quot;' rel='nofollow' target='_blank'><i class='fa fa-pinterest-p'/></a>
+<a class='linkedin' expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-linkedin'/></a>
+<a class='pinterest' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;amp;media=&quot; + data:post.thumbnailUrl + &quot;&amp;amp;description= + data:post.title&quot;' rel='nofollow' target='_blank'><i class='fa fa-pinterest-p'/></a>
 </div>
 		<div style='clear: both;'/>
 
 		<!-- kotak profil di bawah postingan -->
 		<b:if cond='data:post.authorAboutMe'>
-		<div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+		<div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 		  <b:if cond='data:post.authorPhoto.url'>
 			<img expr:src='data:post.authorPhoto.url' itemprop='image' width='90px'/>
 		  </b:if>
@@ -3595,7 +3599,7 @@ head.appendChild(script);
 		  <span itemprop='description'><data:post.authorAboutMe/></span>
 		</div>
     <b:else/>
-    <div class="dimaslanjaka" itemscope="" itemtype="http://schema.org/author"> <div class="about-author" itemscope='itemscope' itemprop="Person" itemtype="http://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="http://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='itemscope' itemtype="http://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='itemscope' itemtype="http://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="http://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="http://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
+    <div class="dimaslanjaka" itemscope="" itemtype="https://schema.org/author"> <div class="about-author" itemscope='itemscope' itemprop="Person" itemtype="https://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="https://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='itemscope' itemtype="https://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='itemscope' itemtype="https://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="https://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="https://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
 		</b:if>
 
 		<!-- Kotak berlangganan email feedburner -->
@@ -3674,7 +3678,7 @@ head.appendChild(script);
 				<b:if cond='data:post.authorProfileUrl'>
 				  <span class='author-info'>
 				  <i class='fa fa-user'/>
-				  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 					<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 					<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 					  <span itemprop='name'><data:post.author/></span>
@@ -3683,7 +3687,7 @@ head.appendChild(script);
 				  </span>
 				<b:else/>
 				  <span class='author-info'>
-				  <span itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
 					<span itemprop='name'><data:post.author/></span>
 				  </span>
 				  </span>
@@ -3747,7 +3751,7 @@ head.appendChild(script);
   <b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
       <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
-        <!-- <img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/> -->
+        <!-- <img alt='' class='icon-action' height='18' src='https://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/> -->
 		<b style='color:#EE4B3D;'><i class='fa fa-pencil'/> Edit</b>
       </a>
     </span>
@@ -4376,11 +4380,10 @@ hs.src = ('//s10.histats.com/js15_gif_as.js');
   <!-- footer wrapper start -->
   <footer id='footer-wrapper'>
 	<div class='footer-left'>
-																																																																																										Copyr<a href='http://www.maxikom/' title='Maxikom'>i</a>ght 2017 <a expr:href='data:blog.homepageUrl' rel='copyright'>
-<data:blog.title/></a>
+		Copyright 2017 <a expr:href='data:blog.homepageUrl' rel='copyright'><data:blog.title/></a>
 	</div>
 	<div class='footer-right'>
-		Powered by <a href='#' id='propellerads' onclick='window.open(&quot;http://deloplen.com/afu.php?zoneid=2791489&quot;)' target='_blank' title='Blogger'>Blogger.com</a>
+		Powered by <a href='#' id='propellerads' onclick='window.open(&quot;https://deloplen.com/afu.php?zoneid=2791489&quot;)' target='_blank' title='Blogger'>Blogger.com</a>
 	</div>
   </footer>
   <!-- footer wrapper end -->
@@ -4443,8 +4446,8 @@ g.find(":eq("+a(k+" li").index(a(k+" li."+b.active))+")").attr("selected",!0);g.
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <script type='text/javascript'>
 //<![CDATA[
-/*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
-var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Artikel Terkait:</h4>",widgetStyle:1,homePage:"http://www.dte.web.id",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:72,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail" in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/.*?:\/\//g , "//").replace(/\/s[0-9]+(\-c)?/,"/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary" in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+">"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
+/*! Related Post Widget for Blogger by Taufik Nurrohman => https://gplus.to/tovic */
+var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Artikel Terkait:</h4>",widgetStyle:1,homePage:"https://www.dte.web.id",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:72,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail" in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/.*?:\/\//g , "//").replace(/\/s[0-9]+(\-c)?/,"/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary" in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+">"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
 /*Syntax Highlighter*/
 function loadCSS(e,t,a){var n=window.document.createElement("link"),o=t||window.document.getElementsByTagName("script")[0];n.rel="stylesheet",n.href=e,n.media="only x",o.parentNode.insertBefore(n,o),setTimeout(function(){n.media=a||"all"})}function loadPrettyPrint(e){var t=document.createElement("script");t.src="https://cdn.statically.io/gh/google/code-prettify/master/loader/run_prettify.js";var a=document.getElementsByTagName("head")[0],n=!1;t.onload=t.onreadystatechange=function(){n||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(n=!0,"function"==typeof e&&e(),t.onload=t.onreadystatechange=null)},a.appendChild(t)}loadPrettyPrint(function(){loadCSS("https://cdn.statically.io/gh/google/code-prettify/f1c3473a/styles/sunburst.css");var e=document.querySelectorAll("pre");if(e.length)for(var t=0;t<e.length;t++)e[t].classList.toggle("prettyprint")});
 /*Safelink*/

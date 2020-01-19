@@ -10,7 +10,7 @@
  * @version 1.4.6
  *
  * @since 1.0.0
- * @see https://www.webmanajemen.com/2020/01/simple-websocket.html Simple Web Socket
+ * @see https://www.webmanajemen.com/p/simple-websocket.html Simple Web Socket
  *
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
