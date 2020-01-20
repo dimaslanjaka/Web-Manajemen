@@ -16,7 +16,7 @@
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="fixed-sn  mdb-skin-custom" data-spy="scroll" data-target="#scrollspy" data-offset="15">
 
   <!-- Start your project here-->
   <div style="height: 100vh">
@@ -28,16 +28,20 @@
   </div>
   <!-- End your project here-->
 
-  <!-- jQuery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+  <script src='js/compiled.gzip.js'></script>
+  <script src='js/compiled.min.js'></script>
+  <script src='js/compiled.footer.js'></script>
+  <script src='js/jquery.validate.js'></script>
+  <!--RSS as Nav and Grid-->
+  <script src='js/compiled.rss.js'></script>
+  <!--Nav Collapse Controller-->
+  <script>
+    $(document).ready(function () {
+      $(".button-collapse").sideNav();
+      var el = document.querySelector('.custom-scrollbar');
+      var ps = new PerfectScrollbar(el);
+    });
+  </script>
 
 </body>
 </html>
