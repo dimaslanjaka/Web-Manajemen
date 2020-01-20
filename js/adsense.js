@@ -4,7 +4,12 @@
     swal({
       title: 'Donate With Click ^_^',
       /*type: 'info',*/
-      html: ads_h + '<li class="fas fa-link"></i> <a href="//web-manajemen.blogspot.com"><b>Website Development Indonesia</b></a> ',
+      content: {
+        element: 'div',
+        attributes: {
+          innerHTML: ads_h + '<li class="fas fa-link"></i> <a href="//web-manajemen.blogspot.com"><b>Website Development Indonesia</b></a> '
+        }
+      },
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: false,
