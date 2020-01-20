@@ -2,6 +2,13 @@
 <!DOCTYPE html>
 <html b:version='2' class='v2' b:css='false' b:js='true' expr:dir='data:blog.languageDirection' xmlns='https://www.w3.org/1999/xhtml' xmlns:b='https://www.google.com/2005/gml/b' xmlns:data='https://www.google.com/2005/gml/data' xmlns:expr='https://www.google.com/2005/gml/expr'>
 <head>
+<!--
+  Recoded by: Dimas Lanjaka
+  Alias: L3n4r0x
+  Website: https://web-manajemen.blogspot.com WMI
+  JSCompress: https://jscompress.com/ Compress javascript
+  CSSCompress: https://csscompressor.com/ Compress CSS
+-->
 <!--[Caching]-->
 <include expiration='7d' path='*.css'></include>
 <include expiration='7d' path='*.js'></include>
@@ -63,9 +70,10 @@
 <!-- [Keywords] -->
 <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.homepageUrl == data:blog.url'>
 	<meta expr:content='data:blog.title' name='keywords'/>
-</b:if>
-<b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
+  <b:else/>
+  <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
 	<meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
 </b:if>
 
 <!-- Noindex search, label, dan archive -->
@@ -87,29 +95,6 @@
   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   <meta content='website' property='og:type'/>
 </b:if>
-<script type='application/ld+json'>
-    {
-      "@context": "https://schema.org",
-      "@type": "Website",
-      "name": "<b:if cond='data:blog.pageType == &quot;item&quot;'><data:blog.pageName/><b:else/><data:blog.pageTitle/></b:if>",
-      "url": "<data:blog.homepageUrl/>",
-      "sameAs": [
-        "<data:blog.homepageUrl/>p/privacy.html",
-        "<data:blog.homepageUrl/>p/policy.html",
-        "<data:blog.homepageUrl/>p/terms.html",
-        "<data:blog.homepageUrl/>p/contact.html",
-        "<data:blog.homepageUrl/>p/landing.html",
-        "<data:blog.homepageUrl/>p/dmca.html",
-        "<data:blog.homepageUrl/>p/privacy.html",
-        "<data:blog.homepageUrl/>p/privacy.html"
-      ],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "<data:blog.homepageUrl/>search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
 <!--[Description & Keywords]-->
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
   <b:if cond='data:blog.homepageUrl != data:blog.url'>
@@ -1851,6 +1836,7 @@ i[class*=fa-google-plus]{color:#dd4b39}
 i[class*=fa-facebook]{color:#3b5998}
 i[class*=fa-twitter]{color:#00aced}
 i[class*=fa-info]{color:#d9534f}span.info{color:#d9534f}
+/*Custom Author*/
 .dimaslanjaka{width:100%}.about-author p.right{text-align:right;vertical-align:middle}.about-author{width:100%;background:#f2f2ef;margin:0 0 30px;padding:10px;border:1px solid #EAEDEF;overflow:hidden;color:#333;font-size:14px;font-family:Georgia,Tahoma,Verdana;line-height:24px}.about-author img{display:block;width:90px;height:90px;margin:0 1.2em 0 0;float:left;background-size:cover;background-repeat:no-repeat;background-position:center center;-webkit-border-radius:999em;-moz-border-radius:999em;border-radius:999em;border:2px solid #ddd;box-shadow:0 1px 1px rgba(0,0,0,.3)}.about-author h3{font-family:georgia;font-size:18px;margin:9px 0;color:#666;border-bottom:2px solid #666;border-top:0}.about-author p{margin:0;text-align:left;color:#666}.moderator-desc{padding-left:2.5em}
 /** Bootstraps **/
 .tangerine{font-family: 'Tangerine', serif}.text-shadow{text-shadow: 4px 4px 4px #aaa}.raleway{font-family: 'Raleway'}.code,.snippet,.snippets,pre,code,kbd,mark,i,u,strike,em{font-family: 'Source Code Pro', monospace;}
@@ -2408,8 +2394,8 @@ h4#comment-post-message {
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <script type='text/javascript'>
-//<![CDATA[
-
+//<![CDATA[ /*Ori: https://github.com/dimaslanjaka/Web-Manajemen/blob/master/WMI/labelThumb.js*/
+function labelthumbs(t){for(var e=0;e<numposts;e++){var n,m=(g=t.feed.entry[e]).title.$t;if(e==t.feed.entry.length)break;for(var r=0;r<g.link.length;r++){if("replies"==g.link[r].rel&&"text/html"==g.link[r].type)var i=g.link[r].title,o=g.link[r].href;if("alternate"==g.link[r].rel){f=g.link[r].href;break}}try{n=(n=g.media$thumbnail.url).replace(/.*?:\/\//g,"//").replace("/s72-c/","/w"+thumb_width+"-h"+thumb_height+"-c/")}catch(t){s=g.content.$t,a=s.indexOf("<img"),b=s.indexOf('src="',a),c=s.indexOf('"',b+5),d=s.substr(b+5,c-b-5),n=-1!=a&&-1!=b&&-1!=c&&""!=d?d:no_thumb}var h=(k=g.published.$t).substring(0,4),l=k.substring(5,7),u=k.substring(8,10);document.write('<ul class="rp_thumbs">'),document.write("<li>"),1==showpostthumbnails&&document.write('<a href="'+f+'"><div class="rp_thumb"><span class="rollover"></span><img width="'+thumb_width+'" height="'+thumb_height+'" alt="'+m+'" src="'+n+'"/></div></a>'),document.write('<span class="rp_title"><a href="'+f+'" target ="_top">'+m+"</a></span>");var p="";if(document.write('<span class="rp_meta">'),1==showpostdate&&(p=p+'<span class="rp_meta_date">'+u+"/"+l+"/"+h+"</span>"),1==showcommentnum&&("1 Comments"==i&&(i="1 Comment"),"0 Comments"==i&&(i="No Comments"),showcomment='<span class="rp_meta_comment"><a href="'+o+'">'+i+"</a></span>",p+=showcomment),1==displaymore&&(p=p+'<span class="rp_meta_more"><a href="'+f+'" class="url" target ="_top">Read More...</a></span>'),document.write(p),document.write("</span>"),document.write('<span class="rp_summary">'),"content"in g)var w=g.content.$t;else if("summary"in g)w=g.summary.$t;else w="";if(w=w.replace(/<\S[^>]*>/g,""),1==showpostsummary)if(w.length<numchars)document.write(""),document.write(w),document.write("");else{document.write("");var _=(w=w.substring(0,numchars)).lastIndexOf(" ");w=w.substring(0,_),document.write(w+"..."),document.write("")}document.write("</span>"),document.write("</li>"),document.write("</ul>")}document.write('<ul class="rp_thumbs2">');for(e=1;e<numposts2;e++){var f,g,y;m=(g=t.feed.entry[e]).title.$t;if(e==t.feed.entry.length)break;for(r=1;r<g.link.length;r++){if("replies"==g.link[r].rel&&"text/html"==g.link[r].type)i=g.link[r].title,o=g.link[r].href;if("alternate"==g.link[r].rel){f=g.link[r].href;break}}try{y=g.media$thumbnail.url.replace(/.*?:\/\//g,"//").replace("/s72-c/","/w"+thumb_width2+"-h"+thumb_height2+"-c/")}catch(t){s=g.content.$t,a=s.indexOf("<img"),b=s.indexOf('src="',a),c=s.indexOf('"',b+5),d=s.substr(b+5,c-b-5),y=-1!=a&&-1!=b&&-1!=c&&""!=d?d:no_thumb2}var k;h=(k=g.published.$t).substring(0,4),l=k.substring(5,7),u=k.substring(8,10);1==showpostthumbnails2&&document.write('<a href="'+f+'"><div class="rp_thumb2"><img width="'+thumb_width2+'" height="'+thumb_height2+'" alt="'+m+'" src="'+y+'"/></div></a>'),document.write("<li>"),document.write('<span class="rp_title rp_title2"><a href="'+f+'" target ="_top">'+m+"</a></span>");p="";document.write('<span class="rp_meta rp_meta2">'),1==showpostdate2&&(p=p+'<span class="rp_meta_date rp_meta_date2">'+u+"/"+l+"/"+h+"</span>"),1==showcommentnum2&&("1 Comments"==i&&(i="1 Comment"),"0 Comments"==i&&(i="No Comments"),showcomment='<span class="rp_meta_comment rp_meta_comment2"><a href="'+o+'">'+i+"</a></span>",p+=showcomment),1==displaymore2&&(p=p+'<span class="rp_meta_more rp_meta_more2"><a href="'+f+'" class="url" target ="_top">Read More...</a></span>'),document.write(p),document.write("</span>"),document.write("</li>")}document.write("</ul>")}var numposts=1,numposts2=4,showpostthumbnails=!0,showpostthumbnails2=!0,displaymore=!0,displaymore2=!1,showcommentnum=!0,showcommentnum2=!0,showpostdate=!0,showpostdate2=!0,showpostsummary=!0,numchars=100,thumb_width=300,thumb_height=140,thumb_width2=60,thumb_height2=60,no_thumb="//1.bp.blogspot.com/-7vDs5hMaDho/U268E2ecF4I/AAAAAAAADY8/RBHVTTuJrxc/w300-h140-c/no-image.png",no_thumb2="//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaGZu9PQ/s60-c/no-image.png";
 //]]>
 </script>
 </b:if>
@@ -2431,7 +2417,7 @@ var WMI = {
 </script>
 </head>
 
-  <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='itemscope' itemtype='https://schema.org/Blog'>
+  <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='' itemtype='https://schema.org/Blog'>
 <div id='fb-root'/>
 <script type='text/javascript'>
 //<![CDATA[
@@ -2482,8 +2468,8 @@ head.appendChild(script);
   <!-- navbar menu end -->
 
   <!-- wrapper start -->
-  <div id='wrapper'>
-
+  <div id='wrapper' itemscope='' itemtype="https://schema.org/WebSite">
+  <meta expr:content='data:blog.homepageUrl' itemprop='url' />
   <b:if cond='data:blog.isMobile'>
   <b:else/>
 
@@ -2661,7 +2647,7 @@ head.appendChild(script);
 	</ul>
 	<!-- secondary navigation menu end -->
 
-	<form action='/search' id='search-form' method='get'><table><tbody><tr><td class='search-box'><input id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><button id='search-button' type='submit'><i class="fas fa-search"></i></button></td></tr></tbody></table></form>
+	<form itemprop='potentialAction' itemscope='' itemtype='https://schema.org/SearchAction' action='/search' id='search-form' method='get'><meta itemprop="target" expr:content='data:blog.homepageUrl + &quot;search?q={q}&quot;' /><table><tbody><tr><td class='search-box'><input itemprop='query-input' id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><button id='search-button' type='submit'><i class="fas fa-search"></i></button></td></tr></tbody></table></form>
 
   </nav>
 
@@ -3103,7 +3089,7 @@ head.appendChild(script);
 				<b:if cond='data:top.showAuthor'>
 					<b:if cond='data:post.authorProfileUrl'>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+					  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 						<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 						<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 						  <span itemprop='name'><data:post.author/></span>
@@ -3112,7 +3098,7 @@ head.appendChild(script);
 					  </span>
 					<b:else/>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+					  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 						<span itemprop='name'><data:post.author/></span>
 					  </span>
 					  </span>
@@ -3240,7 +3226,7 @@ head.appendChild(script);
 					<b:if cond='data:post.authorProfileUrl'>
 					  <span class='author-info'>
 					  <i class='fa fa-user'/>
-					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+					  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 						<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 						<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 						  <span itemprop='name'><data:post.author/></span>
@@ -3249,7 +3235,7 @@ head.appendChild(script);
 					  </span>
 					<b:else/>
 					  <span class='author-info'>
-					  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+					  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 						<span itemprop='name'><data:post.author/></span>
 					  </span>
 					  </span>
@@ -3338,53 +3324,29 @@ head.appendChild(script);
 </b:includable>
       <b:includable id='post' var='post'>
   <div class='hentry'>
-  <article class='post' itemscope='itemscope' itemtype='https://schema.org/NewsArticle'>
-  <b:if cond='data:post.link'>
-    <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.link' />
-    <b:else/>
-      <b:if cond='data:post.url'>
-        <b:if cond='data:blog.url != data:post.url'>
-          <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.url' />
-        <b:else/>
-          <meta itemscope='itemscope' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:blog.url' />
-        </b:if>
-      </b:if>
-  </b:if>
-  <b:if cond='data:top.showTimestamp'>
-    <meta itemprop="datePublished" expr:content='data:post.timestampISO8601' />
-    <meta itemprop="dateModified" expr:content='data:post.timestampISO8601' />
-    <b:else/>
-    <meta itemprop="datePublished" content='2020-01-13T22:49:00+07:00' />
-    <meta itemprop="dateModified" content='2020-01-13T22:49:00+07:00' />
-  </b:if>
-
-  <div style='display: none;' itemprop='publisher' itemscope='' itemtype='https://schema.org/Organization'>
-    <div itemprop='logo' itemscope='' itemtype='https://schema.org/ImageObject'>
-        <img style='visibility: hidden;' src="data:image/svg+xml,%3Csvg width='5cm' height='4cm' version='1.1' xmlns='https://www.w3.org/2000/svg'%3E%3Cdesc%3EFour separate rectangles %3C/desc%3E%3Crect x='0.5cm' y='0.5cm' width='2cm' height='1cm'/%3E%3Crect x='0.5cm' y='2cm' width='1cm' height='1.5cm'/%3E%3Crect x='3cm' y='0.5cm' width='1.5cm' height='2cm'/%3E%3Crect x='3.5cm' y='3cm' width='1cm' height='0.5cm'/%3E%3C!-- Show outline of viewport using 'rect' element --%3E%3Crect x='.01cm' y='.01cm' width='4.98cm' height='3.98cm' fill='none' stroke='blue' stroke-width='.02cm' /%3E%3C/svg%3E" />
-        <noscript><img style='visibility: hidden;' src='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
-        </noscript>
-        <meta itemprop='url' content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
-        <meta itemprop='width' content='600' />
-        <meta itemprop='height' content='60' />
-    </div>
-    <b:if cond='data:top.showAuthor'>
-      <b:if cond='data:post.authorProfileUrl'>
-        <meta itemprop='name' expr:content='data:post.author' />
-        <meta itemprop='url' expr:content='data:post.authorProfileUrl' />
-        <b:else/>
-        <meta itemprop='name' content='Dimas Lanjaka' />
-        <meta itemprop='url' content='https://github.com/dimaslanjaka1' />
-      </b:if>
-      <b:else/>
-        <meta itemprop='name' content='Dimas Lanjaka' />
-        <meta itemprop='url' content='https://github.com/dimaslanjaka1' />
-    </b:if>
-  </div>
-
+  <article class='post'>
 	<b:switch var='data:blog.pageType'>
 	<b:case value='static_page'/>
 	<!-- Posting halaman statis -->
-	  <div>
+	  <div itemscope='' itemtype='https://schema.org/NewsArticle'>
+    <b:if cond='data:post.link'>
+      <meta itemscope='' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.link' />
+      <b:else/>
+        <b:if cond='data:post.url'>
+          <b:if cond='data:blog.url != data:post.url'>
+            <meta itemscope='' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:post.url' />
+          <b:else/>
+            <meta itemscope='' itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' expr:itemid='data:blog.url' />
+          </b:if>
+        </b:if>
+    </b:if>
+    <b:if cond='data:top.showTimestamp'>
+      <meta itemprop="datePublished" expr:content='data:post.timestampISO8601' />
+      <meta itemprop="dateModified" expr:content='data:post.timestampISO8601' />
+      <b:else/>
+      <meta itemprop="datePublished" content='2020-01-13T22:49:00+07:00' />
+      <meta itemprop="dateModified" content='2020-01-13T22:49:00+07:00' />
+    </b:if>
 	    <b:if cond='data:post.title'>
           <h1 class='post-title entry-title' itemprop='name headline'>
             <b:if cond='data:post.link'>
@@ -3406,16 +3368,39 @@ head.appendChild(script);
 			<data:post.body/>
 			<div style='clear: both;'/>
 		</div>
-    <div itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person' class='d-none'>
+    <div style='display: none;' itemprop='publisher' itemscope='' itemtype='https://schema.org/Organization'>
+      <div itemprop='logo' itemscope='' itemtype='https://schema.org/ImageObject'>
+          <img style='visibility: hidden;' src="data:image/svg+xml,%3Csvg width='5cm' height='4cm' version='1.1' xmlns='https://www.w3.org/2000/svg'%3E%3Cdesc%3EFour separate rectangles %3C/desc%3E%3Crect x='0.5cm' y='0.5cm' width='2cm' height='1cm'/%3E%3Crect x='0.5cm' y='2cm' width='1cm' height='1.5cm'/%3E%3Crect x='3cm' y='0.5cm' width='1.5cm' height='2cm'/%3E%3Crect x='3.5cm' y='3cm' width='1cm' height='0.5cm'/%3E%3C!-- Show outline of viewport using 'rect' element --%3E%3Crect x='.01cm' y='.01cm' width='4.98cm' height='3.98cm' fill='none' stroke='blue' stroke-width='.02cm' /%3E%3C/svg%3E" />
+          <noscript><img style='visibility: hidden;' src='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
+          </noscript>
+          <meta itemprop='url' content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' />
+          <meta itemprop='width' content='600' />
+          <meta itemprop='height' content='60' />
+      </div>
+      <b:if cond='data:top.showAuthor'>
+        <b:if cond='data:post.authorProfileUrl'>
+          <meta itemprop='name' expr:content='data:post.author' />
+          <meta itemprop='url' expr:content='data:post.authorProfileUrl' />
+          <b:else/>
+          <meta itemprop='name' content='Dimas Lanjaka' />
+          <meta itemprop='url' content='https://github.com/dimaslanjaka1' />
+        </b:if>
+        <b:else/>
+          <meta itemprop='name' content='Dimas Lanjaka' />
+          <meta itemprop='url' content='https://github.com/dimaslanjaka1' />
+      </b:if>
+    </div>
+    <div itemprop='author' itemscope='' itemtype='https://schema.org/Person' class='d-none'>
       <b itemprop='name'>Dimas Lanjaka</b>
     </div>
+    <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' itemprop='image'/>
 	  </div>
 
 	  <b:case value='item'/>
 	  <!-- Posting halaman item -->
 	  <div>
 	  <b:if cond='data:post.firstImageUrl'>
-		<meta expr:content='data:post.firstImageUrl' itemprop='image'/>
+		  <meta expr:content='data:post.firstImageUrl' itemprop='image'/>
 	  </b:if>
 	  <a expr:name='data:post.id'/>
 	    <b:if cond='data:post.title'>
@@ -3441,7 +3426,7 @@ head.appendChild(script);
 				<b:if cond='data:post.authorProfileUrl'>
 				  <span class='author-info'>
 				  <i class='fa fa-user'/>
-				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+				  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 					<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 					<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 					  <span itemprop='name'><data:post.author/></span>
@@ -3450,7 +3435,7 @@ head.appendChild(script);
 				  </span>
 				<b:else/>
 				  <span class='author-info'>
-				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+				  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 					<span itemprop='name'><data:post.author/></span>
 				  </span>
 				  </span>
@@ -3459,6 +3444,7 @@ head.appendChild(script);
 			<b:if cond='data:top.showTimestamp'>
 			<b:if cond='data:post.url'>
 			  <meta expr:content='data:post.canonicalUrl' itemprop='url'/>
+        <meta itemprop="dateModified" expr:content='data:post.timestampISO8601' />
 			  <span class='time-info'>
 			  <i class='fa fa-calendar'/> <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published updated' expr:content='data:post.timestampISO8601' itemprop='datePublished'><b:if cond='data:blog.pageType == &quot;index&quot;'><data:post.timestamp/><b:else/><data:post.dateHeader/></b:if></abbr></a>
 			  </span>
@@ -3567,7 +3553,7 @@ head.appendChild(script);
 
 		<!-- kotak profil di bawah postingan -->
 		<b:if cond='data:post.authorAboutMe'>
-		<div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+		<div class='author-profile' itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 		  <b:if cond='data:post.authorPhoto.url'>
 			<img expr:src='data:post.authorPhoto.url' itemprop='image' width='90px'/>
 		  </b:if>
@@ -3579,7 +3565,7 @@ head.appendChild(script);
 		  <span itemprop='description'><data:post.authorAboutMe/></span>
 		</div>
     <b:else/>
-    <div class="dimaslanjaka" itemscope="" itemtype="https://schema.org/author"> <div class="about-author" itemscope='itemscope' itemprop="Person" itemtype="https://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="https://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='itemscope' itemtype="https://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='itemscope' itemtype="https://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="https://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="https://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
+    <div class="dimaslanjaka" itemscope='' itemtype="https://schema.org/author"> <div class="about-author" itemscope='' itemprop="Person" itemtype="https://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="https://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='' itemtype="https://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='' itemtype="https://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="https://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="https://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
 		</b:if>
 
 		<!-- Kotak berlangganan email feedburner -->
@@ -3658,7 +3644,7 @@ head.appendChild(script);
 				<b:if cond='data:post.authorProfileUrl'>
 				  <span class='author-info'>
 				  <i class='fa fa-user'/>
-				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+				  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 					<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
 					<a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
 					  <span itemprop='name'><data:post.author/></span>
@@ -3667,7 +3653,7 @@ head.appendChild(script);
 				  </span>
 				<b:else/>
 				  <span class='author-info'>
-				  <span itemprop='author' itemscope='itemscope' itemtype='https://schema.org/Person'>
+				  <span itemprop='author' itemscope='' itemtype='https://schema.org/Person'>
 					<span itemprop='name'><data:post.author/></span>
 				  </span>
 				  </span>
@@ -3710,7 +3696,6 @@ head.appendChild(script);
 
 	  </div>
 	</b:switch>
-  <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' itemprop='image'/>
   </article>
   </div>
 

@@ -1,4 +1,10 @@
 //<![CDATA[
+var WMI = {
+  prismjs: {
+    theme: 'prism-vs'
+  }
+}
+
 function loadCSS(e, t, n) {
   "use strict";
   var i = window.document.createElement("link");
@@ -11,12 +17,13 @@ function loadCSS(e, t, n) {
     i.media = n || "all"
   });
 }
-loadCSS('https://cdnjs.cloudflare.com/ajax/libs/prism/1.12.2/themes/prism-okaidia.min.css');
+loadCSS('https://raw.githack.com/PrismJS/prism-themes/master/themes/' + WMI.prismjs.theme + '.css');
 var pre = document.querySelectorAll("pre"); //:not(:has(code))
 //automated on single pre
 if (pre.length) {
   for (var index = 0; index < pre.length; index++) {
     var element = pre[index];
+    if (typeof element.parentNode != 'undefined' && typeof element.parentNode.classList != 'undefined' && element.parentNode.classList.contains('gist-data')) continue;
     if (!element.querySelectorAll('code').length) {
       element.innerHTML = '<code>' + element.innerHTML + '</code>';
     }
@@ -25,8 +32,12 @@ if (pre.length) {
     if (element.hasAttribute('lang')) {
       var lang = element.getAttribute('lang');
       if (lang != '') {
-        code[0].classList.remove('language-markup');
-        code[0].classList.toggle('language-' + lang);
+        if (lang == 'manual' || lang == 'disable') {
+          code[0].classList.remove('language-markup');
+        } else {
+          code[0].classList.remove('language-markup');
+          code[0].classList.toggle('language-' + lang);
+        }
       }
     }
   }

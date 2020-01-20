@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="https://codepen.io/dimaslanjaka/pen/yLyQOBY.css">
 <div class="container">
+  <h1 itemprop="headline name" class="text-center">Simple PrismJS Syntax Highlighter</h1>
+  <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/prism.js"></script>
   <h4>&lt;pre&gt; &lt;code&gt; (Not Single)</h4>
+  <blockquote class="alert alert-info">Usage: &lt;pre&gt;&lt;code&gt;code block&lt;/code&gt;&lt;/pre&gt;</blockquote>
   <pre><code>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;
 &lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;
 </code></pre>
   <h4>Only &lt;code&gt;</h4>
+  <blockquote class="alert alert-info">Usage: &lt;code&gt;code block&lt;/code&gt;</blockquote>
   <code>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;
     &lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;</code>
   <h4>Pre (Single Pretext)</h4>
@@ -12,6 +16,7 @@
 &lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;
 &lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;</pre>
   <h4>Pre (Single Pretext) + lang="js"</h4>
+  <blockquote class="alert alert-info">Usage: &lt;pre lang=&quot;js&quot;&gt;code block&lt;/pre&gt;</blockquote>
   <pre lang="js">
 if (window.addEventListener) {
   window.addEventListener("load", downloadJSAtOnload, false);
@@ -22,7 +27,8 @@ if (window.addEventListener) {
 };
 </pre>
 
-  <h4>Disable Syntax Highlighter</h4>
+  <h4>Disabled Syntax Highlighter</h4>
+  <blockquote class="alert alert-info">Usage: &lt;pre lang=&quot;disabled&quot;&gt;code block&lt;/pre&gt;</blockquote>
   <pre lang="disable">
 if (window.addEventListener) {
   window.addEventListener("load", downloadJSAtOnload, false);
@@ -32,6 +38,10 @@ if (window.addEventListener) {
   window.onload = downloadJSAtOnload
 };
 </pre>
+
+  <hr>
+  <h4><a href="https://github.com/PrismJS/prism-themes" title="prismJS themes" rel="nofollow noopener">More Themes</a></h4>
+  <hr>
 
   <section class="language-markup" id="supported-languages">
     <h1><i class="fas fa-code"></i> <a href="https://prismjs.com/#supported-languages" target="_blank">Supported Languages</a></h1>
@@ -243,7 +253,7 @@ if (window.addEventListener) {
         <li data-id="zig">Zig - <code class=" language-markup">zig</code></li>
       </ul>
     </div>
-    <p>Couldn’t find the language you were looking for? <a href="https://github.com/PrismJS/prism/issues" target="_blank">Request it</a>!</p>
+    <p>Couldn't find the language you were looking for? <a href="https://github.com/PrismJS/prism/issues" target="_blank" rel="nofollow noopener">Request it</a>!</p>
   </section>
 </div>
 <script src="https://codepen.io/dimaslanjaka/pen/yLyQOBY.js"></script>
