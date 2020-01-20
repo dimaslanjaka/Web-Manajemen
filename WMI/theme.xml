@@ -67,15 +67,6 @@
   </b:if>
 </b:if>
 
-<!-- [Keywords] -->
-<b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.homepageUrl == data:blog.url'>
-	<meta expr:content='data:blog.title' name='keywords'/>
-  <b:else/>
-    <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
-    <meta expr:content='data:blog.pageName' name='keywords'/>
-  </b:if>
-</b:if>
-
 <!-- Noindex search, label, dan archive -->
 <b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery or data:blog.isMobile'>
 	<meta content='noindex,nofollow' name='robots'/>
@@ -98,8 +89,13 @@
 
 <!--[Description & Keywords]-->
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-  <b:if cond='data:blog.homepageUrl != data:blog.url'>
-    <meta expr:content='data:blog.pageName + &quot;, &quot; + data:blog.pageTitle + &quot;, &quot; + data:blog.title' name='keywords'/>
+  <!-- [Keywords] -->
+  <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.homepageUrl == data:blog.url'>
+    <meta expr:content='data:blog.title' name='keywords'/>
+    <b:else/>
+      <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
+      <meta expr:content='data:blog.pageName + &quot;, &quot; + data:blog.pageTitle + &quot;, &quot; + data:blog.title' name='keywords'/>
+      </b:if>
   </b:if>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' property='og:description'/>
@@ -3456,18 +3452,55 @@ head.appendChild(script);
 			  <span class='time-info'>
 			  <i class='fa fa-calendar'/> <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published updated' expr:content='data:post.timestampISO8601' itemprop='datePublished'><b:if cond='data:blog.pageType == &quot;index&quot;'><data:post.timestamp/><b:else/><data:post.dateHeader/></b:if></abbr></a>
 			  </span>
+        <script type='application/ld+json'>{
+          "@context": "http://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "<data:post.url/>"
+          },
+          "headline": "<data:post.title/>",
+          "description": "Belajar AMP Ternyata Mudah Berkat Kompi Ajaib! Entah kenapa dari situ saya kepikiran membuat blog yang saya pinginnya orang setelah membaca artikel yang saya buat kemudian mengatakan Ternyata Mudah ya! Walaupun itu berkata dalam hati.",
+          "datePublished": "2019-07-23T06:36:00+07:00",
+          "dateModified": "2019-12-12T21:58:01Z",
+          "image": {
+            "@type": "ImageObject",
+            "url": "<b:if cond='data:post.thumbnailUrl'><data:post.thumbnailUrl/><b:else/><b:if cond='data:blog.postImageUrl'><data:blog.postImageUrl/><b:else/><b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postThumbnailUrl/><b:else/>https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg</b:if></b:if></b:if>",
+            "height": 720,
+            "width": 1280
+            },
+          "publisher": {
+            "@type": "Organization",
+            "name": "<data:blog.title/>",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg",
+              "width": 600,
+              "height": 60
+            }
+          },
+          "author": {
+            "@type": "Person",
+            "name": "<data:post.author/>",
+            "url": "<data:post.authorProfileUrl/>"
+          }
+        }</script>
         <script type="application/ld+json">
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "mainEntity": {
               "@type": "Book",
-              "author": "<data:post.authorProfileUrl/>",
+              "author": {
+                "@type": "Person",
+                "name": "<data:post.author/>",
+                "url": "<data:post.authorProfileUrl/>"
+              },
               "datePublished": "<data:post.timestampISO8601/>",
               "image": "<b:if cond='data:post.thumbnailUrl'><data:post.thumbnailUrl/><b:else/><b:if cond='data:blog.postImageUrl'><data:blog.postImageUrl/><b:else/><b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postThumbnailUrl/><b:else/>https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg</b:if></b:if></b:if>",
               "inLanguage": "English",
               "name": "<data:blog.pageName/>",
-              "publisher": "WMI",
+              "publisher": "<data:blog.title/>",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.5",
