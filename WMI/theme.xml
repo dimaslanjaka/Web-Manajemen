@@ -71,9 +71,9 @@
 <b:if cond='data:blog.pageType in {&quot;index&quot;} and data:blog.homepageUrl == data:blog.url'>
 	<meta expr:content='data:blog.title' name='keywords'/>
   <b:else/>
-  <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
-	<meta expr:content='data:blog.pageName' name='keywords'/>
-</b:if>
+    <b:if cond='data:blog.pageType in {&quot;item&quot;,&quot;static_page&quot;}'>
+    <meta expr:content='data:blog.pageName' name='keywords'/>
+  </b:if>
 </b:if>
 
 <!-- Noindex search, label, dan archive -->
@@ -95,6 +95,7 @@
   <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   <meta content='website' property='og:type'/>
 </b:if>
+
 <!--[Description & Keywords]-->
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
   <b:if cond='data:blog.homepageUrl != data:blog.url'>
@@ -152,6 +153,8 @@
 <meta content='en_US' property='og:locale'/>
 <meta content='en_GB' property='og:locale:alternate'/>
 <meta content='id_ID' property='og:locale:alternate'/>
+<!--[Site Verification]-->
+<meta name="yandex-verification" content="0c0c6c1535251d94" />
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
