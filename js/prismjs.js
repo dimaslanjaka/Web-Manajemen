@@ -17,7 +17,7 @@ function loadCSS(e, t, n) {
     i.media = n || "all"
   });
 }
-loadCSS('https://raw.githack.com/PrismJS/prism-themes/master/themes/' + WMI.prismjs.theme + '.css');
+loadCSS('//raw.githack.com/PrismJS/prism-themes/master/themes/' + WMI.prismjs.theme + '.css');
 var pre = document.querySelectorAll("pre"); //:not(:has(code))
 //automated on single pre
 if (pre.length) {
@@ -52,7 +52,7 @@ function downloadJSAtOnload() {
       element.src = (scripts[i]);
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(element);
     }
-  })(['https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.12.2/prism.min.js']);
+  })(['//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js', '//cdnjs.cloudflare.com/ajax/libs/prism/1.12.2/prism.min.js']);
 }
 if (window.addEventListener) {
   window.addEventListener("load", downloadJSAtOnload, false);
