@@ -13451,11 +13451,11 @@ table.table a.btn.btn-whatsapp {
   min-height: 2.65rem
 }
 
-.collapse-content a.collapsed:after {
+.collapse-content a.read-more.collapsed:after {
   content: "Read More"
 }
 
-.collapse-content a:not(.collapsed):after {
+.collapse-content a.read-more:not(.collapsed):after {
   content: "Read Less"
 }
 
