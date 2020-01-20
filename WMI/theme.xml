@@ -17,12 +17,33 @@
 <include expiration='3d' path='*.jpg'></include>
 <include expiration='3d' path='*.png'></include>
 <!-- [ Prefetch DNS for external assets ]-->
-<link rel='dns-prefetch' href='//fonts.googleapis.com'></link>
-<link rel='dns-prefetch' href='//cdnjs.cloudflare.com'></link>
-<link rel='dns-prefetch' href='//use.fontawesome.com'></link>
-<link rel='dns-prefetch' href='//cdn.jsdelivr.net'></link>
-<link rel='dns-prefetch' href='//static.xx.fbcdn.net'></link>
-<link rel='dns-prefetch' href='//www.blogger.com'></link>
+<link crossorigin='' href='https://static.xx.fbcdn.net' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://cdnjs.cloudflare.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.blogger.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://fonts.googleapis.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://resources.blogblog.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.google-analytics.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.gstatic.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.googletagservices.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://raw.githack.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://cdn.jsdelivr.net' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://tpc.googlesyndication.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.googletagmanager.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://1.bp.blogspot.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://2.bp.blogspot.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://3.bp.blogspot.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://4.bp.blogspot.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://cdn.statically.io' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://pagead2.googlesyndication.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://googleads.g.doubleclick.net' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://adservice.google.co.id/' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://adservice.google.com/' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://www.youtube.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://lh3.googleusercontent.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://img.youtube.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://raw.githubusercontent.com' rel='preconnect dns-prefetch' />
+<link crossorigin='' href='https://i.ytimg.com' rel='preconnect dns-prefetch' />
 <!--[Meta Content-Type AND Charset]-->
 <meta charset='utf-8'/>
 <meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>
