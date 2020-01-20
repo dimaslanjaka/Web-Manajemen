@@ -6,8 +6,8 @@
  */
 function loadCSS(e, t, n) {
   "use strict";
-  var i = window.document.createElement("link");
-  var o = t || window.document.getElementsByTagName("script")[0];
+  var i = document.createElement("link");
+  var o = t || document.getElementsByTagName("script")[0];
   i.rel = "stylesheet";
   i.href = e;
   i.media = "only x";

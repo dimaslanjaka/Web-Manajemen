@@ -3345,8 +3345,8 @@ head.appendChild(script);
         </b:if>
     </b:if>
     <b:if cond='data:top.showTimestamp'>
-      <meta itemprop="datePublished" expr:content='data:post.timestampISO8601' />
-      <meta itemprop="dateModified" expr:content='data:post.timestampISO8601' />
+      <meta expr:content='data:post.timestampISO8601' itemprop='datePublished'/>
+      <meta expr:content='data:post.lastUpdatedISO8601' itemprop='dateModified'/>
       <b:else/>
       <meta itemprop="datePublished" content='2020-01-13T22:49:00+07:00' />
       <meta itemprop="dateModified" content='2020-01-13T22:49:00+07:00' />
@@ -3461,8 +3461,8 @@ head.appendChild(script);
           },
           "headline": "<data:post.title/>",
           "description": "Belajar AMP Ternyata Mudah Berkat Kompi Ajaib! Entah kenapa dari situ saya kepikiran membuat blog yang saya pinginnya orang setelah membaca artikel yang saya buat kemudian mengatakan Ternyata Mudah ya! Walaupun itu berkata dalam hati.",
-          "datePublished": "2019-07-23T06:36:00+07:00",
-          "dateModified": "2019-12-12T21:58:01Z",
+          "datePublished": "<data:post.timestampISO8601/>",
+          "dateModified": "<data:post.lastUpdatedISO8601/>",
           "image": {
             "@type": "ImageObject",
             "url": "<b:if cond='data:post.thumbnailUrl'><data:post.thumbnailUrl/><b:else/><b:if cond='data:blog.postImageUrl'><data:blog.postImageUrl/><b:else/><b:if cond='data:blog.postImageThumbnailUrl'><data:blog.postThumbnailUrl/><b:else/>https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg</b:if></b:if></b:if>",
