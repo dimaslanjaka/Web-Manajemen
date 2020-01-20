@@ -8,6 +8,10 @@ if (typeof window.jQuery != 'undefined') {
         var urlj = 'https://agcontents.000webhostapp.com/?url=' + decodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
         try {
           $.getJSON(urlj, function(json) {
+            if (typeof json.feed.entry == 'undefined'){
+              console.log(json);
+              return;
+            }
             var entry = json.feed.entry,
               elItems = '';
             for (var index = 0; index < entry.length; index++) {
