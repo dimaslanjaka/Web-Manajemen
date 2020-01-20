@@ -32,6 +32,7 @@
     });
     $('.adsbygoogle').each(function(i, obj) {
       if (!obj.hasAttribute('pushed')) {
+        if (obj.getElementsByTagName('iframe').length) return;
         (adsbygoogle = window.adsbygoogle || []).push({});
         obj.setAttribute('pushed', 'true');
       }
