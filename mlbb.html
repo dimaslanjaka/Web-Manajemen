@@ -84,7 +84,6 @@
       "description": "Mobile Legends Drone"
     }
   </script>
-  <script data-ad-client="ca-pub-7975270895217217" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Ahref verification -->
   <meta name="ahrefs-site-verification" content="">
 </head>
@@ -418,7 +417,50 @@
         </div>
         <!-- Card -->
       </div>
+      <div class="col-md-3">
+        <!-- Card -->
+        <div class="card promoting-card">
+          <!-- Card content -->
+          <div class="card-body d-flex flex-row">
+
+            <!-- Avatar -->
+            <img src="img/mlbb/1.4.45.png" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
+
+            <!-- Content -->
+            <div>
+              <!-- Title -->
+              <h4 class="card-title font-weight-bold mb-2">v1.4.45</h4>
+              <!-- Subtitle -->
+              <p class="card-text">Drone mobile legends version 1.4.45</p>
+            </div>
+          </div>
+
+          <!-- Card image -->
+          <div class="view overlay">
+            <img class="card-img-top rounded-0" src="img/mlbb/carmilla.png" alt="Card image cap">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body">
+            <div class="collapse-content">
+              <!-- Text -->
+              <p class="card-text" id="">
+                Download drone mobile legends version 1.4.45
+                <ul>
+                  <li><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/master/drone/android%201.4.45%20-%20drone/android.zip" target="_blank" rel="noopener noreferrer" title="Drone MLBB 1.4.45" class="btn btn-flat red-text p-1" data-toggle="tooltip" data-placement="top">Drone <i class="fas fa-download ml-1"></i></a></li>
+                  <li><a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/master/drone/android%201.4.45%20-%20ori/android.zip" target="_blank" rel="noopener noreferrer" title="Original MLBB 1.4.45" class="btn btn-flat red-text p-1" data-toggle="tooltip" data-placement="top">Original <i class="fas fa-download ml-1"></i></a></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
     </div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7975270895217217" data-ad-slot="1983408237" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </main>
   <!-- End your project here-->
 
@@ -519,6 +561,32 @@
       var el = document.querySelector('.custom-scrollbar');
       var ps = new PerfectScrollbar(el);
     });
+    var lazyadsense = false;
+    window.addEventListener("scroll", function() {
+      if ((document.documentElement.scrollTop != 0 && lazyadsense === false) || (document.body.scrollTop != 0 && lazyadsense === false)) {
+        (function() {
+          var ad = document.createElement('script');
+          ad.type = 'text/javascript';
+          ad.async = true;
+          ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+          ad.setAttribute('data-ad-client', 'ca-pub-7975270895217217');
+          var sc = document.getElementsByTagName('script')[0];
+          sc.parentNode.insertBefore(ad, sc);
+          ad.onload = function(e) {
+            console.log({
+              adsense: e
+            });
+            $('.adsbygoogle').each(function(i, obj) {
+              if (!obj.hasAttribute('pushed')) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                obj.setAttribute('pushed', 'true');
+              }
+            });
+          }
+        })();
+        lazyadsense = true;
+      }
+    }, true);
   </script>
 
 </body>
