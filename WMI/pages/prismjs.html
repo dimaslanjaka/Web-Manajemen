@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://codepen.io/dimaslanjaka/pen/yLyQOBY.css">
 <div class="container">
   <h4>&lt;pre&gt; &lt;code&gt; (Not Single)</h4>
   <pre><code>&lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;
@@ -11,7 +12,6 @@
 &lt;h3&gt;Welcome to the real-time HTML editor!&lt;/h3&gt;
 &lt;p&gt;Type HTML in the textarea above, and it will magically appear in the frame below.&lt;/p&gt;</pre>
   <h4>Pre (Single Pretext) + lang="js"</h4>
-
   <pre lang="js">
 if (window.addEventListener) {
   window.addEventListener("load", downloadJSAtOnload, false);
@@ -21,6 +21,18 @@ if (window.addEventListener) {
   window.onload = downloadJSAtOnload
 };
 </pre>
+
+  <h4>Disable Syntax Highlighter</h4>
+  <pre lang="disable">
+if (window.addEventListener) {
+  window.addEventListener("load", downloadJSAtOnload, false);
+} else if (window.attachEvent) {
+  window.attachEvent("onload", downloadJSAtOnload);
+} else {
+  window.onload = downloadJSAtOnload
+};
+</pre>
+
   <section class="language-markup" id="supported-languages">
     <h1><i class="fas fa-code"></i> <a href="https://prismjs.com/#supported-languages" target="_blank">Supported Languages</a></h1>
     <p>This is the list of all <span id="languages-list-count">202</span> languages currently supported by Prism, with
@@ -234,3 +246,4 @@ if (window.addEventListener) {
     <p>Couldn’t find the language you were looking for? <a href="https://github.com/PrismJS/prism/issues" target="_blank">Request it</a>!</p>
   </section>
 </div>
+<script src="https://codepen.io/dimaslanjaka/pen/yLyQOBY.js"></script>
