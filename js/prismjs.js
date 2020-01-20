@@ -4,7 +4,12 @@ var WMI = {
     theme: 'prism-vs'
   }
 }
-
+/**
+ * Load CSS asynchronously
+ * @param string e css URL
+ * @param HTMLScriptElement t
+ * @param string n media css
+ */
 function loadCSS(e, t, n) {
   "use strict";
   var i = window.document.createElement("link");
@@ -42,7 +47,9 @@ if (pre.length) {
     }
   }
 }
-
+/**
+ * Load PrismJS Asynchronously
+ */
 function downloadJSAtOnload() {
   (function(scripts) {
     var i = 0,
