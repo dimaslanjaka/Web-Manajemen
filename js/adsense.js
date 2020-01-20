@@ -16,7 +16,7 @@
   }
   var ad = document.createElement('script');
   ad.type = 'text/javascript';
-  ad.async = true;
+  ad.setAttribute('async', true);
   ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
   ad.setAttribute('data-ad-client', 'ca-pub-7975270895217217');
   var sc = document.getElementsByTagName('script')[0];
