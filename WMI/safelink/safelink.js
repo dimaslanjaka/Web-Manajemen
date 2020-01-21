@@ -3,7 +3,7 @@ if (location.host != 'translate.googleusercontent.com' && x && "" != x) {
   location.replace(safelinkURL + x);
 }
 
-var EXCLUDE = /facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|webmanajemen\.com|www\.blogger\.com|translate\.google\.com|translate\.googleusercontent\.com|javascript\:|\#/gm,
+var EXCLUDE = /facebook\.com|twitter\.com|thumblr\.com|blog\.akarmas\.com|web\-manajemen\.blogspot\.com|dimaslanjaka\.github\.io|webmanajemen\.com|www\.blogger\.com|translate\.google\.com|translate\.googleusercontent\.com|javascript\:|\#|dimaslanjaka/gm,
   l = document.addEventListener || document.attachEvent;
 l("mouseover", function(e) {
   if ("a" == (e.target.nodeName || e.srcElement.nodeName).toLowerCase()) {
