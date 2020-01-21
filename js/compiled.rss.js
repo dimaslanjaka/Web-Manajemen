@@ -5,11 +5,11 @@ if (typeof window.jQuery != 'undefined') {
       var labelName = obj.getAttribute('data-label'),
         elementType = obj.getAttribute('data-type');
       if (labelName && labelName != '') {
-        var urlj = 'https://agcontents.000webhostapp.com/?url=' + decodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
+        var urlj = 'https://agcontents.000webhostapp.com/?url=' + encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
         try {
           $.getJSON(urlj, function(json) {
-            if (typeof json.feed.entry == 'undefined'){
-              console.log(json);
+            if (typeof json.feed == 'undefined'){
+              console.log(urlj, json);
               return;
             }
             var entry = json.feed.entry,

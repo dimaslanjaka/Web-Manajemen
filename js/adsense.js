@@ -10,13 +10,24 @@
           innerHTML: ads_h + '<li class="fas fa-link"></i> <a href="//web-manajemen.blogspot.com"><b>Website Development Indonesia</b></a> '
         }
       },
-      showCloseButton: true,
-      showCancelButton: false,
-      focusConfirm: false,
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-      confirmButtonAriaLabel: 'Thumbs up, great!',
-      cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-      cancelButtonAriaLabel: 'Thumbs down',
+      buttons: {
+        cancel: {
+          text: " Bad!",
+          value: null,
+          visible: true,
+          className: "fas fa-thumbs-down text-danger border border-danger bg-white",
+          closeModal: true,
+        },
+        confirm: {
+          text: " Great!",
+          value: true,
+          visible: true,
+          className: "fas fa-thumbs-up text-success border border-success bg-white",
+          closeModal: true
+        }
+      },
+      closeOnEsc: false,
+      closeOnClickOutside: false
     });
   }
   var ad = document.createElement('script');
