@@ -167,6 +167,15 @@
 </head>
 
 <body class="fixed-sn  mdb-skin-custom" data-spy="scroll" data-target="#scrollspy" data-offset="15">
+  <div id='fb-root' />
+  <script type='text/javascript'>
+    //<![CDATA[
+    !function(e, n, t) {
+      var o, c = e.getElementsByTagName(n)[0];
+      e.getElementById(t) || ((o = e.createElement(n)).id = t, o.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0", c.parentNode.insertBefore(o, c))
+    }(document, "script", "facebook-jssdk");
+    //]]>
+  </script>
   <header>
     <!-- Sidebar navigation -->
     <div id="slide-out" class="side-nav sn-bg-4 mdb-sidenav fixed">
