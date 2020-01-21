@@ -1,5 +1,5 @@
 var x = parse_query("url") || parse_query("u");
-if (typeof safelinkURL == 'undefined'){
+if (typeof safelinkURL == 'undefined') {
   var safelinkURL = sfUrl();
 }
 if (location.host != 'translate.googleusercontent.com' && x) {
@@ -32,7 +32,7 @@ l("mouseover", function(e) {
  * Get safelink URL
  */
 function sfUrl() {
-  return 'https://dimaslanjaka.github.io/page/safelink.html?ID=' + Math.floor(Math.random()) + '&url=';
+  return 'https://dimaslanjaka.github.io/page/safelink.html?ID=' + Math.random().toString(36).substring(7) + '&url=';
 }
 
 /**
