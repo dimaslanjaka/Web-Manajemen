@@ -135,26 +135,36 @@
 
 <!--[thumbnails]-->
 <b:if cond='data:blog.postImageUrl'>
-  <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+  <meta expr:content='&quot;https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/&quot; + data:blog.postImageUrl' property='og:image'/>
   <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
   <link expr:href='data:blog.postImageUrl' rel='image_src'></link>
   <b:else/>
-  <b:if cond='data:blog.postImageThumbnailUrl'>
-    <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+  <b:if cond='data:blog.postThumbnailUrl'>
+    <meta expr:content='&quot;https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/&quot; + data:blog.postThumbnailUrl' property='og:image'/>
     <meta expr:content='data:blog.postThumbnailUrl' name='twitter:image'/>
-    <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'></link>
+    <link expr:href='data:blog.postThumbnailUrl' rel='image_src'></link>
+  <b:else/>
+  <b:if cond='data:blog.postThumbnailUrl'>
+    <meta expr:content='&quot;https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/&quot; + data:blog.postThumbnailUrl' property='og:image'/>
+    <meta expr:content='data:blog.postThumbnailUrl' name='twitter:image'/>
+    <link expr:href='data:blog.postThumbnailUrl' rel='image_src'></link>
   <b:else/>
     <b:if cond='data:post.firstImageUrl'>
-      <meta expr:content='data:post.firstImageUrl' property='og:image'/>
+      <meta expr:content='&quot;https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/&quot; + data:post.firstImageUrl' property='og:image'/>
       <meta expr:content='data:post.firstImageUrl' name='twitter:image'/>
       <link expr:href='data:post.firstImageUrl' rel='image_src'></link>
+      <meta expr:content='data:blog.firstImageUrl' itemprop='image'/>
       <b:else/>
-      <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' property='og:image'/>
+      <meta content='https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' property='og:image'/>
       <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' name='twitter:image'/>
       <link href='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' rel='image_src'></link>
     </b:if>
   </b:if>
+  </b:if>
 </b:if>
+
+<meta property='og:image:width' content='200' />
+<meta property='og:image:height' content='200' />
 
 <!--[Language]-->
 <link expr:href='data:blog.url' hreflang='x-default' rel='alternate'></link>
@@ -3351,6 +3361,23 @@ head.appendChild(script);
       <b:includable id='post' var='post'>
   <div class='hentry'>
   <article class='post'>
+  <b:if cond='data:blog.postImageUrl'>
+    <meta expr:content='data:blog.postImageUrl' itemprop='image'/>
+    <b:else/>
+    <b:if cond='data:blog.postThumbnailUrl'>
+      <meta expr:content='data:blog.postThumbnailUrl' itemprop='image'/>
+    <b:else/>
+    <b:if cond='data:blog.postThumbnailUrl'>
+      <meta expr:content='data:blog.postThumbnailUrl' itemprop='image'/>
+    <b:else/>
+      <b:if cond='data:post.firstImageUrl'>
+        <meta expr:content='data:blog.firstImageUrl' itemprop='image'/>
+        <b:else/>
+        <meta content='https://1.bp.blogspot.com/-rkXCUBbNXyw/XfY0hwoFu5I/AAAAAAAAAhw/BUyeKW5BtMoIJLlPUcPSdqGZBQRncXjDQCK4BGAYYCw/s600/PicsArt_09-09-12.12.25.jpg' itemprop='image'/>
+      </b:if>
+    </b:if>
+    </b:if>
+  </b:if>
 	<b:switch var='data:blog.pageType'>
 	<b:case value='static_page'/>
 	<!-- Posting halaman statis -->
@@ -3628,7 +3655,7 @@ head.appendChild(script);
 		  <span itemprop='description'><data:post.authorAboutMe/></span>
 		</div>
     <b:else/>
-    <div class="dimaslanjaka" itemscope='' itemtype="https://schema.org/author"> <div class="about-author" itemscope='' itemprop="Person" itemtype="https://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="https://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">https://webmanajemen.com</span></a></span></p><div itemscope='' itemtype="https://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='' itemtype="https://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="https://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="https://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
+    <div class="dimaslanjaka"> <div class="about-author" itemscope='' itemprop="author" itemtype="https://schema.org/Person"> <h3><i class="fa fa-user-circle-o"></i> About Author:</h3> <img align="left" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/w_200,h_200/https://imgdb.net/images/3600.jpg" itemprop="image"/> <p itemprop="description">My Name Is <span itemprop="name">Dimas Lanjaka</span>. I started studying in the world of programming starting from 2011. In this Website I will share the tools to manage the websites that you have.</p><p class="w3-container" itemscope="" itemtype="https://schema.org/Organization">Let's Get Connected: <i class="fa fa-twitter"></i> <a href="https://twitter.com/WManajemen" rel="nofollow" target="_blank" itemprop="sameAs url"><font color="#00aced" itemprop="name">Twitter</font></a> | <i class="fa fa-facebook-f"></i> <a itemprop="sameAs url" href="https://www.facebook.com/dimaslanjaka1" rel="nofollow" target="_blank"><font color="#3b5998" itemprop="name">Facebook</font></a> | <i class="fa fa-google-plus-circle"></i> <a href="https://plus.google.com/108171489708218648681" rel="nofollow" itemprop="sameAs url"><font color="#dd4b39">Google Plus</font></a> | <span><a itemprop="url department" href="https://webmanajemen.com"><span itemprop="memberOf">WMI</span></a></span></p><div itemscope='' itemtype="https://schema.org/SportsTeam" class="pt1"> <span itemprop="name"><i class="fa fa-users"></i> Secret Network Forces</span> <div itemprop="member" itemscope='' itemtype="https://schema.org/OrganizationRole"> <div itemprop="member" itemscope="" itemtype="https://schema.org/Person"> <i class="fa fa-user-circle"></i> <span itemprop="name">Agus Ma'arif</span> </div><p class="moderator-desc w3-show-inline-block">Recruited From <span itemprop="startDate">2017</span> <span itemprop="endDate" class="none">2017</span> As <span itemprop="roleName">Moderator</span></p></div><p class="right" itemprop="sponsor" itemtype="https://schema.org/Organization"><small>Powered By <a href="https://www.webmanajemen.com" title="Web Development Indonesia" rel="follow" itemprop="url"><span itemprop="name">Web Development Indonesia</span></a></small></p></div></div></div>
 		</b:if>
 
 		<!-- Kotak berlangganan email feedburner -->
