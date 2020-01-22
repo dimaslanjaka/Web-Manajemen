@@ -3,9 +3,10 @@ if (typeof window.jQuery != 'undefined') {
   if (dataLabel.length) {
     dataLabel.each(function(i, obj) {
       var labelName = obj.getAttribute('data-label'),
-        elementType = obj.getAttribute('data-type');
+        elementType = obj.getAttribute('data-type'), labelUrl = encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
       if (labelName && labelName != '') {
-        var urlj = 'https://wp.webmanajemen.com/cors-proxy.php?mode=native&url=' + encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
+        var urlj = 'https://wp.webmanajemen.com/receiver/index.php?mode=native&url=' + labelUrl;
+        console.log(labelName, labelUrl, decodeURIComponent(labelUrl));
         try {
           $.getJSON(urlj, function(json) {
             if (typeof json.feed == 'undefined'){
