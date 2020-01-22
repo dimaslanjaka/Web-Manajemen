@@ -1,4 +1,4 @@
-(function() {
+(function () {
   if (typeof swal != 'undefined') {
     var ads_h = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7975270895217217" data-ad-slot="4894289831" data-ad-format="link" data-full-width-responsive="true"></ins>';
     swal({
@@ -30,23 +30,25 @@
       closeOnClickOutside: false
     });
   }
-  var ad = document.createElement('script');
-  ad.type = 'text/javascript';
-  ad.setAttribute('async', true);
-  ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  ad.setAttribute('data-ad-client', 'ca-pub-7975270895217217');
-  var sc = document.getElementsByTagName('script')[0];
-  sc.parentNode.insertBefore(ad, sc);
-  ad.onload = function(e) {
-    console.log({
-      adsense: e
-    });
-    $('.adsbygoogle').each(function(i, obj) {
-      if (!obj.hasAttribute('pushed')) {
-        //if (obj.getElementsByTagName('iframe').length) return;
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        obj.setAttribute('pushed', 'true');
-      }
-    });
+  if (!location.host.match(/^localhost|git\.io|agc\.io/gm)) {
+    var ad = document.createElement('script');
+    ad.type = 'text/javascript';
+    ad.setAttribute('async', true);
+    ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    ad.setAttribute('data-ad-client', 'ca-pub-7975270895217217');
+    var sc = document.getElementsByTagName('script')[0];
+    sc.parentNode.insertBefore(ad, sc);
+    ad.onload = function (e) {
+      console.log({
+        adsense: e
+      });
+      $('.adsbygoogle').each(function (i, obj) {
+        if (!obj.hasAttribute('pushed')) {
+          //if (obj.getElementsByTagName('iframe').length) return;
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          obj.setAttribute('pushed', 'true');
+        }
+      });
+    }
   }
 })();
