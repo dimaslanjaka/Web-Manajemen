@@ -30,7 +30,13 @@
       closeOnClickOutside: false
     });
   }
-  if (!location.host.match(/^localhost|git\.io|agc\.io/gm)) {
+  if (typeof RegexHost == 'undefined'){
+    /**
+     * @var RegExp RegexHost regex matching for exclude from adsense
+     */
+    var RegexHost = /^localhost|git\.io|agc\.io|^(\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b):?(\d{2,5})/gm;
+  }
+  if (!location.host.match(RegexHost)) {
     var ad = document.createElement('script');
     ad.type = 'text/javascript';
     ad.setAttribute('async', true);
