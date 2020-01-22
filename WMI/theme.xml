@@ -94,6 +94,7 @@
 </b:if>
 
 <!--[Social Media]-->
+<meta expr:content='data:blog.url' property='og:url'/>
 <meta content='summary' name='twitter:card'/>
 <meta content='@WManajemen' name='twitter:site'/>
 <meta content='@WManajemen' name='twitter:creator'/>
@@ -130,7 +131,7 @@
 <meta content='100001995776790' property='fb:admins'/>
 <meta content='https://www.facebook.com/dimaslanjaka1' property='article:author'/>
 <meta content='https://www.facebook.com/secretnetworkforces' property='article:publisher'/>
-<meta content='KODE-APLIKASI-FACEBOOK' property='fb:app_id'/>
+<meta content='182383652179465' property='fb:app_id'/>
 
 <!--[thumbnails]-->
 <b:if cond='data:blog.postImageUrl'>
@@ -3609,7 +3610,7 @@ head.appendChild(script);
 <a class='twitter' expr:href='&quot;https://twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-twitter'/></a>
 <a class='googleplus' expr:href='&quot;https://plus.google.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-google-plus'/></a>
 <a class='linkedin' expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-linkedin'/></a>
-<a class='pinterest' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;amp;media=&quot; + data:post.thumbnailUrl + &quot;&amp;amp;description= + data:post.title&quot;' rel='nofollow' target='_blank'><i class='fa fa-pinterest-p'/></a>
+<a class='pinterest' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;media=&quot; + data:post.thumbnailUrl + &quot;&amp;description=&quot;+ data:post.title' rel='nofollow' target='_blank'><i class='fa fa-pinterest-p'/></a>
 </div>
 		<div style='clear: both;'/>
 
