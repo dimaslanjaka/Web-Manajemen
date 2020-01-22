@@ -5,7 +5,7 @@ if (typeof window.jQuery != 'undefined') {
       var labelName = obj.getAttribute('data-label'),
         elementType = obj.getAttribute('data-type');
       if (labelName && labelName != '') {
-        var urlj = 'https://agcontents.000webhostapp.com/?url=' + encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
+        var urlj = 'https://wp.webmanajemen.com/cors-proxy.php?mode=native&url=' + encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
         try {
           $.getJSON(urlj, function(json) {
             if (typeof json.feed == 'undefined'){
