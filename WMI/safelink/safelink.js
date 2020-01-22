@@ -21,8 +21,8 @@ function start_safelink(e){
     if (e.target.host.match(/javascript\:void/gm)) {
       return;
     }
-    host = parse_url(a).hostname;
-    if (!host.match(EXCLUDE)) {
+    host = parse_url(a).hasOwnProperty('hostname') ? parse_url(a).hostname : null;
+    if (host && !host.match(EXCLUDE)) {
       t.href = safelinkURL + btoa(a);
       t.setAttribute('target', '_blank');
       if (typeof t.classList != 'undefined') {
