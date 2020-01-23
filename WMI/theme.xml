@@ -47,7 +47,7 @@
 <!--[Meta Content-Type AND Charset]-->
 <meta charset='utf-8'/>
 <!--<meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>-->
-<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1' />
 <meta content='text/html;charset=UTF-8' http-equiv='Content-Type'/>
 <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
 <meta content='449227586c5e50f67f3b738c8f3820d8' name='propeller'/>
