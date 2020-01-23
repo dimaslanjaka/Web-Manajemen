@@ -2841,7 +2841,7 @@ head.appendChild(script);
     <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
   </p>
 </b:includable>
-      <b:includable id='breadcrumb' var='posts'>
+<b:includable id='breadcrumb' var='posts'>
       <b:if cond='data:blog.homepageUrl != data:blog.url'>
       <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
         <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span><data:blog.pageName/></span>
@@ -2850,50 +2850,52 @@ head.appendChild(script);
         <b:if cond='data:blog.pageType == &quot;item&quot;'>
         <b:loop values='data:posts' var='post' index='i'>
           <b:if cond='data:post.labels'>
-          <div class='breadcrumbs' itemscope='' itemtype='https://schema.org/BreadcrumbList'>
-          <span itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem'>
-          <meta itemprop='position' expr:content='data:i + 1' />
-          <a expr:href='data:blog.homepageUrl' itemprop='item'>
-            <span itemprop='name'>Home</span>
-          </a>
-          </span> &#187;
-        <b:loop values='data:post.labels' var='label' index='ii'>
-          <span itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem'>
-          <meta itemprop='position' expr:content='data:i + 1 + data:ii + 1' />
-            <a expr:href='data:label.url + &quot;?&amp;max-results=8&quot;' itemprop='item'>
-              <span itemprop='name'><data:label.name/></span>
+            <div class='breadcrumbs' itemscope='' itemtype='https://schema.org/BreadcrumbList'>
+            <span itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' expr:content='data:i + 1' />
+            <a expr:href='data:blog.homepageUrl' itemprop='item'>
+              <span itemprop='name'>Home</span>
             </a>
-          </span>
-          <b:if cond='data:label.isLast != &quot;true&quot;'> &#187;
+            </span> &#187;
+          <b:loop values='data:post.labels' var='label' index='ii'>
+            <span itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' expr:content='data:i + 1 + data:ii + 1' />
+              <a expr:href='data:label.url + &quot;?&amp;max-results=8&quot;' itemprop='item'>
+                <span itemprop='name'><data:label.name/></span>
+              </a>
+            </span>
+            <b:if cond='data:label.isLast != &quot;true&quot;'> &#187;
+          </b:if>
+          </b:loop> &#187;
+          <a expr:href='data:post.url' itemprop='url'><span itemprop='name'><data:post.title/></span></a>
+          </div>
+          <b:else/>
+          <div class='breadcrumbs'><span>
+          <a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187;
+          <span>Uncategorized</span> &#187; <span><data:post.title/></span></div>
         </b:if>
-        </b:loop> &#187;
-        <a expr:href='data:post.url' itemprop='url'><span itemprop='name'><data:post.title/></span></a>
-        </div>
-        <b:else/>
-        <div class='breadcrumbs'><span>
-        <a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187;
-        <span>Uncategorized</span> &#187; <span><data:post.title/></span></div>
-	    </b:if>
       </b:loop>
       <b:else/>
         <b:if cond='data:blog.pageType == &quot;archive&quot;'>
-        <div class='breadcrumbs'> <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span>Archive for <data:blog.pageName/></span>
-	    </div>
-      <b:else/>
-        <b:if cond='data:blog.searchQuery'>
-        <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span><data:blog.pageName/></span>
-	    </div>
-      <b:else/>
-        <b:if cond='data:blog.pageType == &quot;index&quot;'>
-        <div class='breadcrumbs'>
-	    <b:if cond='data:blog.pageName == &quot;&quot;'> <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span>All post</span>
-        <b:else/>
-        <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span><data:blog.pageName/></span>
-        </b:if>
+          <div class='breadcrumbs'> <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span>Archive for <data:blog.pageName/></span>
         </div>
-      </b:if>
-      </b:if>
-      </b:if>
+        <b:else/>
+          <b:if cond='data:blog.searchQuery'>
+            <div class='breadcrumbs'><span>
+              <a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187;
+              <span><data:blog.pageName/></span>
+            </div>
+            <b:else/>
+            <b:if cond='data:blog.pageType == &quot;index&quot;'>
+              <div class='breadcrumbs'>
+              <b:if cond='data:blog.pageName == &quot;&quot;'> <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span>All post</span>
+              <b:else/>
+              <span><a expr:href='data:blog.homepageUrl' rel='nofollow'>Home</a></span> &#187; <span><data:blog.pageName/></span>
+              </b:if>
+              </div>
+            </b:if>
+          </b:if>
+        </b:if>
       </b:if>
       </b:if>
       </b:if>
