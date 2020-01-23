@@ -235,7 +235,7 @@ default="normal bold 14px Open Sans Condensed, Arial, sans-serif" value="normal 
 <Variable name="menu.navigation.hover.color" description="Hover Color" type="color" default="#222222" value="#222222"/>
 <Variable name="menu.navigation.border.color" description="Border Color" type="color" default="#FF4F4F" value="#FF4F4F"/>
 </Group>
-<Group description="Search Box" selector="#search-form">
+<Group description="Search Box" selector=".search-form">
 <Variable name="input.background.color" description="Input Background Color" type="color" default="#ffffff" value="#ffffff"/>
 <Variable name="button.background.color" description="Button Background Color" type="color" default="#FF4F4F" value="#FF4F4F"/>
 <Variable name="input.color" description="Input Color" type="color" default="#666666" value="#666666"/>
@@ -364,7 +364,7 @@ kbd{font-size:80%;border:1px solid #999;padding:2px 5px;border-bottom-width:2px;
 }
 mark{background-color:#ffce00;color:black;
 }
-p,blockquote,pre,table,figure,hr,form:not(.form-inline),ol,ul,dl{margin:1.5em 0;
+p,blockquote,pre,table,figure,hr,form:not(.form-inline):not(.search-form),ol,ul,dl{margin:1.5em 0;
 }
 hr{height:1px;border:none;background-color:#666;
 }
@@ -724,21 +724,21 @@ text-decoration: inherit;
 padding-left: 6px;
 }
 /* SEARCH FORM */
-#search-form {
+.search-form {
 background:#333333;
 float:right;
 margin:0 0;
 height:48px;
 width:200px;
 }
-#search-form table {
+.search-form table {
 width:100%;
 margin:0 0 0 0;
 }
-#search-form td.search-box {
+.search-form td.search-box {
 padding-right:3px;
 }
-#search-form input#search-box[type="text"] {
+.search-form input#search-box[type="text"] {
 background:#ffffff;
 height:36px;
 line-height:36px;
@@ -749,7 +749,7 @@ color:#666666;
 border:none;
 text-transform: uppercase;
 }
-#search-form #search-button[type="submit"] {
+.search-form #search-button[type="submit"] {
 font-family: "Font Awesome 5 Pro";
 background:#FF4F4F;
 color:#ffffff;
@@ -763,11 +763,11 @@ transition:all 0.25s;
 -moz-transition:all 0.25s;
 -webkit-transition:all 0.25s;
 }
-#search-form #search-button[type="submit"]:hover{
+.search-form #search-button[type="submit"]:hover{
 background:#222222;
 cursor:pointer;
 }
-#search-form input#search-box[type="text"]:focus {
+.search-form input#search-box[type="text"]:focus {
 background:#eee;
 outline:none;
 }
@@ -1654,7 +1654,7 @@ max-width:100%
 .active {
 display: block;
 }
-#search-form {
+.search-form {
 width:100%;
 margin:0 0 0 0 !important;
 }
@@ -1693,21 +1693,21 @@ display : none;
 .toggleMenu {
 display:inline-block;
 }
-#search-form {
+.search-form {
 width:100%;
 background:#444;
 }
-#search-form td.search-box {
+.search-form td.search-box {
 padding:0 10px !important;
 }
-#search-form td.search-button {
+.search-form td.search-button {
 padding:0 10px;
 width:1%;
 }
-#search-form input#search-box[type="text"] {
+.search-form input#search-box[type="text"] {
 margin:0 0 0 0;
 }
-#search-form #search-button[type="submit"] {
+.search-form #search-button[type="submit"] {
 margin:0 0 0 0;
 }
 .img-thumbnail {
@@ -2659,11 +2659,12 @@ head.appendChild(script);
 
   <nav class='dropdowns' itemscope='' itemtype="https://schema.org/WebSite">
   <b:if cond='data:blog.pageType == "item"'>
-    <meta expr:content='data:post.url' itemprop='url' />
-    <meta expr:content='data:post.title' itemprop='name' />
+    <meta expr:content='data:blog.url' itemprop='url' />
+    <meta expr:content='data:blog.pageName' itemprop='name' />
   <b:else/>
     <meta expr:content='data:blog.homepageUrl' itemprop='url' />
     <meta expr:content='data:blog.title' itemprop='name' />
+    <meta expr:content='data:blog.metaDescription' itemprop='description'/>
   </b:if>
   <a class='toggleMenu' href='#'><i class='fa fa-th-list'/> Menu</a>
 
@@ -2690,7 +2691,7 @@ head.appendChild(script);
 	</ul>
 	<!-- secondary navigation menu end -->
 
-	<form itemprop='potentialAction' itemscope='' itemtype='https://schema.org/SearchAction' action='/search' id='search-form' method='get'><meta itemprop="target" expr:content='data:blog.homepageUrl + &quot;search?q={q}&quot;' /><table><tbody><tr><td class='search-box'><input itemprop='query-input' id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><button id='search-button' type='submit'><i class="fas fa-search"></i></button></td></tr></tbody></table></form>
+	<form itemprop='potentialAction' itemscope='' itemtype='https://schema.org/SearchAction' action='/search' class='search-form' expr:id='data:blog.url' method='get'><meta itemprop="target" expr:content='data:blog.homepageUrl + &quot;search?q={q}&quot;' /><table><tbody><tr><td class='search-box'><input itemprop='query-input' id='search-box' name='q' onblur='if(this.value==&apos;&apos;)this.value=this.defaultValue;' onfocus='if(this.value==this.defaultValue)this.value=&apos;&apos;;' type='text' value='Search...' vinput=''/></td> <td class='search-button'><button id='search-button' type='submit'><i class="fas fa-search"></i></button></td></tr></tbody></table></form>
 
   </nav>
 
