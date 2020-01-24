@@ -11,8 +11,8 @@
       <data:view.title.escaped/>
     </title>
     <b:include data='blog' name='all-head-content'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css?v=AIE' media='all' rel='stylesheet' type='text/css'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css?v=AIE' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css?v=WMI_AI' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css?v=WMI_AI' media='all' rel='stylesheet' type='text/css'/>
     <b:skin version='1.3.0'><![CDATA[
 /*!************************************************
  * MDB Blogger Template
@@ -1620,14 +1620,14 @@
     };
     /* ]]> */
     </script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.core.js?v=AIE'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.search.js?v=AIE'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.gzip.js?v=AIE'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.min.js?v=AIE'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.footer.js?v=AIE'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/jquery.validate.js?v=AIE'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.core.js?v=WMI_AI'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.search.js?v=WMI_AI'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.gzip.js?v=WMI_AI'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.min.js?v=WMI_AI'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.footer.js?v=WMI_AI'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/jquery.validate.js?v=WMI_AI'></script>
     <!--RSS as Nav and Grid-->
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.rssblogger.js?v=AIE'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.rssblogger.js?v=WMI_AI'></script>
     <!--Nav Collapse Controller-->
     <script>
     //      <![CDATA[
