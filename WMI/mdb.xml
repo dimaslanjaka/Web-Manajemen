@@ -11,8 +11,8 @@
       <data:view.title.escaped/>
     </title>
     <b:include data='blog' name='all-head-content'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css' media='all' rel='stylesheet' type='text/css'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css?v=AIO' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css?v=AIO' media='all' rel='stylesheet' type='text/css'/>
     <b:skin version='1.3.0'><![CDATA[
 /*!************************************************
  * MDB Blogger Template
@@ -331,6 +331,12 @@
     <b:include data='blog' name='google-analytics'/>
 
     <script async='async' src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'/>
+    <script>
+    const WMI = {
+      homepage: '<data:blog.homepageUrl/>',
+      cors: true
+    }
+    </script>
   </head>
 
   <body class='fixed-sn  mdb-skin-custom' data-offset='15' data-spy='scroll' data-target='#scrollspy'>
@@ -1614,14 +1620,14 @@
     };
     /* ]]> */
     </script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.core.js'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.search.js'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.gzip.js'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.min.js'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.footer.js'></script>
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/jquery.validate.js'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.core.js?v=AIO'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.search.js?v=AIO'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.gzip.js?v=AIO'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.min.js?v=AIO'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.footer.js?v=AIO'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/jquery.validate.js?v=AIO'></script>
     <!--RSS as Nav and Grid-->
-    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.rss.js'></script>
+    <script src='https://git.webmanajemen.com/Web-Manajemen/js/compiled.rssblogger.js?v=AIO'></script>
     <!--Nav Collapse Controller-->
     <script>
     //      <![CDATA[
