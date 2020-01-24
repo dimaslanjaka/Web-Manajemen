@@ -14,13 +14,13 @@ if (typeof window.jQuery != 'undefined') {
             if (typeof json.feed == 'undefined') {
               console.log(urlj, json);
               return;
+            } else if (typeof json.feed.entry == 'undefined'){
+              console.log(labelName + ' Not found any items');
+              dataLabel.remove();
+              return;
             }
             var entry = json.feed.entry,
               elItems = '';
-            if (typeof entry.length == 'undefined'){
-              console.log(labelName + ' Not found any items');
-              dataLabel.remove();
-            }
             for (var index = 0; index < entry.length; index++) {
               var item = entry[index],
                 title = item.title.$t,
