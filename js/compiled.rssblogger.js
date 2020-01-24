@@ -1,7 +1,7 @@
 if (typeof window.jQuery != 'undefined') {
   var dataLabel = $('[data-label]');
   if (dataLabel.length) {
-    dataLabel.each(function(i, obj) {
+    dataLabel.each(function (i, obj) {
       var labelName = obj.getAttribute('data-label'),
         elementType = obj.getAttribute('data-type'),
         labelUrl = urlj = encodeURIComponent(WMI.homepage + '/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
@@ -10,12 +10,12 @@ if (typeof window.jQuery != 'undefined') {
           urlj = 'https://wp.webmanajemen.com/receiver/index.php?mode=native&url=' + labelUrl;
         }
         try {
-          $.getJSON(urlj, function(json) {
+          $.getJSON(urlj, function (json) {
             if (typeof json.feed == 'undefined') {
               console.log(urlj, json);
               return;
-            } else if (typeof json.feed.entry == 'undefined'){
-              console.log(labelName + ' Not found any items');
+            } else if (typeof json.feed.entry == 'undefined') {
+              console.log('Label: ' + labelName + ' Not found any items');
               dataLabel.remove();
               return;
             }
