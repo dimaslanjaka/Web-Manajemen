@@ -5,3 +5,6 @@
 @import url(compiled.animate.css);
 @import url(compiled.pickadate.css);
 @import url(compiled.clockpicker.css);
+a[href^='https://www.000webhost.com']{
+  display: none !important;
+}
