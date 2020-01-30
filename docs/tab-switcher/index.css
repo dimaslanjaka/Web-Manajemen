@@ -3,5 +3,20 @@
  * @author dimas lanjaka <dimaslanjaka[at]gmail.com>
  * @url https://codepen.io/dimaslanjaka/pen/LYEvERq
  */
- div[hreflang]{display:none};
+div[hreflang] {
+  display: none;
+}
 
+.fadeIn {
+  -webkit-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
