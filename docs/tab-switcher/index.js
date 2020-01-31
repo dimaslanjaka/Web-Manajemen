@@ -6,6 +6,10 @@
 if (typeof defaultlang == 'undefined') {
   var defaultlang = 'id';
 }
+if (typeof WMI != 'undefined' && typeof WMI.defaultlang != 'undefined' && WMI.defaultlang != '') {
+  defaultlang = WMI.defaultlang;
+}
+
 if (typeof translator == 'undefined' || typeof translator != 'boolean') {
   var translator = true;
 }
@@ -14,11 +18,24 @@ if (typeof jQuery == 'undefined') {
   var headTag = document.getElementsByTagName("head")[0];
   var jqTag = document.createElement('script');
   jqTag.type = 'text/javascript';
-  jqTag.src = '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
-  jqTag.onload = iniT;
+  jqTag.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
+  jqTag.onload = loadVelocity;
   headTag.appendChild(jqTag);
 } else {
-  iniT();
+  loadVelocity();
+}
+
+function loadVelocity() {
+  if (typeof window.Velocity == 'undefined') {
+    var headTag = document.getElementsByTagName("head")[0];
+    var jqTag = document.createElement('script');
+    jqTag.type = 'text/javascript';
+    jqTag.src = 'https://raw.githack.com/julianshapiro/velocity/master/velocity.min.js';
+    jqTag.onload = iniT;
+    headTag.appendChild(jqTag);
+  } else {
+    iniT();
+  }
 }
 
 function iniT() {
@@ -26,21 +43,15 @@ function iniT() {
     urlp = urlc.searchObject;
 
   if (urlp.hasOwnProperty('hl')) {
-    cC(urlp.hl);
+    return cC(urlp.hl);
   } else {
-    if (typeof defaultlang != 'undefined' && defaultlang != '') {
-      cC(defaultlang);
-    } else if (typeof WMI != 'undefined' && typeof WMI.defaultlang != 'undefined' && WMI.defaultlang != '') {
-      cC(WMI.defaultlang);
-    }
+    cC(defaultlang);
   }
 }
 
-document.addEventListener('change', function (e) {
-  if (e.target && e.target.id == 'hl-switch') {
-    cC(e.target.value);
-  }
-});
+function handleSwitcher(val) {
+  return cC(val);
+}
 
 function parse_url(url) {
   if (!url) {
@@ -81,23 +92,53 @@ function loadCountry(callback) {
   ad.onload = callback;
 }
 
-function cC(hl) {
-  var cC = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
-  //var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
-  if (cC.length) {
-    var timer = 2000;
-    $("div[hl], div[hreflang]").hide().fadeOut(timer, function(){
-      cC.hide().fadeIn(timer, function(){
-        cC.attr('style', 'display:block');
-      });
-    });
+var items = document.querySelectorAll("div[hl], div[hreflang]");
+items.forEach(function (el, i) {
+  setTimeout(() => {
+    el.setAttribute('style', 'display:none');
+    if (i == (items.length - 1)) {
+      var selected = document.querySelectorAll(("div[hl='" + defaultlang + "'], div[hreflang='" + defaultlang + "']")).item(0);
+      setTimeout(() => {
+        selected.setAttribute('style', 'display:block');
+      }, 1000);
+    }
+  }, 1000);
+});
 
-    if (typeof translator != 'undefined' && translator) {
-      if (typeof getCountryName == 'undefined') {
-        loadCountry(createTranslator);
-      } else {
-        createTranslator();
+function cC(hl) {
+  var timer = 2000;
+  var items = document.querySelectorAll("div[hl], div[hreflang]");
+  items.forEach(function (el, i) {
+    setTimeout(() => {
+      el.setAttribute('style', 'display:none');
+      el.setAttribute('class', 'hidden')
+      if (i == (items.length - 1)) {
+        var selected = document.querySelectorAll(("div[hl='" + hl + "'], div[hreflang='" + hl + "']")).item(0);
+        setTimeout(() => {
+          selected.setAttribute('style', 'display:block; transition: all .2s ease-out;');
+          selected.removeAttribute('class');
+        }, 1000);
       }
+    }, 1000);
+  });
+  /**
+   element.hide(timer, function () {
+    var elm = $(this);
+    var lang = elm.attr('hl');
+    if (!lang) lang = elm.attr('hreflang');
+    console.log(lang, hl)
+    if (lang == hl) {
+      elm.show(timer);
+    }
+  });
+   */
+  //var element = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
+  /** Create translator */
+  if (typeof translator != 'undefined' && translator) {
+    if (typeof getCountryName == 'undefined') {
+      loadCountry(createTranslator);
+    } else {
+      createTranslator();
     }
   }
 }
@@ -118,14 +159,16 @@ function createTranslator() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"><i class="fas fa-language"></i></span>
 </div>
-<select name="" id="hl-switch" class="form-control">`;
+<select name="" id="hl-switch" class="form-control" onchange="handleSwitcher(this.value)">
+<option value="" readonly>Translate</option>
+`;
     cC.forEach(function (el, i) {
       var langCode = el.getAttribute('hl');
-      if (!langCode){
+      if (!langCode) {
         langCode = el.getAttribute('hreflang');
       }
       var selected = defaultlang == langCode ? 'selected' : false;
-      translatorEl += '<option value="' + langCode + '" ' + selected + '>' + getCountryLanguage(langCode) + '</option>';
+      translatorEl += '<option value="' + langCode + '">' + getCountryLanguage(langCode) + '</option>';
     });
     translatorEl += `</select>
 </div>
