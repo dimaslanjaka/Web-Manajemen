@@ -87,7 +87,9 @@ function cC(hl) {
   if (cC.length) {
     var timer = 300;
     $("div[hl], div[hreflang]").slideUp(timer, function(){
-      cC.slideDown(timer);
+      cC.slideDown(timer, function(){
+        cC.attr('style', 'display:block');
+      });
     });
 
     if (typeof translator != 'undefined' && translator) {
