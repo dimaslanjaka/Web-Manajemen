@@ -76,7 +76,7 @@ function createTranslator() {
   //var cC = $("div[hl], div[hreflang]");
   var cC = document.querySelectorAll("div[hl], div[hreflang]");
   if (cC.length) {
-    var translatorEl = `<div class="fixed-bottom" id="WMItranslator">
+    var translatorEl = `<div style="position:fixed; bottom: 0; left: 0" id="WMItranslator">
 <div class="card p-0 m-0" style="width:12em">
 <!-- Card content -->
 <div class="card-body p-0 m-0">
