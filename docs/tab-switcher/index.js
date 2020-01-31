@@ -6,8 +6,10 @@
 
 var urlc = parse_url(),
   urlp = urlc.searchObject,
-  defaultlang = 'id',
   translator = true;
+  if (typeof defaultlang == 'undefined'){
+    var defaultlang = 'id';
+  }
 if (urlp.hasOwnProperty('hl')) {
   cC(urlp.hl);
 } else {
