@@ -3,10 +3,13 @@
  * @author dimas lanjaka <dimaslanjaka[at]gmail.com>
  * @url https://codepen.io/dimaslanjaka/pen/LYEvERq
  */
-div[hreflang] {
+div[hreflang], div[hl] {
   display: none;
 }
-
+div[hreflang] a[data-wpel-link="external"], div[hl] a[data-wpel-link="external"]{
+  margin-left: 2px;
+  margin-right: 2px;
+}
 .fadeIn {
   -webkit-transition: opacity 1s linear;
   -o-transition: opacity 1s linear;
