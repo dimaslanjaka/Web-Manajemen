@@ -123,7 +123,6 @@ function createTranslator() {
         langCode = el.getAttribute('hreflang');
       }
       var selected = defaultlang == langCode ? 'selected' : false;
-      console.log(langCode, defaultlang)
       translatorEl += '<option value="' + langCode + '" ' + selected + '>' + getCountryLanguage(langCode) + '</option>';
     });
     translatorEl += `</select>
