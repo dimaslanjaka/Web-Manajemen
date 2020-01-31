@@ -88,6 +88,7 @@ function cC(hl) {
     var timer = 300;
     $("div[hl], div[hreflang]").fadeOut(timer, function(){
       cC.fadeIn(timer);
+      showAnim(cC);
     });
 
     if (typeof translator != 'undefined' && translator) {
@@ -142,7 +143,7 @@ var AnimationStep = 10; //pixels
 var AnimationInterval = 50; //milliseconds
 
 function showAnim(el) {
-  if (el instanceof NodeList) {
+  if (el instanceof NodeList || el instanceof jQuery) {
     for (let index = 0; index < el.length; index++) {
       const element = el[index];
       showAC(element);
