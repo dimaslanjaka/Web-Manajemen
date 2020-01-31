@@ -85,8 +85,8 @@ function cC(hl) {
   var cC = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
   //var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
   if (cC.length) {
-    var timer = 300;
-    $("div[hl], div[hreflang]").fadeOut(timer, function(){
+    var timer = 2000;
+    $("div[hl], div[hreflang]").show().fadeOut(timer, function(){
       cC.hide().fadeIn(timer, function(){
         cC.attr('style', 'display:block');
       });
