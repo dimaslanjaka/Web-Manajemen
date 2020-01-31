@@ -86,8 +86,8 @@ function cC(hl) {
   //var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
   if (cC.length) {
     var timer = 300;
-    $("div[hl], div[hreflang]").fadeOut(timer, function(){
-      cC.fadeIn(timer);
+    $("div[hl], div[hreflang]").slideUp(timer, function(){
+      cC.slideDown(timer);
     });
 
     if (typeof translator != 'undefined' && translator) {
