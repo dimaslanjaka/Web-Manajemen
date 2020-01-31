@@ -191,7 +191,7 @@ function fadeInC(el, time) {
       (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
     } else {
       el.style.display = 'block';
-      showAnim(el);
+      //showAnim(el);
     }
   };
 
