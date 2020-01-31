@@ -9,12 +9,6 @@ div[hl] {
   display: none;
 }
 
-div[hreflang] a[data-wpel-link="external"],
-div[hl] a[data-wpel-link="external"] {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
 #WMItranslator {
   position: fixed;
   bottom: 0;
