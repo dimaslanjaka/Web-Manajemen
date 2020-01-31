@@ -87,7 +87,7 @@ function cC(hl) {
   if (cC.length) {
     var timer = 300;
     $("div[hl], div[hreflang]").fadeOut(timer, function(){
-      cC.fadeIn(timer, function(){
+      cC.hide().fadeIn(timer, function(){
         cC.attr('style', 'display:block');
       });
     });
