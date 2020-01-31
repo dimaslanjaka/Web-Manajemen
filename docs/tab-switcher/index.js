@@ -88,7 +88,6 @@ function cC(hl) {
     var timer = 300;
     $("div[hl], div[hreflang]").fadeOut(timer, function(){
       cC.fadeIn(timer);
-      showAnim(cC);
     });
 
     if (typeof translator != 'undefined' && translator) {
@@ -137,40 +136,4 @@ function createTranslator() {
     //$('body').append(translatorEl);
     document.body.innerHTML += translatorEl;
   }
-}
-
-var AnimationStep = 10; //pixels
-var AnimationInterval = 50; //milliseconds
-
-function showAnim(el) {
-  if (el instanceof NodeList || el instanceof jQuery) {
-    for (let index = 0; index < el.length; index++) {
-      const element = el[index];
-      showAC(element);
-    }
-  } else {
-    showAC(el);
-  }
-}
-/**
- *
- * @param {HTMLElement} el
- * @param {*} height
- */
-function showAC(el) {
-  el.style.display = "block";
-  var height = el.clientHeight;
-  el.style.height = "0px";
-  Animate(el, height);
-}
-
-function Animate(element, targetHeight) {
-  var curHeight = element.clientHeight;
-  if (curHeight >= targetHeight)
-    return true;
-  element.style.height = (curHeight + AnimationStep) + "px";
-  window.setTimeout(function () {
-    Animate(element, targetHeight);
-  }, AnimationInterval);
-  return false;
 }
