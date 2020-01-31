@@ -81,6 +81,25 @@ function loadCountry(callback) {
   ad.onload = callback;
 }
 
+function cC(hl) {
+  var cC = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
+  //var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
+  if (cC.length) {
+    var timer = 300;
+    $("div[hl], div[hreflang]").fadeOut(timer, function(){
+      cC.fadeIn(timer);
+    });
+
+    if (typeof translator != 'undefined' && translator) {
+      if (typeof getCountryName == 'undefined') {
+        loadCountry(createTranslator);
+      } else {
+        createTranslator();
+      }
+    }
+  }
+}
+
 function createTranslator() {
   //if ($('#hl-switch').length) return;
   if (document.querySelectorAll('#hl-switch').length) return;
@@ -99,11 +118,13 @@ function createTranslator() {
 </div>
 <select name="" id="hl-switch" class="form-control">`;
     cC.forEach(function (el, i) {
-      if (el.getAttribute('hl')) {
-        translatorEl += '<option value="' + el.getAttribute('hl') + '">' + getCountryLanguage(el.getAttribute('hl')) + '</option>';
-      } else if (el.getAttribute('hreflang')) {
-        translatorEl += '<option value="' + el.getAttribute('hreflang') + '">' + getCountryLanguage(el.getAttribute('hreflang')) + '</option>';
+      var langCode = el.getAttribute('hl');
+      if (!langCode){
+        langCode = el.getAttribute('hreflang');
       }
+      var selected = defaultlang == langCode ? 'selected' : false;
+      console.log(langCode, defaultlang)
+      translatorEl += '<option value="' + langCode + '" ' + selected + '>' + getCountryLanguage(langCode) + '</option>';
     });
     translatorEl += `</select>
 </div>
@@ -115,26 +136,6 @@ function createTranslator() {
 </div>`;
     //$('body').append(translatorEl);
     document.body.innerHTML += translatorEl;
-  }
-}
-
-function cC(hl) {
-  $("div[hl], div[hreflang]").fadeOut('slow');
-  //var cC = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
-  var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
-  if (cC.length) {
-    if (cC.length === 1) {
-      $(cC).fadeIn(300);
-    } else {
-      cC[0].style.display = 'block';
-    }
-    if (typeof translator != 'undefined' && translator) {
-      if (typeof getCountryName == 'undefined') {
-        loadCountry(createTranslator);
-      } else {
-        createTranslator();
-      }
-    }
   }
 }
 
