@@ -3,33 +3,44 @@
  * @author dimas lanjaka <dimaslanjaka[at]gmail.com>
  * @url https://codepen.io/dimaslanjaka/pen/LYEvERq
  */
-
-var urlc = parse_url(),
-  urlp = urlc.searchObject,
-  translator = true;
-  if (typeof defaultlang == 'undefined'){
-    var defaultlang = 'id';
-  }
-if (urlp.hasOwnProperty('hl')) {
-  cC(urlp.hl);
-} else {
-  if (typeof defaultlang != 'undefined' && defaultlang != '') {
-    cC(defaultlang);
-  } else if (typeof WMI != 'undefined' && typeof WMI.defaultlang != 'undefined' && WMI.defaultlang != '') {
-    cC(WMI.defaultlang);
-  }
-  /*
-  $(document).on('change', '[id="hl-switch"]', function(e) {
-    e.preventDefault();
-    cC($(this).val());
-  });
-  */
-  document.addEventListener('change', function (e) {
-    if (e.target && e.target.id == 'hl-switch') {
-      cC(e.target.value);
-    }
-  });
+if (typeof defaultlang == 'undefined') {
+  var defaultlang = 'id';
 }
+if (typeof translator == 'undefined' || typeof translator != 'boolean') {
+  var translator = true;
+}
+
+if (typeof jQuery == 'undefined') {
+  var headTag = document.getElementsByTagName("head")[0];
+  var jqTag = document.createElement('script');
+  jqTag.type = 'text/javascript';
+  jqTag.src = '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
+  jqTag.onload = iniT;
+  headTag.appendChild(jqTag);
+} else {
+  iniT();
+}
+
+function iniT() {
+  var urlc = parse_url(),
+    urlp = urlc.searchObject;
+
+  if (urlp.hasOwnProperty('hl')) {
+    cC(urlp.hl);
+  } else {
+    if (typeof defaultlang != 'undefined' && defaultlang != '') {
+      cC(defaultlang);
+    } else if (typeof WMI != 'undefined' && typeof WMI.defaultlang != 'undefined' && WMI.defaultlang != '') {
+      cC(WMI.defaultlang);
+    }
+  }
+}
+
+document.addEventListener('change', function (e) {
+  if (e.target && e.target.id == 'hl-switch') {
+    cC(e.target.value);
+  }
+});
 
 function parse_url(url) {
   if (!url) {
@@ -108,14 +119,12 @@ function createTranslator() {
 }
 
 function cC(hl) {
-  //$("div[hl], div[hreflang]").fadeOut('slow');
-  fadeOut(document.querySelectorAll("div[hl], div[hreflang]"), 300);
+  $("div[hl], div[hreflang]").fadeOut('slow');
   //var cC = $("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
   var cC = document.querySelectorAll("div[hl='" + hl + "'], div[hreflang='" + hl + "']");
   if (cC.length) {
     if (cC.length === 1) {
-      //cC.fadeIn(300);
-      fadeIn(cC, 300);
+      $(cC).fadeIn(300);
     } else {
       cC[0].style.display = 'block';
     }
@@ -127,75 +136,6 @@ function cC(hl) {
       }
     }
   }
-}
-
-function fadeOut(el, time) {
-  if (!time) time = 300;
-  if (!el) return;
-  if (el instanceof NodeList) {
-    for (let index = 0; index < el.length; index++) {
-      const element = el[index];
-      fadeOutC(element);
-    }
-  } else {
-    fadeOutC(el);
-  }
-}
-/**
- * FadeOut Control Element
- * @param {HTMLElement} el
- * @param {Number} time
- */
-function fadeOutC(el, time) {
-  var fadeEffect = setInterval(function () {
-    if (!el.style.opacity) {
-      el.style.opacity = 1;
-    }
-    if (el.style.opacity > 0) {
-      el.style.opacity -= 0.1;
-    } else {
-      var timer = clearInterval(fadeEffect);
-      el.style.display = 'none';
-    }
-    el.style.transition = `opacity ${time / 1000} linear`;
-  }, time);
-}
-
-function fadeIn(el, time) {
-  if (!el) return;
-  if (!time) time = 300;
-  if (el instanceof NodeList) {
-    for (let index = 0; index < el.length; index++) {
-      const element = el[index];
-      fadeInC(element, time);
-    }
-  } else {
-    fadeInC(el, time);
-  }
-}
-/**
- * FadeIn Control Element
- * @param {HTMLElement} el
- * @param {Number} time
- */
-function fadeInC(el, time) {
-  el.style.transition = `opacity ${time / 1000} linear`;
-  el.style.opacity = 0;
-
-  var last = +new Date();
-  var tick = function () {
-    el.style.opacity = +el.style.opacity + (new Date() - last) / time;
-    last = +new Date();
-
-    if (+el.style.opacity < 1) {
-      (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-    } else {
-      el.style.display = 'block';
-      //showAnim(el);
-    }
-  };
-
-  tick();
 }
 
 var AnimationStep = 10; //pixels
