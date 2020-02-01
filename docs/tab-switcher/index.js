@@ -120,9 +120,10 @@ function cC(hl, callback) {
       if (i == (items.length - 1)) {
         var selected = document.querySelectorAll(("div[hl='" + hl + "'], div[hreflang='" + hl + "']")).item(0);
         setTimeout(() => {
-          selected.setAttribute('style', 'display:block; transition: all .2s ease-out;');
-          selected.removeAttribute('class');
-          console.log(selected)
+          if (selected) {
+            selected.setAttribute('style', 'display:block; transition: all .2s ease-out;');
+            selected.removeAttribute('class');
+          }
           if (typeof callback == 'function') callback();
         }, 1000);
       }
