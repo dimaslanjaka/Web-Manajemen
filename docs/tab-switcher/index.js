@@ -19,10 +19,10 @@ if (typeof jQuery == 'undefined') {
   var jqTag = document.createElement('script');
   jqTag.type = 'text/javascript';
   jqTag.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
-  jqTag.onload = loadVelocity;
+  jqTag.onload = iniT;
   headTag.appendChild(jqTag);
 } else {
-  loadVelocity();
+  iniT();
 }
 
 function loadVelocity() {
@@ -41,12 +41,11 @@ function loadVelocity() {
 function iniT() {
   var urlc = parse_url(),
     urlp = urlc.searchObject;
-
-  if (urlp.hasOwnProperty('hl')) {
-    return cC(urlp.hl);
-  } else {
-    cC(defaultlang);
-  }
+  return cC(defaultlang, function () {
+    if (urlp.hasOwnProperty('hl')) {
+      return cC(urlp.hl);
+    }
+  });
 }
 
 function handleSwitcher(val) {
@@ -91,7 +90,7 @@ function loadCountry(callback) {
   sc.parentNode.insertBefore(ad, sc);
   ad.onload = callback;
 }
-
+/*
 var items = document.querySelectorAll("div[hl], div[hreflang]");
 items.forEach(function (el, i) {
   setTimeout(() => {
@@ -104,19 +103,27 @@ items.forEach(function (el, i) {
     }
   }, 1000);
 });
-
-function cC(hl) {
+*/
+function cC(hl, callback) {
   var timer = 2000;
   var items = document.querySelectorAll("div[hl], div[hreflang]");
   items.forEach(function (el, i) {
     setTimeout(() => {
-      el.setAttribute('style', 'display:none');
-      el.setAttribute('class', 'hidden')
+      var lang = el.getAttribute('hreflang');
+      if (!lang) {
+        lang = el.getAttribute('hl');
+      }
+      if (lang != hl) {
+        el.setAttribute('style', 'display:none');
+        el.setAttribute('class', 'hidden');
+      }
       if (i == (items.length - 1)) {
         var selected = document.querySelectorAll(("div[hl='" + hl + "'], div[hreflang='" + hl + "']")).item(0);
         setTimeout(() => {
           selected.setAttribute('style', 'display:block; transition: all .2s ease-out;');
           selected.removeAttribute('class');
+          console.log(selected)
+          if (typeof callback == 'function') callback();
         }, 1000);
       }
     }, 1000);
