@@ -11,7 +11,7 @@ var loadJS = function (url, implementationCode, location) {
 
   location.appendChild(scriptTag);
 };
-loadJS('//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', initComments);
+loadJS('//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js?revision=' + Math.random(), initComments);
 
 
 function initComments() {
@@ -69,7 +69,7 @@ function initComments() {
     '</pre>', '</code>'
   ];
 
-  loadJS('../emoji-unpacked.js', function () {
+  loadJS('https://git.webmanajemen.com/Web-Manajemen/templates/vienna%20lite%202/Template/emoji-unpacked.js?revision=' + Math.random(), function () {
     var avatar = $("#comments");
     avatar.find('.comment_avatar img').each(function () {
       var ava = $(this).attr('src');
