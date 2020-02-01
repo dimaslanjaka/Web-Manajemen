@@ -2565,6 +2565,16 @@ head.appendChild(script);
       This results in a margin-width's worth of pixels being cropped. If the
       user is not using shrink to fit then we expand the header.
       -->
+      <b:if cond='data:sourceUrl'>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "<data:blog.url/>",
+        "logo": "<data:sourceUrl/>"
+      }
+      </script>
+      </b:if>
       <b:if cond='data:mobile'>
           <div id='header-inner'>
             <div class='titlewrapper' style='background: transparent'>

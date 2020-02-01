@@ -984,6 +984,16 @@ var _0x53b7=["\x3C","\x69\x6E\x64\x65\x78\x4F\x66","\x73\x70\x6C\x69\x74","\x6C\
       This results in a margin-width's worth of pixels being cropped. If the
       user is not using shrink to fit then we expand the header.
       -->
+      <b:if cond='data:sourceUrl'>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "<data:blog.url/>",
+        "logo": "<data:sourceUrl/>"
+      }
+      </script>
+      </b:if>
       <b:if cond='data:mobile'>
           <div id='header-inner'>
             <div class='titlewrapper' style='background: transparent'>
@@ -2000,7 +2010,7 @@ var _0x53b7=["\x3C","\x69\x6E\x64\x65\x78\x4F\x66","\x73\x70\x6C\x69\x74","\x6C\
 <div class='authorboxfull'>
 <div class='avatar-container'>
 <a href=''>
-<b:if cond='data:post.authorPhoto.url'><img class='author_avatar img-circle' expr:alt='data:post.author' expr:src='data:post.authorPhoto.url' itemprop='image' height='96' width='96'/><b:else/><img class='author_avatar img-circle' expr:alt='data:post.author' expr:src='data:post.authorPhoto.url' itemprop='image' height='96' width='96'/></b:if>
+<b:if cond='data:post.authorPhoto.url'><img class='author_avatar img-circle' expr:alt='data:post.author' expr:src='data:post.authorPhoto.url' itemprop='image' height='96' width='96'/><b:else/><img class='author_avatar img-circle' expr:alt='data:post.author' src='https://res.cloudinary.com/dimaslanjaka/image/fetch/f_auto/https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/img/icon/admin-settings-male.png' itemprop='image' height='96' width='96'/></b:if>
 </a>
 </div>
 <div class='author_description_container'>
@@ -2041,7 +2051,7 @@ $(document).ready(function(){$(".pl").click(function(){$("#share-menu").slideTog
 </script>
 <div style='clear:both'/>
 <div class='follow-by-email-inner'>
-      <form action='http://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;http://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
+      <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=ArakaMovies', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
         <table class='tabletd1'>
           <tr>
             <td>
@@ -2052,7 +2062,7 @@ $(document).ready(function(){$(".pl").click(function(){$("#share-menu").slideTog
             </td>
           </tr>
         </table>
-        <input expr:value='data:feedPath' name='uri' type='hidden'/>
+        <input type="hidden" value="ArakaMovies" name="uri" />
         <input name='loc' type='hidden' value='en_US'/>
       </form>
     </div>
