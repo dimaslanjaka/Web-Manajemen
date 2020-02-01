@@ -113,7 +113,7 @@ function cC(hl, callback) {
       if (!lang) {
         lang = el.getAttribute('hl');
       }
-      if (lang != hl) {
+      if (lang != hl && el) {
         el.setAttribute('style', 'display:none');
         el.setAttribute('class', 'hidden');
       }
