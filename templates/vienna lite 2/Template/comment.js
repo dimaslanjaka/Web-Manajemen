@@ -1,7 +1,7 @@
 var loadJS = function (url, implementationCode, location) {
-  //url is URL of external file, implementationCode is the code
-  //to be called from the file, location is the location to
-  //insert the <script> element
+  if (!location) {
+    location = document.head;
+  }
 
   var scriptTag = document.createElement('script');
   scriptTag.src = url;
@@ -11,7 +11,7 @@ var loadJS = function (url, implementationCode, location) {
 
   location.appendChild(scriptTag);
 };
-loadJS('//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js')
+loadJS('//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', initComments);
 
 
 function initComments() {
