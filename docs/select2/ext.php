@@ -8,6 +8,7 @@ class dimasCurl extends Curl
   private $proxy = '';
   private $reindex = 'reindex';
   private $tmp;
+  private $proxyFile;
 
   public function __construct($base = 0)
   {
@@ -19,15 +20,19 @@ class dimasCurl extends Curl
       mkdir($dir, 0777);
       umask($oldmask);
     }
-    $pf = __DIR__ . '/proxy.txt';
+    $this->proxyFile = __DIR__ . '/proxy.txt';
     $p = [];
-    if (file_exists($pf)) {
-      $p = file($pf, FILE_SKIP_EMPTY_LINES);
+    if (file_exists($this->proxyFile)) {
+      $p = file($this->proxyFile, FILE_SKIP_EMPTY_LINES);
+      $p = array_map('trim', $p);
+      if (!empty($p)) $this->proxy = $p[array_rand($p)];
     }
-    $p = array_map('trim', $p);
-    $this->proxy = $p[array_rand($p)];
   }
-
+  /**
+   * Save Results
+   *
+   * @return void
+   */
   public function saveGit()
   {
     $res = $this->response;
@@ -38,7 +43,7 @@ class dimasCurl extends Curl
       $response['msg'] = $this->errorMessage;
       $code = [7];
       if (in_array($this->errorCode, $code)) {
-        file_put_contents(__DIR__ . '/proxy.txt', str_replace($this->proxy, '', file_get_contents(__DIR__ . '/proxy.txt')));
+        file_put_contents($this->proxyFile, str_replace($this->proxy, '', file_get_contents($this->proxyFile)));
       }
     } else {
       $response = $res;
