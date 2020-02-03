@@ -37,18 +37,18 @@ function formatRepo(repo) {
   }
   //console.log(repo)
   var markup = "<div class='select2-result-repository clearfix'>" +
-    "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
-    "<div class='select2-result-repository__meta'>" +
-    "<div class='select2-result-repository__title'>" + repo.full_name + "</div>";
+    "<div class='select2-result-RepoAvatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+    "<div class='select2-result-RepoMeta'>" +
+    "<div class='select2-result-RepoTitle'>" + repo.full_name + "</div>";
 
   if (repo.description) {
-    markup += "<div class='select2-result-repository__description'>" + repo.description + "</div>";
+    markup += "<div class='select2-result-RepoDesc'>" + repo.description + "</div>";
   }
 
-  markup += "<div class='select2-result-repository__statistics'>" +
-    "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo.forks_count + " Forks</div>" +
-    "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
-    "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
+  markup += "<div class='select2-result-RepoStats'>" +
+    "<div class='select2-result-RepoForked'><i class='fas fa-flash'></i> " + repo.forks_count + " Forks</div>" +
+    "<div class='select2-result-RepoStars'><i class='fas fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
+    "<div class='select2-result-RepoWatchers'><i class='fas fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
     "</div>" +
     "</div></div>";
 
@@ -133,5 +133,9 @@ function formatRepoSelection(repo) {
     templateSelection: formatRepoSelection,
     theme: 'adwitt'
   });
+  $(document).one('click', 'input.select2-search__field', function(e){
+    e.preventDefault();
+    $(this).addClass('form-control');
+  })
 });
 
