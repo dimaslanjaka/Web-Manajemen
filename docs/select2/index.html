@@ -14,11 +14,12 @@
     href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
     color="#111" />
   <style>
+    /*page*/
     .wrap {
       width: 500px;
       margin: 2em auto;
     }
-
+    /*Utility*/
     .clearfix:before,
     .clearfix:after {
       content: " ";
@@ -28,7 +29,7 @@
     .clearfix:after {
       clear: both;
     }
-
+    /*Select 2 additional*/
     .select2-result-repository {
       padding-top: 4px;
       padding-bottom: 3px;
@@ -95,14 +96,98 @@
     .select2-results__options {
       overflow-y: auto;
     }
+    /* Custom Button */
+    .btn-circle.btn-sm {
+      width: 30px;
+      height: 30px;
+      padding: 6px 0px;
+      border-radius: 15px;
+      font-size: 8px;
+      text-align: center;
+    }
+
+    .btn-circle.btn-md {
+      width: 50px;
+      height: 50px;
+      padding: 7px 10px;
+      border-radius: 25px;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .btn-circle.btn-xl {
+      width: 70px;
+      height: 70px;
+      padding: 10px 16px;
+      border-radius: 35px;
+      font-size: 12px;
+      text-align: center;
+    }
+    /*loading*/
+    #Overlay {
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      transition: 1s 0.4s;
+    }
+
+    #Overlayprogress {
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      width: 0;
+      top: 50%;
+    }
+
+    #Overlayprogstat {
+      font-size: 0.7em;
+      letter-spacing: 3px;
+      position: absolute;
+      top: 50%;
+      margin-top: -40px;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+    }
   </style>
   <script>
-    window.console = window.console || function (t) { };
-  </script>
-  <script>
-    if (document.location.search.match(/type=embed/gi)) {
-      window.parent.postMessage("resize", "*");
-    }
+    ;(function () {
+      function id(v) { return document.getElementById(v); }
+      function loadbar() {
+        var OverLay = id("Overlay"),
+          prog = id("Overlayprogress"),
+          stat = id("Overlayprogstat"),
+          img = document.images,
+          c = 0;
+        tot = img.length;
+
+        function ImageLoading() {
+          c += 1;
+          var perc = ((100 / tot * c) << 0) + "%";
+          console.log(perc, c, tot);
+          prog.style.width = perc;
+          stat.innerHTML = "Loading " + perc;
+          if (c === tot) return ImageDoneLoading();
+        }
+        function ImageDoneLoading() {
+          OverLay.style.opacity = 0;
+          setTimeout(function () {
+            OverLay.style.display = "none";
+          }, 1200);
+        }
+        for (var i = 0; i < tot; i++) {
+          var tImg = new Image();
+          tImg.onload = ImageLoading;
+          tImg.onerror = ImageLoading;
+          tImg.src = img[i].src;
+        }
+      }
+      document.addEventListener('DOMContentLoaded', loadbar, false);
+    }());
   </script>
 </head>
 
@@ -116,7 +201,7 @@
       <option value="3620194" selected="selected">select2/select2</option>
     </select>
     <div class="text-center mt-3">
-      <button class="btn btn-primary"><i class="fas fa-sync"></i></button>
+      <button id="reIndex" class="btn-primary btn-circle btn-md"><i class="fas fa-sync fa-lg"></i></button>
     </div>
     <div class="text-center fixed fixed-bottom m-5">
       <a href="https://github.com/dimaslanjaka/Web-Manajemen/tree/master/docs/select2" target="_blank"

@@ -59,7 +59,6 @@ function formatRepo(repo) {
 function formatRepoSelection(repo) {
   return repo.full_name || repo.text;
 }
-
 !(function (d, i, m, a, s) {
   var load = function (dd, ii, mm, aa, ss) {
     var r, sc = ii.createElement(aa);
@@ -162,4 +161,3 @@ function formatRepoSelection(repo) {
     $(this).addClass('form-control');
   });
 });
-
