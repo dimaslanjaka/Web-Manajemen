@@ -1,4 +1,3 @@
-loadCSS(['https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css', 'https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css', './css/style.css', './css/select2.min.css']);
 /**
  * Load CSS asynchronously
  * @see https://www.webmanajemen.com/2020/01/load-css-asynchronously.html
@@ -28,7 +27,10 @@ function loadCSS(e, t, n) {
     load(e, t, n);
   }
 }
-
+/**
+ * Format single repo into result html pagging
+ * @param {Object} repo
+ */
 function formatRepo(repo) {
   if (repo.loading) {
     //console.log(repo.loading);
@@ -66,13 +68,13 @@ function formatRepoSelection(repo) {
     sc.onload = sc.onreadystatechange = function () {
       if (!r && typeof ss == 'function' && (!this.readyState || this.readyState == 'complete')) {
         r = true;
-        ss(dd);
+        ss(dd, load);
       }
     };
     var b = document.body.firstChild;
     b.parentNode.insertBefore(sc, b);
   }
-  if (Array.isArray(m)){
+  if (Array.isArray(m)) {
     for (var index = 0; index < m.length; index++) {
       if (index == m.length - 1) {
         load(d, i, m[index], a, s);
@@ -83,7 +85,17 @@ function formatRepoSelection(repo) {
   } else {
     load(d, i, m, a, s);
   }
-})(window, document, ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js'], 'script', function (w) {
+})(window, document, ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js'], 'script', function (w, l) {
+  'use strict';
+  loadCSS(['https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css', 'https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css', './css/style.css', './css/select2.min.css']);
+
+  if (typeof window.jQuery == 'undefined') {
+    return l(w, document, 'https://unpkg.com/sweetalert/dist/sweetalert.min.js', 'script', function (w, l) {
+      swal("jQuery Error", "Please reload the browser").then(function(c){
+        location.reload()
+      });
+    });
+  }
   var $ajax = $(".js-example-data-ajax");
   $ajax.select2({
     ajax: {
@@ -103,7 +115,7 @@ function formatRepoSelection(repo) {
           return {
             "results": [
               {
-                id: 00101230,
+                id: '00101230',
                 name: "ERROR",
                 full_name: "ERROR CURL",
                 description: data.msg,
