@@ -2,13 +2,23 @@
 
 use Curl\Curl;
 
-class dimasCurl extends Curl
+/**
+ * Github repository fetcher
+ * * Lightweight github repositories searcher
+ * @author Dimas Lanjaka <dimaslanjaka@gmail.com>
+ * @license MIT
+ * @version 1.0.0
+ * @todo Fetching github repository index faster
+ */
+class dimasGit extends Curl
 {
   public $bname;
+  public $git_response;
   private $proxy = '';
   private $reindex = 'reindex';
   private $tmp;
   private $proxyFile;
+  private $CFile;
 
   public function __construct($base = 0)
   {
@@ -37,19 +47,20 @@ class dimasCurl extends Curl
   {
     $res = $this->response;
     $response = [];
-    if ($this->error) {
+    if ($this->error || !$res) {
       $response['error'] = true;
       $response['code'] = $this->errorCode;
       $response['msg'] = $this->errorMessage;
-      $code = [7];
+      $code = [7, 56, 28];
       if (in_array($this->errorCode, $code)) {
         file_put_contents($this->proxyFile, str_replace($this->proxy, '', file_get_contents($this->proxyFile)));
       }
     } else {
       $response = $res;
+      file_put_contents($this->CFile, json_encode($response), LOCK_EX);
     }
-
-    return $res;
+    $this->git_response = $response;
+    return $this;
   }
   /**
    * Load git repos
@@ -60,14 +71,14 @@ class dimasCurl extends Curl
   public function loadGit($query)
   {
     $this->setUrl('https://api.github.com/search/repositories');
-    $this->bname = md5($this->url);
-    $this->tmp = __DIR__ . '/tmp';
-    $file = $this->tmp . $this->bname . '.json';
-    if (!$this->isreq($this->reindex) && file_exists($file)) {
-      $this->response = json_decode(file_get_contents($file));
+    $this->bname = md5(serialize($query));
+    $this->tmp = __DIR__ . '/tmp/';
+    $this->CFile = $this->tmp . $this->bname . '.json';
+    if (!$this->isreq($this->reindex) && file_exists($this->CFile)) {
+      $this->response = json_decode(file_get_contents($this->CFile));
       $this->error = 0;
       $this->errorMessage = 0;
-      return $this;
+      return $this->saveGit();
     }
     $headers = ['Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5', 'Connection: Keep-Alive', 'Cache-Control: max-age=0', 'Upgrade-Insecure-Requests: 1', 'DNT: 1', 'Keep-Alive: 300', 'Content-type: */*;charset=UTF-8', 'Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7', 'Accept-Language: en-us,en;q=0.5', 'Pragma: no-cache', 'Origins: https://translate.google.co.id'];
     $this->setHeaders($headers);
@@ -80,12 +91,13 @@ class dimasCurl extends Curl
     $this->setOpt(CURLOPT_COOKIESESSION, true);
     $this->setOpt(CURLOPT_RETURNTRANSFER, true);
     $this->setOpt(CURLOPT_FOLLOWLOCATION, true);
+    $this->setTimeout(300);
     if (!empty($this->proxy)) {
       $this->setProxy($this->proxy);
       $this->setProxyTunnel(1);
     }
     $this->get($query);
-    return $this;
+    return $this->saveGit();
   }
 
   /**
