@@ -12,8 +12,6 @@ if (isset($_REQUEST['page'])) {
 }
 if (empty($param)) return;
 
-$curl = new dimasCurl();
+$curl = new dimasGit();
 $curl->loadGit($param);
-$response = $curl->saveGit();
-
-echo json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+exit(json_encode($curl->git_response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
