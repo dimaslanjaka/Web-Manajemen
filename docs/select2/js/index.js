@@ -70,7 +70,7 @@ function formatRepoSelection(repo) {
         ss(dd, load);
       }
     };
-    var b = document.body.firstChild;
+    var b = document.getElementsByTagName(a)[0];
     b.parentNode.insertBefore(sc, b);
   }
   if (Array.isArray(m)) {
@@ -96,7 +96,7 @@ function formatRepoSelection(repo) {
     });
   }
   var $ajax = $(".js-example-data-ajax");
-  $ajax.select2({
+  var init = $ajax.select2({
     ajax: {
       url: "./query.php",
       dataType: 'json',
