@@ -1,4 +1,3 @@
-var $ajax = $(".js-example-data-ajax");
 loadCSS(['https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css', 'https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css', './css/style.css', './css/select2.min.css']);
 /**
  * Load CSS asynchronously
@@ -59,20 +58,33 @@ function formatRepoSelection(repo) {
   return repo.full_name || repo.text;
 }
 
-(function (d, i, m, a, s) {
-  var r;
-  a = i.createElement(a);
-  a.async = true;
-  a.src = m;
-  a.onload = a.onreadystatechange = function () {
-    if (!r && (!this.readyState || this.readyState == 'complete')) {
-      r = true;
-      s();
+!(function (d, i, m, a, s) {
+  var load = function (dd, ii, mm, aa, ss) {
+    var r, sc = ii.createElement(aa);
+    sc.async = true;
+    sc.src = mm;
+    sc.onload = sc.onreadystatechange = function () {
+      if (!r && typeof ss == 'function' && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        ss(dd);
+      }
+    };
+    var b = document.body.firstChild;
+    b.parentNode.insertBefore(sc, b);
+  }
+  if (Array.isArray(m)){
+    for (var index = 0; index < m.length; index++) {
+      if (index == m.length - 1) {
+        load(d, i, m[index], a, s);
+      } else {
+        load(d, i, m[index], a);
+      }
     }
-  };
-  var b = document.body.firstChild;
-  b.parentNode.insertBefore(a, b);
-})(window, document, 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js', 'script', function () {
+  } else {
+    load(d, i, m, a, s);
+  }
+})(window, document, ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js'], 'script', function (w) {
+  var $ajax = $(".js-example-data-ajax");
   $ajax.select2({
     ajax: {
       url: "./query.php",
@@ -133,9 +145,9 @@ function formatRepoSelection(repo) {
     templateSelection: formatRepoSelection,
     theme: 'adwitt'
   });
-  $(document).one('click', 'input.select2-search__field', function(e){
+  $(document).one('click', 'input.select2-search__field', function (e) {
     e.preventDefault();
     $(this).addClass('form-control');
-  })
+  });
 });
 
