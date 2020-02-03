@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - select2 - loading remote data</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css'>
+  <link rel='stylesheet' href='./header.css'>
+  <style>
+    .wrap {
+      width: 500px;
+      margin: 2em auto;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      content: " ";
+      display: table;
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    .select2-result-repository {
+      padding-top: 4px;
+      padding-bottom: 3px;
+    }
+
+    .select2-result-repository__avatar {
+      float: left;
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    .select2-result-repository__avatar img {
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+    }
+
+    .select2-result-repository__meta {
+      margin-left: 70px;
+    }
+
+    .select2-result-repository__title {
+      color: black;
+      font-weight: bold;
+      word-wrap: break-word;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .select2-result-repository__forks,
+    .select2-result-repository__stargazers {
+      margin-right: 1em;
+    }
+
+    .select2-result-repository__forks,
+    .select2-result-repository__stargazers,
+    .select2-result-repository__watchers {
+      display: inline-block;
+      color: #aaa;
+      font-size: 11px;
+    }
+
+    .select2-result-repository__description {
+      font-size: 13px;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .select2-results__option--highlighted .select2-result-repository__title {
+      color: white;
+    }
+
+    .select2-results__option--highlighted .select2-result-repository__forks,
+    .select2-results__option--highlighted .select2-result-repository__stargazers,
+    .select2-results__option--highlighted .select2-result-repository__description,
+    .select2-results__option--highlighted .select2-result-repository__watchers {
+      color: #c6dcef;
+    }
+
+    .select2-container--adwitt .select2-results>.select2-results__options {
+      max-height: 300px;
+    }
+
+    .select2-results__options {
+      overflow-y: auto;
+    }
+  </style>
+  <script>
+    window.console = window.console || function (t) { };
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+</head>
+
+<body translate="no">
+  <div class="wrap">
+    <select class="js-example-data-ajax" style="width:100%">
+      <option value="3620194" selected="selected">select2/select2</option>
+    </select>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js'></script>
+  <script id="rendered-js">
+    var $ajax = $(".js-example-data-ajax");
+
+    function formatRepo(repo) {
+
+      if (repo.loading) return repo.text;
+      console.log(repo.loading);
+      var markup = "<div class='select2-result-repository clearfix'>" +
+        "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+        "<div class='select2-result-repository__meta'>" +
+        "<div class='select2-result-repository__title'>" + repo.full_name + "</div>";
+
+      if (repo.description) {
+        markup += "<div class='select2-result-repository__description'>" + repo.description + "</div>";
+      }
+
+      markup += "<div class='select2-result-repository__statistics'>" +
+        "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo.forks_count + " Forks</div>" +
+        "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
+        "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
+        "</div>" +
+        "</div></div>";
+
+      return markup;
+    }
+
+    function formatRepoSelection(repo) {
+      return repo.full_name || repo.text;
+    }
+
+    $ajax.select2({
+      ajax: {
+        url: "https://api.github.com/search/repositories",
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+          return {
+            q: params.term, // search term
+            page: params.page
+          };
+
+        },
+        processResults: function (data, params) {
+          // parse the results into the format expected by Select2
+          // since we are using custom formatting functions we do not need to
+          // alter the remote JSON data, except to indicate that infinite
+          // scrolling can be used
+          console.log(data, params);
+          params.page = params.page || 1;
+
+          return {
+            results: data.items,
+            pagination: {
+              more: params.page * 30 < data.total_count
+            }
+          };
+
+
+        },
+        cache: true
+      },
+
+      escapeMarkup: function (markup) { return markup; },
+      minimumInputLength: 1,
+      templateResult: formatRepo,
+      templateSelection: formatRepoSelection,
+      theme: 'adwitt'
+    });
+//# sourceURL=pen.js
+  </script>
+</body>
+
+</html>
