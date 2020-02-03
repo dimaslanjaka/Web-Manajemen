@@ -2,7 +2,47 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <!--[Caching]-->
+  <include expiration='7d' path='*.css'></include>
+  <include expiration='7d' path='*.js'></include>
+  <include expiration='3d' path='*.gif'></include>
+  <include expiration='3d' path='*.jpeg'></include>
+  <include expiration='3d' path='*.jpg'></include>
+  <include expiration='3d' path='*.png'></include>
+  <!-- [ Prefetch DNS for external assets ]-->
+  <link crossorigin='' href='https://static.xx.fbcdn.net' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://cdnjs.cloudflare.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.blogger.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://fonts.googleapis.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://resources.blogblog.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.google-analytics.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.gstatic.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.googletagservices.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://raw.githack.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://cdn.jsdelivr.net' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://tpc.googlesyndication.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.googletagmanager.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://1.bp.blogspot.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://2.bp.blogspot.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://3.bp.blogspot.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://4.bp.blogspot.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://cdn.statically.io' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://pagead2.googlesyndication.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://googleads.g.doubleclick.net' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://adservice.google.co.id/' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://adservice.google.com/' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://www.youtube.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://lh3.googleusercontent.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://img.youtube.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://raw.githubusercontent.com' rel='preconnect dns-prefetch' />
+  <link crossorigin='' href='https://i.ytimg.com' rel='preconnect dns-prefetch' />
+  <!--[Meta Content-Type AND Charset]-->
+  <meta charset='utf-8' />
+  <!--<meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>-->
+  <meta content='width=device-width, initial-scale=1' name='viewport' />
+  <meta content='text/html;charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
   <title>Select 2 Loading Remote Data</title>
   <link rel="canonical" href="https://mirror.webmanajemen.com/Web-Manajemen/docs/select2/">
   <link rel="apple-touch-icon" type="image/png"
@@ -19,6 +59,7 @@
       width: 500px;
       margin: 2em auto;
     }
+
     /*Utility*/
     .clearfix:before,
     .clearfix:after {
@@ -29,6 +70,7 @@
     .clearfix:after {
       clear: both;
     }
+
     /*Select 2 additional*/
     .select2-result-repository {
       padding-top: 4px;
@@ -96,6 +138,7 @@
     .select2-results__options {
       overflow-y: auto;
     }
+
     /* Custom Button */
     .btn-circle.btn-sm {
       width: 30px;
@@ -123,76 +166,36 @@
       font-size: 12px;
       text-align: center;
     }
+
     /*loading*/
     #Overlay {
-      position: fixed;
-      z-index: 99999;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.9);
-      transition: 1s 0.4s;
-    }
-
-    #Overlayprogress {
-      height: 1px;
-      background: #fff;
-      position: absolute;
-      width: 0;
-      top: 50%;
-    }
-
-    #Overlayprogstat {
-      font-size: 0.7em;
-      letter-spacing: 3px;
-      position: absolute;
-      top: 50%;
-      margin-top: -40px;
       width: 100%;
-      text-align: center;
-      color: #fff;
+      height: 100%;
+      position: fixed;
+      z-index: 9999;
+      background-color: azure;
+      background: url("https://i.imgur.com/jtkTPvb.gif") no-repeat center center rgb(255, 255, 255)
     }
   </style>
   <script>
-    ;(function () {
-      function id(v) { return document.getElementById(v); }
-      function loadbar() {
-        var OverLay = id("Overlay"),
-          prog = id("Overlayprogress"),
-          stat = id("Overlayprogstat"),
-          img = document.images,
-          c = 0;
-        tot = img.length;
-
-        function ImageLoading() {
-          c += 1;
-          var perc = ((100 / tot * c) << 0) + "%";
-          console.log(perc, c, tot);
-          prog.style.width = perc;
-          stat.innerHTML = "Loading " + perc;
-          if (c === tot) return ImageDoneLoading();
-        }
-        function ImageDoneLoading() {
-          OverLay.style.opacity = 0;
-          setTimeout(function () {
-            OverLay.style.display = "none";
-          }, 1200);
-        }
-        for (var i = 0; i < tot; i++) {
-          var tImg = new Image();
-          tImg.onload = ImageLoading;
-          tImg.onerror = ImageLoading;
-          tImg.src = img[i].src;
-        }
+    document.onreadystatechange = function () {
+      var state = document.readyState
+      if (state == 'interactive') {
+        document.getElementById('wrap').style.visibility = "hidden";
+      } else if (state == 'complete') {
+        setTimeout(function () {
+          //document.getElementById('interactive');
+          document.getElementById('Overlay').style.visibility = "hidden";
+          document.getElementById('wrap').style.visibility = "visible";
+        }, 1000);
       }
-      document.addEventListener('DOMContentLoaded', loadbar, false);
-    }());
+    }
   </script>
 </head>
 
 <body translate="no" id="body-content">
-  <div class="wrap">
+  <div id="Overlay"></div>
+  <div id="wrap" class="wrap">
     <div class="text-center mb-3">
       <h1 itemprop="headline title">Remote Data (Basic defer > async)</h1>
       <p class="text-muted">Increase page performance</p>
