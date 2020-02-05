@@ -3,6 +3,7 @@ define(["jquery", "select2", "loadcss"], function ($) {
         loadCSS(['https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css', './css/style.min.css?v=11', './css/select2.min.css']);
         /** Declare global dump data */
         var items = [], pageSize = 50;
+        /** Dump 10k data */
         for (var i = 0; i < 10000; i++) {
             /** Set dump object */
             items.push({ id: i, text: "item " + i });
