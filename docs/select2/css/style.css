@@ -2697,6 +2697,6 @@ table.dataTable thead th.left {
   font-size: 13px;
 }
 
-a[href^='https://www.000webhost.com'] {
+[href^='https://www.000webhost.com'],[src^='https://www.000webhost.com'] {
   display: none !important;
 }
