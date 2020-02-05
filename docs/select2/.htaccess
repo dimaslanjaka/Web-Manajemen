@@ -1,2 +1,16 @@
-##Cache 1 day
-Header set Cache-Control "max-age=86400, public"
+# Custom Header
+<ifModule mod_headers.c>
+Header set Connection keep-alive
+<filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+<filesMatch "\.(css)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+<filesMatch "\.(js)$">
+Header set Cache-Control "max-age=31536000, private"
+</filesMatch>
+<filesMatch "\.(x?html?|php)$">
+Header set Cache-Control "private, must-revalidate"
+</filesMatch>
+</ifModule>
