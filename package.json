@@ -1,11 +1,21 @@
 {
   "name": "webmanajemen",
   "description": "Website Manajemen Indonesia Repository",
-  "licenses": [{
-    "type": "ISC",
-    "url": "https://opensource.org/licenses/ISC"
-  }],
-  "version": "5.0.0.1332",
+  "licenses": [
+    {
+      "type": "ISC",
+      "url": "https://opensource.org/licenses/ISC"
+    },
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    },
+    {
+      "type": "Apache-2.0",
+      "url": "https://opensource.org/licenses/apache2.0.php"
+    }
+  ],
+  "version": "5.0.1",
   "main": "js/mdb.min.js",
   "repository": "https://github.com/dimaslanjaka/Web-Manajemen.git",
   "author": "Dimas Lanjaka",
@@ -13,6 +23,7 @@
   "dependencies": {
     "jquery": "^3.4.1",
     "requirejs": "^2.3.6",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "toastr": "^2.1.4"
   }
 }
