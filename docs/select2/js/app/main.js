@@ -11,12 +11,12 @@ define(["jquery", "select2", "loadcss"], function ($) {
         $.fn.select2.amd.require(["select2/data/array", "select2/utils"],
 
             function (ArrayData, Utils) {
-                function CustomData($element, options) {
-                    CustomData.__super__.constructor.call(this, $element, options);
+                function CDATA($element, options) {
+                    CDATA.__super__.constructor.call(this, $element, options);
                 }
-                Utils.Extend(CustomData, ArrayData);
+                Utils.Extend(CDATA, ArrayData);
 
-                CustomData.prototype.query = function (params, callback) {
+                CDATA.prototype.query = function (params, callback) {
                     if (!("page" in params)) {
                         params.page = 1;
                     }
@@ -30,7 +30,7 @@ define(["jquery", "select2", "loadcss"], function ($) {
                 $(document).ready(function () {
                     $("#sl2").select2({
                         ajax: {},
-                        dataAdapter: CustomData
+                        dataAdapter: CDATA
                     });
                 });
             })
