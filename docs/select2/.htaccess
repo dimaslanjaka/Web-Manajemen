@@ -1,4 +1,4 @@
-# Custom Header
+# Leverage browser caching
 <ifModule mod_headers.c>
 Header set Connection keep-alive
 <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
