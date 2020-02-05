@@ -1,8 +1,18 @@
 {
-  "require": {
-    "php-curl-class/php-curl-class": "^8.6"
-  },
-  "autoload": {
-    "files": ["ext.php"]
-  }
+    "name": "dimaslanjaka/select2",
+    "description": "Select2 Performances Improvement",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimas Lanjaka",
+            "email": "dimaslanjaka@gmail.com"
+        }
+    ],
+    "require": {
+      "php-curl-class/php-curl-class": "^8.6"
+    },
+    "autoload": {
+      "files": ["ext.php"]
+    }
 }
