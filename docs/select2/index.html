@@ -43,8 +43,8 @@
   <meta content='width=device-width, initial-scale=1' name='viewport' />
   <meta content='text/html;charset=UTF-8' http-equiv='Content-Type' />
   <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-  <title>Select 2 Loading Remote Data</title>
-  <link rel="canonical" href="https://mirror.webmanajemen.com/Web-Manajemen/docs/select2/">
+  <title>Select 2 Loading Remote Data - WMI</title>
+  <!--Icon-->
   <link rel="apple-touch-icon" type="image/png"
     href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
   <meta name="apple-mobile-web-app-title" content="CodePen">
@@ -53,6 +53,37 @@
   <link rel="mask-icon" type=""
     href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
     color="#111" />
+  <link rel="shortcut icon" href="https://z9t4u9f6.stackpathcdn.com/wp-content/themes/mdbootstrap4/favicon.ico" />
+  <!--Major-->
+  <link rel="canonical" href="https://mirror.webmanajemen.com/Web-Manajemen/docs/select2/index.html">
+  <meta name="description" content="Improve performance of Select2 remote data. Improving backend cache for select2." />
+  <!--Facebook/Google-->
+  <meta property="og:url" content="https://mirror.webmanajemen.com/Web-Manajemen/docs/select2/index.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Select 2 Loading Remote Data - WMI" />
+  <meta property="og:description"
+    content="Improve performance of Select2 remote data. Improving backend cache for select2." />
+  <meta property="og:site_name" content="WMI GitLabs" />
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/img/working%20cache.png" />
+  <meta property="og:image:secure_url"
+    content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/img/working%20cache.png" />
+  <meta content='100001995776790' property='fb:admins' />
+  <meta content='https://www.facebook.com/dimaslanjaka1' property='article:author' />
+  <meta content='https://www.facebook.com/secretnetworkforces' property='article:publisher' />
+  <meta content='182383652179465' property='fb:app_id' />
+  <!--Twitter-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="Select 2 Loading Remote Data - WMI" />
+  <meta name="twitter:title" content="Select 2 Loading Remote Data - WMI" />
+  <meta name="twitter:site" content="@WManajemen" />
+  <meta name="twitter:image"
+    content="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://raw.githubusercontent.com/dimaslanjaka/Web-Manajemen/master/img/working%20cache.png" />
+  <meta content='summary' name='twitter:card' />
+  <meta content='@WManajemen' name='twitter:site' />
+  <meta content='@WManajemen' name='twitter:creator' />
+
   <style>
     /*page*/
     .wrap {
@@ -169,12 +200,31 @@
 
     /*loading*/
     #Overlay {
-      width: 100%;
-      height: 100%;
       position: fixed;
       z-index: 9999;
-      background-color: azure;
-      background: url("https://i.imgur.com/jtkTPvb.gif") no-repeat center center rgb(255, 255, 255)
+      margin: 5px;
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      /* Light grey */
+      border-top: 16px solid #3498db;
+      /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      text-align: center;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
   <script>
@@ -194,7 +244,7 @@
 </head>
 
 <body translate="no" id="body-content">
-  <div id="Overlay"></div>
+  <div id="Overlay"><div class="loader"></div></div>
   <div id="wrap" class="wrap">
     <div class="text-center mb-3">
       <h1 itemprop="headline title">Remote Data (Basic defer > async)</h1>
@@ -231,7 +281,7 @@
 
   <div class="text-center fixed fixed-bottom m-5">
     <a href="https://github.com/dimaslanjaka/Web-Manajemen/tree/master/docs/select2" target="_blank"
-      rel="noopener noreferrer"><i class="fab fa-github"></i> Git</a>
+      rel="noopener noreferrer"><i class="fab fa-github"></i> Git</a> | <a href="https://developers.google.com/speed/pagespeed/insights/?hl=id&url=https%3A%2F%2Fmirror.webmanajemen.com%2FWeb-Manajemen%2Fdocs%2Fselect2%2Findex.html&tab=desktop" target="_blank" rel="noopener noreferrer">Pagespeed</a>
   </div>
   <!--
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
