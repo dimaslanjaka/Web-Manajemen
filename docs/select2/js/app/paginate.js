@@ -4,7 +4,8 @@ define(["jquery", "select2", "loadcss"], function ($) {
         /** Declare global dump data */
         var items = [];
         for (var i = 0; i < 10000; i++) {
-            items.push({ id: i, text: "item " + i })
+            /** Set dump object */
+            items.push({ id: i, text: "item " + i });
         }
 
         pageSize = 50
