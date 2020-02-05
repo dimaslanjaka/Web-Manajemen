@@ -1,9 +1,9 @@
 {
-  "name": "mdbootstrap",
-  "version": "4.11.0",
+  "name": "webmanajemen",
+  "version": "5.0.0.1332",
   "main": "js/mdb.min.js",
-  "repository": "https://github.com/mdbootstrap/bootstrap-material-design.git",
-  "author": "MDBootstrap",
+  "repository": "https://github.com/dimaslanjaka/Web-Manajemen.git",
+  "author": "Dimas Lanjaka",
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.4.1"
