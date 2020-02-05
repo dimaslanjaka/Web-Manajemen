@@ -1,3 +1,6 @@
+# Custom htaccess for performances
+# by dimas lanjaka
+
 ServerSignature Off
 # Custom Header
 # Cache 1 day
