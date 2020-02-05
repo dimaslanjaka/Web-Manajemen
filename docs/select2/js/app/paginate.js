@@ -1,8 +1,9 @@
 define(["jquery", "select2", "loadcss"], function ($) {
     $(function () {
         loadCSS(['https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css', './css/style.min.css?v=11', './css/select2.min.css']);
-        items = []
-        for (var i = 0; i < 1000; i++) {
+        /** Declare global data */
+        items = [];
+        for (var i = 0; i < 10000; i++) {
             items.push({ id: i, text: "item " + i })
         }
 
