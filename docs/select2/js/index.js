@@ -86,7 +86,7 @@ function formatRepoSelection(repo) {
   }
 })(window, document, ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.full.js'], 'script', function (w, l) {
   'use strict';
-  loadCSS(['https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css', 'https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css', './css/style.css', './css/select2.min.css']);
+  loadCSS(['https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css', './css/style.css', './css/select2.min.css']);
 
   if (typeof window.jQuery == 'undefined') {
     return l(w, document, 'https://unpkg.com/sweetalert/dist/sweetalert.min.js', 'script', function (w, l) {
@@ -95,7 +95,7 @@ function formatRepoSelection(repo) {
       });
     });
   }
-  var $ajax = $(".js-example-data-ajax");
+  var $ajax = $("#sl2");
   var init = $ajax.select2({
     ajax: {
       url: "./query.php",
@@ -155,9 +155,5 @@ function formatRepoSelection(repo) {
     templateResult: formatRepo,
     templateSelection: formatRepoSelection,
     theme: 'adwitt'
-  });
-  $(document).one('click', 'input.select2-search__field', function (e) {
-    e.preventDefault();
-    $(this).addClass('form-control');
   });
 });
