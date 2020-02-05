@@ -33,6 +33,7 @@ function formatRepo(repo) {
 function formatRepoSelection(repo) {
   return repo.full_name || repo.text;
 }
+
 define(["jquery", "select2", "loadcss"], function ($) {
   loadCSS(['https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css', './css/style.css', './css/select2.min.css']);
   if (typeof window.jQuery == 'undefined') {
@@ -55,9 +56,10 @@ define(["jquery", "select2", "loadcss"], function ($) {
         };
       },
       processResults: function (data, params) {
-        //console.log(data, params);
+        /**
+         * Error return
+         */
         if (typeof data.error != 'undefined') {
-          console.log(data)
           return {
             "results": [
               {
@@ -80,7 +82,7 @@ define(["jquery", "select2", "loadcss"], function ($) {
             }
           }
         }
-
+        /** Success return */
         params.page = params.page || 1;
 
         return {
