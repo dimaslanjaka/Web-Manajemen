@@ -61,7 +61,7 @@ div[hl].hidden {
   box-sizing: border-box;
   max-width: 100%;
   padding: 0.5em 0.6em;
-  margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em;*/
 }
 
 .WMIvisible {

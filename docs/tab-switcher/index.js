@@ -162,7 +162,7 @@ function createTranslator() {
 <!-- Card content -->
 <div class="card-body p-0 m-0">
 <div class="card-text p-0 m-0">
-<form action="">
+<form action="#" style="margin:0">
   <div class="input-group">
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"><i class="fas fa-language"></i></span>
