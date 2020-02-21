@@ -56,7 +56,8 @@
   $('a.floated').click(function (e) {
     e.preventDefault();
     var query = parseURL();
-    var urlB = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : false) + location.pathname + '?build&file=' + query.file;
+    var urlB = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + location.pathname + '?build&file=' + query.file;
+    console.log(urlB);
     location.href = urlB;
   });
 </script>
