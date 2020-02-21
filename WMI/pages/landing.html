@@ -243,7 +243,7 @@
 
       <div class="view overlay z-depth-1-half">
         <img
-          src="https://agcontents.000webhostapp.com/?url=https://cdn.iconscout.com/icon/free/png-256/js-file-18-504454.png"
+          src="https://mirror.webmanajemen.com/receiver/?url=https://cdn.iconscout.com/icon/free/png-256/js-file-18-504454.png"
           class="img-fluid" alt="Javascript">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -306,7 +306,7 @@
 
       <div class="view overlay z-depth-1-half">
         <img
-          src="https://agcontents.000webhostapp.com/?url=https://cdn.iconscout.com/icon/free/png-256/css-file-22-504460.png"
+          src="https://mirror.webmanajemen.com/receiver/?url=https://cdn.iconscout.com/icon/free/png-256/css-file-22-504460.png"
           class="img-fluid" alt="CSS">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -369,7 +369,7 @@
 
       <div class="view overlay z-depth-1-half">
         <img
-          src="https://agcontents.000webhostapp.com/?url=https://cdn.iconscout.com/icon/free/png-256/php-file-74-913040.png"
+          src="https://mirror.webmanajemen.com/receiver/?url=https://cdn.iconscout.com/icon/free/png-256/php-file-74-913040.png"
           class="img-fluid" alt="">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -438,7 +438,7 @@
 
       <div class="view overlay z-depth-1-half">
         <img
-          src="https://agcontents.000webhostapp.com/?url=https%3A%2F%2Ficons-for-free.com%2Ficonfiles%2Fpng%2F512%2Ffile%2Bfile%2Bformat%2Bjava%2Bicon-1320167057696257963.png"
+          src="https://mirror.webmanajemen.com/receiver/?url=https%3A%2F%2Ficons-for-free.com%2Ficonfiles%2Fpng%2F512%2Ffile%2Bfile%2Bformat%2Bjava%2Bicon-1320167057696257963.png"
           class="img-fluid" alt="Java">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -454,7 +454,7 @@
 
       <div class="view overlay z-depth-1-half">
         <img
-          src="https://agcontents.000webhostapp.com/?url=https://cdn1.iconfinder.com/data/icons/hawcons/32/699870-icon-87-document-file-py-512.png"
+          src="https://mirror.webmanajemen.com/receiver/?url=https://cdn1.iconfinder.com/data/icons/hawcons/32/699870-icon-87-document-file-py-512.png"
           class="img-fluid" alt="Python">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -469,7 +469,7 @@
     <div class="col-lg-4 col-md-6 mb-4">
 
       <div class="view overlay z-depth-1-half">
-        <img src="https://agcontents.000webhostapp.com/?url=http://cdn.onlinewebfonts.com/svg/img_543514.png"
+        <img src="https://mirror.webmanajemen.com/receiver/?url=http://cdn.onlinewebfonts.com/svg/img_543514.png"
           class="img-fluid" alt="">
         <div class="mask rgba-white-slight"></div>
       </div>
@@ -579,7 +579,7 @@
     $("#cForm").submit(function (e) {
       e.preventDefault();
       toastr.info('Sending messages', 'Message');
-      var mailer = 'https://agcontents.000webhostapp.com/mail.php';
+      var mailer = 'https://mirror.webmanajemen.com/receiver/mail.php';
       $.post(mailer, $(this).serialize(), function (resm) {
         console.log(resm);
         if (typeof resm.type != 'undefined' && typeof resm.message != 'undefined') {
@@ -611,7 +611,7 @@
                   itemWrapper = element.querySelectorAll('.carousel-item').item(indexEntry),
                   outerWrapper;
                 getFeedUrl(entry, 'self', function (postURL) {
-                  $.getJSON('https://agcontents.000webhostapp.com/?url=' + postURL + '?alt=json', function (postResponse) {
+                  $.getJSON('https://mirror.webmanajemen.com/receiver/?url=' + postURL + '?alt=json', function (postResponse) {
                     if (postResponse.hasOwnProperty('entry')) {
                       if (typeof postResponse.entry.media$thumbnail != 'undefined') {
                         itemWrapper.getElementsByTagName('img')[0].setAttribute('src', postResponse.entry.media$thumbnail.url);
