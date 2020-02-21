@@ -4,6 +4,7 @@
  * @see https://sweetalert.js.org/docs/#content SweetAlert
  * @var string alertAds_html adsense HTML or other ads HTML string. default string
  * @var boolean VerifyLoadedAds verify adsense was loaded or not. default false
+ * @author Dimas Lanjaka <dimascyber008@gmail.com>
  */
 var alertAds = false;
 var VerifyLoadedAds = true;
