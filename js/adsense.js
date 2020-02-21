@@ -5,6 +5,7 @@
  * @var string alertAds_html adsense HTML or other ads HTML string. default string
  * @var boolean VerifyLoadedAds verify adsense was loaded or not. default false
  */
+var alertAds = false;
 if (typeof alertAds == 'undefined') {
   var alertAds = true;
   if (typeof alertAds_html == 'undefined') {
