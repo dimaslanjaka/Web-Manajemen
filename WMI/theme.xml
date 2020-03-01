@@ -3649,13 +3649,13 @@ head.appendChild(script);
 
 		<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='description'>
     <b:if cond='data:blog.url != data:blog.homepageUrl'>
-		<!-- iklan di bawah judul taruh di sini -->
-    <ins class='adsbygoogle' data-ad-client='ca-pub-7975270895217217' data-ad-format='link' data-ad-slot='4894289831' data-full-width-responsive='true' style='display:block'/>
+    <!-- iklan di bawah judul taruh di sini -->
+
     </b:if>
 			<data:post.body/>
     <b:if cond='data:blog.url != data:blog.homepageUrl'>
-		<!-- iklan di bawah postingan taruh di sini -->
-    <ins class='adsbygoogle' data-ad-client='ca-pub-7975270895217217' data-ad-format='link' data-ad-slot='4894289831' data-full-width-responsive='true' style='display:block'/>
+    <!-- iklan di bawah postingan taruh di sini -->
+
     </b:if>
 
 			<div style='clear: both;'/>
@@ -4224,12 +4224,7 @@ head.appendChild(script);
     <b:section class='panel panel-1' id='panel-1' maxwidgets='4' preferred='yes'>
       <b:widget id='HTML2' locked='false' title='Ads' type='HTML' version='1'>
         <b:widget-settings>
-          <b:widget-setting name='content'>&lt;ins class=&quot;adsbygoogle&quot;
-     style=&quot;display:block&quot;
-     data-ad-client=&quot;ca-pub-7975270895217217&quot;
-     data-ad-slot=&quot;4894289831&quot;
-     data-ad-format=&quot;link&quot;
-     data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;</b:widget-setting>
+          <b:widget-setting name='content'></b:widget-setting>
         </b:widget-settings>
         <b:includable id='main'>
   <!-- only display title if it's non-empty -->
