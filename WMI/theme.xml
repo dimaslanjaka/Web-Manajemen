@@ -4222,9 +4222,47 @@ head.appendChild(script);
 
   <div class='set set-1'>
     <b:section class='panel panel-1' id='panel-1' maxwidgets='4' preferred='yes'>
-      <b:widget id='HTML2' locked='false' title='Ads' type='HTML' version='1'>
+      <b:widget id='HTML2' locked='false' title='' type='HTML' version='1'>
         <b:widget-settings>
-          <b:widget-setting name='content'></b:widget-setting>
+          <b:widget-setting name='content'>&lt;div id=&quot;top-content&quot; class=&quot;&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ItemList&quot;&gt;
+  &lt;h4 itemprop=&quot;name&quot;&gt;
+    &lt;a href=&quot;https://web-manajemen.blogspot.co.id/p/redirect.html?url=aHR0cHM6Ly93ZWItbWFuYWplbWVuMi5ibG9nc3BvdC5jb20vIw==&quot;&gt;Konten
+      Unggulan
+    &lt;/a&gt;
+  &lt;/h4&gt;
+  &lt;link itemprop=&quot;itemListOrder&quot; href=&quot;http://schema.org/ItemListOrderDescending&quot; /&gt;
+  &lt;ol&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;1&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Install PHP CLI In Android&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;2&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/2017/04/how-to-make-blogger-safelink-converter.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Safelink V3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;3&lt;/span&gt; &lt;a href=&quot;https://web-manajemen.blogspot.com/2017/08/update-code-auto-syntax-highlighter.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Simple Prettyprint Syntax Highlighter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;4&lt;/span&gt; &lt;a href=&quot;https://web-manajemen.blogspot.com/p/html-editor.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online HTML Editor&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;5&lt;/span&gt; &lt;a href=&quot;https://web-manajemen.blogspot.com/p/html-entities.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online HTML Entities Converter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;6&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/p/youtube-converter.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online
+          Youtube Converter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;7&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/p/auto-visitor-online.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online Auto Visitor Work 100%&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;8&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/p/html-encrypter.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online
+          HTML Encrypter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;9&lt;/span&gt;
+      &lt;a href=&quot;https://web-manajemen.blogspot.com/p/comodo-ssl-checker.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online
+          Comodo SSL Checker&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;10&lt;/span&gt; &lt;a href=&quot;https://web-manajemen.blogspot.com/p/googleweblight-surfer.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Surf Website Faster&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;11&lt;/span&gt; &lt;a href=&quot;https://web-manajemen.blogspot.com/p/html-minifier.html&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online HTML Minifier&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li itemprop=&quot;itemListElement&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ListItem&quot;&gt;&lt;span itemprop=&quot;position&quot;&gt;12&lt;/span&gt; &lt;a target=&quot;_blank&quot; class=&quot;&quot; title=&quot;Online Website Translator&quot; id=&quot;ads-bestchange&quot; href=&quot;//web-manajemen.blogspot.com/p/website-translator.html&quot; onclick=&quot;this.href=&#39;//web-manajemen.blogspot.com/p/website-translator.html&#39;&quot; rel=&quot;nofollow&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Online Website Translator&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  #top-content span[itemprop=&quot;position&quot;] {
+    display: none;
+  }
+  #top-content a {
+    display: block;
+  }
+&lt;/style&gt;</b:widget-setting>
         </b:widget-settings>
         <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -4549,34 +4587,6 @@ if(typeof firstText=="undefined")firstText="First";if(typeof lastText=="undefine
 </b:if>
 </b:if>
 </b:if>
-<!--Lazy Load Adsense-->
-<script>
-//<![CDATA[
-var lazyadsense = false;
-window.addEventListener("scroll", function () {
-  if ((document.documentElement.scrollTop != 0 && lazyadsense === false) || (document.body.scrollTop != 0 && lazyadsense === false)) {
-    (function () {
-      var ad = document.createElement('script');
-      ad.type = 'text/javascript';
-      ad.async = true;
-      ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-      var sc = document.getElementsByTagName('script')[0];
-      sc.parentNode.insertBefore(ad, sc);
-      ad.onload = function (e) {
-        console.log({adsense: e});
-        $('.adsbygoogle').each(function (i, obj) {
-          if (!obj.hasAttribute('pushed')) {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            obj.setAttribute('pushed', 'true');
-          }
-        });
-      }
-    })();
-    lazyadsense = true;
-  }
-}, true);
-//]]>
-</script>
 <!--[WMI Project | Delete This]-->
 <script>
 //<![CDATA[
