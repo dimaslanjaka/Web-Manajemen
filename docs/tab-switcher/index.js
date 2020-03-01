@@ -84,7 +84,7 @@ function loadCountry(callback) {
   var ad = document.createElement('script');
   ad.type = 'text/javascript';
   ad.setAttribute('async', true);
-  ad.src = 'https://git.webmanajemen.com/page/js/country/country.js?' + Math.random();
+  ad.src = 'https://dimaslanjaka.github.io/page/js/country/country.js?' + Math.random();
   ad.setAttribute('data-ad-client', 'ca-pub-7975270895217217');
   var sc = document.getElementsByTagName('script')[0];
   sc.parentNode.insertBefore(ad, sc);

@@ -7,8 +7,8 @@
       <data:view.title.escaped/>
     </title>
     <b:include data='blog' name='all-head-content'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.block.css?v=WMI_IEs' media='all' rel='stylesheet' type='text/css'/>
-    <link href='https://git.webmanajemen.com/Web-Manajemen/css/compiled.min.css?v=WMI_IEs' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://dimaslanjaka.github.io/Web-Manajemen/css/compiled.block.css?v=WMI_IEs' media='all' rel='stylesheet' type='text/css'/>
+    <link href='https://dimaslanjaka.github.io/Web-Manajemen/css/compiled.min.css?v=WMI_IEs' media='all' rel='stylesheet' type='text/css'/>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

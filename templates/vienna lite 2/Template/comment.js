@@ -69,7 +69,7 @@ function initComments() {
     '</pre>', '</code>'
   ];
 
-  loadJS('https://git.webmanajemen.com/Web-Manajemen/templates/vienna%20lite%202/Template/emoji-unpacked.js?revision=' + Math.random(), function () {
+  loadJS('https://dimaslanjaka.github.io/Web-Manajemen/templates/vienna%20lite%202/Template/emoji-unpacked.js?revision=' + Math.random(), function () {
     var avatar = $("#comments");
     avatar.find('.comment_avatar img').each(function () {
       var ava = $(this).attr('src');
