@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   var userId = localStorage.getItem('_uuid') ? localStorage.getItem('_uuid').substring(0, 5) : 0;
-  var ajaxUrl = 'https://wp.webmanajemen.com/receiver/index.php?mode=native&url=https://mdbootstrap.com/wp-admin/admin-ajax.php';
+  var ajaxUrl = 'https://dimaslanjaka.000webhostapp.com/receiver/index.php?mode=native&url=https://mdbootstrap.com/wp-admin/admin-ajax.php';
   var searchTree = mdw_search_object.search_tree;
 
   var $mdbMainSearch = $('#mdb_main_search');

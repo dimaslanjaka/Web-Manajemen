@@ -1031,12 +1031,12 @@ form#commentForm{padding:10px}
 &lt;span class=&#39;d-none d-xl-inline-block ml-1&#39;&gt;Tools&lt;/span&gt;
 &lt;/i&gt;&lt;/a&gt;
 &lt;div aria-labelledby=&#39;navbar-tools&#39; class=&#39;dropdown-menu dropdown-menu-right dropdown-info&#39;&gt;
-&lt;a class=&#39;dropdown-item&#39; href=&#39;https://wp.webmanajemen.com/AGC/proxy&#39;&gt;Google proxy checker&lt;/a&gt;
+&lt;a class=&#39;dropdown-item&#39; href=&#39;https://dimaslanjaka.000webhostapp.com/AGC/proxy&#39;&gt;Google proxy checker&lt;/a&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
 &lt;!-- Login / register --&gt;
-&lt;a alt=&#39;Sign Up&#39; class=&#39;btn btn-info btn-rounded btn-sm waves-effect waves-light&#39; href=&#39;//wp.webmanajemen.com/AGC/login&#39; id=&#39;navbar-static-login&#39;&gt;LOGIN&lt;/a&gt;
+&lt;a alt=&#39;Sign Up&#39; class=&#39;btn btn-info btn-rounded btn-sm waves-effect waves-light&#39; href=&#39;//dimaslanjaka.000webhostapp.com/AGC/login&#39; id=&#39;navbar-static-login&#39;&gt;LOGIN&lt;/a&gt;
 &lt;/ul&gt;</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
