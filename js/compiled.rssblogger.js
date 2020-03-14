@@ -7,7 +7,7 @@ if (typeof window.jQuery != 'undefined') {
         labelUrl = urlj = encodeURIComponent(WMI.homepage + '/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
       if (labelName && labelName != '') {
         if (typeof WMI.cors != 'undefined' && WMI.cors) {
-          urlj = 'https://wp.webmanajemen.com/receiver/index.php?mode=native&url=' + labelUrl;
+          urlj = 'https://dimaslanjaka.000webhostapp.com/receiver/index.php?mode=native&url=' + labelUrl;
         }
         try {
           $.getJSON(urlj, function (json) {

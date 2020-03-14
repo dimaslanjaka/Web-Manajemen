@@ -237,12 +237,12 @@ This template is free for both personal and commercial use, But to satisfy the '
 <span class='d-none d-xl-inline-block ml-1'>Tools</span>
 </a>
 <div aria-labelledby='navbar-tools' class='dropdown-menu dropdown-menu-right dropdown-info'>
-<a class='dropdown-item' href='https://wp.webmanajemen.com/AGC/proxy'>Google proxy checker</a>
+<a class='dropdown-item' href='https://dimaslanjaka.000webhostapp.com/AGC/proxy'>Google proxy checker</a>
 </div>
 </li>
 
 <!-- Login / register -->
-<a alt='Sign Up' class='btn btn-info btn-rounded btn-sm waves-effect waves-light' href='//wp.webmanajemen.com/AGC/login' id='navbar-static-login'>LOGIN</a>
+<a alt='Sign Up' class='btn btn-info btn-rounded btn-sm waves-effect waves-light' href='//dimaslanjaka.000webhostapp.com/AGC/login' id='navbar-static-login'>LOGIN</a>
 </ul>
       ]]>
               </b:widget-setting>

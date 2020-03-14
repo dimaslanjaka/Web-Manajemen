@@ -5,7 +5,7 @@ if (typeof window.jQuery != 'undefined') {
       var labelName = obj.getAttribute('data-label'),
         elementType = obj.getAttribute('data-type'), labelUrl = encodeURIComponent('https://www.webmanajemen.com/feeds/posts/summary/-/' + labelName + '?alt=json&max-results=10');
       if (labelName && labelName != '') {
-        var urlj = 'https://wp.webmanajemen.com/receiver/index.php?mode=native&url=' + labelUrl;
+        var urlj = 'https://dimaslanjaka.000webhostapp.com/receiver/index.php?mode=native&url=' + labelUrl;
         //console.log(labelName, labelUrl, decodeURIComponent(labelUrl));
         try {
           $.getJSON(urlj, function(json) {
