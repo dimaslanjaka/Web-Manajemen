@@ -51,7 +51,7 @@ if (typeof window.jQuery != 'undefined') {
             complete: function(jqXHR, textStatus) {
               localCache.set(url, jqXHR, processRSS);
             },
-            //success: processRSS
+            success: processRSS
           });
         } catch (error) {
           obj.remove();
@@ -59,6 +59,7 @@ if (typeof window.jQuery != 'undefined') {
       }
 
       function processRSS(json) {
+        console.log(json)
         if (typeof json.feed == 'undefined') {
           console.log(urlj, json);
           return;
