@@ -281,10 +281,13 @@ var localCache = {
   }
 };
 
+var ajid;
+
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
   if (options.cache) {
-    var complete = originalOptions.complete || $.noop,
-      url = MD5(originalOptions.url);
+    var complete = originalOptions.complete || $.noop;
+    ajid = MD5(originalOptions.url);
+    var url = ajid;
     //remove jQuery cache as we have our own localCache
     options.cache = false;
     options.beforeSend = function() {
@@ -315,7 +318,8 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
 $.ajaxTransport("+*", function (options, originalOptions, jqXHR, headers, completeCallback) {
   //var id = originalOptions.url + JSON.stringify(originalOptions.data);
-  var id = MD5(originalOptions.url);
+  if (!ajid) ajid = MD5(originalOptions.url);
+  var id = ajid;
   options.cache = false;
 
   if (localCache.exist(id)) {
