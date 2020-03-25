@@ -286,7 +286,11 @@ var ajid;
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
   if (options.cache) {
     var complete = originalOptions.complete || $.noop;
-    ajid = MD5(originalOptions.url);
+    if (originalOptions.hasOwnProperty('data')){
+      ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
+    } else {
+      ajid = MD5(originalOptions.url);
+    }
     var url = ajid;
     //remove jQuery cache as we have our own localCache
     options.cache = false;
@@ -316,21 +320,27 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 });
 
 
-$.ajaxTransport("+*", function (options, originalOptions, jqXHR, headers, completeCallback) {
+$.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, completeCallback) {
   //var id = originalOptions.url + JSON.stringify(originalOptions.data);
-  if (!ajid) ajid = MD5(originalOptions.url);
+  if (!ajid) {
+    if (originalOptions.hasOwnProperty('data')){
+      ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
+    } else {
+      ajid = MD5(originalOptions.url);
+    }
+  }
   var id = ajid;
   options.cache = false;
 
   if (localCache.exist(id)) {
-      return {
-          send: function (headers, completeCallback) {
-              completeCallback(200, "OK", localCache.get(id));
-          },
-          abort: function () {
-              /* abort code, nothing needed here I guess... */
-          }
-      };
+    return {
+      send: function(headers, completeCallback) {
+        completeCallback(200, "OK", localCache.get(id));
+      },
+      abort: function() {
+        /* abort code, nothing needed here I guess... */
+      }
+    };
   }
 });
 
