@@ -288,18 +288,45 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
     //remove jQuery cache as we have our own localCache
     options.cache = false;
     options.beforeSend = function() {
-      if (localCache.exist(url)) {
-        //console.log(url, 'exists')
-        complete(localCache.get(url));
-        return false;
+      if (!options.hasOwnProperty('defer') || !options.defer) {
+        if (localCache.exist(url)) {
+          //console.log(url, 'exists')
+          complete(localCache.get(url));
+          return false;
+        } else {
+          //console.log(url, 'not exists');
+        }
+        return true;
       } else {
-        //console.log(url, 'not exists');
+        if (!localCache.exist(id)) {
+          jqXHR.promise().done(function(data, textStatus) {
+            localCache.set(id, data);
+          });
+        }
+        return true;
       }
-      return true;
     };
     options.complete = function(data, textStatus) {
       localCache.set(url, data, complete);
     };
+  }
+});
+
+
+$.ajaxTransport("+*", function (options, originalOptions, jqXHR, headers, completeCallback) {
+  //var id = originalOptions.url + JSON.stringify(originalOptions.data);
+  var id = MD5(originalOptions.url);
+  options.cache = false;
+
+  if (localCache.exist(id)) {
+      return {
+          send: function (headers, completeCallback) {
+              completeCallback(200, "OK", localCache.get(id));
+          },
+          abort: function () {
+              /* abort code, nothing needed here I guess... */
+          }
+      };
   }
 });
 
