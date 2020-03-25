@@ -113,6 +113,7 @@ jQuery(document).ready(function($) {
     $.ajax({
       type: 'POST',
       url: ajaxUrl,
+      cache: true,
       data: {
         action: "save_phrase",
         phrase: phrase,
