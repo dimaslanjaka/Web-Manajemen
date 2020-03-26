@@ -286,6 +286,7 @@ var run_ajid = false;
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
   run_ajid = options.hasOwnProperty('usecache') ? true : false;
+  console.log('ajaxPrefilter using cache ' + options.hasOwnProperty('usecache'));
   if (run_ajid) {
     var complete = originalOptions.complete || $.noop;
     if (originalOptions.hasOwnProperty('data')){
@@ -323,7 +324,7 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
 
 $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, completeCallback) {
-  //var id = originalOptions.url + JSON.stringify(originalOptions.data);
+  console.log('ajaxTransport using cache ' + options.hasOwnProperty('usecache'));
   if (!run_ajid) run_ajid = options.hasOwnProperty('usecache') ? true : false;
   if (!ajid) {
     if (originalOptions.hasOwnProperty('data')){
