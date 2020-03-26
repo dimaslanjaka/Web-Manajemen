@@ -254,12 +254,18 @@ var localCache = {
     delete localCache.data[url];
   },
   exist: function(url) {
+    var live = false;
+    var expired = false;
+    if (localCache.data[url].hasOwnProperty('_')){
+      expired = (new Date().getTime() - localCache.data[url]._) < localCache.timeout;
+      live = new Date().getTime() - localCache.data[url]._;
+    }
     var opt = {
-      url: url,
-      data: localCache.data[url],
-      live: new Date().getTime() - localCache.data[url]._,
-      timeout: localCache.timeout,
-      expired: (new Date().getTime() - localCache.data[url]._) < localCache.timeout
+      'url': url,
+      'data': localCache.data[url],
+      'live': live,
+      'timeout': localCache.timeout,
+      'expired': expired
     }
     var e = opt.data && !opt.expired;
     //console.log(opt, e);
