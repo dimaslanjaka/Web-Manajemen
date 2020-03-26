@@ -256,9 +256,11 @@ var localCache = {
   exist: function(url) {
     var live = false;
     var expired = false;
-    if (localCache.data[url].hasOwnProperty('_')){
-      expired = (new Date().getTime() - localCache.data[url]._) < localCache.timeout;
-      live = new Date().getTime() - localCache.data[url]._;
+    if (typeof localCache.data[url] == 'object') {
+      if (localCache.data[url].hasOwnProperty('_')) {
+        expired = (new Date().getTime() - localCache.data[url]._) < localCache.timeout;
+        live = new Date().getTime() - localCache.data[url]._;
+      }
     }
     var opt = {
       'url': url,
@@ -295,7 +297,7 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
   //console.log('ajaxPrefilter using cache ' + options.hasOwnProperty('usecache'));
   if (run_ajid) {
     var complete = originalOptions.complete || $.noop;
-    if (originalOptions.hasOwnProperty('data')){
+    if (originalOptions.hasOwnProperty('data')) {
       ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
     } else {
       ajid = MD5(originalOptions.url);
@@ -333,7 +335,7 @@ $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, complet
   //console.log('ajaxTransport using cache ' + options.hasOwnProperty('usecache'));
   if (!run_ajid) run_ajid = options.hasOwnProperty('usecache') ? true : false;
   if (!ajid) {
-    if (originalOptions.hasOwnProperty('data')){
+    if (originalOptions.hasOwnProperty('data')) {
       ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
     } else {
       ajid = MD5(originalOptions.url);
