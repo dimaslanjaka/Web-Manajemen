@@ -335,7 +335,7 @@ $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, complet
   var id = ajid;
   options.cache = false;
 
-  if (localCache.exist(id)) {
+  if (localCache.exist(id) && run_ajid) {
     return {
       send: function(headers, completeCallback) {
         completeCallback(200, "OK", localCache.get(id));
