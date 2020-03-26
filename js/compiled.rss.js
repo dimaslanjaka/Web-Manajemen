@@ -282,9 +282,11 @@ var localCache = {
 };
 
 var ajid;
+var run_ajid = false;
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-  if (options.cache) {
+  run_ajid = options.hasOwnProperty('usecache') ? true : false;
+  if (run_ajid) {
     var complete = originalOptions.complete || $.noop;
     if (originalOptions.hasOwnProperty('data')){
       ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
