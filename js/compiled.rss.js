@@ -324,6 +324,7 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
 $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, completeCallback) {
   //var id = originalOptions.url + JSON.stringify(originalOptions.data);
+  if (!run_ajid) run_ajid = options.hasOwnProperty('usecache') ? true : false;
   if (!ajid) {
     if (originalOptions.hasOwnProperty('data')){
       ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
@@ -362,7 +363,7 @@ if (typeof window.jQuery != 'undefined') {
         try {
           request = $.ajax({
             url: urlj,
-            cache: true,
+            usecache: true,
             method: 'GET',
             success: processRSS
           });
