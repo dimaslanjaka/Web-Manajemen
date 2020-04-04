@@ -228,6 +228,12 @@ var MD5 = function(string) {
   return temp.toLowerCase();
 }
 
+function parse_url( url ) {
+  var a = document.createElement('a');
+  a.href = url;
+  return a;
+}
+
 var request;
 var localDataKey = 'ajaxCache';
 var localData = {
@@ -298,10 +304,11 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
   if (run_ajid) {
     var complete = originalOptions.complete || $.noop;
     if (originalOptions.hasOwnProperty('data')) {
-      ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
+      ajid = originalOptions.url + JSON.stringify(originalOptions.data);
     } else {
-      ajid = MD5(originalOptions.url);
+      ajid = originalOptions.url;
     }
+    console.error(parse_url(ajid), JSON.stringify(parse_url(ajid)));
     var url = ajid;
     //remove jQuery cache as we have our own localCache
     options.cache = false;
@@ -336,9 +343,9 @@ $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, complet
   if (!run_ajid) run_ajid = options.hasOwnProperty('usecache') ? true : false;
   if (!ajid) {
     if (originalOptions.hasOwnProperty('data')) {
-      ajid = MD5(originalOptions.url + JSON.stringify(originalOptions.data));
+      ajid = originalOptions.url + JSON.stringify(originalOptions.data);
     } else {
-      ajid = MD5(originalOptions.url);
+      ajid = originalOptions.url;
     }
   }
   var id = ajid;
