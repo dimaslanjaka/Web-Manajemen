@@ -228,10 +228,31 @@ var MD5 = function(string) {
   return temp.toLowerCase();
 }
 
-function parse_url( url ) {
+function parse_url(url) {
   var a = document.createElement('a');
   a.href = url;
-  return a;
+  result = {
+    protocol: a.protocol,
+    query: a.pathname,
+    host: a.host,
+    hostname: a.hostname,
+    hash: a.hash
+  };
+
+  return result;
+}
+
+function parse_query(url_string, name) {
+  var url = new URL(url_string);
+  return url.searchParams.get(name);
+}
+
+var restartCache = parse_query(location.href, 'reload');
+if (!restartCache) {
+  restartCache = parse_query(location.href, 'max-results');
+}
+if (!restartCache) {
+  restartCache = parse_query(location.href, 'label');
 }
 
 var request;
@@ -296,11 +317,12 @@ var localCache = {
 };
 
 var ajid;
-var run_ajid = false;
+var run_ajid = null;
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-  run_ajid = options.hasOwnProperty('usecache') ? true : false;
+  run_ajid = ((options.hasOwnProperty('usecache') ? true : false) && !restartCache);
   //console.log('ajaxPrefilter using cache ' + options.hasOwnProperty('usecache'));
+  //console.info(run_ajid);
   if (run_ajid) {
     var complete = originalOptions.complete || $.noop;
     if (originalOptions.hasOwnProperty('data')) {
@@ -308,10 +330,11 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
     } else {
       ajid = originalOptions.url;
     }
-    console.error(parse_url(ajid), JSON.stringify(parse_url(ajid)));
+
     var url = ajid;
     //remove jQuery cache as we have our own localCache
     options.cache = false;
+    //console.error(restartCache);
     options.beforeSend = function() {
       if (!options.hasOwnProperty('defer') || !options.defer) {
         if (localCache.exist(url)) {
@@ -340,7 +363,8 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
 $.ajaxTransport("+*", function(options, originalOptions, jqXHR, headers, completeCallback) {
   //console.log('ajaxTransport using cache ' + options.hasOwnProperty('usecache'));
-  if (!run_ajid) run_ajid = options.hasOwnProperty('usecache') ? true : false;
+  if (run_ajid === null) run_ajid = ((options.hasOwnProperty('usecache') ? true : false) && !restartCache);
+  //console.info(run_ajid);
   if (!ajid) {
     if (originalOptions.hasOwnProperty('data')) {
       ajid = originalOptions.url + JSON.stringify(originalOptions.data);

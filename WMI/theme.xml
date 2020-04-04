@@ -2451,6 +2451,8 @@ var WMI = {
 }
 //]]>
 </script>
+<meta content='R1VPQXFUckIycWp6Sm9iSXBBMHVFdmViM0V1WXp6aFVicGhzQTlLSGFqMD01' name='dmca-site-verification'/>
+<meta content='S1Vrekp5L0JIT2pxS3ZoK2RmYm5oMUUyVmEzZlZGUkRJenZhcHdGU1lyVT01' name='dmca-site-verification'/>
 </head>
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass' itemscope='' itemtype='https://schema.org/Blog'>
@@ -4453,7 +4455,8 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
 })();&lt;/script&gt;
 &lt;noscript&gt;&lt;a href=&quot;/&quot; alt=&quot;&quot; target=&quot;_blank&quot; &gt;&lt;div id=&quot;histatsC&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;//s4is.histats.com/stats/i/3860842.gif?3860842&amp;amp;103&quot; /&gt;&lt;/div&gt;&lt;/a&gt;
 &lt;/noscript&gt;
-&lt;!-- Histats.com  END  --&gt;</b:widget-setting>
+&lt;!-- Histats.com  END  --&gt;
+&lt;a href=&quot;//www.dmca.com/Protection/Status.aspx?ID=8788839a-b0df-40a6-9924-c30a5d4d5f98&quot; title=&quot;DMCA.com Protection Status&quot; class=&quot;dmca-badge&quot;&gt; &lt;img src =&quot;https://images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=8788839a-b0df-40a6-9924-c30a5d4d5f98&quot;  alt=&quot;DMCA.com Protection Status&quot; /&gt;&lt;/a&gt;  &lt;script src=&quot;https://images.dmca.com/Badges/DMCABadgeHelper.min.js&quot;&gt; &lt;/script&gt;</b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -4465,6 +4468,23 @@ hs.src = (&#39;//s10.histats.com/js15_gif_as.js&#39;);
   </div>
 
 
+</b:includable>
+    </b:widget>
+    <b:widget id='AdSense1' locked='false' title='' type='AdSense'>
+      <b:widget-settings>
+        <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='style.textcolor'>#444444</b:widget-setting>
+        <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+        <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='style.urlcolor'>#8d8d8d</b:widget-setting>
+        <b:widget-setting name='style.linkcolor'>#ee4b3d</b:widget-setting>
+        <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+  <div class='widget-content'>
+    <data:adCode/>
+    <b:include name='quickedit'/>
+  </div>
 </b:includable>
     </b:widget>
   </b:section>
