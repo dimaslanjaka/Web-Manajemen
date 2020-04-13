@@ -83,7 +83,7 @@ var localCache = {
     return e;
   },
   get: function (url) {
-    console.log('Get cache ' + url, localCache.data[url].data);
+    //console.log('Get cache ' + url, localCache.data[url].data);
     return localCache.data[url].data;
   },
   set: function (url, cachedData, callback) {
