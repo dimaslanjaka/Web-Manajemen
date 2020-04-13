@@ -201,7 +201,7 @@ if (typeof window.jQuery != 'undefined') {
        * @param {JQueryXHR} json
        */
       function processRSS(json) {
-        //console.log('data', json)
+        //console.log('data', json);
         if (json.hasOwnProperty('responseJSON')) {
           json = json.responseJSON;
         }
