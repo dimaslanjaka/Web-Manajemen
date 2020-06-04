@@ -1,9 +1,9 @@
 /**
  * Lazy load Adsense with customizable config
- * @var boolean alertAds show alert ads every page loaded with sweetalert. default true
+ * @type boolean alertAds show alert ads every page loaded with sweetalert. default true
  * @see https://sweetalert.js.org/docs/#content SweetAlert
- * @var string alertAds_html adsense HTML or other ads HTML string. default string
- * @var boolean VerifyLoadedAds verify adsense was loaded or not. default false
+ * @type string alertAds_html adsense HTML or other ads HTML string. default string
+ * @type boolean VerifyLoadedAds verify adsense was loaded or not. default false
  * @author Dimas Lanjaka <dimascyber008@gmail.com>
  */
 var alertAds = false;
@@ -50,7 +50,7 @@ if (typeof VerifyLoadedAds == 'undefined') {
   }
   if (typeof RegexHost == 'undefined') {
     /**
-     * @var RegExp RegexHost regex matching for exclude from adsense
+     * @type RegExp RegexHost regex matching for exclude from adsense
      */
     var RegexHost = /^localhost|git\.io|agc\.io|^(\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b):?(\d{2,5})/gm;
   }

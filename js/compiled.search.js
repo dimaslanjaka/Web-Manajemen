@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
 
   $mdbMainSearch.on('keyup', searchTree, mdbSearchHandler);
 
-  $mdbMainSearch.on('click', searchTree, mdbSearchHandler);
+  //$mdbMainSearch.on('click', searchTree, mdbSearchHandler);
 
   $mdbMainSearch.on('blur', function() {
 
