@@ -16,8 +16,10 @@
 // @downloadURL  https://rawgit.com/dimaslanjaka/Web-Manajemen/master/userscripts/freeproxylist.user.js
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAACVBMVEUAAGcAAABmzDNZt9VtAAAAAXRSTlMAQObYZgAAAF5JREFUeNrtkTESABAQxPD/R6tsE2dUGYUtFJvLDKf93KevHJAjpBorAQWSBIKqFASC4G0pCAkm4GfaEvgYXl0T6HBaE97f0vmnfYHbZOMLZCx9ISdKWwjOWZSC8GYm4SUGwfYgqI4AAAAASUVORK5CYII=
 // ==/UserScript==
-var global_index = 0, global_proxies = [];
-(function () {
+
+var global_index = 0,
+  global_proxies = [];
+(function() {
   'use strict';
   parsingFPL();
   $(document).on('click', 'ul.pagination li, ul.pagination li a, .fg-button, [aria-controls="proxylisttable"]', parsingFPL);
@@ -48,12 +50,14 @@ function parsingFPL() {
 
 function checkSPL() {
   if (typeof global_proxies[global_index] != 'undefined') {
-    $.post('https://dimaslanjaka.000webhostapp.com/receiver/proxy-receiver.php', { save: global_proxies[global_index] }).always(function () {
+    $.post('https://ns.webmanajemen.com/proxy/receiver', {
+      save: global_proxies[global_index]
+    }).always(function() {
       global_index++;
       if (global_index < global_proxies.length) {
         checkSPL();
       }
-      if (global_index == global_proxies.length - 1){
+      if (global_index == global_proxies.length - 1) {
         global_proxies = [];
       }
     });
