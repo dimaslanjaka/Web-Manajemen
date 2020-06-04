@@ -16,7 +16,7 @@
 
 var global_index = 0,
   global_proxies = [];
-(function() {
+(function () {
   'use strict';
 
   var wrap = document.querySelectorAll('td');
@@ -37,7 +37,7 @@ function checkSpys() {
   if (typeof global_proxies[global_index] != 'undefined') {
     $.post('https://ns.webmanajemen.com/proxy/receiver', {
       save: global_proxies[global_index]
-    }).always(function() {
+    }).always(function () {
       global_index++;
       if (global_index < global_proxies.length) {
         checkSpys();
