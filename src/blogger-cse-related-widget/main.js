@@ -1,11 +1,11 @@
 function gcseCallback() {
-	if (document.readyState != "complete")
+	if (document.readyState !== "complete")
 		return google.setOnLoadCallback(gcseCallback, true);
 	google.search.cse.element.render({
 		gname: "gsearch",
 		div: "ignielCSE",
 		tag: "searchresults-only",
-		attributes: { linkTarget: "" },
+		attributes: {linkTarget: ""},
 	});
 	var element = google.search.cse.element.getElement("gsearch");
 	element.execute("php");

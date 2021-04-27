@@ -13,5 +13,8 @@
     "html": false,
     "css": true,
     "js": true
-  }
+  },
+  "standalone": [
+    "bundle.js"
+  ]
 }
