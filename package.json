@@ -15,6 +15,7 @@
     "gulp-uglify": "^3.0.2",
     "html-minifier": "^4.0.0",
     "jquery": "^3.6.0",
+    "jstree": "^3.3.11",
     "merge-stream": "^2.0.0",
     "mkdirp": "^1.0.4",
     "showdown": "^1.9.1",
