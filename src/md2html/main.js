@@ -1,14 +1,25 @@
+/**
+ * @type {HTMLTextAreaElement}
+ */
 const textarea = document.getElementById("input"),
 	output = document.getElementById("output"),
-	initText = document.getElementById("initText").innerText;
+	initText = document.getElementById("initText").innerText,
+	/**
+	 * @type {HTMLTextAreaElement}
+	 */
+	textareas = document.getElementsByTagName("textarea");
 
+// listen input to render markdown result
 textarea.addEventListener("keyup", render);
+// listen all textarea to auto expand
+for (let index = 0; index < textareas.length; index++) {
+	const elTA = textareas[index];
+	elTA.addEventListener("paste", autoExpand);
+	elTA.addEventListener("input", autoExpand);
+	elTA.addEventListener("keyup", autoExpand);
+	elTA.addEventListener("click", autoExpand);
+}
 
-var heightLimit = 200; /* Maximum height: 200px */
-
-textarea.addEventListener("paste", autoExpand);
-textarea.addEventListener("input", autoExpand);
-textarea.addEventListener("keyup", autoExpand);
 window.addEventListener("load", function (_windows, _event) {
 	autoExpand();
 	render();
@@ -16,11 +27,18 @@ window.addEventListener("load", function (_windows, _event) {
 window.addEventListener("resize", autoExpand);
 
 function autoExpand() {
-	textarea.style.height = ""; /* Reset the height*/
-	textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+	var heightLimit = 200; /* Maximum height: 200px */
+	for (const etextarea in textareas) {
+		if (Object.hasOwnProperty.call(textareas, etextarea)) {
+			const elTextarea = textareas[etextarea];
+			elTextarea.style.height = ""; /* Reset the height*/
+			elTextarea.style.height =
+				Math.min(elTextarea.scrollHeight, heightLimit) + "px";
 
-	textarea.style.height = "inherit";
-	textarea.style.height = textarea.scrollHeight + "px";
+			elTextarea.style.height = "inherit";
+			elTextarea.style.height = elTextarea.scrollHeight + "px";
+		}
+	}
 }
 
 function render() {
@@ -34,8 +52,9 @@ function render() {
 
 	converter.setFlavor("github");
 
-	if (textarea.value) {
+	if (textarea.value.length) {
 		output.innerHTML = html;
+		document.getElementById("outputHTML").value = html;
 	} else {
 		output.innerHTML = `<h3>${initText}</h3>`;
 	}

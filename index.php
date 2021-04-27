@@ -11,8 +11,7 @@ header('Pragma: no-cache');
 if (isset($_GET['render'])) {
   $file = __DIR__ . '/' . $_GET['render'];
   if (file_exists($file)) {
-    include($file);
-    exit;
+    return include($file);
   }
 }
 

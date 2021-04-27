@@ -2,10 +2,11 @@ var LISTS = [];
 if (typeof listbuild == "object") {
 	LISTS = listbuild;
 }
-
+console.log(LISTS);
 // create ul root
 var ul = document.createElement("ul");
 
+var filecounter = 0;
 for (var key in LISTS) {
 	/**
 	 * @type {Array}
@@ -21,13 +22,15 @@ for (var key in LISTS) {
 		 */
 		var file = files[index];
 		var ulfile = document.createElement("li");
-		ulfile.id = "child_node_" + (index + 1);
+		ulfile.id = "child_node_" + (filecounter + 1);
 		ulfile.textContent = getFileName(file);
+		ulfile.setAttribute("title", file);
 		ulfile.setAttribute("href", `/index.php?render=${file}`);
 		ulfile.setAttribute("data-jstree", json_encode({ type: "file" }));
 
 		// add files to ul folders
 		ulfiles.appendChild(ulfile);
+		filecounter++;
 	}
 
 	// add to ul folder
@@ -77,8 +80,10 @@ $(function () {
 	// 7 bind to events triggered on the tree
 	$("#jstree").on("changed.jstree", function (e, data) {
 		if (typeof data.node.li_attr.href == "string") {
-			location.href = data.node.li_attr.href;
+			//location.href = data.node.li_attr.href;
+			window.open(data.node.li_attr.href, "render").focus();
 		}
+		console.log(data);
 	});
 	// 8 interact with the tree - either way is OK
 	$("#button").on("click", function () {
