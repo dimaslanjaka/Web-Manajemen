@@ -1,0 +1,17 @@
+{
+  "title": "Markdown To Html",
+  "css": [
+    "main.css"
+  ],
+  "js": [
+    "main.js"
+  ],
+  "html": [
+    "main.html"
+  ],
+  "minify": {
+    "html": false,
+    "css": true,
+    "js": true
+  }
+}
