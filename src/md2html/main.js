@@ -3,9 +3,12 @@
  */
 const textarea = document.getElementById("input"),
 	output = document.getElementById("output"),
+	/**
+	 * @type {string}
+	 */
 	initText = document.getElementById("initText").innerText,
 	/**
-	 * @type {HTMLTextAreaElement}
+	 * @type {HTMLCollectionOf<HTMLTextAreaElement>}
 	 */
 	textareas = document.getElementsByTagName("textarea");
 
