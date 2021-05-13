@@ -54,46 +54,40 @@ gulp.task("default", function () {
 
 											if (fs.existsSync(csspath)) {
 												css = fs.readFileSync(csspath).toString();
-												if (csspath.endsWith(".scss")) {
-													let outcss =
-														__dirname +
-														"/build/" +
-														path.basename(dirname(csspath), ".scss") +
-														".css";
-													//console.log(outcss);
-													sass.render(
-														{
-															file: csspath,
-															outFile: outcss,
-														},
-														function (error, result) {
-															if (!error) {
-																//console.log(result.css.toString());
-																fs.writeFile(
-																	outcss,
-																	result.css.toString(),
-																	function (err) {
-																		if (!err) {
-																			//file written on disk
-																			css = fs.readFileSync(outcss).toString();
-																		}
-																	}
-																);
-															}
-														}
-													);
-												}
-												if (minifycss) {
-													new CleanCSS({
-														compatibility: "*",
-													}).minify(css, function (err, output) {
-														if (!err) {
-															css = output.styles;
-															html += "<style>" + css + "</style>";
+												if (
+													csspath.endsWith(".scss") ||
+													csspath.endsWith(".sass")
+												) {
+													let sassOpt = {
+														file: csspath,
+													};
+													if (minifycss) {
+														sassOpt.outputStyle = "compressed";
+													}
+													sass.render(sassOpt, function (error, result) {
+														if (!error) {
+															//console.log(result.css.toString());
+															//console.info("scss compiled successfully");
+															html +=
+																"<style>" +
+																result.css.toString("utf-8") +
+																"</style>";
+															//console.log(html);
 														}
 													});
 												} else {
-													html += "<style>" + css + "</style>";
+													if (minifycss) {
+														new CleanCSS({
+															compatibility: "*",
+														}).minify(css, function (err, output) {
+															if (!err) {
+																css = output.styles;
+																html += "<style>" + css + "</style>";
+															}
+														});
+													} else {
+														html += "<style>" + css + "</style>";
+													}
 												}
 											}
 										}
@@ -146,7 +140,10 @@ gulp.task("default", function () {
 										value,
 										htmlname
 									);
-									write(resultfile, html);
+									//console.log(html);
+									setTimeout(() => {
+										write(resultfile, html);
+									}, 1000);
 								}
 							}
 						}
