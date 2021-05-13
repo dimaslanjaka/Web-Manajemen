@@ -4,9 +4,10 @@
 table#gi {
 	border-collapse: collapse;
 	width: 100%;
-}
-
-table#gi {
-	border: 1px solid black;
-	border-radius: 25%;
+	tr,
+	td,
+	th {
+		border: 1px solid black;
+		border-radius: 25%;
+	}
 }

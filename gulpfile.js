@@ -75,6 +75,7 @@ gulp.task("default", function () {
 																	function (err) {
 																		if (!err) {
 																			//file written on disk
+																			css = fs.readFileSync(outcss).toString();
 																		}
 																	}
 																);
@@ -83,7 +84,7 @@ gulp.task("default", function () {
 													);
 												}
 												if (minifycss) {
-													await new CleanCSS({
+													new CleanCSS({
 														compatibility: "*",
 													}).minify(css, function (err, output) {
 														if (!err) {
