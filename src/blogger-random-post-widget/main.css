@@ -1,0 +1,16 @@
+/* Random Post Thumbnail by igniel.com */
+#ignielRandom {background-color:#008c5f; padding:0px; margin:0px; border:15px solid #1e2128}
+#ignielRandom ul {padding:0px; margin:0px;}
+#ignielRandom ul li {margin:0; padding:15px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.3); transition: all .3s ease;}
+#ignielRandom ul li:last-child {border-bottom:none}
+#ignielRandom ul li .judul {padding:0 10px 0 0}
+#ignielRandom ul li:hover {background-color:rgba(0,0,0,.25)}
+#ignielRandom ul li a {font-size:13px; color:#fff; line-height:16px;}
+#ignielRandom ul li .thumbnail {width:100px; float:left; margin-right:10px; line-height:0px;}
+#ignielRandom ul li img {width:100%; max-width:100%; height: auto;}
+#ignielRandom ul li:first-child {border-bottom:none; padding:0px;}
+#ignielRandom ul li:first-child .thumbnail {width: 100%; display:block; margin:0px;}
+#ignielRandom ul li:first-child .judul {background-color:rgba(29, 33, 41, .6); width:calc(100% - 30px); text-align:center; padding:15px; position:absolute; bottom:0px; transition: all .3s ease;}
+#ignielRandom ul li:first-child a {font-size:16px; line-height:22px; transition: all .0s ease;}
+#ignielRandom ul li:first-child a:hover {font-size:20px; line-height:28px;}
+#ignielRandom ul li:first-child a:hover .judul {background-color:rgba(29, 33, 41, 1)}

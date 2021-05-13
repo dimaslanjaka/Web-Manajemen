@@ -1,0 +1,47 @@
+{
+  "name": "html-builder",
+  "version": "1.0.0",
+  "description": "Transform html css js into one html",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "clean-css": "^5.1.2",
+    "del": "^6.0.0",
+    "googleapis": "^72.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.2",
+    "html-minifier": "^4.0.0",
+    "jquery": "^3.6.0",
+    "jstree": "^3.3.11",
+    "merge-stream": "^2.0.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^6.0.0",
+    "showdown": "^1.9.1",
+    "terser": "^5.7.0",
+    "through2": "^4.0.2",
+    "uglify-js-es6": "^2.8.9",
+    "vinyl-source-stream": "^2.0.0",
+    "xss": "^1.0.8"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony"
+  },
+  "scripts": {
+    "test": "echo test",
+    "gulp": "gulp",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "html"
+  ],
+  "author": "Dimas Lanjaka",
+  "license": "MIT"
+}

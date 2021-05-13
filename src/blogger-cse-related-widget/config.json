@@ -1,0 +1,20 @@
+{
+  "title": "Blogger related posts widget with cse",
+  "css": [
+    "main.css"
+  ],
+  "js": [
+    "main.js"
+  ],
+  "html": [
+    "main.html"
+  ],
+  "minify": {
+    "html": false,
+    "css": true,
+    "js": true
+  },
+  "standalone": [
+    "bundle.js"
+  ]
+}
