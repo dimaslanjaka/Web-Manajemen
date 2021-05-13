@@ -149,7 +149,7 @@ function gcseCallback() {
     gname: "gsearch",
     div: window.id_cse /*Div#id*/,
     tag: "searchresults-only",
-    attributes: {linkTarget: ""},
+    attributes: { linkTarget: "" },
   });
 
   var element = google.search.cse.element.getElement("gsearch");

@@ -1,0 +1,17 @@
+{
+  "title": "Blogger random posts widget",
+  "css": [
+    "main.scss"
+  ],
+  "js": [
+    "main.js"
+  ],
+  "html": [
+    "main.html"
+  ],
+  "minify": {
+    "html": false,
+    "css": true,
+    "js": true
+  }
+}

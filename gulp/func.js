@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-var {dirname} = require("path");
+const { dirname } = require("path");
 
 function getFolders(dir) {
   return fs.readdirSync(dir).filter(function (file) {
@@ -9,7 +9,7 @@ function getFolders(dir) {
 }
 
 function writeFile(path, contents, cb) {
-  fs.mkdirSync(dirname(path), {recursive: true});
+  fs.mkdirSync(dirname(path), { recursive: true });
   fs.writeFileSync(path, contents);
 }
 
@@ -17,4 +17,6 @@ module.exports = {
   write: writeFile,
   listFolder: getFolders,
   dirname: dirname,
+  path: path,
+  fs: fs,
 };
