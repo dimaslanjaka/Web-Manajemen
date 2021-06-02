@@ -1,0 +1,21 @@
+{
+  "title": "Perbedaan typescript dan javascript secara rinci",
+  "blogger": {
+    "publish": true,
+    "label": "CSS, Script"
+  },
+  "css": [
+    "main.css"
+  ],
+  "js": [
+    "main.js"
+  ],
+  "html": [
+    "main.html"
+  ],
+  "minify": {
+    "html": false,
+    "css": true,
+    "js": true
+  }
+}

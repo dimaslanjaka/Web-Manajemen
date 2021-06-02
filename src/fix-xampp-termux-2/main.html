@@ -1,0 +1,67 @@
+<link
+	rel="stylesheet"
+	href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css"
+	media="all"
+/>
+<link
+	rel="stylesheet"
+	href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/default.min.css"
+/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+
+<div id="bootstrap-wrapper">
+	<h2>Solution to "error retrieving pid file" - Termux and apache</h2>
+  <p>
+    Apache errors overview:
+    <pre><code>
+      (20014) Internal error (specific information not available):
+
+      AH00058: Error retrieving pid file var / run / apache2 / httpd.pid
+
+      AH00059: Remove it before continuing if it is corrupted.
+    </code></pre>
+    This mistake seems while summoning <b>apachectl</b> either with <b>start</b> or with <b>stop</b> and here and there happens when running on Previous <a href="/2021/06/install-xampp-lampp-on-android-non-root.html" rel="follow">Install XAMPP apache on android termux</a>.
+    <h5>Solution</h5>
+    <ul>
+      <li>Stop apache first
+        <pre><code class="lang-bash">apachectl stop</code></pre>
+      </li>
+      <li>
+        Change dir:
+        <pre><code class="lang-bash">cd /data/data/com.termux/files/usr/var/run/apache2</code></pre>
+      </li>
+      <li>Then delete the <b>httpd.pid</b> file:
+      <pre><code class="lang-bash">rm httpd.pid</code></pre>
+      </li>
+      <li>Or using this script:
+        <pre><code class="lang-bash">
+          #
+          # This script is part of the video,
+          # Cómo instalar Apache Web Server en Android: https://youtu.be/cwp63pJMy_A and
+          # it's intended to be used on Termux Android 32 bits in order to fix the issue,
+          # https://github.com/termux/termux-packages/issues/1727
+          # Before executing this script you must install termux-chroot see de video,
+          # Cómo hacer chroot en Termux: https://youtu.be/gdy12S94BBk
+          #
+          #!/usr/bin/env bash
+          aps=$(pidof httpd)
+          pidf=/var/run/apache2/httpd.pid
+          [[ -f $pidf ]] && rm -f $pidf
+          [[ "$aps" != "" ]] && kill -9 $aps
+        </code></pre>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Github issues:
+    <ul>
+      <li><a href="https://github.com/termux/termux-packages/issues/1727" target="_blank" rel="noopener noreferrer nofollow">https://github.com/termux/termux-packages/issues/1727</a></li>
+      <li><a href="https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid" target="_blank" rel="nofollow noopener noreferrer">https://stackoverflow.com/questions/27862664/13permission-denied-error-retrieving-pid-file-run-httpd-pid</a></li>
+    </ul>
+  </p>
+
+  <p>
+    <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png" alt="apache error termux">
+  </p>
+</div>

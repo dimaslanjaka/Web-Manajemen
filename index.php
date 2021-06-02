@@ -11,8 +11,10 @@ header('Pragma: no-cache');
 if (isset($_GET['render'])) {
   $file = __DIR__ . '/' . $_GET['render'];
   if (file_exists($file)) {
-    return include($file);
+    include($file);
   }
+  include __DIR__ . '/assets/html/toolbar.html';
+  return;
 }
 
 /// LIST DIRECTORY
@@ -31,7 +33,9 @@ foreach ($list as $path) {
   } else {
     foreach ($listbuild as $listbuild_key => $listbuild_value) {
       // if list build start with directory name of $fixpath, add file to that key
-      if (str_starts_with($listbuild_key, dirname($fixpath))) {
+      //if (str_starts_with($listbuild_key, dirname($fixpath))) {
+      //var_dump([$listbuild_key, dirname($fixpath)]);
+      if ($listbuild_key == dirname($fixpath)) {
         // create an array value into list key
         $listbuild[$listbuild_key][] = $fixpath;
       }

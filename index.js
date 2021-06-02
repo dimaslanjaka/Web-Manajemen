@@ -81,7 +81,7 @@ $(function () {
 	$("#jstree").on("changed.jstree", function (e, data) {
 		if (typeof data.node.li_attr.href == "string") {
 			//location.href = data.node.li_attr.href;
-			window.open(data.node.li_attr.href, "render").focus();
+			window.open(data.node.li_attr.href, "render-html").focus();
 		}
 		console.log(data);
 	});
