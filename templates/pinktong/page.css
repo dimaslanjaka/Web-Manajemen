@@ -1,0 +1,23 @@
+#main-wrapper {
+  width: 100%
+}
+
+.post-title {
+  text-align: center
+}
+
+.post {
+  margin: 0 0px 20px !important;
+  padding: 0;
+}
+
+.post-body {
+  margin: 0;
+  padding: 0
+}
+
+.postmeta {
+  padding-left: 0;
+  margin: 0 20px;
+  display: none
+}

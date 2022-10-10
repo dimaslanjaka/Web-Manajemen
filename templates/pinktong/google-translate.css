@@ -1,0 +1,112 @@
+#google_translate_element {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1200;
+}
+
+/* ================================== *\
+    Mediaqueries
+\* ================================== */
+@media (max-width: 667px) {
+  #google_translate_element {
+    bottom: 2px;
+    left: 2px !important;
+    width: 100% !important;
+  }
+
+  #google_translate_element goog-te-gadget {
+    width: 100% !important;
+  }
+
+  #google_translate_element .skiptranslate {
+    width: 100% !important;
+  }
+
+  #google_translate_element .goog-te-gadget-simple {
+    width: calc(100% - 32px) !important;
+    text-align: center;
+  }
+}
+
+@media (min-width: 667px) {
+
+  /* Hide text */
+  span.goog-te-menu-value {
+    width: 0px !important;
+    height: 0px !important;
+  }
+
+  .goog-te-menu-value * {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.goog-te-gadget {
+  font-family: Roboto, "Open Sans", sans-serif !important;
+  text-transform: uppercase;
+}
+
+.goog-te-gadget-simple {
+  background-color: rgba(255, 51, 51, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 8px !important;
+  border-radius: 4px !important;
+  font-size: 1rem !important;
+  line-height: 2rem !important;
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+
+.goog-te-menu2 {
+  max-width: 100%;
+}
+
+.goog-te-menu-value {
+  color: #fff !important;
+}
+
+.goog-te-menu-value:before {
+  font-family: 'Material Icons';
+  content: "\E927";
+  margin-right: 0px;
+  font-size: 2rem;
+  vertical-align: -10px;
+}
+
+.goog-te-menu-value span:nth-child(5) {
+  display: none;
+}
+
+.goog-te-menu-value span:nth-child(3) {
+  border: none !important;
+  font-family: 'Material Icons';
+}
+
+.goog-te-menu-value span:nth-child(3):after {
+  font-family: 'Material Icons';
+  content: "\E5C5";
+  font-size: 1.5rem;
+  vertical-align: -6px;
+}
+
+.goog-te-gadget-icon {
+  background-image: url(https://placehold.it/32) !important;
+  background-position: 0px 0px;
+  height: 32px !important;
+  width: 32px !important;
+  margin-right: 8px !important;
+  display: none;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}

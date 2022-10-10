@@ -1,0 +1,70 @@
+ <meta charset="UTF-8">
+<style>
+  #full{width:100%;height:100%}
+table
+{
+    table-layout: fixed;
+    width: 100%;
+}
+
+td
+{
+    border: 1px solid green;
+    overflow: hidden;
+}
+  input[type="text"] {
+     width: 100%; 
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+}
+  input[type="submit"] {
+     width: 100%; 
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+}
+  </style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="full" class="w3-red">
+<div class="w3-content w3-border w3-round w3-border-red" style="overflow-x:auto;">
+<table cellpadding="5" cellspacing="0" class="w3-white" border="0" style="width: 100%; border-collapse: collapse">
+  <tr>
+    <td>
+      <table cellpadding="2" cellspacing="0" style="width:100%;border-collapse: collapse" class="w3-text-teal">
+        <tr>
+          <td style="width:13%">
+            <b>Enter URL:</b>
+          </td>
+          <td style="width:64%">
+       <input class="w3-round w3-teal w3-border w3-border-red" type="text" name="url" value="http://" size="40" onClick="this.select();" style="white-space:normal"/>
+          </td>
+          <td>
+            <input class="w3-button w3-teal w3-round" type="button" value="Check" onclick="OnSubmitPluginInput(this,'http://www.webtoolhub.com/plugins/wt561360-http-header-viewer.aspx');" style="white-space:normal;width:100%"/>
+         </td>
+       </tr>
+       <tr>
+         <td style="font-size:9pt">
+     Usage:
+         </td>
+         <td colspan="2" style="font-size: 9pt;">
+     (e.g. yourwebsite.com or http://yourwebsite.com)
+         </td>
+       </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <iframe name="pluginframe561360" frameborder="0" style="width: 100%; height: 300px"></iframe>
+    </td>
+  </tr>
+  <tr>
+    <td style="font-size: 9pt; font-family: Verdana, Arial;">
+      Powered by: <a href="http://www.webtoolhub.com/tn561360-http-header-viewer.aspx" title="Free Webmaster Tools">WebToolHub.com</a>
+    </td>
+  </tr>
+</table>
+<script type="text/javascript" src="https://secure.webtoolhub.com/plugin.axd"></script>
+</div></div>
