@@ -1,0 +1,38 @@
+<html><head><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false);
+}
+var queries = getQueryVariable("q");
+
+var yturl = 'https://www.googleapis.com/youtube/v3/search?q='+queries+'&part=snippet&maxResults=1&key=AIzaSyAx6gnU8v7jQDi6ZFg_ERCtJRJUIC9VuoQ';
+$.getJSON(yturl, function(data) {
+  document.write('<style type="text/css" scoped="">\
+a {text-decoration:none}\
+.videoWrapper {\
+	position: relative;\
+	padding-bottom: 56.25%; /* 16:9 */\
+	padding-top: 25px;\
+	height: 0;\
+}\
+.videoWrapper iframe {\
+	position: absolute;\
+	top: 0;\
+	left: 0;\
+	width: 100%;\
+	height: 100%;\
+}</style>');
+//  var fquery = 'https://www.youtube.com/embed/';
+//  var bquery = '?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&vq=large&origin=https://webmanajemen.xyz';
+ // document.write('<div class="videoWrapper"><iframe src="'+fquery+data.items[0].id.videoId+bquery+'"></iframe></div>');
+ var parseryt = data.items[0].id.videoId;
+ document.write('https://www.youtube.com/embed/'+parseryt+'?autoplay=1&fs=1&iv_load_policy=1&showinfo=1&rel=1&cc_load_policy=1&start=0&end=0&vq=large&origin=https://webmanajemen.xyz');
+})
+</script>
+</head><body></body></html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.webmanajemen.com/sitemap.xml
+Sitemap: https://mirror.webmanajemen.com/sitemap.txt

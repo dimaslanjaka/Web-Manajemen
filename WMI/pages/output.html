@@ -1,0 +1,291 @@
+<html><head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css">
+<style>
+  /**
+ *
+ * In this pen:
+ * added stylesheets with CDN:
+ *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css
+ *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/theme/material.css
+ *
+ */
+
+  *,
+  *:after,
+  *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  html {
+    background: #fff;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5em;
+    letter-spacing: .3px;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: #151515;
+  }
+
+  html {
+    font-family: 'Geneva', sans-serif;
+  }
+
+
+  /* ----------
+	WRAPPERS & CONTAINERS
+---------- */
+  section {
+    position: relative;
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    position: relative;
+    margin: auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 970px;
+  }
+
+  section:after,
+  .container:after,
+  .row:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+
+
+  /* ----------
+	ANHOR TAG
+---------- */
+  a {
+    cursor: pointer;
+    outline: 0;
+  }
+
+  h1>a,
+  h2>a,
+  h3>a,
+  h4>a,
+  h5>a,
+  h6>a,
+  p>a {
+    color: #ed9d0a;
+    text-decoration: none;
+  }
+
+  h1>a:hover,
+  h2>a:hover,
+  h3>a:hover,
+  h4>a:hover,
+  h5>a:hover,
+  h6>a:hover,
+  p>a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* ----------
+	TYPOGRAPHY
+---------- */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  ul {
+    margin-bottom: 1rem;
+    -ms-word-break: break-word;
+    -ms-word-wrap: break-word;
+    -webkit-word-break: break-word;
+    -webkit-word-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child,
+  p:last-child,
+  blockquote:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.25em;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child),
+  h5:not(:first-child),
+  h6:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  h1 {
+    letter-spacing: 2px;
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h1 strong,
+  h2 strong,
+  h3 strong,
+  h4 strong,
+  h5 strong,
+  h6 strong {
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #e1e1e1;
+  }
+
+
+  /* ----------
+	CODE BLOCK
+---------- */
+  .code-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .3);
+  }
+
+  .code-container:last-child {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    background-color: #ed9d0a;
+    color: #fff;
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .15);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: 200ms -webkit-transform ease, 200ms transform ease, 200ms box-shadow ease;
+    transition: 200ms -webkit-transform ease, 200ms transform ease, 200ms box-shadow ease;
+  }
+
+  .btn:hover {
+    box-shadow: 0 6px 6px -4px rgba(0, 0, 0, .2);
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  .btn.btn-left {
+    float: left;
+  }
+
+  .btn.btn-right {
+    float: right;
+  }
+
+
+  .row {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .row:last-child {
+    margin-bottom: 0;
+  }
+</style>
+<script>
+  window.console = window.console || function (t) { };
+</script>
+<style>
+  body {
+    height: 100%;
+  }
+
+  textarea,
+  article,
+  .CodeMirror {
+    height: 100% !important;
+  }
+</style>
+</head><body><textarea name="" id="codeM" cols="30" rows="10" class="form-control">  %WMI_CONTENT%
+</textarea>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/xml/xml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/css/css.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/javascript/javascript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/htmlmixed/htmlmixed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+<script id="rendered-js">
+  /**
+   *
+   * In this pen:
+   * added scripts with CDN:
+   *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js
+   *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/xml/xml.js
+   *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/css/css.js
+   *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/javascript/javascript.js
+   *   -  //cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/htmlmixed/htmlmixed.js
+   *
+   */
+
+  var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codeM"), {
+    lineNumbers: true,
+    mode: 'htmlmixed'
+    // theme: 'default',
+  });
+  swal({
+    title: 'Usage',
+    content: {
+      element: 'p',
+      attributes: {
+        innerHTML: 'Copy all the html code in the textarea, then paste it into the blogger post or page as HTML EDITOR'
+      }
+    },
+    buttons: {
+      cancel: false,
+      confirm: "I Understand"
+    },
+  });
+</script></body></html>

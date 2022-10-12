@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en" class=""><head><script src="//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js"></script><script src="//static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico"><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111"><link rel="canonical" href="https://codepen.io/dimaslanjaka/pen/YREWax">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<style class="cp-pen-styles">* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+body {
+  padding: 10px;
+  margin: 0;
+  font-family: "Bree Serif", serif;
+}
+
+.btn {
+  margin: 2px;
+}
+
+.columns {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+}
+.columns .col {
+  padding: 0;
+  margin: 0;
+}
+.columns .col:last-child {
+  padding: 10px;
+}
+@media (min-width: 50em) {
+  .columns .col {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+  }
+  .columns .col:first-child {
+    padding-right: 5px;
+  }
+  .columns .col:last-child {
+    padding: 0 0 0 5px;
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 75%;
+  /* 4:3 aspect ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  padding-top: 0;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style></head><body>
+<link href="//fonts.googleapis.com/css?family=Open+Sans|Bree+Serif" rel="stylesheet" type="text/css">
+
+<div class="columns">
+  <div class="col">
+    <div class="video-wrapper">
+      <div id="player"></div>
+    </div>
+  </div>
+  <div class="col">
+    <p>
+      <button onclick="p_on();" class="btn btn-success">Unmute</button>
+      <button onclick="p_off();" class="btn btn-danger">Mute</button>
+      <button onclick="p_pause();" class="btn btn-danger">Pause</button>
+      <button id="play" onclick="p_play();" class="btn btn-success">Play</button>
+      <button id="play" onclick="p_load();" class="btn btn-primary">Load New Videos</button> <time></time>
+      </p><hr>
+      <desc></desc>
+    <p></p>
+  </div>
+</div>
+
+<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script src="https://www.youtube.com/iframe_api"></script>
+<script>// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubeIframeAPIReady(idv) {//alert(idv);
+  if (idv === 'undefined' || idv == null) {
+    idv = "NRSKpwivshA";
+  }
+  player = new YT.Player('player', {
+    height: '360',
+    width: '640',
+    videoId: idv,
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      'autohide': 2, // 0,1,2
+      'autoplay': 1, // 0,1 
+      //'cc_load_policy': 0, // 0,1
+      'color': 'red', // red,white
+      'controls': 2, // 0,1,2
+      'disablekb': 0, //0,1 
+      'enablejsapi': 1, // 0,1
+      //'end': ,
+      'fs': 1, // 0,1
+      'hl': 'en',
+      'iv_load_policy': 1, // 1,3
+      //'list': ,
+      //'listType': ,
+      'loop': 0, // 0,1
+      'modestbranding': 1, // 0,1
+      //'origin': 'codepen.io',
+      //'playerapiid': ,
+      //'playlist': ,
+      //playsinline
+      'rel': 0, // 0,1
+      'showinfo': 0, // 0,1
+      //start
+      'theme': 'light' // dark,light 
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange } });
+
+
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  //event.target.playVideo();
+  player.playVideo();
+  player.mute();
+}
+
+function p_load() {
+  var IDs = ["nDKrTtemAyI", "-ImhbXQEdPI"];
+  var ID = IDs[Math.floor(Math.random() * IDs.length)];
+  player.seekTo(0);
+  player.loadVideoById(ID, 0);
+}
+
+function p_play() {
+  player.playVideo();
+  player.unMute();
+}
+function p_on() {
+  player.unMute();
+}
+function p_off() {
+  player.mute();
+}
+function p_pause() {
+  player.pauseVideo();
+}
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    // setTimeout(stopVideo, 6000);
+    var timeLeft = 30;
+    var timerId = setInterval(loopi, 1000);
+    function loopi() {
+      var elem = document.getElementsByTagName('time')[0];
+      if (timeLeft == 0) {
+        timeLeft += 40;
+        elem.innerHTML = "Reload New Videos";
+        p_load();
+        //clearTimeout(timerId);
+      } else {
+        timeLeft--;
+        elem.innerHTML = timeLeft + ' seconds remaining';
+      }
+    }
+    done = true;
+  }
+  // if (player.isMuted() && player.getPlayerState() == 2 && !isUnMuted) {
+  c = 0;
+  if (player.isMuted()) {
+    obj = player.mute();
+    str = JSON.stringify(obj);
+    str = JSON.stringify(obj, null, 4);
+    ell = document.getElementsByTagName('desc')[0];
+    ++c;
+    if (c == 1) {
+
+    } //ell.innerHTML = btoa(str);
+    // player.unMute();
+    player.playVideo();
+    isUnMuted = true;
+  }
+}
+
+function stopVideo() {
+  player.stopVideo();
+}
+
+
+/*
+  var slides = document.getElementsByClassName("btn");
+  for(var i = 0; i < slides.length; i++)
+  {
+    slides.item(i);  
+    //Distribute(slides.item(i));
+  }
+  */
+//window.open(document.URL);
+//# sourceURL=pen.js
+</script>
+
+</body></html>

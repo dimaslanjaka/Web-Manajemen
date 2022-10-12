@@ -1,0 +1,31 @@
+@media screen and (max-width:800px) {
+
+  body.item-view .post-body a[imageanchor="1"][style*="float: left;"],
+  body.item-view .post-body a[imageanchor="1"][style*="float: right;"] {
+    float: none !important;
+    clear: none !important
+  }
+
+  body.item-view .post-body a[imageanchor="1"] img {
+    display: block;
+    height: auto;
+    margin: 0 auto
+  }
+
+  body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child {
+    margin-top: 20px
+  }
+
+  .post-body a[imageanchor] {
+    display: block
+  }
+
+  body.item-view .post-body a[imageanchor="1"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important
+  }
+
+  body.item-view .post-body a[imageanchor="1"]+a[imageanchor="1"] {
+    margin-top: 16px
+  }
+}
