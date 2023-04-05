@@ -1,0 +1,4 @@
+.vscode/sftp*
+/vendor/
+/node_modules/
+/tmp/
