@@ -7,7 +7,7 @@ const path = require("path");
 const pkgtwbs = require("../tmp/bootstrap/package.json");
 const { writefile } = require("sbg-utility");
 const version = pkgtwbs.version.replace(/\./gm, "-");
-const filename = "bootstrap-wrapper-" + version + ".css";
+const filename = "bootstrap-" + version + "-wrapper.css";
 const result = sass.compile(
 	path.join(__dirname, "bootstrap-wrapper-builder.scss")
 );
