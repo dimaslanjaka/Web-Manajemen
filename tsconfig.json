@@ -26,17 +26,9 @@
 		//"rootDir": "./libs",
 	},
 	"typeAcquisition": { "include": ["jquery"] },
-	"include": ["./userscripts/**/*", "./js/**/*", "WMI/**/*"],
+	"include": ["./src/**/*"],
 	"exclude": [
-		"node_modules",
-		"**/.vscode/**",
-		"**/node_modules/**",
-		"**/vendor/**",
-		"**/tmp/**",
-		"**/assets/**",
-		"**.min.js",
-		"**/*.min.js",
-		"Web-Manajemen",
+		"**/node_modules",
 		"**/tmp"
 	],
 	"compileOnSave": true
