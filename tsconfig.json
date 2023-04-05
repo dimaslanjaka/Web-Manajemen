@@ -36,7 +36,8 @@
 		"**/assets/**",
 		"**.min.js",
 		"**/*.min.js",
-		"Web-Manajemen"
+		"Web-Manajemen",
+		"**/tmp"
 	],
 	"compileOnSave": true
 }

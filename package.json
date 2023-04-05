@@ -21,9 +21,17 @@
   "author": "Dimas Lanjaka",
   "license": "MIT",
   "dependencies": {
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.4",
     "requirejs": "^2.3.6",
+    "sbg-utility": "^1.0.8",
     "sweetalert": "^2.1.2",
     "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "eslint": "^8.37.0",
+    "npm-check-updates": "^16.10.2",
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0"
   }
 }
