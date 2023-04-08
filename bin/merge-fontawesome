@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+basedir=`dirname "$0"`
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
