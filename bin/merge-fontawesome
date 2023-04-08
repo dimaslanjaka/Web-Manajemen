@@ -7,3 +7,9 @@ basedir=`dirname "$0"`
 case `uname` in
   *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
+
+git checkout fontawesome-pro css
+git checkout fontawesome-pro js
+git checkout fontawesome-pro webfonts
+git checkout fontawesome-pro otfs
+git checkout fontawesome-pro svgs
