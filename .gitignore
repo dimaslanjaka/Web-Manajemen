@@ -1,4 +1,7 @@
-.vscode
+.vscode/sftp*
 /vendor/
 /node_modules/
 /tmp/
+
+FA5PRO
+font-awesome-pro-v6
