@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+basedir=`dirname "$0"` # current script directory
+cwddir="${PWD}"
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+echo "base directory $basedir"
+echo "cwd directory $cwddir"
+echo ""
+
+toadd=$(realpath $cwddir/$1)
+echo "undo add $toadd"
+echo ""
+
+git restore --staged "$1"
