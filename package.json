@@ -23,7 +23,7 @@
   "dependencies": {
     "jquery": "^3.6.4",
     "requirejs": "^2.3.6",
-    "sbg-utility": "^1.0.8",
+    "sbg-utility": "^1.0.9",
     "sweetalert": "^2.1.2",
     "toastr": "^2.1.4"
   },
