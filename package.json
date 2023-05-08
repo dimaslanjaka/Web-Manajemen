@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/node": "^18.15.11",
     "eslint": "^8.39.0",
-    "npm-check-updates": "^16.10.9",
+    "npm-check-updates": "^16.10.10",
     "prettier": "^2.8.7",
     "sass": "^1.60.0"
   }
