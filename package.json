@@ -32,6 +32,6 @@
     "eslint": "^8.40.0",
     "npm-check-updates": "^16.10.12",
     "prettier": "^2.8.7",
-    "sass": "^1.60.0"
+    "sass": "^1.62.1"
   }
 }
