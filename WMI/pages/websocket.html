@@ -1,4 +1,4 @@
-<html><head></head><body>%WMI_STYLE%
+%WMI_STYLE%
 %WMI_NAVBAR%
 <style>
   [id=usage] .card {
@@ -12,8 +12,12 @@
 <!--Content Here-->
 <div>
   <h1 itemprop="name">Simple Websocket Writen in PHP and Javascript</h1>
-  <img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png" alt="Websocket How to" class="d-none">
-  <h5 class="ml-3"><i class="fab fa-js mr-1"></i><span class="badge badge-info">Javascript</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL2pzL3dlYnNvY2tldC5qcw==" target="_blank" rel="nofollow noopener noreferer" class="btn btn-success btn-sm ml-1" title="JS">Download<i class="fas fa-download ml-1"></i></a></h5>
+  <img itemprop="image" src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://bertzzie.com/knowledge/javascript-lanjut/_images/AJAXvsWebSocket.png"
+    alt="Websocket How to" class="d-none" />
+  <h5 class="ml-3"><i class="fab fa-js mr-1"></i><span class="badge badge-info">Javascript</span><a
+      href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js" target="_blank"
+      rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="JS">Download<i
+        class="fas fa-download ml-1"></i></a></h5>
         <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/js/websocket.js"></script>
   <h6 class="text-center">JS Usage Example</h6>
   <div class="row" id="usage">
@@ -21,7 +25,8 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">By Variable OR Const</h5>
-          <pre class="card-text">const start_socket = false;
+          <pre class="card-text">
+const start_socket = false;
 if (start_socket){
   socket_start();
 }
@@ -33,7 +38,8 @@ if (start_socket){
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">By Element Exists</h5>
-          <pre class="card-text">var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
+          <pre class="card-text">
+var websocketElement = document.getElementById('websocket'); //find any elements with id websocket
 if (websocketElement){
   socket_start();
 }
@@ -47,17 +53,21 @@ if (websocketElement){
           <h5 class="card-title">Others</h5>
           <p class="card-text">
             You can use it as your wish. OR using basic example bellow :
-            </p><pre>if (conditional) {
+            <pre>
+if (conditional) {
   socket_start();
 }
             </pre>
-          <p></p>
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <h5 class="ml-3"><i class="fab fa-php mr-1"></i><span class="badge badge-info">PHP</span><a href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cHM6Ly9naXRodWIuY29tL2RpbWFzbGFuamFrYS9XZWItTWFuYWplbWVuL2Jsb2IvbWFzdGVyL1BIUC93ZWJzb2NrZXQucGhw" target="_blank" rel="nofollow noopener noreferer" class="btn btn-success btn-sm ml-1" title="PHP">Download<i class="fas fa-download ml-1"></i></a></h5>
+  <h5 class="ml-3"><i class="fab fa-php mr-1"></i><span class="badge badge-info">PHP</span><a
+      href="https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php" target="_blank"
+      rel="noopener noreferrer" class="btn btn-success btn-sm ml-1" title="PHP">Download<i
+        class="fas fa-download ml-1"></i></a></h5>
         <script src="https://gist-it.appspot.com/https://github.com/dimaslanjaka/Web-Manajemen/blob/master/PHP/websocket.php"></script>
   <h6 class="text-center">PHP Usage Example</h6>
   <div class="row" id="usage">
@@ -65,13 +75,14 @@ if (websocketElement){
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">PHP Normal Usage</h5>
-          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+          <pre class="card-text">
+$websocket = new WMI_websocket(false, false);
 /* Data Example */
 $websocket-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+  &apos;pendapatan_max_invoice&apos; =&gt; 45,
+  &apos;piutang_max_invoice&apos; =&gt; 55,
+  &apos;hutang_max_invoice&apos; =&gt; 65,
+  &apos;pengeluaran_max_invoice&apos; =&gt; 67,
 ]);
 $websocket-&gt;SEND();
         </pre>
@@ -82,12 +93,13 @@ $websocket-&gt;SEND();
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">PHP Object Oriented Usage</h5>
-          <pre class="card-text">$websocket = new WMI_websocket(false, false);
+          <pre class="card-text">
+$websocket = new WMI_websocket(false, false);
 $websocket-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+  &apos;pendapatan_max_invoice&apos; =&gt; 45,
+  &apos;piutang_max_invoice&apos; =&gt; 55,
+  &apos;hutang_max_invoice&apos; =&gt; 65,
+  &apos;pengeluaran_max_invoice&apos; =&gt; 67,
 ])-&gt;SEND();
         </pre>
         </div>
@@ -97,11 +109,12 @@ $websocket-&gt;createData([
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">PHP <b>Static</b> Object Oriented Usage</h5>
-          <pre class="card-text">WMI_websocket::i(false, false)-&gt;createData([
-  'pendapatan_max_invoice' =&gt; 45,
-  'piutang_max_invoice' =&gt; 55,
-  'hutang_max_invoice' =&gt; 65,
-  'pengeluaran_max_invoice' =&gt; 67,
+          <pre class="card-text">
+WMI_websocket::i(false, false)-&gt;createData([
+  &apos;pendapatan_max_invoice&apos; =&gt; 45,
+  &apos;piutang_max_invoice&apos; =&gt; 55,
+  &apos;hutang_max_invoice&apos; =&gt; 65,
+  &apos;pengeluaran_max_invoice&apos; =&gt; 67,
 ])-&gt;SEND();
         </pre>
         </div>
@@ -111,4 +124,4 @@ $websocket-&gt;createData([
 
 </div>
 
-%WMI_FOOTER%</body></html>
+%WMI_FOOTER%

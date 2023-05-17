@@ -1,39 +1,20 @@
-<html><head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-          var pair = vars[i].split('=');
-          if (pair[0] == variable) {
-            return pair[1];
-          }
-        }
-        return false;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+      if (pair[0] == variable) {
+        return pair[1];
       }
-      var idC = getQueryVariable('id');
-      var tC = getQueryVariable('tab');
-
-      document.write(
-        '<iframe src="https://codepen.io/mattyfours/embed/' +
-          idC +
-          '?default-tab=' +
-          tC +
-          '" width="100%" height="300" scrolling="auto" frameborder="0" style="width:100%;height:100%"></iframe>'
-      );
-      document.write(
-        '<p data-height="268" data-theme-id="0" data-slug-hash="' +
-          idC +
-          '" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/' +
-          idC +
-          '" rel="nofollow">' +
-          idC +
-          '</a> on <a rel="nofollow" href="https://www.webmanajemen.com/page/safelink.html?url=aHR0cDovL2NvZGVwZW4uaW8=" target="_blank">CodePen</a></p>'
-      );
-      //document.write('<iframe src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=html" width="100%" height="100%" scrolling="auto" frameborder="0" style="width:100%;height:100%"></iframe>');
+    }
+    return (false);
+  }
+  var idC = getQueryVariable('id');
+  var tC = getQueryVariable('tab');
+    
+ document.write('<iframe src="https://codepen.io/mattyfours/embed/'+idC+'?default-tab='+tC+'" width="100%" height="300" scrolling="auto" frameborder="0" style="width:100%;height:100%"></iframe>');
+document.write('<p data-height="268" data-theme-id="0" data-slug-hash="'+idC+'" data-user="dimaslanjaka" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/'+idC+'">'+idC+'</a> on <a rel="nofollow" href="http://codepen.io" target="_blank">CodePen</a></p>');
+    //document.write('<iframe src="https://codepen.io/mattyfours/embed/JyVMBd?default-tab=html" width="100%" height="100%" scrolling="auto" frameborder="0" style="width:100%;height:100%"></iframe>');
     </script>
-  </head>
-  <body>
-
-</body></html>
