@@ -1,7 +1,18 @@
 // git clone https://github.com/twbs/bootstrap.git tmp/bootstrap
 // cd tmp/bootstrap
-// git pull origin main
+
+// latest version
+// git fetch --all --tags --prune
+// git pull origin main --prune
+
+// change version
+// git checkout tags/<tag> -b <branch>
+
+// build
 // npm install
+// npm run css
+// with js
+// npm run dist
 
 const sass = require("sass");
 const path = require("path");
