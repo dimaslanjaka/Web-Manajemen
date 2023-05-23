@@ -1,5 +1,7 @@
-// clone https://github.com/twbs/bootstrap.git /tmp/bootstrap
-// cd /tmp/bootstrap && npm install
+// git clone https://github.com/twbs/bootstrap.git tmp/bootstrap
+// cd tmp/bootstrap
+// git pull origin main
+// npm install
 
 const sass = require("sass");
 const path = require("path");
