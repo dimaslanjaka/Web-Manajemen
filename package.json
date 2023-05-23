@@ -21,17 +21,26 @@
   "author": "Dimas Lanjaka",
   "license": "MIT",
   "dependencies": {
-    "jquery": "^3.6.4",
+    "jquery": "^3.7.0",
     "requirejs": "^2.3.6",
-    "sbg-utility": "^1.0.9",
+    "sbg-utility": "^1.1.0",
     "sweetalert": "^2.1.2",
     "toastr": "^2.1.4"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "eslint": "^8.40.0",
+    "@types/node": "^20.2.3",
+    "eslint": "^8.41.0",
     "npm-check-updates": "^16.10.12",
-    "prettier": "^2.8.7",
-    "sass": "^1.60.0"
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "overrides": {
+    "deepmerge-ts": "4.3.0"
+  },
+  "resolutions": {
+    "deepmerge-ts": "4.3.0"
   }
 }
