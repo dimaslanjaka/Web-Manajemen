@@ -1,39 +1,6 @@
 @charset "UTF-8";
-#bootstrap-wrapper {
-  /*!
-   * Bootstrap  v5.3.0-alpha3 (https://getbootstrap.com/)
-   * Copyright 2011-2023 The Bootstrap Authors
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   */
-  /* rtl:raw:
-  [type="tel"],
-  [type="url"],
-  [type="email"],
-  [type="number"] {
-    direction: ltr;
-  }
-  */
-  /* rtl:begin:ignore */
-  /* rtl:end:ignore */
-  /* rtl:begin:ignore */
-  /* rtl:end:ignore */
-  /* rtl:begin:ignore */
-  /* rtl:end:ignore */
-  /* rtl:begin:ignore */
-  /* rtl:end:ignore */
-  /* rtl:options: {
-    "autoRename": true,
-    "stringMap":[ {
-      "name"    : "prev-next",
-      "search"  : "prev",
-      "replace" : "next"
-    } ]
-  } */
-  /* rtl:begin:remove */
-  /* rtl:end:remove */
-}
-#bootstrap-wrapper :root,
-#bootstrap-wrapper [data-bs-theme=light] {
+:root,
+[data-bs-theme=light] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -151,7 +118,8 @@
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 }
-#bootstrap-wrapper [data-bs-theme=dark] {
+
+[data-bs-theme=dark] {
   color-scheme: dark;
   --bs-body-color: #adb5bd;
   --bs-body-color-rgb: 173, 181, 189;
@@ -203,6 +171,35 @@
   --bs-form-valid-border-color: #75b798;
   --bs-form-invalid-color: #ea868f;
   --bs-form-invalid-border-color: #ea868f;
+}
+
+#bootstrap-wrapper {
+  /* rtl:raw:
+  [type="tel"],
+  [type="url"],
+  [type="email"],
+  [type="number"] {
+    direction: ltr;
+  }
+  */
+  /* rtl:begin:ignore */
+  /* rtl:end:ignore */
+  /* rtl:begin:ignore */
+  /* rtl:end:ignore */
+  /* rtl:begin:ignore */
+  /* rtl:end:ignore */
+  /* rtl:begin:ignore */
+  /* rtl:end:ignore */
+  /* rtl:options: {
+    "autoRename": true,
+    "stringMap":[ {
+      "name"    : "prev-next",
+      "search"  : "prev",
+      "replace" : "next"
+    } ]
+  } */
+  /* rtl:begin:remove */
+  /* rtl:end:remove */
 }
 #bootstrap-wrapper *,
 #bootstrap-wrapper *::before,
