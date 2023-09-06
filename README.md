@@ -2,6 +2,13 @@
 
 > Version 6 – the iconic SVG, font, and CSS framework
 
+sample svg
+```html
+<svg width="90" height="90">       
+     <image xlink:href="https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/a4c538ca4ccbf8a8ce86f8c4a6f04ba03361847d/svgs/duotone/0.svg" src="https://static.vecteezy.com/system/resources/previews/005/720/408/original/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg" width="90" height="90"/>    
+</svg>
+```
+
 The internet's most popular icon toolkit has been redesigned and built from
 scratch. On top of this, features like icon font ligatures, an SVG framework,
 official NPM packages for popular frontend libraries like React, and access to
