@@ -1,6 +1,17 @@
 {
   "name": "web-manajemen-fontawesome",
   "description": "Website Manajemen Indonesia Font Awesome",
+  "files": [
+    "scss/**/*.scss",
+    "!scss/tests/**",
+    "css",
+    "less",
+    "webfonts",
+    "sprites",
+    "metadata",
+    "js",
+    "svgs"
+  ],
   "scripts": {
     "start": "php -S 127.0.0.1:4000"
   },
