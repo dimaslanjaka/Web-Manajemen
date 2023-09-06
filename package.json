@@ -1,6 +1,7 @@
 {
-  "name": "web-manajemen-fontawesome",
+  "name": "@fortawesome/fontawesome-svg-core",
   "description": "Website Manajemen Indonesia Font Awesome",
+  "main": "js-packages/@fontawesome/fontawesome-svg-core/import.macro.js",
   "files": [
     "scss/**/*.scss",
     "!scss/tests/**",
@@ -10,7 +11,8 @@
     "sprites",
     "metadata",
     "js",
-    "svgs"
+    "svgs",
+    "js-packages"
   ],
   "scripts": {
     "start": "php -S 127.0.0.1:4000"
@@ -30,7 +32,6 @@
     }
   ],
   "version": "6.4.2",
-  "main": "index.js",
   "repository": "https://github.com/dimaslanjaka/Web-Manajemen.git",
   "author": "Dimas Lanjaka",
   "license": "MIT",
