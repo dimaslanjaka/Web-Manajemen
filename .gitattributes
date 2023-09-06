@@ -1,2 +1,6 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Set line endings to always be lf for SVG font files
+* text eol=lf
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

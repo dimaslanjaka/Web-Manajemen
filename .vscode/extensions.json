@@ -1,3 +1,6 @@
 {
-	"recommendations": ["formulahendry.code-runner"]
+	"recommendations": [
+		"formulahendry.code-runner",
+		"k--kato.intellij-idea-keybindings"
+	]
 }
