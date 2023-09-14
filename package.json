@@ -1,5 +1,5 @@
 {
-  "name": "@fortawesome/fontawesome-svg-core",
+  "name": "@fontawesome/fontawesome-svg-core",
   "description": "Website Manajemen Indonesia Font Awesome",
   "main": "js-packages/@fontawesome/fontawesome-svg-core/import.macro.js",
   "files": [
