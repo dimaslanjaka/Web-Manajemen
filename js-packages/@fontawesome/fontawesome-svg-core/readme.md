@@ -1,0 +1,1 @@
+source: https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/%40fortawesome/fontawesome-svg-core

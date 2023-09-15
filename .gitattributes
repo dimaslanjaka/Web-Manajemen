@@ -1,4 +1,4 @@
-*           text=auto
+*           text=auto eol=lf
 *.txt       text eol=lf
 *.json      text eol=lf filter=tabspace
 *.sh        text eol=lf
@@ -25,3 +25,7 @@
 *.jpg       binary diff
 *.ico       binary diff
 *.pdf       binary diff
+*.eot       binary
+*.ttf       binary
+*.woff      binary
+*.woff2     binary
