@@ -13,3 +13,4 @@ git checkout fontawesome-pro js
 git checkout fontawesome-pro webfonts
 git checkout fontawesome-pro otfs
 git checkout fontawesome-pro svgs
+git checkout fontawesome-pro sprites
