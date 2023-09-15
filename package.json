@@ -21,7 +21,7 @@
   "author": "Dimas Lanjaka",
   "license": "MIT",
   "dependencies": {
-    "jquery": "^3.5.1",
+    "jquery": "^3.7.1",
     "requirejs": "^2.3.6",
     "sweetalert": "^2.1.2",
     "toastr": "^2.1.4"
