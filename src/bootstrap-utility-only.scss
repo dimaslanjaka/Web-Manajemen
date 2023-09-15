@@ -1,0 +1,28 @@
+/*!
+  * Only bootstrap helper and utility
+  */
+
+/*!
+  * Configuration
+  */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+/*!
+  * Root
+  */
+@import "bootstrap/scss/root";
+
+/*!
+  * Helpers
+  */
+@import "bootstrap/scss/helpers";
+
+/*!
+  * Utilities
+  */
+@import "bootstrap/scss/utilities/api";
