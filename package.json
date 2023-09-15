@@ -17,6 +17,10 @@
   ],
   "version": "5.0.1",
   "main": "js/mdb.min.js",
+  "files": [
+    "./css",
+    "./src"
+  ],
   "repository": "https://github.com/dimaslanjaka/Web-Manajemen.git",
   "author": "Dimas Lanjaka",
   "license": "MIT",
