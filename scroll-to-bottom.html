@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Scroll to bottom of page</title>
+
+    <link rel="canonical" href="https://codepen.io/dimaslanjaka/pen/dyrEQGx">
+  
+  
+  
+  
+<style>
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 100px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* FOR DEMO ONLY */
+
+body {
+  /*   font: bold 1.2em/2.5 arial; */
+  text-align: center;
+}
+label {
+  cursor: pointer;
+  display: inline-block;
+  transition: 1s ease;
+}
+:checked ~ label {
+  margin-bottom: 1400px;
+}
+.content {
+  min-height: 400px;
+}
+
+article {
+  width: 40%;
+  margin: 0 auto;
+  color: #444;
+}
+header {
+  background: #c7dd8b;
+  height: 50px;
+}
+footer {
+  background: #db8a8a;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <header>
+  <h2>This is top of page</h2>
+</header>
+
+<article>
+  <input type='checkbox' id='c' />
+  <label for='c'>Toggle Content Height</label>
+  <div class="content">content</div>
+  <div class="content">content 1</div>
+  <div class="content">content 2</div>
+  <div class="content">content 3</div>
+</article>
+
+<footer>
+  <h2>This is bottom of page</h2>
+</footer>
+  
+      <script id="rendered-js" >
+window.scrollTo({
+  top: document.documentElement.scrollHeight - window.innerHeight,
+  left: 0,
+  behavior: "smooth" });
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>
