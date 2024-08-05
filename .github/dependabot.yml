@@ -12,6 +12,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    branches:
+      - master
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -22,9 +24,13 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
+    branches:
+      - master
 
   # Maintain dependencies for Composer
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "weekly"
+    branches:
+      - master
