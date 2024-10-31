@@ -45,7 +45,7 @@
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
     "requirejs": "^2.3.7",
-    "sbg-utility": "^1.1.8",
+    "sbg-utility": "^2.0.5",
     "sweetalert": "^2.1.2",
     "toastr": "^2.1.4"
   },
